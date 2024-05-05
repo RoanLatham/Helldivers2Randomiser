@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --grey-text: #d9d9d9;
+}
+
+@font-face {
+    font-family: 'Swiss 721';
+    src: url('./assets/fonts/Swiss 721 Extended Bold.otf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Sinclair';
+    src: url('./assets/fonts/FS Sinclair Regular.otf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Sinclair';
+    src: url('./assets/fonts/FS Sinclair Bold.otf');
+    font-weight: bold;
+}
+
+
+body {
+    background-color: #21586D;
+    width: 100vw;
+    margin: 0;
+}
+
+* {
+    color: white;
+}
+
+p{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.primary-text {
+    color: white;
+    font-family: 'Sinclair';
+    font-weight: bold;
+}
+
+.secondary-text {
+    color: var(--grey-text);
+    font-family: 'Sinclair';
+    font-weight: bold;
+}
+
+.title-text {
+    font-family: "Swiss 721";
+    font-weight: "bold";
+}
+
+.flex-horizontal{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-horizontal > *:not(:first-child) {
+    margin-left: 2rem;
+}
+
+.flex-vertical{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-vertical > *:not(:first-child) {
+    margin-top: 2rem;
+}
