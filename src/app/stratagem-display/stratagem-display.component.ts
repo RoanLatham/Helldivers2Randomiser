@@ -8,10 +8,24 @@ import { Stratagem, stratagems } from '../stratagems';
   standalone: true,
 })
 export class StratagemDisplayComponent implements OnInit {
-  @Input() id!: number;
+  private _id!: number;
   stratagem!: Stratagem;
 
+  @Input()
+  set id(value: number) {
+    this._id = value;
+    this.updateStratagem();
+  }
+
+  get id(): number {
+    return this._id;
+  }
+
   ngOnInit() {
+    this.updateStratagem();
+  }
+
+  updateStratagem() {
     const stratagem = stratagems.find((s) => s.id === this.id);
 
     if (stratagem) {

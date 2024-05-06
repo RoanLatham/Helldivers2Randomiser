@@ -1,0 +1,42 @@
+.stratagem-filter-button {
+    aspect-ratio: 1;
+    width: 10vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+}
+
+.secondary-text{
+    -webkit-hyphens:auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.stratagem-filter-icon {
+    background-color: black;
+    aspect-ratio: 1;
+}
+
+.stratagem-filter-icon-disabled{
+    filter: grayscale(100%);
+    background-color: #191919;
+
+    width: 90%;
+    margin: 10%;
+
+    align-self: center;
+}
+
+.stratagem-filter-module-container{
+    display: flex;
+    justify-content: left;
+}
+
+.stratagem-filter-container{
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin-bottom: 50vmin;
+}

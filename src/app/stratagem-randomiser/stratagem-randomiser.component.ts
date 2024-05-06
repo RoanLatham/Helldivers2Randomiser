@@ -1,27 +1,81 @@
 import { Component, OnInit } from '@angular/core';
 import { StratagemDisplayComponent } from '../stratagem-display/stratagem-display.component';
+import { StratagemFilterStateService } from '../stratagem-filter-state.service';
+import { Stratagem, stratagems } from '../stratagems';
 
 @Component({
   selector: 'app-stratagem-randomiser',
   templateUrl: './stratagem-randomiser.component.html',
   styleUrls: ['./stratagem-randomiser.component.scss'],
-  standalone: true,
   imports: [StratagemDisplayComponent],
+  standalone: true,
 })
 export class StratagemRandomiserComponent implements OnInit {
   ids: number[] = [];
+  disabledIds: number[] = [];
+  onlyOneBackpack: boolean = true;
 
-  constructor() { }
+  backpackStratagemIDs: number[] = [
+    12,
+    47,
+    17,
+    10,
+    16,
+    25,
+    33,
+    35,
+    41,
+    42,
+  ];
+
+  // Determine the maximum ID dynamically, this could be made more preformant by calculating this at compile time
+  maxId: number = stratagems[stratagems.length - 1].id;
+
+  constructor(private stratagemState: StratagemFilterStateService) { }
 
   ngOnInit(): void {
-    this.ids = this.getRandomIds();
+    // Subscribe to the disabledIds$ observable
+    this.stratagemState.disabledIds$.subscribe(ids => {
+      this.disabledIds = ids;
+      // this.ids = this.getRandomIds();
+    });
+
+    // Subscribe to the onlyOneBackpack$ observable
+    this.stratagemState.onlyOneBackpack$.subscribe(value => {
+      this.onlyOneBackpack = value;
+    });
+
+    this.randomise();
+  }
+
+  randomise(): void{
+    console.log("randomising stratagems")
+    this.ids = [...this.getRandomIds()];
   }
 
   getRandomIds(): number[] {
-    const numbers = Array.from({length: 52}, (_, i) => i + 1);
+    let numbers = Array.from({length: this.maxId}, (_, i) => i + 1)
+      .filter(id => !this.disabledIds.includes(id));
+
     this.shuffle(numbers);
+  
+    // console.log("only one backpack is: " + this.onlyOneBackpack);
+    // If onlyOneBackpack is true, filter the numbers array
+    if (this.onlyOneBackpack) {
+      // Find the first backpack ID in the numbers array
+      const firstBackpackId = numbers.find(id => this.backpackStratagemIDs.includes(id, 0));
+  
+      // If a backpack ID was found, filter out all other backpack IDs
+      if (firstBackpackId !== undefined) {
+        numbers = numbers.filter(id => id === firstBackpackId || !this.backpackStratagemIDs.includes(id));
+      }
+    }
+
+    console.log("selected IDs are: " +numbers.slice(0, 4));
+  
     return numbers.slice(0, 4);
   }
+  
 
   shuffle(array: number[]) {
     for (let i = array.length - 1; i > 0; i--) {

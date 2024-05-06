@@ -2,13 +2,19 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { StratagemDisplayComponent } from './stratagem-display/stratagem-display.component';
 import { StratagemRandomiserComponent } from './stratagem-randomiser/stratagem-randomiser.component';
+import { StratagemFiltersComponent } from './stratagem-filters/stratagem-filters.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, StratagemDisplayComponent, StratagemRandomiserComponent],
+  imports: [
+    RouterOutlet,
+    StratagemDisplayComponent,
+    StratagemRandomiserComponent,
+    StratagemFiltersComponent,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'HelldiversLoadout';
@@ -23,7 +29,7 @@ export class AppComponent {
   }
 
   constructor() {
-    const numbers = Array.from({length: 52}, (_, i) => i + 1);
+    const numbers = Array.from({ length: 52 }, (_, i) => i + 1);
     this.shuffle(numbers);
     this.ids = numbers.slice(0, 4);
   }
