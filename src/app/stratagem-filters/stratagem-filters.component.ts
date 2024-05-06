@@ -32,4 +32,12 @@ export class StratagemFiltersComponent implements OnInit {
   toggleStratagem(id: number): void {
     this.stratagemState.toggleStratagem(id);
   }
+
+  toggleOnlyOneBackpack(): void {
+    this.stratagemState.toggleOnlyOneBackpack();
+  }
+  
+  toggleOnlyOneSupport(): void {
+    this.stratagemState.toggleOnlyOneSupport();
+  }
 }

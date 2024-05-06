@@ -14,6 +14,7 @@ export class StratagemRandomiserComponent implements OnInit {
   ids: number[] = [];
   disabledIds: number[] = [];
   onlyOneBackpack: boolean = true;
+  onlyOneSupport: boolean = true;
 
   backpackStratagemIDs: number[] = [
     12,
@@ -26,6 +27,24 @@ export class StratagemRandomiserComponent implements OnInit {
     35,
     41,
     42,
+  ];
+
+  supportStratagemIDs: number[] = [
+    9,
+    11,
+    14,
+    15,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
   ];
 
   // Determine the maximum ID dynamically, this could be made more preformant by calculating this at compile time
@@ -45,12 +64,17 @@ export class StratagemRandomiserComponent implements OnInit {
       this.onlyOneBackpack = value;
     });
 
+    // Subscribe to the onlyOneSupport$ observable
+    this.stratagemState.onlyOneSupport$.subscribe(value => {
+      this.onlyOneSupport = value;
+    });
+
     this.randomise();
   }
 
   randomise(): void{
     console.log("randomising stratagems")
-    this.ids = [...this.getRandomIds()];
+    this.ids = this.getRandomIds();
   }
 
   getRandomIds(): number[] {
@@ -68,6 +92,18 @@ export class StratagemRandomiserComponent implements OnInit {
       // If a backpack ID was found, filter out all other backpack IDs
       if (firstBackpackId !== undefined) {
         numbers = numbers.filter(id => id === firstBackpackId || !this.backpackStratagemIDs.includes(id));
+      }
+    }
+
+    // console.log("only one support weapon is: " + this.onlyOneSupport);
+    // If onlyOneSupport is true, filter the numbers array
+    if (this.onlyOneSupport) {
+      // Find the first backpack ID in the numbers array
+      const firstSupportId = numbers.find(id => this.supportStratagemIDs.includes(id, 0));
+  
+      // If a backpack ID was found, filter out all other backpack IDs
+      if (firstSupportId !== undefined) {
+        numbers = numbers.filter(id => id === firstSupportId || !this.supportStratagemIDs.includes(id));
       }
     }
 

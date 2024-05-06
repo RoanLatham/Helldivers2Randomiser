@@ -24,7 +24,7 @@ export class StratagemFilterStateService {
       this.disableStratagem(id);
     }
 
-    console.log("filter service: dissabled IDs: " + this.disabledIds.value)
+    console.log('filter service: dissabled IDs: ' + this.disabledIds.value);
   }
 
   //BehaviorSubject for the onlyOneBackpack setting
@@ -33,5 +33,23 @@ export class StratagemFilterStateService {
 
   setOnlyOneBackpack(value: boolean) {
     this.onlyOneBackpack.next(value);
+  }
+
+  toggleOnlyOneBackpack() {
+    const currentValue = this.onlyOneBackpack.value;
+    this.onlyOneBackpack.next(!currentValue);
+  }
+
+  //BehaviorSubject for the onlyOneBackpack setting
+  private onlyOneSupport = new BehaviorSubject<boolean>(false);
+  onlyOneSupport$ = this.onlyOneSupport.asObservable();
+
+  setOnlyOneSupport(value: boolean) {
+    this.onlyOneSupport.next(value);
+  }
+
+  toggleOnlyOneSupport() {
+    const currentValue = this.onlyOneSupport.value;
+    this.onlyOneSupport.next(!currentValue);
   }
 }
