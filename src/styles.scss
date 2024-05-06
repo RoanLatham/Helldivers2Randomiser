@@ -17,8 +17,8 @@
 
 @font-face {
     font-family: 'Sinclair';
-    src: url('./assets/fonts/FS Sinclair Bold.otf');
-    font-weight: bold;
+    src: url('./assets/fonts/FS Sinclair Medium.otf');
+    font-weight: Medium;
 }
 
 
@@ -40,13 +40,13 @@ p{
 .primary-text {
     color: white;
     font-family: 'Sinclair';
-    font-weight: bold;
+    font-weight: Medium;
 }
 
 .secondary-text {
     color: var(--grey-text);
     font-family: 'Sinclair';
-    font-weight: bold;
+    font-weight: Medium;
 }
 
 .title-text {
@@ -57,17 +57,21 @@ p{
 .flex-horizontal{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+text-align: center;
 }
 
-.flex-horizontal > *:not(:first-child) {
-    margin-left: 2rem;
-}
+// .flex-horizontal > *:not(:first-child) {
+//     margin-left: 2rem;
+// }
 
 .flex-vertical{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+text-align: center;
 }
 
-.flex-vertical > *:not(:first-child) {
-    margin-top: 2rem;
-}
+// .flex-vertical > *:not(:first-child) {
+//     margin-top: 2rem;
+// }

@@ -1,12 +1,32 @@
-.primary-text{
-font-size: 1.5rem;
+.primary-text,
+.secondary-text {
+    margin: 0;
+    padding: 0 1vmin;
 }
 
-.stratagem-icon{
+.primary-text {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.secondary-text {
+    margin-top: 0.2rem;
+}
+
+.stratagem-icon {
     aspect-ratio: 1;
-    width: 220px;
+    width: 18vmin;
 }
 
-.icon-background{
+.icon-background {
     background-color: black;
+}
+
+.flex-vertical{
+    justify-content: center;
+    align-items: center;
+}
+
+.stratagem-display{
+    width: 25vmin;
 }
