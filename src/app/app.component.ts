@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { StratagemDisplayComponent } from './stratagem-display/stratagem-display.component';
 import { StratagemRandomiserComponent } from './stratagem-randomiser/stratagem-randomiser.component';
 import { StratagemFiltersComponent } from './stratagem-filters/stratagem-filters.component';
+import { BoosterDisplayComponent } from './booster-display/booster-display.component';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { StratagemFiltersComponent } from './stratagem-filters/stratagem-filters
     StratagemDisplayComponent,
     StratagemRandomiserComponent,
     StratagemFiltersComponent,
+    BoosterDisplayComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

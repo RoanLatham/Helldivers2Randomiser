@@ -15,6 +15,8 @@ export class StratagemRandomiserComponent implements OnInit {
   disabledIds: number[] = [];
   onlyOneBackpack: boolean = true;
   onlyOneSupport: boolean = true;
+  guaranteeBackpack: boolean = false;
+  guaranteeSupport: boolean = false;
 
   backpackStratagemIDs: number[] = [
     12,
@@ -69,11 +71,21 @@ export class StratagemRandomiserComponent implements OnInit {
       this.onlyOneSupport = value;
     });
 
+    // Subscribe to the guaranteeBackpack$ observable
+  this.stratagemState.guaranteeBackpack$.subscribe(value => {
+    this.guaranteeBackpack = value;
+  });
+
+  // Subscribe to the guaranteeSupport$ observable
+  this.stratagemState.guaranteeSupport$.subscribe(value => {
+    this.guaranteeSupport = value;
+  });
+
     this.randomise();
   }
 
   randomise(): void{
-    console.log("randomising stratagems")
+    // console.log("randomising stratagems")
     this.ids = this.getRandomIds();
   }
 
@@ -107,9 +119,22 @@ export class StratagemRandomiserComponent implements OnInit {
       }
     }
 
+    //trim results to 4 IDs
+    numbers = numbers.slice(0, 4);
+
+    // // If no backpack is in results and guarentee backpack is enabled replace one entry with one from the lsit of backpack stratagems
+    // if(!numbers.find(id => this.backpackStratagemIDs.includes(id, 0)) && this.backpackStratagemIDs){
+    //   numbers[3] = this.backpackStratagemIDs[Math.floor(Math.random() * this.backpackStratagemIDs.length)]
+    // }
+
+    // // If no support weapon is in results and guarentee support is enabled replace one entry with one from the lsit of support weapons
+    // if(!numbers.find(id => this.supportStratagemIDs.includes(id, 0)) && this.guaranteeSupport){
+    //   numbers[4] = this.supportStratagemIDs[Math.floor(Math.random() * this.supportStratagemIDs.length)]
+    // }
+
     console.log("selected IDs are: " +numbers.slice(0, 4));
   
-    return numbers.slice(0, 4);
+    return numbers;
   }
   
 

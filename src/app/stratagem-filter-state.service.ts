@@ -24,8 +24,10 @@ export class StratagemFilterStateService {
       this.disableStratagem(id);
     }
 
-    console.log('filter service: dissabled IDs: ' + this.disabledIds.value);
+    console.log('stratagem filter service: dissabled IDs: ' + this.disabledIds.value);
   }
+
+
 
   //BehaviorSubject for the onlyOneBackpack setting
   private onlyOneBackpack = new BehaviorSubject<boolean>(false);
@@ -40,7 +42,22 @@ export class StratagemFilterStateService {
     this.onlyOneBackpack.next(!currentValue);
   }
 
-  //BehaviorSubject for the onlyOneBackpack setting
+  //BehaviorSubject for the guarenteeBackpack setting
+  private guaranteeBackpack = new BehaviorSubject<boolean>(false);
+  guaranteeBackpack$ = this.guaranteeBackpack.asObservable();
+
+  setGuatenteeBackpack(value: boolean) {
+    this.guaranteeBackpack.next(value);
+  }
+
+  toggleGuatenteeBackpack() {
+    const currentValue = this.guaranteeBackpack.value;
+    this.guaranteeBackpack.next(!currentValue);
+  }
+
+
+
+  //BehaviorSubject for the onlyOneSupport setting
   private onlyOneSupport = new BehaviorSubject<boolean>(false);
   onlyOneSupport$ = this.onlyOneSupport.asObservable();
 
@@ -52,4 +69,17 @@ export class StratagemFilterStateService {
     const currentValue = this.onlyOneSupport.value;
     this.onlyOneSupport.next(!currentValue);
   }
+
+    //BehaviorSubject for the guarenteeSupport weapon setting
+    private guarenteeSupport = new BehaviorSubject<boolean>(false);
+    guaranteeSupport$ = this.guarenteeSupport.asObservable();
+  
+    setGuatenteeSupport(value: boolean) {
+      this.guarenteeSupport.next(value);
+    }
+  
+    toggleGuatenteeSupport() {
+      const currentValue = this.guarenteeSupport.value;
+      this.guarenteeSupport.next(!currentValue);
+    }
 }

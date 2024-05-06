@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:HelldiversLoadout": "node dist/helldivers-loadout/server/server.mjs",
-    "generateStratagems": "node GenerateStratagems.js"
+    "generateStratagems": "node GenerateStratagems.js",
+    "generateBoosters": "node GenerateBoosters.js"
   },
   "private": true,
   "dependencies": {

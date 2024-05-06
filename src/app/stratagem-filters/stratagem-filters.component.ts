@@ -36,8 +36,16 @@ export class StratagemFiltersComponent implements OnInit {
   toggleOnlyOneBackpack(): void {
     this.stratagemState.toggleOnlyOneBackpack();
   }
-  
+
+  toggleGuatenteeBackpack(): void {
+    this.stratagemState.toggleGuatenteeBackpack();
+  }
+
   toggleOnlyOneSupport(): void {
     this.stratagemState.toggleOnlyOneSupport();
+  }
+
+  toggleGuatenteeSupport(): void {
+    this.stratagemState.toggleGuatenteeSupport();
   }
 }

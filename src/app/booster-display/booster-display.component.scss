@@ -1,0 +1,31 @@
+.subtitle-text,
+.primary-text,
+.secondary-text {
+    margin: 0;
+    padding: 0 1vmin;
+}
+
+.primary-text {
+    font-size: 2rem;
+}
+
+
+.secondary-text {
+    margin: 0.2rem 0;
+}
+
+.flex-vertical{
+    align-items: left;
+    justify-items: left;
+    text-align: left;
+}
+
+.booster-icon {
+    aspect-ratio: 1 / 1;
+    width: 18vmin;
+    // min-height: 100%;
+}
+
+.booster-display{
+    width: 100%;
+}
