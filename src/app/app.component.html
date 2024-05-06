@@ -1,7 +1,8 @@
 <main class="main">
   <div class="flex-vertical randomiser-display">
+    <button (click)="randomiseStratagems()" style="color: black; margin: 0 10vmin;">randomise</button>
     <app-stratagem-randomiser></app-stratagem-randomiser>
-    <app-booster-display [id]="1"></app-booster-display>
+    <app-booster-randomiser></app-booster-randomiser>
     <div style="width: 100%; justify-content: center; align-items: center; display: flex;">
       <div class="seperator"></div>
     </div>

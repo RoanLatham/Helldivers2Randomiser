@@ -86,10 +86,10 @@ export class StratagemRandomiserComponent implements OnInit {
 
   randomise(): void{
     // console.log("randomising stratagems")
-    this.ids = this.getRandomIds();
+    this.ids = this.getFilteredRandomIds();
   }
 
-  getRandomIds(): number[] {
+  getFilteredRandomIds(): number[] {
     let numbers = Array.from({length: this.maxId}, (_, i) => i + 1)
       .filter(id => !this.disabledIds.includes(id));
 
