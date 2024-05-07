@@ -47,12 +47,12 @@ export class WarbondFilterStateService {
   // If all children are  dissabled already, enable all
   // Warbond icons should also appear dissabed only when all chidldren are dissabled,
   // even if they were all disabbled manually
-  toggleWarbond(warbondName: string) {
+  // toggleWarbond(warbondName: string) {
 
 
 
-    // console.log(
-    //   'Warbond filter service: dissabled IDs: ' + this.disabledIds.value
-    // );
-  }
+  //   // console.log(
+  //   //   'Warbond filter service: dissabled IDs: ' + this.disabledIds.value
+  //   // );
+  // }
 }
