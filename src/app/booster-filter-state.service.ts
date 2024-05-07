@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Booster, boosters } from './boosters';
 
 @Injectable({
   providedIn: 'root',
@@ -36,8 +35,8 @@ export class BoosterFilterStateService {
       this.disableBooster(id);
     }
 
-    console.log(
-      'booster filter service: dissabled IDs: ' + this.disabledIds.value
-    );
+    // console.log(
+    //   'Booster filter service: dissabled IDs: ' + this.disabledIds.value
+    // );
   }
 }

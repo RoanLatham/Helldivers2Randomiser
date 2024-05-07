@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Booster, boosters } from '../boosters';
 import { CommonModule } from '@angular/common';
 import { BoosterFilterStateService } from '../booster-filter-state.service';
+import { WarbondFilterStateService } from '../warbond-filter-state.service';
 
 @Component({
   selector: 'app-booster-filters',
@@ -14,7 +15,10 @@ export class BoosterFiltersComponent implements OnInit {
   boosters = boosters;
   disabledIds: number[] = [];
 
-  constructor(private boosterState: BoosterFilterStateService) {}
+  constructor(
+    private boosterState: BoosterFilterStateService,
+    private warbondState: WarbondFilterStateService
+  ) {}
 
   ngOnInit(): void {
     // Subscribe to the disabledIds$ observable
