@@ -1,0 +1,14 @@
+<div class="flex-vertical booster-filter-container">
+    <div class="flex-horizontal booster-filter-module-container">
+        <p class="subtitle-text">Enabled Boosters:</p>
+    </div>
+    <div class="flex-horizontal booster-filter-module-container">
+        <div *ngFor="let booster of boosters">
+            <button class="secondary-text booster-filter-button" (click)="togglebooster(booster.id)">
+                <img [src]="booster.iconPath" alt="{{ booster.name }} toggle" class="booster-filter-icon"
+                    [class.booster-filter-icon-disabled]="disabledIds.includes(booster.id)">
+                <!-- {{ booster.name }} -->
+            </button>
+        </div>
+    </div>
+</div>

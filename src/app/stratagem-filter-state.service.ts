@@ -24,7 +24,7 @@ export class StratagemFilterStateService {
       this.disableStratagem(id);
     }
 
-    console.log('stratagem filter service: dissabled IDs: ' + this.disabledIds.value);
+    // console.log('stratagem filter service: dissabled IDs: ' + this.disabledIds.value);
   }
 
 

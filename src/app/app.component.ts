@@ -5,6 +5,7 @@ import { StratagemRandomiserComponent } from './stratagem-randomiser/stratagem-r
 import { StratagemFiltersComponent } from './stratagem-filters/stratagem-filters.component';
 import { BoosterDisplayComponent } from './booster-display/booster-display.component';
 import { BoosterRandomiserComponent } from './booster-randomiser/booster-randomiser.component';
+import { BoosterFiltersComponent } from './booster-filters/booster-filters.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { BoosterRandomiserComponent } from './booster-randomiser/booster-randomi
     StratagemFiltersComponent,
     BoosterDisplayComponent,
     BoosterRandomiserComponent,
+    BoosterFiltersComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

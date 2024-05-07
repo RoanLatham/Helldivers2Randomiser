@@ -1,6 +1,6 @@
-.stratagem-filter-button {
+.booster-filter-button {
     aspect-ratio: 1;
-    width: 8vmin;
+    width: 10vmin;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,14 +14,15 @@
     hyphens: auto;
 }
 
-.stratagem-filter-icon {
-    background-color: black;
-    aspect-ratio: 1;
+.booster-filter-icon {
+    background-color: transparent;
+    aspect-ratio: 1 / 1;
+    width: 100%;
 }
 
-.stratagem-filter-icon-disabled{
+.booster-filter-icon-disabled{
     filter: grayscale(100%);
-    background-color: #191919;
+    background-color: transparent;
 
     width: 90%;
     margin: 10%;
@@ -29,12 +30,12 @@
     align-self: center;
 }
 
-.stratagem-filter-module-container{
+.booster-filter-module-container{
     display: flex;
     justify-content: left;
 }
 
-.stratagem-filter-container{
+.booster-filter-container{
     display: flex;
     justify-content: left;
 }

@@ -132,7 +132,7 @@ export class StratagemRandomiserComponent implements OnInit {
     //   numbers[4] = this.supportStratagemIDs[Math.floor(Math.random() * this.supportStratagemIDs.length)]
     // }
 
-    console.log("selected IDs are: " +numbers.slice(0, 4));
+    // console.log("Stratagem Randomiser: selected IDs are: " +numbers.slice(0, 4));
   
     return numbers;
   }
