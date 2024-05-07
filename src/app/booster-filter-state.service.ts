@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Booster, boosters } from './boosters';
 
 @Injectable({
   providedIn: 'root',
@@ -27,4 +28,11 @@ export class StratagemFilterStateService {
     console.log('booster filter service: dissabled IDs: ' + this.disabledIds.value);
   }
 
+  toggleWarbond(warbondName: string){
+    
+    let matches: Booster[] = boosters.filter(booster => booster.warbond)
+    // Loop through booster entires, 
+    //save id of boosters that match warbond, 
+    //add to dissabled ids
+  }
 }

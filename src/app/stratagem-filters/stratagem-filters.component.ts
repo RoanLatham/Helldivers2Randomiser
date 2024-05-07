@@ -18,7 +18,7 @@ export class StratagemFiltersComponent implements OnInit {
   constructor(private stratagemState: StratagemFilterStateService) {}
 
   ngOnInit(): void {
-    // Extract all shipoModules form stratagems.ts
+    // Extract all shipoModules from stratagems.ts
     this.shipModules = Array.from(
       new Set(this.stratagems.map((s) => s.shipModule))
     );
