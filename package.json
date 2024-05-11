@@ -10,6 +10,9 @@
     "serve:ssr:HelldiversLoadout": "node dist/helldivers-loadout/server/server.mjs",
     "generateStratagems": "node GenerateStratagems.js",
     "generateBoosters": "node GenerateBoosters.js",
+    "GenerateWeapons": "node GenerateWeapons.js",
+    "GenerateBlankWarbonds": "node GenerateBlankWarbonds.js",
+    "PopulateWarbonds": "node PopulateWarbonds.js",
     "deploy": "deploy.bat"
   },
   "private": true,
