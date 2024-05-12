@@ -3,6 +3,8 @@
     --grey-text: #d9d9d9;
 }
 
+$randomiers-icon-size: 12vmin;
+
 @font-face {
     font-family: 'Swiss 721';
     src: url('./assets/fonts/Swiss 721 Extended Bold.otf');
@@ -21,7 +23,6 @@
     font-weight: Medium;
 }
 
-
 body {
     background-color: #21586D;
     width: 100vw;
@@ -32,7 +33,7 @@ body {
     color: white;
 }
 
-p{
+p {
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
@@ -41,6 +42,7 @@ p{
     color: white;
     font-family: 'Sinclair';
     font-weight: Medium;
+    font-size: 1.5rem;
 }
 
 .secondary-text {
@@ -52,6 +54,7 @@ p{
 .title-text {
     font-family: "Swiss 721";
     font-weight: "bold";
+    margin: 0px;
 }
 
 .subtitle-text {
@@ -60,32 +63,16 @@ p{
     font-weight: "bold";
 }
 
-.flex-horizontal{
+.flex-horizontal {
     display: flex;
     flex-direction: row;
     justify-content: center;
-text-align: center;
+    text-align: center;
 }
 
-// .flex-horizontal > *:not(:first-child) {
-//     margin-left: 2rem;
-// }
-
-.flex-vertical{
+.flex-vertical {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-text-align: center;
-}
-
-// .flex-vertical > *:not(:first-child) {
-//     margin-top: 2rem;
-// }
-
-.flex-center{
-    width: 100%;
-    display: flex;
-    flex-direction: center;
     justify-content: center;
     text-align: center;
 }

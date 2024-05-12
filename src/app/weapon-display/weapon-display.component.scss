@@ -1,3 +1,5 @@
+@import '../../styles.scss';
+
 .subtitle-text,
 .primary-text,
 .secondary-text {
@@ -11,7 +13,7 @@
 
 .primary-text {
     margin-top: 0.2rem;
-    font-size: 2rem;
+    // font-size: 2rem;
 }
 
 .secondary-text {
@@ -25,6 +27,17 @@
 }
 
 .weapon-icon{
-    height: 18vmin;
-    width: auto;
+    height: $randomiers-icon-size;
+    // aspect-ratio: 250/134;
+    width: fit-content;
+}
+
+.Weapon-display{
+    margin: 0px 2vmin;
+    // Calculate teh width of the wepon display contaitner based on the 
+    // icon heright and aspect ratio of the weapon icons
+    // this is doen itead of other methods so that
+    // the grenade dispaly has the same witdth despite its
+    // icon having a diffrent width to normal weapons
+    width: calc($randomiers-icon-size * (250 / 134));   
 }

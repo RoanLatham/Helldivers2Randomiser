@@ -6,12 +6,14 @@
 $stripe-dark: #201e21;
 $stripe-yellow: #48401b;
 
+$randomiser-display-gap: 6vmin;
+
 
 .seperator {
     width: 90vmin;
     background-color: white;
     height: 1px;
-    margin: 10vmin 0;
+    margin: $randomiser-display-gap 0;
 }
 
 .randomise-button {
@@ -71,4 +73,9 @@ $stripe-yellow: #48401b;
     margin-bottom: 1.35rem;
     line-height: 100%;
 
+}
+
+.randomiser-display{
+    gap: $randomiser-display-gap;
+    margin-top: $randomiser-display-gap;
 }

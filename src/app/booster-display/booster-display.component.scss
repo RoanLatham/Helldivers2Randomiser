@@ -1,3 +1,5 @@
+@import '../../styles.scss';
+
 .subtitle-text,
 .primary-text,
 .secondary-text {
@@ -5,9 +7,9 @@
     padding: 0 1vmin;
 }
 
-.primary-text {
-    font-size: 2rem;
-}
+// .primary-text {
+//     font-size: 2rem;
+// }
 
 
 .secondary-text {
@@ -22,10 +24,14 @@
 
 .booster-icon {
     aspect-ratio: 1 / 1;
-    width: 18vmin;
+    width: $randomiers-icon-size;
     // min-height: 100%;
-}
+}   
+
 
 .booster-display{
-    width: 100%;
+    // width: 100%;
+    max-width: 18vw;
+    // Improves dispaly on veritcal browser windows
+    min-width: 30rem; 
 }

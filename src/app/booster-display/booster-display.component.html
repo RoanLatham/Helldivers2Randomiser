@@ -1,11 +1,13 @@
-<div class="flex-horizontal booster-display">
-    <div>
-        <img class="booster-icon" [src]="booster.iconPath" alt="{{booster.name}} Icon">
-    </div>
-    <div class="flex-vertical">
-        <p class="subtitle-text">Booster:</p>
-        <p class="primary-text">{{booster.name}}</p>
-        <p class="secondary-text">{{booster.description}}</p>
-        <p class="secondary-text">{{booster.warbond}}</p>
+<div class="flex-horizontal">
+    <div class="flex-horizontal booster-display">
+        <div>
+            <img class="booster-icon" [src]="booster.iconPath" alt="{{booster.name}} Icon">
+        </div>
+        <div class="flex-vertical">
+            <p class="subtitle-text">Booster:</p>
+            <p class="primary-text">{{booster.name}}</p>
+            <p class="secondary-text">{{booster.description}}</p>
+            <!-- <p class="secondary-text">{{booster.warbond}}</p> -->
+        </div>
     </div>
 </div>

@@ -1,13 +1,16 @@
 <main class="main">
-  <div class="flex-vertical randomiser-display">
-    <div class="flex-center">
-      <button class="randomise-button" (click)="randomise()" style="color: black; margin: 10vmin 0;">
-        <p class="primary-text randomise-button-text">randomise</p>
-      </button>
+  <div class="flex-vertical">
+    <div class="flex-vertical randomiser-display">
+      <h1 class="title-text">Helldivers 2 Loadout Randomizer</h1>
+      <div>
+        <button class="randomise-button" (click)="randomise()">
+          <p class="primary-text randomise-button-text">randomise</p>
+        </button>
+      </div>
+      <app-weapon-randomiser></app-weapon-randomiser>
+      <app-stratagem-randomiser></app-stratagem-randomiser>
+      <app-booster-randomiser></app-booster-randomiser>
     </div>
-    <app-weapon-randomiser></app-weapon-randomiser>
-    <app-stratagem-randomiser></app-stratagem-randomiser>
-    <app-booster-randomiser></app-booster-randomiser>
     <div style="width: 100%; justify-content: center; align-items: center; display: flex;">
       <div class="seperator"></div>
     </div>

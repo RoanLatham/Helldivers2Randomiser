@@ -1,3 +1,5 @@
+@import '../../styles.scss';
+
 .primary-text,
 .secondary-text {
     margin: 0;
@@ -5,7 +7,7 @@
 }
 
 .primary-text {
-    font-size: 1.5rem;
+    // font-size: 1.5rem;
     margin-top: 1rem;
 }
 
@@ -13,17 +15,14 @@
     margin-top: 0.2rem;
 }
 
-
+.icon-background,
 .stratagem-icon {
     aspect-ratio: 1 / 1;
-    width: 18vmin;
-    height: 18vmin;
+    width: $randomiers-icon-size;
+    height: $randomiers-icon-size;
 }
 
 .icon-background{
-    aspect-ratio: 1 / 1;
-    width: 18vmin;
-    height: 18vmin;
     background-color: black;
 }
 
