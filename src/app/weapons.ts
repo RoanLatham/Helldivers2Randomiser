@@ -67,7 +67,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 8,
-    "name": "BR-14 Adjudicator Weapon",
+    "name": "BR-14 Adjudicator",
     "type": "Primary Weapons",
     "category": "Assault Rifle",
     "warbond": "Democratic Detonation",
@@ -75,7 +75,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 9,
-    "name": "AR-23P Liberator Penetrator Weapon",
+    "name": "AR-23P Liberator Penetrator",
     "type": "Primary Weapons",
     "category": "Assault Rifle",
     "warbond": "Helldivers Mobilize",
@@ -83,7 +83,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 10,
-    "name": "AR-23 Liberator Weapon",
+    "name": "AR-23 Liberator",
     "type": "Primary Weapons",
     "category": "Assault Rifle",
     "warbond": "Standard Issue",
@@ -91,7 +91,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 11,
-    "name": "AR-23C Liberator Concussive Weapon",
+    "name": "AR-23C Liberator Concussive",
     "type": "Primary Weapons",
     "category": "Assault Rifle",
     "warbond": "Steeled Veterans",
@@ -99,7 +99,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 12,
-    "name": "ARC-12 Blitzer Weapon",
+    "name": "ARC-12 Blitzer",
     "type": "Primary Weapons",
     "category": "Energy Based",
     "warbond": "Cutting Edge",
@@ -107,7 +107,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 13,
-    "name": "LAS-16 Sickle Weapon",
+    "name": "LAS-16 Sickle",
     "type": "Primary Weapons",
     "category": "Energy Based",
     "warbond": "Cutting Edge",
@@ -115,7 +115,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 14,
-    "name": "SG-8P Punisher Plasma Weapon",
+    "name": "SG-8P Punisher Plasma",
     "type": "Primary Weapons",
     "category": "Energy Based",
     "warbond": "Cutting Edge",
@@ -123,7 +123,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 15,
-    "name": "LAS-5 Scythe Weapon",
+    "name": "LAS-5 Scythe",
     "type": "Primary Weapons",
     "category": "Energy Based",
     "warbond": "Helldivers Mobilize",
@@ -131,7 +131,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 16,
-    "name": "PLAS-1 Scorcher Weapon",
+    "name": "PLAS-1 Scorcher",
     "type": "Primary Weapons",
     "category": "Energy Based",
     "warbond": "Helldivers Mobilize",
@@ -139,7 +139,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 17,
-    "name": "CB-9 Exploding Crossbow Weapon",
+    "name": "CB-9 Exploding Crossbow",
     "type": "Primary Weapons",
     "category": "Explosive",
     "warbond": "Democratic Detonation",
@@ -147,7 +147,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 18,
-    "name": "R-36 Eruptor Weapon",
+    "name": "R-36 Eruptor",
     "type": "Primary Weapons",
     "category": "Explosive",
     "warbond": "Democratic Detonation",
@@ -155,7 +155,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 19,
-    "name": "JAR-5 Dominator Weapon",
+    "name": "JAR-5 Dominator",
     "type": "Primary Weapons",
     "category": "Explosive",
     "warbond": "Steeled Veterans",
@@ -163,7 +163,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 20,
-    "name": "R-63 Diligence Weapon",
+    "name": "R-63 Diligence",
     "type": "Primary Weapons",
     "category": "Marksman Rifle",
     "warbond": "Helldivers Mobilize",
@@ -171,7 +171,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 21,
-    "name": "R-63CS Diligence Counter Sniper Weapon",
+    "name": "R-63CS Diligence Counter Sniper",
     "type": "Primary Weapons",
     "category": "Marksman Rifle",
     "warbond": "Helldivers Mobilize",
@@ -179,7 +179,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 22,
-    "name": "SG-225 Breaker Weapon",
+    "name": "SG-225 Breaker",
     "type": "Primary Weapons",
     "category": "Shotgun",
     "warbond": "Helldivers Mobilize",
@@ -187,7 +187,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 23,
-    "name": "SG-225SP Breaker Spray&Pray Weapon",
+    "name": "SG-225SP Breaker Spray&Pray",
     "type": "Primary Weapons",
     "category": "Shotgun",
     "warbond": "Helldivers Mobilize",
@@ -195,7 +195,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 24,
-    "name": "SG-8 Punisher Weapon",
+    "name": "SG-8 Punisher",
     "type": "Primary Weapons",
     "category": "Shotgun",
     "warbond": "Helldivers Mobilize",
@@ -203,7 +203,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 25,
-    "name": "SG-8S Slugger Weapon",
+    "name": "SG-8S Slugger",
     "type": "Primary Weapons",
     "category": "Shotgun",
     "warbond": "Helldivers Mobilize",
@@ -211,7 +211,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 26,
-    "name": "SG-225IE Breaker Incendiary Weapon",
+    "name": "SG-225IE Breaker Incendiary",
     "type": "Primary Weapons",
     "category": "Shotgun",
     "warbond": "Steeled Veterans",
@@ -219,7 +219,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 27,
-    "name": "SMG-37 Defender Weapon",
+    "name": "SMG-37 Defender",
     "type": "Primary Weapons",
     "category": "Submachine Gun",
     "warbond": "Helldivers Mobilize",
@@ -227,7 +227,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 28,
-    "name": "MP-98 Knight Weapon",
+    "name": "MP-98 Knight",
     "type": "Primary Weapons",
     "category": "Submachine Gun",
     "warbond": "Super Citizen Edition",
@@ -235,7 +235,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 29,
-    "name": "LAS-7 Dagger Weapon",
+    "name": "LAS-7 Dagger",
     "type": "Secondary Weapons",
     "category": "Secondary Weapons",
     "warbond": "Cutting Edge",
@@ -243,7 +243,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 30,
-    "name": "GP-31 Grenade Pistol Weapon",
+    "name": "GP-31 Grenade Pistol",
     "type": "Secondary Weapons",
     "category": "Secondary Weapons",
     "warbond": "Democratic Detonation",
@@ -251,7 +251,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 31,
-    "name": "P-19 Redeemer Weapon",
+    "name": "P-19 Redeemer",
     "type": "Secondary Weapons",
     "category": "Secondary Weapons",
     "warbond": "Helldivers Mobilize",
@@ -259,7 +259,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 32,
-    "name": "P-2 Peacemaker Weapon",
+    "name": "P-2 Peacemaker",
     "type": "Secondary Weapons",
     "category": "Secondary Weapons",
     "warbond": "Standard Issue",
@@ -267,7 +267,7 @@ export const weapons: Weapon[] = [
   },
   {
     "id": 33,
-    "name": "P-4 Senator Weapon",
+    "name": "P-4 Senator",
     "type": "Secondary Weapons",
     "category": "Secondary Weapons",
     "warbond": "Steeled Veterans",
