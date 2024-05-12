@@ -7,8 +7,10 @@
           <p class="primary-text randomise-button-text">randomise</p>
         </button>
       </div>
-      <app-weapon-randomiser></app-weapon-randomiser>
-      <app-stratagem-randomiser></app-stratagem-randomiser>
+      <div> <!-- adding this  div so the gap: attribute gets ingored between these too so the gap can instead be added my the wepon displays so the layout doesnt move with multi-line weapon names -->
+        <app-weapon-randomiser></app-weapon-randomiser>
+        <app-stratagem-randomiser></app-stratagem-randomiser>
+      </div>
       <app-booster-randomiser></app-booster-randomiser>
     </div>
     <div style="width: 100%; justify-content: center; align-items: center; display: flex;">
