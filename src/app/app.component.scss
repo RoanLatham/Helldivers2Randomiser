@@ -35,7 +35,7 @@ $stripe-yellow: #48401b;
     border: 3px solid white;
 }
 
-//god what is this, idk but settign the color attibiue in the cutton wasnt alterign the text inside ite (even without the <p> its wrpeed in now, idk to fidn otu why so im doing this
+//idk but setting the color attibiue in the button wasn't altering the text inside it (even without the <p> it has now, idk to fidn otu why so im doing this
 .randomise-button:hover>.randomise-button-text {
     color: white;
 }

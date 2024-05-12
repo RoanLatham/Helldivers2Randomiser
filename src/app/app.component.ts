@@ -7,6 +7,7 @@ import { BoosterDisplayComponent } from './booster-display/booster-display.compo
 import { BoosterRandomiserComponent } from './booster-randomiser/booster-randomiser.component';
 import { BoosterFiltersComponent } from './booster-filters/booster-filters.component';
 import { WeaponDisplayComponent } from './weapon-display/weapon-display.component';
+import { WeaponRandomiserComponent } from './weapon-randomiser/weapon-randomiser.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ import { WeaponDisplayComponent } from './weapon-display/weapon-display.componen
     BoosterDisplayComponent,
     BoosterRandomiserComponent,
     BoosterFiltersComponent,
-    WeaponDisplayComponent
+    WeaponDisplayComponent,
+    WeaponRandomiserComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -41,9 +43,11 @@ export class AppComponent {
     this.ids = numbers.slice(0, 4);
   }
 
+  @ViewChild(WeaponRandomiserComponent) WeaponRandomiserComponent!: WeaponRandomiserComponent
   @ViewChild(StratagemRandomiserComponent) stratagemRandomiserComponent!: StratagemRandomiserComponent;
   @ViewChild(BoosterRandomiserComponent) boosterRandomiserComponent!: BoosterRandomiserComponent;
-  randomiseStratagems(): void {
+  randomise(): void {
+    this.WeaponRandomiserComponent.randomise();
     this.stratagemRandomiserComponent.randomise();
     this.boosterRandomiserComponent.randomise();
 
