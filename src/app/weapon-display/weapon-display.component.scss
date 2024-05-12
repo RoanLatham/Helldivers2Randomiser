@@ -14,6 +14,7 @@
 .primary-text {
     margin-top: 0.2rem;
     // font-size: 2rem;
+    min-height: 6rem;
 }
 
 .secondary-text {
@@ -34,10 +35,10 @@
 
 .Weapon-display{
     margin: 0px 2vmin;
-    // Calculate teh width of the wepon display contaitner based on the 
-    // icon heright and aspect ratio of the weapon icons
-    // this is doen itead of other methods so that
-    // the grenade dispaly has the same witdth despite its
-    // icon having a diffrent width to normal weapons
+    // Calculate the width of the weapon display container based on the 
+    // icon height and aspect ratio of the primary/secondary weapon icons
+    // this is done instead of other methods so that
+    // the grenade display has the same witdth as the primary/secondary weapon displays
+    // despite its icon having a diffrent width + apsect ratio
     width: calc($randomiers-icon-size * (250 / 134));   
 }
