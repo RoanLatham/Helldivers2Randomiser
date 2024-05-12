@@ -1,6 +1,8 @@
+@import '../../styles.scss';
+
 .stratagem-filter-button {
     aspect-ratio: 1;
-    width: 8vmin;
+    width: $filters-icon-size;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,3 +42,6 @@
     justify-content: left;
 }
 
+.checkbox-container{
+    gap: 5vmin;
+}

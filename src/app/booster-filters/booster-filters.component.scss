@@ -1,6 +1,8 @@
+@import '../../styles.scss';
+
 .booster-filter-button {
     aspect-ratio: 1;
-    width: 10vmin;
+    width: calc($filters-icon-size + 1vmin); // Add 1vin so the icons look more perceptually equally sized to the strategem icons due to the haxagon shape
     display: flex;
     flex-direction: column;
     justify-content: center;
