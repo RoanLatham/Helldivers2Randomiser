@@ -1,0 +1,30 @@
+.subtitle-text,
+.primary-text,
+.secondary-text {
+    margin: 0;
+    padding: 0 1vmin;
+}
+
+.subtitle-text{
+    margin-top: 1rem;
+}
+
+.primary-text {
+    margin-top: 0.2rem;
+    font-size: 2rem;
+}
+
+.secondary-text {
+    margin: none;
+}
+
+.flex-vertical{
+    align-items: left;
+    justify-items: left;
+    text-align: left;
+}
+
+.weapon-icon{
+    height: 18vmin;
+    width: auto;
+}
