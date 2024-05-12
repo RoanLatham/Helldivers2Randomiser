@@ -1,6 +1,15 @@
 <main class="main">
   <div class="flex-vertical randomiser-display">
-    <button (click)="randomiseStratagems()" style="color: black; margin: 10vmin 0;">randomise</button>
+    <div class="flex-center">
+      <button class="randomise-button" (click)="randomiseStratagems()" style="color: black; margin: 10vmin 0;">
+        <p class="primary-text randomise-button-text">randomise</p>
+      </button>
+    </div>
+    <div class="flex-horizontal">
+      <app-weapon-display [id]="10">Primary Weapon:</app-weapon-display>
+      <app-weapon-display [id]="31">Secondary Weapon:</app-weapon-display>
+      <app-weapon-display [id]="3">Grenade:</app-weapon-display>
+    </div>
     <app-stratagem-randomiser></app-stratagem-randomiser>
     <app-booster-randomiser></app-booster-randomiser>
     <div style="width: 100%; justify-content: center; align-items: center; display: flex;">

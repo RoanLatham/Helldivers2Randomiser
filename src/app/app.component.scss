@@ -3,9 +3,72 @@
 // text-align: center;
 // }
 
-.seperator{
+$stripe-dark: #201e21;
+$stripe-yellow: #48401b;
+
+
+.seperator {
     width: 90vmin;
     background-color: white;
     height: 1px;
     margin: 10vmin 0;
+}
+
+.randomise-button {
+    background: repeating-linear-gradient(45deg,
+            $stripe-yellow,
+            $stripe-yellow 3px,
+            $stripe-dark 4px,
+            $stripe-dark 8px);
+
+    border: 3px solid #fde813;
+    box-shadow:
+        0 0 5px #4d532f,
+        /* Outer glow */
+        inset 0 0 4px #d4bf00;
+    /* Inner glow */
+    width: fit-content;
+
+}
+
+.randomise-button:hover {
+    border: 3px solid white;
+}
+
+//god what is this, idk but settign the color attibiue in the cutton wasnt alterign the text inside ite (even without the <p> its wrpeed in now, idk to fidn otu why so im doing this
+.randomise-button:hover>.randomise-button-text {
+    color: white;
+}
+
+.randomise-button:active {
+    border: 3px solid #60dd81;
+
+    background: repeating-linear-gradient(45deg,
+            #1f3b2d,
+            #1f3b2d 3px,
+            #1e211f 4px,
+            #1e211f 8px);
+
+    box-shadow:
+        0 0 5px #1e211f,
+        /* Outer glow */
+        inset 0 0 4px #60dd81;
+    /* Inner glow */
+    width: fit-content;
+}
+
+.randomise-button:active>.randomise-button-text {
+    color: #60dd81;
+}
+
+
+.randomise-button-text {
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #ffeb00;
+    margin: 1.5rem 2rem;
+    // Stupid font has the text floating above the line so im doing this cursed thing
+    margin-bottom: 1.35rem;
+    line-height: 100%;
+
 }
