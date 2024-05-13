@@ -50,4 +50,8 @@ export class WeaponFiltersComponent implements OnInit {
       (weapon) => weapon.type === type && weapon.category === category
     );
   }
+
+  toggleCategory(category: string): void{
+    this.weaponState.toggleCategory(category)
+  }
 }
