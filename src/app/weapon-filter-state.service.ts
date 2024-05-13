@@ -29,4 +29,6 @@ export class WeaponFilterStateService {
 
   //TODO Catergory toggles will proabbly go here, take name of acategor as paramater? iterate throguh weapons.ts, each weapon in the category has its ID added to teh dissabled IDS list
 
+
+  //toggle category
 }

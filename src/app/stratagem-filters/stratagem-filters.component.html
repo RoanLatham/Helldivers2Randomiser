@@ -26,14 +26,14 @@
     </div>
     <div class="flex-vertical">
         <div class="flex-horizontal stratagem-filter-module-container" *ngFor="let module of shipModules">
-            <div *ngFor="let stratagem of stratagems">
+            <ng-container *ngFor="let stratagem of stratagems">
                 <button class="secondary-text stratagem-filter-button" *ngIf="stratagem.shipModule === module"
                     (click)="toggleStratagem(stratagem.id)">
                     <img [src]="stratagem.iconPath" alt="{{ stratagem.name }} toggle" class="stratagem-filter-icon"
                         [class.stratagem-filter-icon-disabled]="disabledIds.includes(stratagem.id)">
                     <!-- {{ stratagem.name }} -->
                 </button>
-            </div>
+            </ng-container>
         </div>
     </div>
 </div>

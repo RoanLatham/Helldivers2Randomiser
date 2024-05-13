@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeaponDisplayComponent } from '../weapon-display/weapon-display.component';
 import { Weapon, weapons } from '../weapons';
-import { BoosterFilterStateService } from '../booster-filter-state.service';
+import { WeaponFilterStateService } from '../weapon-filter-state.service';
 
 @Component({
   selector: 'app-weapon-randomiser',
@@ -25,12 +25,22 @@ export class WeaponRandomiserComponent implements OnInit {
   secondaryWeaponId!: number;
   grenadeId!: number;
 
+  disabledIds: number[] = [];
+
+  constructor(private weaponState: WeaponFilterStateService) {}
+
+
   ngOnInit() {
-    this.getRandomIds()
+    // Subscribe to the disabledIds$ observable
+    this.weaponState.disabledIds$.subscribe((ids) => {
+      this.disabledIds = ids;
+    });
+
+    this.getRandomIds();
   }
 
   randomise(): void {
-    this.getRandomIds()
+    this.getRandomIds();
   }
 
   getRandomIds(): void {
@@ -40,7 +50,17 @@ export class WeaponRandomiserComponent implements OnInit {
   }
 
   getRandomWeaponId(weaponIds: number[]): number {
-    const randomIndex = Math.floor(Math.random() * weaponIds.length);
-    return weaponIds[randomIndex];
+    // Filter out the disabled IDs
+    const availableIds = weaponIds.filter(id => !this.disabledIds.includes(id));
+
+    // console.log('Weapon ranodimiser: available ids:' + availableIds)
+    // console.log('Weapon ranodimiser: disabeled ids:' + this.disabledIds)
+    
+    if (availableIds.length === 0) {
+      throw new Error('No available IDs left to choose from.');
+    }
+
+    const randomIndex = Math.floor(Math.random() * availableIds.length);
+    return availableIds[randomIndex];
   }
 }

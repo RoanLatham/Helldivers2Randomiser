@@ -8,6 +8,7 @@ import { BoosterRandomiserComponent } from './booster-randomiser/booster-randomi
 import { BoosterFiltersComponent } from './booster-filters/booster-filters.component';
 import { WeaponDisplayComponent } from './weapon-display/weapon-display.component';
 import { WeaponRandomiserComponent } from './weapon-randomiser/weapon-randomiser.component';
+import { WeaponFiltersComponent } from './weapon-filters/weapon-filters.component';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { WeaponRandomiserComponent } from './weapon-randomiser/weapon-randomiser
     BoosterRandomiserComponent,
     BoosterFiltersComponent,
     WeaponDisplayComponent,
-    WeaponRandomiserComponent
+    WeaponRandomiserComponent,
+    WeaponFiltersComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

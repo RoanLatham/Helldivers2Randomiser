@@ -1,8 +1,8 @@
 @import '../../styles.scss';
 
-.stratagem-filter-button {
-    aspect-ratio: 1;
-    width: $filters-icon-size;
+.weapon-filter-button {
+    height: $filters-icon-size;
+    width: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,37 +17,32 @@
     hyphens: auto;
 }
 
-.stratagem-filter-icon {
-    background-color: black;
-    aspect-ratio: 1;
+.weapon-filter-icon {
+    height: 100%;
 }
 
-.stratagem-filter-icon-disabled{
+.weapon-filter-icon-disabled{
     filter: grayscale(100%);
-    background-color: #191919;
 
-    width: 90%;
+    height: 90%;
     margin: 10%;
 
     align-self: center;
 }
 
-.stratagem-filter-module-container{
+.weapon-filter-category-container{
     display: flex;
     justify-content: left;
     width: 100%;
 }
 
-.stratagem-filter-container{
+.weapon-filter-container{
     display: flex;
     justify-content: left;
-}
-
-.checkbox-container{
-    gap: 5vmin;
 }
 
 .flex-horizontal,
 .flex-vertical{
     gap: $filter-icon-gap;
 }
+
