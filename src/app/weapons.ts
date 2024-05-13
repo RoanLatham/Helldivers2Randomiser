@@ -69,33 +69,33 @@ export const weapons: Weapon[] = [
     "id": 8,
     "name": "BR-14 Adjudicator",
     "type": "Primary Weapons",
-    "category": "Assault Rifle",
+    "category": "Assault Rifles",
     "warbond": "Democratic Detonation",
-    "iconPath": "./assets/Weapons/Primary%20Weapons/Assault%20Rifle/Democratic%20Detonation/BR-14%20Adjudicator%20Weapon.png"
+    "iconPath": "./assets/Weapons/Primary%20Weapons/Assault%20Rifles/Democratic%20Detonation/BR-14%20Adjudicator%20Weapon.png"
   },
   {
     "id": 9,
     "name": "AR-23P Liberator Penetrator",
     "type": "Primary Weapons",
-    "category": "Assault Rifle",
+    "category": "Assault Rifles",
     "warbond": "Helldivers Mobilize",
-    "iconPath": "./assets/Weapons/Primary%20Weapons/Assault%20Rifle/Helldivers%20Mobilize/AR-23P%20Liberator%20Penetrator%20Weapon.png"
+    "iconPath": "./assets/Weapons/Primary%20Weapons/Assault%20Rifles/Helldivers%20Mobilize/AR-23P%20Liberator%20Penetrator%20Weapon.png"
   },
   {
     "id": 10,
     "name": "AR-23 Liberator",
     "type": "Primary Weapons",
-    "category": "Assault Rifle",
+    "category": "Assault Rifles",
     "warbond": "Standard Issue",
-    "iconPath": "./assets/Weapons/Primary%20Weapons/Assault%20Rifle/Standard%20Issue/AR-23%20Liberator%20Weapon.png"
+    "iconPath": "./assets/Weapons/Primary%20Weapons/Assault%20Rifles/Standard%20Issue/AR-23%20Liberator%20Weapon.png"
   },
   {
     "id": 11,
     "name": "AR-23C Liberator Concussive",
     "type": "Primary Weapons",
-    "category": "Assault Rifle",
+    "category": "Assault Rifles",
     "warbond": "Steeled Veterans",
-    "iconPath": "./assets/Weapons/Primary%20Weapons/Assault%20Rifle/Steeled%20Veterans/AR-23C%20Liberator%20Concussive%20Weapon.png"
+    "iconPath": "./assets/Weapons/Primary%20Weapons/Assault%20Rifles/Steeled%20Veterans/AR-23C%20Liberator%20Concussive%20Weapon.png"
   },
   {
     "id": 12,
@@ -165,73 +165,73 @@ export const weapons: Weapon[] = [
     "id": 20,
     "name": "R-63 Diligence",
     "type": "Primary Weapons",
-    "category": "Marksman Rifle",
+    "category": "Marksman Rifles",
     "warbond": "Helldivers Mobilize",
-    "iconPath": "./assets/Weapons/Primary%20Weapons/Marksman%20Rifle/Helldivers%20Mobilize/R-63%20Diligence%20Weapon.png"
+    "iconPath": "./assets/Weapons/Primary%20Weapons/Marksman%20Rifles/Helldivers%20Mobilize/R-63%20Diligence%20Weapon.png"
   },
   {
     "id": 21,
     "name": "R-63CS Diligence Counter Sniper",
     "type": "Primary Weapons",
-    "category": "Marksman Rifle",
+    "category": "Marksman Rifles",
     "warbond": "Helldivers Mobilize",
-    "iconPath": "./assets/Weapons/Primary%20Weapons/Marksman%20Rifle/Helldivers%20Mobilize/R-63CS%20Diligence%20Counter%20Sniper%20Weapon.png"
+    "iconPath": "./assets/Weapons/Primary%20Weapons/Marksman%20Rifles/Helldivers%20Mobilize/R-63CS%20Diligence%20Counter%20Sniper%20Weapon.png"
   },
   {
     "id": 22,
     "name": "SG-225 Breaker",
     "type": "Primary Weapons",
-    "category": "Shotgun",
+    "category": "Shotguns",
     "warbond": "Helldivers Mobilize",
-    "iconPath": "./assets/Weapons/Primary%20Weapons/Shotgun/Helldivers%20Mobilize/SG-225%20Breaker%20Weapon.png"
+    "iconPath": "./assets/Weapons/Primary%20Weapons/Shotguns/Helldivers%20Mobilize/SG-225%20Breaker%20Weapon.png"
   },
   {
     "id": 23,
     "name": "SG-225SP Breaker Spray&Pray",
     "type": "Primary Weapons",
-    "category": "Shotgun",
+    "category": "Shotguns",
     "warbond": "Helldivers Mobilize",
-    "iconPath": "./assets/Weapons/Primary%20Weapons/Shotgun/Helldivers%20Mobilize/SG-225SP%20Breaker%20Spray&Pray%20Weapon.png"
+    "iconPath": "./assets/Weapons/Primary%20Weapons/Shotguns/Helldivers%20Mobilize/SG-225SP%20Breaker%20Spray&Pray%20Weapon.png"
   },
   {
     "id": 24,
     "name": "SG-8 Punisher",
     "type": "Primary Weapons",
-    "category": "Shotgun",
+    "category": "Shotguns",
     "warbond": "Helldivers Mobilize",
-    "iconPath": "./assets/Weapons/Primary%20Weapons/Shotgun/Helldivers%20Mobilize/SG-8%20Punisher%20Weapon.png"
+    "iconPath": "./assets/Weapons/Primary%20Weapons/Shotguns/Helldivers%20Mobilize/SG-8%20Punisher%20Weapon.png"
   },
   {
     "id": 25,
     "name": "SG-8S Slugger",
     "type": "Primary Weapons",
-    "category": "Shotgun",
+    "category": "Shotguns",
     "warbond": "Helldivers Mobilize",
-    "iconPath": "./assets/Weapons/Primary%20Weapons/Shotgun/Helldivers%20Mobilize/SG-8S%20Slugger%20Weapon.png"
+    "iconPath": "./assets/Weapons/Primary%20Weapons/Shotguns/Helldivers%20Mobilize/SG-8S%20Slugger%20Weapon.png"
   },
   {
     "id": 26,
     "name": "SG-225IE Breaker Incendiary",
     "type": "Primary Weapons",
-    "category": "Shotgun",
+    "category": "Shotguns",
     "warbond": "Steeled Veterans",
-    "iconPath": "./assets/Weapons/Primary%20Weapons/Shotgun/Steeled%20Veterans/SG-225IE%20Breaker%20Incendiary%20Weapon.png"
+    "iconPath": "./assets/Weapons/Primary%20Weapons/Shotguns/Steeled%20Veterans/SG-225IE%20Breaker%20Incendiary%20Weapon.png"
   },
   {
     "id": 27,
     "name": "SMG-37 Defender",
     "type": "Primary Weapons",
-    "category": "Submachine Gun",
+    "category": "Submachine Guns",
     "warbond": "Helldivers Mobilize",
-    "iconPath": "./assets/Weapons/Primary%20Weapons/Submachine%20Gun/Helldivers%20Mobilize/SMG-37%20Defender%20Weapon.png"
+    "iconPath": "./assets/Weapons/Primary%20Weapons/Submachine%20Guns/Helldivers%20Mobilize/SMG-37%20Defender%20Weapon.png"
   },
   {
     "id": 28,
     "name": "MP-98 Knight",
     "type": "Primary Weapons",
-    "category": "Submachine Gun",
+    "category": "Submachine Guns",
     "warbond": "Super Citizen Edition",
-    "iconPath": "./assets/Weapons/Primary%20Weapons/Submachine%20Gun/Super%20Citizen%20Edition/MP-98%20Knight%20Weapon.png"
+    "iconPath": "./assets/Weapons/Primary%20Weapons/Submachine%20Guns/Super%20Citizen%20Edition/MP-98%20Knight%20Weapon.png"
   },
   {
     "id": 29,
