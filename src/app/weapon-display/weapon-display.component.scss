@@ -1,4 +1,5 @@
 @import '../../styles.scss';
+@import '../app.component.scss';
 
 .subtitle-text,
 .primary-text,
@@ -13,8 +14,12 @@
 
 .primary-text {
     margin-top: 0.2rem;
-    // font-size: 2rem;
-    min-height: 6rem;
+
+    // Instead of using margin or gap, set the size of the text element so that 
+    // multi-line text doens not move the layout
+    // this is done instead of overflow visible so that the layout will 
+    // still shift in very extereme broswer window sizes
+    min-height: calc(3rem + $randomiser-display-gap);
 }
 
 .secondary-text {
