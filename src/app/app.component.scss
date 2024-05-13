@@ -78,4 +78,5 @@ $randomiser-display-gap: 5vmin;
 .filters-container{
     width: 90vmin;
     gap: $randomiser-display-gap;
+    overflow: hidden;
 }

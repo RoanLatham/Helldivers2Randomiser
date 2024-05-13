@@ -2,14 +2,23 @@
     <div class="flex-horizontal warbond-filter-container">
         <p class="subtitle-text">Enabled Warbonds:</p>
     </div>
-    <div class="flex-horizontal warbond-filter-container">
-        <ng-container *ngFor="let warbond of warbonds">
-            <!-- Check if the warbond belongs to the current type and category -->
-            <button class="secondary-text warbond-filter-button" (click)="togglewarbond(warbond.id)">
-                <img [src]="warbond.iconPath" alt="{{ warbond.name }} toggle" class="warbond-filter-icon"
-                    [class.warbond-filter-icon-disabled]="disabledIds.includes(warbond.id)">
-                <p class="secondary-text">{{ warbond.name }}</p>
-            </button>
-        </ng-container>
+    <div class="flex-horizontal" style="position: relative;">
+        <button class="scroll-button scroll-left scroll-button-left" (click)="scrollLeft()" style="color: black;">
+            <img [src]="'assets/next.png'" alt="scroll warbonds right" class="chevron-icon chevron-icon-left">
+        </button>
+
+        <div class="flex-horizontal warbond-filter-container scroll-container" #scrollContainer>
+            <ng-container *ngFor="let warbond of warbonds">
+                <!-- Check if the warbond belongs to the current type and category -->
+                <button class="secondary-text warbond-filter-button scroll-content" (click)="togglewarbond(warbond.id)">
+                    <img [src]="warbond.iconPath" alt="{{ warbond.name }} toggle" class="warbond-filter-icon"
+                        [class.warbond-filter-icon-disabled]="disabledIds.includes(warbond.id)">
+                    <p class="secondary-text">{{ warbond.name }}</p>
+                </button>
+            </ng-container>
+        </div>
+        <button class="scroll-button scroll-right" (click)="scrollRight()" style="color: black;">
+            <img [src]="'assets/next.png'" alt="scroll warbonds right" class="chevron-icon">
+        </button>
     </div>
 </div>

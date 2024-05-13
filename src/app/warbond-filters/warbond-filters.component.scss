@@ -11,8 +11,8 @@
     padding: 0px;
 }
 
-.secondary-text{
-    -webkit-hyphens:auto;
+.secondary-text {
+    -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
 }
@@ -21,23 +21,67 @@
     height: 100%;
 }
 
-.warbond-filter-icon-disabled{
+.warbond-filter-icon-disabled {
     filter: grayscale(100%);
 
     height: 90%;
-    margin: 10%;
 
     align-self: center;
 }
 
-.warbond-filter-container{
+.warbond-filter-container {
     display: flex;
     justify-content: left;
     width: 100%;
 }
 
-.flex-horizontal,
-.flex-vertical{
-    gap: $filter-icon-gap;
+.scroll-container {
+    overflow: hidden;
 }
 
+$transparent-background-color: rgba($background-color, 0.85);
+
+.scroll-button {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background: linear-gradient(to left, $transparent-background-color, rgba(0, 0, 0, 0));
+    border: 0px;
+    height: 100%;
+
+    transition: transform 0.05s ease-in-out;
+}
+
+.scroll-button:active .chevron-icon{
+    transform: scale(0.9);
+}
+
+.scroll-button:active .chevron-icon-left{
+    transform: rotate(180deg) scale(0.9);
+}
+
+
+.scroll-button-left{
+    background: linear-gradient(to right, $transparent-background-color, rgba(0, 0, 0, 0));
+}
+
+.scroll-left {
+    left: 0;
+}
+
+.scroll-right {
+    right: 0;
+}
+
+.chevron-icon{
+    width: calc($filters-icon-size / 2);
+}
+
+.chevron-icon-left{
+    transform: rotate(180deg);
+}
+
+.flex-horizontal,
+.flex-vertical {
+    gap: $filter-icon-gap;
+}

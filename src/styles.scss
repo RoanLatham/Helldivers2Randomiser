@@ -25,8 +25,10 @@ $filter-icon-gap: 1vmin;
     font-weight: Medium;
 }
 
+$background-color: #201e21;
+
 body {
-    background-color: #201e21;
+    background-color: $background-color;
     width: 100vw;
     margin: 0;
 }
