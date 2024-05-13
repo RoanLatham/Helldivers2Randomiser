@@ -15,9 +15,11 @@ export const warbonds: Warbond[] = [
     "tier": "Premium",
     "iconPath": "./assets/Warbonds/Premium/Cutting%20Edge.png",
     "WeaponIds": [
-      5,
-      6,
-      7
+      1,
+      12,
+      13,
+      14,
+      29
     ],
     "BoosterIds": [
       1
@@ -29,9 +31,11 @@ export const warbonds: Warbond[] = [
     "tier": "Premium",
     "iconPath": "./assets/Warbonds/Premium/Democratic%20Detonation.png",
     "WeaponIds": [
-      1,
-      10,
-      11
+      2,
+      8,
+      17,
+      18,
+      30
     ],
     "BoosterIds": [
       2
@@ -43,9 +47,11 @@ export const warbonds: Warbond[] = [
     "tier": "Premium",
     "iconPath": "./assets/Warbonds/Premium/Steeled%20Veterans.png",
     "WeaponIds": [
-      4,
-      12,
-      19
+      7,
+      11,
+      19,
+      26,
+      33
     ],
     "BoosterIds": [
       9
@@ -57,7 +63,9 @@ export const warbonds: Warbond[] = [
     "tier": "Special",
     "iconPath": "./assets/Warbonds/Special/Standard%20Issue.png",
     "WeaponIds": [
-      3
+      6,
+      10,
+      32
     ],
     "BoosterIds": []
   },
@@ -67,7 +75,7 @@ export const warbonds: Warbond[] = [
     "tier": "Special",
     "iconPath": "./assets/Warbonds/Special/Super%20Citizen%20Edition.png",
     "WeaponIds": [
-      21
+      28
     ],
     "BoosterIds": []
   },
@@ -77,16 +85,20 @@ export const warbonds: Warbond[] = [
     "tier": "Standard",
     "iconPath": "./assets/Warbonds/Standard/Helldivers%20Mobilize.png",
     "WeaponIds": [
-      2,
-      8,
+      3,
+      4,
+      5,
       9,
-      13,
-      14,
       15,
       16,
-      17,
-      18,
-      20
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      27,
+      31
     ],
     "BoosterIds": [
       3,

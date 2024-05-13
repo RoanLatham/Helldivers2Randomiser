@@ -11,13 +11,15 @@ export class WeaponFilterStateService {
   disabledIds$ = this.disabledIds.asObservable();
   
   weapons = weapons
-  
+
   disableWeapon(id: number) {
     this.disabledIds.next([...this.disabledIds.value, id]);
+    // console.log('Weapon filter service: dissabled IDs: ' + this.disabledIds.value);
   }
 
   enableWeapon(id: number) {
     this.disabledIds.next(this.disabledIds.value.filter((i) => i !== id));
+    // console.log('Weapon filter service: dissabled IDs: ' + this.disabledIds.value);
   }
 
   toggleWeapon(id: number) {

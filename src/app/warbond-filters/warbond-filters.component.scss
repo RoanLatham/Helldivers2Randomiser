@@ -1,0 +1,43 @@
+@import '../../styles.scss';
+
+.warbond-filter-button {
+    height: calc($filters-icon-size * 2);
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+}
+
+.secondary-text{
+    -webkit-hyphens:auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.warbond-filter-icon {
+    height: 100%;
+}
+
+.warbond-filter-icon-disabled{
+    filter: grayscale(100%);
+
+    height: 90%;
+    margin: 10%;
+
+    align-self: center;
+}
+
+.warbond-filter-container{
+    display: flex;
+    justify-content: left;
+    width: 100%;
+}
+
+.flex-horizontal,
+.flex-vertical{
+    gap: $filter-icon-gap;
+}
+

@@ -1,0 +1,15 @@
+<div class="flex-vertical">
+    <div class="flex-horizontal warbond-filter-container">
+        <p class="subtitle-text">Enabled Warbonds:</p>
+    </div>
+    <div class="flex-horizontal warbond-filter-container">
+        <ng-container *ngFor="let warbond of warbonds">
+            <!-- Check if the warbond belongs to the current type and category -->
+            <button class="secondary-text warbond-filter-button" (click)="togglewarbond(warbond.id)">
+                <img [src]="warbond.iconPath" alt="{{ warbond.name }} toggle" class="warbond-filter-icon"
+                    [class.warbond-filter-icon-disabled]="disabledIds.includes(warbond.id)">
+                <p class="secondary-text">{{ warbond.name }}</p>
+            </button>
+        </ng-container>
+    </div>
+</div>

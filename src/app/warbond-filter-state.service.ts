@@ -1,58 +1,107 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { BoosterFilterStateService } from './booster-filter-state.service';
-import { Booster, boosters } from './boosters';
+import { WeaponFilterStateService } from './weapon-filter-state.service';
+import { Warbond, warbonds } from './warbonds';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WarbondFilterStateService {
-  constructor(private boostersService: BoosterFilterStateService) {
-     // Calc set of warbonds in all boosters
+  //Keep track of all dissabled boosters adn weapons for displaying dissabled warbonds dynamilcally
+  boosterDisabledIds: number[] = [];
+  weaponDisabledIds: number[] = [];
 
-    this.boostersService.disabledIds$.subscribe(disabledIds => {
-      // Do something with the data
-      // Calc set of warbonds in 
-      this.checkAllWarbondsDisabled(disabledIds);
+  constructor(
+    private boosterState: BoosterFilterStateService,
+    private weaponState: WeaponFilterStateService
+  ) {
+    // Subscribe to the disabledIds$ observable for boosters
+    this.boosterState.disabledIds$.subscribe((ids) => {
+      this.boosterDisabledIds = ids;
+      this.checkDisabledWarbonds();
+    });
+
+    // Subscribe to the disabledIds$ observable for weapons
+    this.weaponState.disabledIds$.subscribe((ids) => {
+      this.weaponDisabledIds = ids;
+      this.checkDisabledWarbonds();
     });
   }
 
-  checkAllWarbondsDisabled(disabledIds: number[]): void {
-    // Create a set of warbonds from the disabled boosters
-    let disabledWarbondSet = new Set(boosters.filter(booster => disabledIds.includes(booster.id)).map(booster => booster.warbond));
+  warbonds = warbonds;
 
-    let dissabledWarbonds: string[] = [];
+  // BehaviorSubject for individual Warbonds the user disabled
+  private disabledIds = new BehaviorSubject<number[]>([]);
+  disabledIds$ = this.disabledIds.asObservable();
+
+  checkDisabledWarbonds(): void {
+    let disabledWarbondIds: number[] = [];
+
     // Check each warbond
-    disabledWarbondSet.forEach(warbond => {
-      // Get all boosters with this warbond
-      let warbondBoosters = boosters.filter(booster => booster.warbond === warbond);
+    this.warbonds.forEach((warbond) => {
+      // Check if all weapons and boosters of this warbond are disabled
+      const isWarbondDisabled =
+        warbond.WeaponIds.every((id) => this.weaponDisabledIds.includes(id)) &&
+        warbond.BoosterIds.every((id) => this.boosterDisabledIds.includes(id));
 
-      // Check if all boosters with this warbond are disabled
-      if (warbondBoosters.every(booster => disabledIds.includes(booster.id))) {
-        dissabledWarbonds = [...dissabledWarbonds, warbond]
+      if (isWarbondDisabled) {
+        disabledWarbondIds.push(warbond.id);
       }
 
-      this.disabledWarbonds.next(dissabledWarbonds);
-      console.log("Warbond filter service: Dissabled warbonds:" + this.disabledWarbonds.value);
+      console.log('warbond: ' + warbond.name + ' is ' + isWarbondDisabled);
+      console.log(
+        warbond.WeaponIds.every((id) => this.weaponDisabledIds.includes(id))
+      );
+      console.log(
+        warbond.BoosterIds.every((id) => this.boosterDisabledIds.includes(id))
+      );
     });
+
+    // Update the BehaviorSubject with the new list of disabled warbond IDs
+    this.disabledIds.next(disabledWarbondIds);
+    console.log(
+      'Warbond filter service: Disabled warbonds:' + this.disabledIds.value
+    );
   }
 
-  //BehaviorSubject for individual Warbonds the user dissabled
-  private disabledWarbonds = new BehaviorSubject<string[]>([]);
-  disabledWarbonds$ = this.disabledWarbonds.asObservable();
-
-  // Toggle warbond, 
+  // Toggle warbond,
   // If all children are enabled, dissable all
   // If only some chileren are enabled, still dissable all
   // If all children are  dissabled already, enable all
   // Warbond icons should also appear dissabed only when all chidldren are dissabled,
   // even if they were all disabbled manually
-  // toggleWarbond(warbondName: string) {
 
+  // Toggle warbond
+  toggleWarbond(id: number): void {
+    // Find the warbond by ID
+    const warbond = this.warbonds.find((w) => w.id === id);
+    if (!warbond) {
+      console.error('Warbond not found');
+      return;
+    }
 
+    // Check if all children (weapons and boosters) are currently disabled
+    const allWeaponsDisabled = warbond.WeaponIds.every((wId) =>
+      this.weaponDisabledIds.includes(wId)
+    );
+    const allBoostersDisabled = warbond.BoosterIds.every((bId) =>
+      this.boosterDisabledIds.includes(bId)
+    );
 
-  //   // console.log(
-  //   //   'Warbond filter service: dissabled IDs: ' + this.disabledIds.value
-  //   // );
-  // }
+    if (allWeaponsDisabled && allBoostersDisabled) {
+      // If all children are disabled, enable all
+      warbond.WeaponIds.forEach((wId) => this.weaponState.enableWeapon(wId));
+      warbond.BoosterIds.forEach((bId) => this.boosterState.enableBooster(bId));
+    } else {
+      // If any child is enabled, disable all
+      warbond.WeaponIds.forEach((wId) => this.weaponState.disableWeapon(wId));
+      warbond.BoosterIds.forEach((bId) =>
+        this.boosterState.disableBooster(bId)
+      );
+    }
+
+    // Update the list of disabled warbonds
+    this.checkDisabledWarbonds();
+  }
 }

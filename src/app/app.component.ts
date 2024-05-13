@@ -9,6 +9,7 @@ import { BoosterFiltersComponent } from './booster-filters/booster-filters.compo
 import { WeaponDisplayComponent } from './weapon-display/weapon-display.component';
 import { WeaponRandomiserComponent } from './weapon-randomiser/weapon-randomiser.component';
 import { WeaponFiltersComponent } from './weapon-filters/weapon-filters.component';
+import { WarbondFiltersComponent } from './warbond-filters/warbond-filters.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ import { WeaponFiltersComponent } from './weapon-filters/weapon-filters.componen
     BoosterFiltersComponent,
     WeaponDisplayComponent,
     WeaponRandomiserComponent,
-    WeaponFiltersComponent
+    WeaponFiltersComponent,
+    WarbondFiltersComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
