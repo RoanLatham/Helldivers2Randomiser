@@ -57,258 +57,264 @@ export const stratagems: Stratagem[] = [
   },
   {
     "id": 9,
+    "name": "Anti-Tank Mines",
+    "shipModule": "Engineering Bay",
+    "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Engineering%20Bay/Anti-Tank%20Mines.svg"
+  },
+  {
+    "id": 10,
     "name": "Arc Thrower",
     "shipModule": "Engineering Bay",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Engineering%20Bay/Arc%20Thrower.svg"
   },
   {
-    "id": 10,
+    "id": 11,
     "name": "Ballistic Shield Backpack",
     "shipModule": "Engineering Bay",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Engineering%20Bay/Ballistic%20Shield%20Backpack.svg"
   },
   {
-    "id": 11,
+    "id": 12,
     "name": "Grenade Launcher",
     "shipModule": "Engineering Bay",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Engineering%20Bay/Grenade%20Launcher.svg"
   },
   {
-    "id": 12,
+    "id": 13,
     "name": "Guard Dog Rover",
     "shipModule": "Engineering Bay",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Engineering%20Bay/Guard%20Dog%20Rover.svg"
   },
   {
-    "id": 13,
+    "id": 14,
     "name": "Incendiary Mines",
     "shipModule": "Engineering Bay",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Engineering%20Bay/Incendiary%20Mines.svg"
   },
   {
-    "id": 14,
+    "id": 15,
     "name": "Laser Cannon",
     "shipModule": "Engineering Bay",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Engineering%20Bay/Laser%20Cannon.svg"
   },
   {
-    "id": 15,
+    "id": 16,
     "name": "Quasar Cannon",
     "shipModule": "Engineering Bay",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Engineering%20Bay/Quasar%20Cannon.svg"
   },
   {
-    "id": 16,
+    "id": 17,
     "name": "Shield Generator Pack",
     "shipModule": "Engineering Bay",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Engineering%20Bay/Shield%20Generator%20Pack.svg"
   },
   {
-    "id": 17,
+    "id": 18,
     "name": "Supply Pack",
     "shipModule": "Engineering Bay",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Engineering%20Bay/Supply%20Pack.svg"
   },
   {
-    "id": 18,
+    "id": 19,
     "name": "Eagle 110MM Rocket Pods",
     "shipModule": "Hangar",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Hangar/Eagle%20110MM%20Rocket%20Pods.svg"
   },
   {
-    "id": 19,
+    "id": 20,
     "name": "Eagle 500KG Bomb",
     "shipModule": "Hangar",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Hangar/Eagle%20500KG%20Bomb.svg"
   },
   {
-    "id": 20,
+    "id": 21,
     "name": "Eagle Airstrike",
     "shipModule": "Hangar",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Hangar/Eagle%20Airstrike.svg"
   },
   {
-    "id": 21,
+    "id": 22,
     "name": "Eagle Cluster Bomb",
     "shipModule": "Hangar",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Hangar/Eagle%20Cluster%20Bomb.svg"
   },
   {
-    "id": 22,
+    "id": 23,
     "name": "Eagle Napalm Airstrike",
     "shipModule": "Hangar",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Hangar/Eagle%20Napalm%20Airstrike.svg"
   },
   {
-    "id": 23,
+    "id": 24,
     "name": "Eagle Smoke Strike",
     "shipModule": "Hangar",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Hangar/Eagle%20Smoke%20Strike.svg"
   },
   {
-    "id": 24,
+    "id": 25,
     "name": "Eagle Strafing Run",
     "shipModule": "Hangar",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Hangar/Eagle%20Strafing%20Run.svg"
   },
   {
-    "id": 25,
+    "id": 26,
     "name": "Jump Pack",
     "shipModule": "Hangar",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Hangar/Jump%20Pack.svg"
   },
   {
-    "id": 26,
+    "id": 27,
     "name": "Orbital 120MM HE Barrage",
     "shipModule": "Orbital Cannons",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Orbital%20Cannons/Orbital%20120MM%20HE%20Barrage.svg"
   },
   {
-    "id": 27,
+    "id": 28,
     "name": "Orbital 380MM HE Barrage",
     "shipModule": "Orbital Cannons",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Orbital%20Cannons/Orbital%20380MM%20HE%20Barrage.svg"
   },
   {
-    "id": 28,
+    "id": 29,
     "name": "Orbital Airburst Strike",
     "shipModule": "Orbital Cannons",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Orbital%20Cannons/Orbital%20Airburst%20Strike.svg"
   },
   {
-    "id": 29,
+    "id": 30,
     "name": "Orbital Gatling Barrage",
     "shipModule": "Orbital Cannons",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Orbital%20Cannons/Orbital%20Gatling%20Barrage.svg"
   },
   {
-    "id": 30,
+    "id": 31,
     "name": "Orbital Laser",
     "shipModule": "Orbital Cannons",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Orbital%20Cannons/Orbital%20Laser.svg"
   },
   {
-    "id": 31,
+    "id": 32,
     "name": "Orbital Railcannon Strike",
     "shipModule": "Orbital Cannons",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Orbital%20Cannons/Orbital%20Railcannon%20Strike.svg"
   },
   {
-    "id": 32,
+    "id": 33,
     "name": "Orbital Walking Barrage",
     "shipModule": "Orbital Cannons",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Orbital%20Cannons/Orbital%20Walking%20Barrage.svg"
   },
   {
-    "id": 33,
+    "id": 34,
     "name": "Airburst Rocket Launcher",
     "shipModule": "Patriotic Administration Center",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Patriotic%20Administration%20Center/Airburst%20Rocket%20Launcher.svg"
   },
   {
-    "id": 34,
+    "id": 35,
     "name": "Anti-Materiel Rifle",
     "shipModule": "Patriotic Administration Center",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Patriotic%20Administration%20Center/Anti-Materiel%20Rifle.svg"
   },
   {
-    "id": 35,
+    "id": 36,
     "name": "Autocannon",
     "shipModule": "Patriotic Administration Center",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Patriotic%20Administration%20Center/Autocannon.svg"
   },
   {
-    "id": 36,
+    "id": 37,
     "name": "Expendable Anti-Tank",
     "shipModule": "Patriotic Administration Center",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Patriotic%20Administration%20Center/Expendable%20Anti-Tank.svg"
   },
   {
-    "id": 37,
+    "id": 38,
     "name": "Flamethrower",
     "shipModule": "Patriotic Administration Center",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Patriotic%20Administration%20Center/Flamethrower.svg"
   },
   {
-    "id": 38,
+    "id": 39,
     "name": "Heavy Machine Gun",
     "shipModule": "Patriotic Administration Center",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Patriotic%20Administration%20Center/Heavy%20Machine%20Gun.svg"
   },
   {
-    "id": 39,
+    "id": 40,
     "name": "Machine Gun",
     "shipModule": "Patriotic Administration Center",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Patriotic%20Administration%20Center/Machine%20Gun.svg"
   },
   {
-    "id": 40,
+    "id": 41,
     "name": "Railgun",
     "shipModule": "Patriotic Administration Center",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Patriotic%20Administration%20Center/Railgun.svg"
   },
   {
-    "id": 41,
+    "id": 42,
     "name": "Recoilless Rifle",
     "shipModule": "Patriotic Administration Center",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Patriotic%20Administration%20Center/Recoilless%20Rifle.svg"
   },
   {
-    "id": 42,
+    "id": 43,
     "name": "Spear",
     "shipModule": "Patriotic Administration Center",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Patriotic%20Administration%20Center/Spear.svg"
   },
   {
-    "id": 43,
+    "id": 44,
     "name": "Stalwart",
     "shipModule": "Patriotic Administration Center",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Patriotic%20Administration%20Center/Stalwart.svg"
   },
   {
-    "id": 44,
+    "id": 45,
     "name": "Autocannon Sentry",
     "shipModule": "Robotics Workshop",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Robotics%20Workshop/Autocannon%20Sentry.svg"
   },
   {
-    "id": 45,
+    "id": 46,
     "name": "EMS Mortar Sentry",
     "shipModule": "Robotics Workshop",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Robotics%20Workshop/EMS%20Mortar%20Sentry.svg"
   },
   {
-    "id": 46,
+    "id": 47,
     "name": "Gatling Sentry",
     "shipModule": "Robotics Workshop",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Robotics%20Workshop/Gatling%20Sentry.svg"
   },
   {
-    "id": 47,
+    "id": 48,
     "name": "Guard Dog",
     "shipModule": "Robotics Workshop",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Robotics%20Workshop/Guard%20Dog.svg"
   },
   {
-    "id": 48,
+    "id": 49,
     "name": "Machine Gun Sentry",
     "shipModule": "Robotics Workshop",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Robotics%20Workshop/Machine%20Gun%20Sentry.svg"
   },
   {
-    "id": 49,
+    "id": 50,
     "name": "Mortar Sentry",
     "shipModule": "Robotics Workshop",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Robotics%20Workshop/Mortar%20Sentry.svg"
   },
   {
-    "id": 50,
+    "id": 51,
     "name": "Patriot Exosuit",
     "shipModule": "Robotics Workshop",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Robotics%20Workshop/Patriot%20Exosuit.svg"
   },
   {
-    "id": 51,
+    "id": 52,
     "name": "Rocket Sentry",
     "shipModule": "Robotics Workshop",
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Robotics%20Workshop/Rocket%20Sentry.svg"
