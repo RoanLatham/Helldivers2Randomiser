@@ -1,28 +1,29 @@
 <div class="flex-vertical">
     <!-- Iterate over weapon types -->
     <ng-container *ngFor="let type of weaponTypes">
-        <div class="flex-horizontal weapon-filter-category-container">
+        <div class="flex-horizontal weapon-filter-container">
             <p class="subtitle-text">{{ type }}:</p> <!-- Display the weapon type -->
         </div>
         <!-- Iterate over categories within each type -->
         <ng-container *ngFor="let category of weaponCategories">
             <!-- This div will only appear if there are weapons of this category -->
             <div *ngIf="hasWeaponsOfTypeAndCategory(type, category)"
-                class="flex-vertical weapon-filter-category-container">
-                <div class="flex-horizontal weapon-filter-category-container" *ngIf="type === 'Primary Weapons'" >
-                    <p class="secondary-text">{{ category }}</p> 
+                class="flex-vertical weapon-filter-container">
+                <div class="flex-horizontal weapon-filter-container weapon-checkbox-container" *ngIf="type === 'Primary Weapons'">
+                    <p class="secondary-text">{{ category }}</p>
                     <input type="checkbox" (change)="toggleCategory(category)" checked>
                 </div>
-                <div class="flex-horizontal weapon-filter-category-container">
-                <ng-container *ngFor="let weapon of weapons">
-                    <!-- Check if the weapon belongs to the current type and category -->
-                    <button class="secondary-text weapon-filter-button"
-                        *ngIf="weapon.type === type && weapon.category === category" (click)="toggleWeapon(weapon.id)">
-                        <img [src]="weapon.iconPath" alt="{{ weapon.name }} toggle" class="weapon-filter-icon"
-                            [class.weapon-filter-icon-disabled]="disabledIds.includes(weapon.id)">
-                        <!-- {{ weapon.name }} -->
-                    </button>
-                </ng-container>
+                <div class="flex-horizontal weapon-filter-container">
+                    <ng-container *ngFor="let weapon of weapons">
+                        <!-- Check if the weapon belongs to the current type and category -->
+                        <button class="weapon-filter-button"
+                            *ngIf="weapon.type === type && weapon.category === category"
+                            (click)="toggleWeapon(weapon.id)">
+                            <img [src]="weapon.iconPath" alt="{{ weapon.name }} toggle" class="weapon-filter-icon"
+                                [class.weapon-filter-icon-disabled]="disabledIds.includes(weapon.id)">
+                            <!-- {{ weapon.name }} -->
+                        </button>
+                    </ng-container>
                 </div>
             </div>
         </ng-container>

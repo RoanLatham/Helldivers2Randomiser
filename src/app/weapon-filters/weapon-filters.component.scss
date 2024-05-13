@@ -29,16 +29,10 @@
 
     align-self: center;
 }
-
-.weapon-filter-category-container{
-    display: flex;
-    justify-content: left;
-    width: 100%;
-}
-
 .weapon-filter-container{
     display: flex;
     justify-content: left;
+    width: 100%;
 }
 
 .flex-horizontal,
@@ -46,3 +40,6 @@
     gap: $filter-icon-gap;
 }
 
+.weapon-checkbox-container{
+    margin-top: calc($filter-icon-gap * 2);
+}
