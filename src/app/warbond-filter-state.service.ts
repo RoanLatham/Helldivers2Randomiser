@@ -49,20 +49,20 @@ export class WarbondFilterStateService {
         disabledWarbondIds.push(warbond.id);
       }
 
-      console.log('warbond: ' + warbond.name + ' is ' + isWarbondDisabled);
-      console.log(
-        warbond.WeaponIds.every((id) => this.weaponDisabledIds.includes(id))
-      );
-      console.log(
-        warbond.BoosterIds.every((id) => this.boosterDisabledIds.includes(id))
-      );
+      // console.log('warbond: ' + warbond.name + ' is ' + isWarbondDisabled);
+      // console.log(
+      //   warbond.WeaponIds.every((id) => this.weaponDisabledIds.includes(id))
+      // );
+      // console.log(
+      //   warbond.BoosterIds.every((id) => this.boosterDisabledIds.includes(id))
+      // );
     });
 
     // Update the BehaviorSubject with the new list of disabled warbond IDs
     this.disabledIds.next(disabledWarbondIds);
-    console.log(
-      'Warbond filter service: Disabled warbonds:' + this.disabledIds.value
-    );
+    // console.log(
+    //   'Warbond filter service: Disabled warbonds:' + this.disabledIds.value
+    // );
   }
 
   // Toggle warbond,
