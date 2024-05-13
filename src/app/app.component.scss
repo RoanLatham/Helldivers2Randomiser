@@ -2,7 +2,7 @@
 $stripe-dark: #201e21;
 $stripe-yellow: #48401b;
 
-$randomiser-display-gap: 5vmin;
+$randomiser-display-gap: 6vmin;
 
 .seperator {
     width: 90vmin;
@@ -25,7 +25,7 @@ $randomiser-display-gap: 5vmin;
         inset 0 0 4px #d4bf00;
     /* Inner glow */
     width: fit-content;
-
+    cursor: pointer
 }
 
 .randomise-button:hover {
