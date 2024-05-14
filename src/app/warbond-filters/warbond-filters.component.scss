@@ -24,8 +24,10 @@
 
 .warbond-filter-icon-disabled {
     filter: grayscale(100%);
+    transform: scale(90%);
 
-    height: 90%;
+    // width: 90%;
+    // margin: 0px 10%;
 
     align-self: center;
 }

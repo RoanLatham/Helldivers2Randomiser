@@ -25,16 +25,12 @@
 .booster-filter-icon-disabled{
     filter: grayscale(100%);
     background-color: transparent;
+    transform: scale(90%);
 
-    width: 90%;
-    margin: 10%;
+    // width: 90%;
+    // margin: 0px 10%;
 
     align-self: center;
-}
-
-.booster-filter-module-container{
-    display: flex;
-    justify-content: left;
 }
 
 .booster-filter-container{
