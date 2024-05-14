@@ -9,9 +9,10 @@
             <!-- This div will only appear if there are weapons of this category -->
             <div *ngIf="hasWeaponsOfTypeAndCategory(type, category)"
                 class="flex-vertical weapon-filter-container">
-                <div class="flex-horizontal weapon-filter-container weapon-checkbox-container" *ngIf="type === 'Primary Weapons'">
+                <div class="flex-horizontal weapon-filter-container weapon-checkbox-container" *ngIf="type === 'Primary Weapons'" (click)="toggleCategory(category)">
                     <p class="secondary-text">{{ category }}</p>
-                    <input type="checkbox" (change)="toggleCategory(category)" checked>
+                    <!-- TODO Link checkboxes to actuall state of anabeld weapons in category-->
+                    <input type="checkbox" [checked]="!isCategoryDissabled(category)">
                 </div>
                 <div class="flex-horizontal weapon-filter-container">
                     <ng-container *ngFor="let weapon of weapons">

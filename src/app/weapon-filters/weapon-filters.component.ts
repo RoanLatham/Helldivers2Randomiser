@@ -43,15 +43,19 @@ export class WeaponFiltersComponent implements OnInit {
     this.weaponState.toggleWeapon(id);
   }
 
-  // ... inside your component class ...
-
   hasWeaponsOfTypeAndCategory(type: string, category: string): boolean {
     return this.weapons.some(
       (weapon) => weapon.type === type && weapon.category === category
     );
   }
 
-  toggleCategory(category: string): void{
-    this.weaponState.toggleCategory(category)
+  toggleCategory(category: string): void {
+    this.weaponState.toggleCategory(category);
+  }
+
+  isCategoryDissabled(category: string): boolean {
+    return this.weapons
+      .filter((weapon) => weapon.category === category)
+      .every((weapon) => this.disabledIds.includes(weapon.id));
   }
 }

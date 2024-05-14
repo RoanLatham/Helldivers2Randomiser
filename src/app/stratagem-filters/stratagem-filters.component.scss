@@ -50,8 +50,12 @@ input{
     justify-content: left;
 }
 
-.checkbox-container{
+.checkboxes-container{
     gap: 5vmin;
+}
+
+.checkbox-container{
+    cursor: pointer;
 }
 
 .flex-horizontal,
