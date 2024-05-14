@@ -99,12 +99,12 @@ p {
 
 // Sizes the body to include the verical scroll bar to prevent the layout from 
 // becoming off-center
-html{
+html {
     overflow: auto;
     overflow-x: hidden;
 }
 
-body{
+body {
     overflow-y: scroll;
     overflow-x: hidden;
     box-sizing: border-box;
@@ -113,5 +113,4 @@ body{
 
 img {
     pointer-events: none;
-  }
-  
+}
