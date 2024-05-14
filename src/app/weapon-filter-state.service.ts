@@ -61,12 +61,10 @@ export class WeaponFilterStateService {
       ...grenades.filter(weapon => weapon.category === category).map(weapon => weapon.id)
     ];
 
-    console.log(categoryWeaponIds);
 
     // Check if the category is currently disabled
     const isDisabled = categoryWeaponIds.every(id => this.disabledIds.value.includes(id));
 
-    console.log(isDisabled);
     // Toggle the state based on the current state
     if (isDisabled) {
       this.enableCategory(category);
