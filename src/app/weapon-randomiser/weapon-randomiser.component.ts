@@ -44,22 +44,24 @@ export class WeaponRandomiserComponent implements OnInit {
   }
 
   getRandomIds(): void {
-    this.primaryWeaponId = this.getRandomWeaponId(this.primaryWeaponIds);
-    this.secondaryWeaponId = this.getRandomWeaponId(this.secondaryWeaponIds);
-    this.grenadeId = this.getRandomWeaponId(this.grenadeIds);
+    this.primaryWeaponId = this.getRandomWeaponId(this.primaryWeaponIds, this.primaryWeaponId);
+    this.secondaryWeaponId = this.getRandomWeaponId(this.secondaryWeaponIds, this.secondaryWeaponId);
+    this.grenadeId = this.getRandomWeaponId(this.grenadeIds, this.grenadeId);
   }
+  
 
-  getRandomWeaponId(weaponIds: number[]): number {
+  getRandomWeaponId(weaponIds: number[], previousId: number): number {
     // Filter out the disabled IDs
     const availableIds = weaponIds.filter(id => !this.disabledIds.includes(id));
-
-    // console.log('Weapon ranodimiser: available ids:' + availableIds)
-    // console.log('Weapon ranodimiser: disabeled ids:' + this.disabledIds)
-    
+  
+    // console.log('Weapon randomiser: available ids:' + availableIds)
+    // console.log('Weapon randomiser: disabled ids:' + this.disabledIds)
+  
     if (availableIds.length === 0) {
-      throw new Error('No available IDs left to choose from.');
+      // If no available IDs, return the previous ID
+      return previousId;
     }
-
+  
     const randomIndex = Math.floor(Math.random() * availableIds.length);
     return availableIds[randomIndex];
   }
