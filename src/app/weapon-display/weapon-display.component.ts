@@ -1,21 +1,21 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Weapon, weapons } from '../weapons';
+import { primaryWeapons, secondaryWeapons, grenades } from '../weapons';
 
 @Component({
   selector: 'app-weapon-display',
   standalone: true,
   imports: [],
   templateUrl: './weapon-display.component.html',
-  styleUrl: './weapon-display.component.scss'
+  styleUrls: ['./weapon-display.component.scss']
 })
 export class WeaponDisplayComponent implements OnInit {
   private _id!: number;
-  weapon!: Weapon;
+  weapon!: { id: number; name: string; category: string; warbond: string; iconPath: string; };
 
   @Input()
   set id(value: number) {
     this._id = value;
-    this.updateweapon();
+    this.updateWeapon();
   }
 
   get id(): number {
@@ -23,11 +23,11 @@ export class WeaponDisplayComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.updateweapon();
+    this.updateWeapon();
   }
 
-  updateweapon() {
-    const weapon = weapons.find((b) => b.id === this.id);
+  updateWeapon() {
+    const weapon = [...primaryWeapons, ...secondaryWeapons, ...grenades].find((w) => w.id === this.id);
     if (weapon) {
       this.weapon = weapon;
     } else {

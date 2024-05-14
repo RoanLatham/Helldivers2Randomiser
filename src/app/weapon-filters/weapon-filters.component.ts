@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Weapon, weapons } from '../weapons';
+import { primaryWeapons, secondaryWeapons, grenades } from '../weapons';
 import { CommonModule } from '@angular/common';
 import { WeaponFilterStateService } from '../weapon-filter-state.service';
 
@@ -8,18 +8,16 @@ import { WeaponFilterStateService } from '../weapon-filter-state.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './weapon-filters.component.html',
-  styleUrl: './weapon-filters.component.scss',
+  styleUrls: ['./weapon-filters.component.scss'],
 })
 export class WeaponFiltersComponent implements OnInit {
-  weapons = weapons;
-  // weaponTypes: string[] = [];
-  weaponTypes = ['Primary Weapons', 'Secondary Weapons', 'Grenades'];
+  primaryWeapons = primaryWeapons;
+  secondaryWeapons = secondaryWeapons;
+  grenades = grenades;
   weaponCategories: string[] = [];
   disabledIds: number[] = [];
 
-  constructor(
-    private weaponState: WeaponFilterStateService // private warbondState: WarbondFilterStateService
-  ) {}
+  constructor(private weaponState: WeaponFilterStateService) {}
 
   ngOnInit(): void {
     // Subscribe to the disabledIds$ observable
@@ -27,26 +25,16 @@ export class WeaponFiltersComponent implements OnInit {
       this.disabledIds = ids;
     });
 
-    // Extract all teh types from weapons.ts
-    // this.weaponTypes = Array.from(
-    //   new Set(this.weapons.map((s) => s.type))
-    // );
-
-    // Extract all categories from weapons.ts
+    // Extract all categories from primary weapons, secondary weapons, and grenades
     this.weaponCategories = Array.from(
-      new Set(this.weapons.map((s) => s.category))
+      new Set([
+        ...this.primaryWeapons.map((s) => s.category),
+      ])
     );
   }
 
   toggleWeapon(id: number): void {
-    // console.log("Filter component:  Dissabling id: " + id)
     this.weaponState.toggleWeapon(id);
-  }
-
-  hasWeaponsOfTypeAndCategory(type: string, category: string): boolean {
-    return this.weapons.some(
-      (weapon) => weapon.type === type && weapon.category === category
-    );
   }
 
   toggleCategory(category: string): void {
@@ -54,8 +42,16 @@ export class WeaponFiltersComponent implements OnInit {
   }
 
   isCategoryDissabled(category: string): boolean {
-    return this.weapons
-      .filter((weapon) => weapon.category === category)
-      .every((weapon) => this.disabledIds.includes(weapon.id));
+    const categoryWeaponIds = [
+      ...this.primaryWeapons.filter((weapon) => weapon.category === category).map((weapon) => weapon.id),
+      ...this.secondaryWeapons.filter((weapon) => weapon.category === category).map((weapon) => weapon.id),
+      ...this.grenades.filter((weapon) => weapon.category === category).map((weapon) => weapon.id),
+    ];
+
+    return categoryWeaponIds.every((id) => this.disabledIds.includes(id));
+  }
+
+  primaryWeaponsForCategory(category: string): { id: number; name: string; category: string; warbond: string; iconPath: string; }[] {
+    return this.primaryWeapons.filter((weapon) => weapon.category === category);
   }
 }

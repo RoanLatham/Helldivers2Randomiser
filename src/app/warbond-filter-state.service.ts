@@ -8,7 +8,6 @@ import { Warbond, warbonds } from './warbonds';
   providedIn: 'root',
 })
 export class WarbondFilterStateService {
-  //Keep track of all dissabled boosters adn weapons for displaying dissabled warbonds dynamilcally
   boosterDisabledIds: number[] = [];
   weaponDisabledIds: number[] = [];
 
@@ -35,42 +34,32 @@ export class WarbondFilterStateService {
   private disabledIds = new BehaviorSubject<number[]>([]);
   disabledIds$ = this.disabledIds.asObservable();
 
+  isWarbondDisabled(warbond: Warbond): boolean {
+    return (
+      warbond.PrimaryWeaponIds.every((id) =>
+        this.weaponDisabledIds.includes(id)
+      ) &&
+      warbond.SecondaryWeaponIds.every((id) =>
+        this.weaponDisabledIds.includes(id)
+      ) &&
+      warbond.GrenadeIds.every((id) => this.weaponDisabledIds.includes(id)) &&
+      warbond.BoosterIds.every((id) => this.boosterDisabledIds.includes(id))
+    );
+  }
+
   checkDisabledWarbonds(): void {
     let disabledWarbondIds: number[] = [];
 
     // Check each warbond
     this.warbonds.forEach((warbond) => {
-      // Check if all weapons and boosters of this warbond are disabled
-      const isWarbondDisabled =
-        warbond.WeaponIds.every((id) => this.weaponDisabledIds.includes(id)) &&
-        warbond.BoosterIds.every((id) => this.boosterDisabledIds.includes(id));
-
-      if (isWarbondDisabled) {
+      if (this.isWarbondDisabled(warbond)) {
         disabledWarbondIds.push(warbond.id);
       }
-
-      // console.log('warbond: ' + warbond.name + ' is ' + isWarbondDisabled);
-      // console.log(
-      //   warbond.WeaponIds.every((id) => this.weaponDisabledIds.includes(id))
-      // );
-      // console.log(
-      //   warbond.BoosterIds.every((id) => this.boosterDisabledIds.includes(id))
-      // );
     });
 
     // Update the BehaviorSubject with the new list of disabled warbond IDs
     this.disabledIds.next(disabledWarbondIds);
-    // console.log(
-    //   'Warbond filter service: Disabled warbonds:' + this.disabledIds.value
-    // );
   }
-
-  // Toggle warbond,
-  // If all children are enabled, dissable all
-  // If only some chileren are enabled, still dissable all
-  // If all children are  dissabled already, enable all
-  // Warbond icons should also appear dissabed only when all chidldren are dissabled,
-  // even if they were all disabbled manually
 
   // Toggle warbond
   toggleWarbond(id: number): void {
@@ -81,21 +70,28 @@ export class WarbondFilterStateService {
       return;
     }
 
-    // Check if all children (weapons and boosters) are currently disabled
-    const allWeaponsDisabled = warbond.WeaponIds.every((wId) =>
-      this.weaponDisabledIds.includes(wId)
-    );
-    const allBoostersDisabled = warbond.BoosterIds.every((bId) =>
-      this.boosterDisabledIds.includes(bId)
-    );
+    // Check if the warbond is currently disabled
+    const isWarbondDisabled = this.isWarbondDisabled(warbond);
 
-    if (allWeaponsDisabled && allBoostersDisabled) {
-      // If all children are disabled, enable all
-      warbond.WeaponIds.forEach((wId) => this.weaponState.enableWeapon(wId));
+    if (isWarbondDisabled) {
+      // If the warbond is disabled, enable all children
+      warbond.PrimaryWeaponIds.forEach((wId) =>
+        this.weaponState.enableWeapon(wId)
+      );
+      warbond.SecondaryWeaponIds.forEach((wId) =>
+        this.weaponState.enableWeapon(wId)
+      );
+      warbond.GrenadeIds.forEach((wId) => this.weaponState.enableWeapon(wId));
       warbond.BoosterIds.forEach((bId) => this.boosterState.enableBooster(bId));
     } else {
-      // If any child is enabled, disable all
-      warbond.WeaponIds.forEach((wId) => this.weaponState.disableWeapon(wId));
+      // If the warbond is enabled, disable all children
+      warbond.PrimaryWeaponIds.forEach((wId) =>
+        this.weaponState.disableWeapon(wId)
+      );
+      warbond.SecondaryWeaponIds.forEach((wId) =>
+        this.weaponState.disableWeapon(wId)
+      );
+      warbond.GrenadeIds.forEach((wId) => this.weaponState.disableWeapon(wId));
       warbond.BoosterIds.forEach((bId) =>
         this.boosterState.disableBooster(bId)
       );

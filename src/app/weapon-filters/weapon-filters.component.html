@@ -1,32 +1,61 @@
 <div class="flex-vertical">
-    <!-- Iterate over weapon types -->
-    <ng-container *ngFor="let type of weaponTypes">
+    <!-- Primary Weapons -->
+    <div class="flex-vertical weapon-filter-container">
         <div class="flex-horizontal weapon-filter-container">
-            <p class="subtitle-text">{{ type }}:</p> <!-- Display the weapon type -->
+            <p class="subtitle-text">Primary Weapons:</p>
         </div>
-        <!-- Iterate over categories within each type -->
         <ng-container *ngFor="let category of weaponCategories">
-            <!-- This div will only appear if there are weapons of this category -->
-            <div *ngIf="hasWeaponsOfTypeAndCategory(type, category)"
-                class="flex-vertical weapon-filter-container">
-                <div class="flex-horizontal weapon-filter-container weapon-checkbox-container" *ngIf="type === 'Primary Weapons'" (click)="toggleCategory(category)">
-                    <p class="secondary-text">{{ category }}</p>
-                    <!-- TODO Link checkboxes to actuall state of anabeld weapons in category-->
-                    <input type="checkbox" [checked]="!isCategoryDissabled(category)">
-                </div>
-                <div class="flex-horizontal weapon-filter-container">
-                    <ng-container *ngFor="let weapon of weapons">
-                        <!-- Check if the weapon belongs to the current type and category -->
-                        <button class="weapon-filter-button"
-                            *ngIf="weapon.type === type && weapon.category === category"
-                            (click)="toggleWeapon(weapon.id)">
-                            <img [src]="weapon.iconPath" alt="{{ weapon.name }} toggle" class="weapon-filter-icon"
-                                [class.weapon-filter-icon-disabled]="disabledIds.includes(weapon.id)">
-                            <!-- {{ weapon.name }} -->
-                        </button>
-                    </ng-container>
-                </div>
+            <div class="flex-horizontal weapon-filter-container weapon-checkbox-container"
+                (click)="toggleCategory(category)">
+                <p class="secondary-text">{{ category }}</p>
+                <input type="checkbox" [checked]="!isCategoryDissabled(category)">
+            </div>
+            <div class="flex-horizontal weapon-filter-container">
+                <ng-container *ngFor="let weapon of primaryWeaponsForCategory(category)">
+                    <button class="weapon-filter-button" (click)="toggleWeapon(weapon.id)">
+                        <img [src]="weapon.iconPath" alt="{{ weapon.name }} toggle" class="weapon-filter-icon"
+                            [class.weapon-filter-icon-disabled]="disabledIds.includes(weapon.id)">
+                    </button>
+                </ng-container>
             </div>
         </ng-container>
-    </ng-container>
+    </div>
+
+    <!-- Secondary Weapons -->
+    <div class="flex-vertical weapon-filter-container">
+        <div class="flex-horizontal weapon-filter-container">
+            <p class="subtitle-text">Secondary Weapons:</p>
+        </div>
+        <!-- <div class="flex-horizontal weapon-filter-container weapon-checkbox-container" (click)="toggleCategory('Secondary Weapons')">
+            <p class="secondary-text">Secondary Weapons</p>
+            <input type="checkbox" [checked]="!isCategoryDissabled('Secondary Weapons')">
+        </div> -->
+        <div class="flex-horizontal weapon-filter-container">
+            <ng-container *ngFor="let weapon of secondaryWeapons">
+                <button class="weapon-filter-button" (click)="toggleWeapon(weapon.id)">
+                    <img [src]="weapon.iconPath" alt="{{ weapon.name }} toggle" class="weapon-filter-icon"
+                        [class.weapon-filter-icon-disabled]="disabledIds.includes(weapon.id)">
+                </button>
+            </ng-container>
+        </div>
+    </div>
+
+    <!-- Grenades -->
+    <div class="flex-vertical weapon-filter-container">
+        <div class="flex-horizontal weapon-filter-container">
+            <p class="subtitle-text">Grenades:</p>
+        </div>
+        <!-- <div class="flex-horizontal weapon-filter-container weapon-checkbox-container" (click)="toggleCategory('Grenades')">
+            <p class="secondary-text">Grenades</p>
+            <input type="checkbox" [checked]="!isCategoryDissabled('Grenades')">
+        </div> -->
+        <div class="flex-horizontal weapon-filter-container">
+            <ng-container *ngFor="let weapon of grenades">
+                <button class="weapon-filter-button" (click)="toggleWeapon(weapon.id)">
+                    <img [src]="weapon.iconPath" alt="{{ weapon.name }} toggle" class="weapon-filter-icon"
+                        [class.weapon-filter-icon-disabled]="disabledIds.includes(weapon.id)">
+                </button>
+            </ng-container>
+        </div>
+    </div>
 </div>
