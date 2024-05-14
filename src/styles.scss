@@ -94,7 +94,14 @@ p {
     align-items: center;
 }
 
+// Sizes the body to include the verical scroll bar to prevent the layout from 
+// becoming off-center
+html{
+    overflow: auto;
+    overflow-x: hidden;
+}
 
 body{
-    overflow-x: hidden;
+    overflow-y: scroll;
+    box-sizing: border-box;
 }
