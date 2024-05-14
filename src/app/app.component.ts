@@ -10,6 +10,8 @@ import { WeaponDisplayComponent } from './weapon-display/weapon-display.componen
 import { WeaponRandomiserComponent } from './weapon-randomiser/weapon-randomiser.component';
 import { WeaponFiltersComponent } from './weapon-filters/weapon-filters.component';
 import { WarbondFiltersComponent } from './warbond-filters/warbond-filters.component';
+import { RandomiseButtonComponent } from './randomise-button/randomise-button.component';
+
 
 @Component({
   selector: 'app-root',
@@ -25,7 +27,8 @@ import { WarbondFiltersComponent } from './warbond-filters/warbond-filters.compo
     WeaponDisplayComponent,
     WeaponRandomiserComponent,
     WeaponFiltersComponent,
-    WarbondFiltersComponent
+    WarbondFiltersComponent,
+    RandomiseButtonComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -54,6 +57,5 @@ export class AppComponent {
     this.WeaponRandomiserComponent.randomise();
     this.stratagemRandomiserComponent.randomise();
     this.boosterRandomiserComponent.randomise();
-
   }
 }

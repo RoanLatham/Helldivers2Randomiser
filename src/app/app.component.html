@@ -2,11 +2,7 @@
   <div class="flex-vertical">
     <div class="flex-vertical randomiser-display">
       <h1 class="title-text">Helldivers 2 Loadout Randomizer</h1>
-      <div>
-        <button class="randomise-button" (click)="randomise()">
-          <p class="primary-text randomise-button-text">randomise</p>
-        </button>
-      </div>
+      <app-randomise-button (randomise)="randomise()"></app-randomise-button>
       <div> <!-- adding this  div so the gap: attribute gets ingored between these too so the gap can instead be added my the wepon displays so the layout doesnt move with multi-line weapon names -->
         <app-weapon-randomiser></app-weapon-randomiser>
         <app-stratagem-randomiser></app-stratagem-randomiser>
