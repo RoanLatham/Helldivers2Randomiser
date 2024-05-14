@@ -68,6 +68,7 @@ export class StratagemFilterStateService {
   toggleOnlyOneSupport() {
     const currentValue = this.onlyOneSupport.value;
     this.onlyOneSupport.next(!currentValue);
+    console.log('Stratefem Filter Service: onlyOneSupport is: '+ this.onlyOneSupport.value)
   }
 
     //BehaviorSubject for the guarenteeSupport weapon setting

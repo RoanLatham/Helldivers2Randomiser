@@ -320,3 +320,32 @@ export const stratagems: Stratagem[] = [
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Robotics%20Workshop/Rocket%20Sentry.svg"
   }
 ];
+export const backpackStratagemIds: number[] = [
+  11,
+  13,
+  17,
+  18,
+  26,
+  34,
+  36,
+  42,
+  43,
+  48
+];
+export const supportWeaponStratagemIds: number[] = [
+  10,
+  12,
+  15,
+  16,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44
+];

@@ -14,6 +14,8 @@ export class StratagemFiltersComponent implements OnInit {
   stratagems = stratagems;
   shipModules: string[] = [];
   disabledIds: number[] = [];
+  onlyOneBackpack: boolean = false;
+  onlyOneSupport: boolean = false;
 
   constructor(private stratagemState: StratagemFilterStateService) {}
 
@@ -26,6 +28,16 @@ export class StratagemFiltersComponent implements OnInit {
     // Subscribe to the disabledIds$ observable
     this.stratagemState.disabledIds$.subscribe((ids) => {
       this.disabledIds = ids;
+    });
+
+    // Subscribe to the onlyOneBackpack$ observable
+    this.stratagemState.onlyOneBackpack$.subscribe((ids) => {
+      this.onlyOneBackpack = ids;
+    });
+
+    // Subscribe to the onlyOneSupport$ observable
+    this.stratagemState.onlyOneSupport$.subscribe((ids) => {
+      this.onlyOneSupport = ids;
     });
   }
 

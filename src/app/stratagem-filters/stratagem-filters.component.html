@@ -1,19 +1,19 @@
 <div class="flex-vertical stratagem-filter-container">
     <div class="flex-horizontal checkbox-container">
         <div class="flex-vertical">
-            <div class="flex-horizontal">
+            <div class="flex-horizontal" (click)="toggleOnlyOneBackpack()">
                 <p class="primary-text"> Only One Backpack</p>
-                <input type="checkbox" (change)="toggleOnlyOneBackpack()">
+                <input type="checkbox" [checked]="onlyOneBackpack">
             </div>
             <!-- <div class="flex-horizontal">
                 <p class="primary-text">Guatentee Backpack</p>
                 <input type="checkbox" (change)="toggleGuatenteeBackpack()">
             </div> -->
         </div>
-        <div class="flex-vertical">
+        <div class="flex-vertical" (click)="toggleOnlyOneSupport()">
             <div class="flex-horizontal">
                 <p class="primary-text">Only One Support Weapon</p>
-                <input type="checkbox" (change)="toggleOnlyOneSupport()">
+                <input type="checkbox" [checked]="onlyOneSupport">
             </div>
             <!-- <div class="flex-horizontal">
                 <p class="primary-text">Guatentee Support Weapon</p>
