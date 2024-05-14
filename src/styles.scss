@@ -3,7 +3,7 @@
     --grey-text: #d9d9d9;
 }
 
-$randomiers-icon-size: 12vmin;
+$randomiers-icon-size: 11vmin;
 $filters-icon-size: 7vmin;
 $filter-icon-gap: 1vmin;
 
@@ -105,4 +105,5 @@ body{
     overflow-y: scroll;
     overflow-x: hidden;
     box-sizing: border-box;
+    margin-bottom: 50vh;
 }
