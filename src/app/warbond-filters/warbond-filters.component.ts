@@ -24,7 +24,7 @@ export class WarbondFiltersComponent implements OnInit {
   }
 
   togglewarbond(id: number): void {
-    console.log('Warbond Filter component:  toggling id: ' + id);
+    // console.log('Warbond Filter component:  toggling id: ' + id);
     this.warbondState.toggleWarbond(id);
   }
 

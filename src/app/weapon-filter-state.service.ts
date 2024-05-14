@@ -29,7 +29,7 @@ export class WeaponFilterStateService {
       this.disableWeapon(id);
     }
 
-    console.log('Weapon filter service: dissabled IDs: ' + this.disabledIds.value);
+    // console.log('Weapon filter service: dissabled IDs: ' + this.disabledIds.value);
   }
 
   disableCategory(category: string): void {
@@ -71,6 +71,6 @@ export class WeaponFilterStateService {
       this.disableCategory(category);
     }
 
-    console.log('Weapon filter service: dissabled IDs: ' + this.disabledIds.value);
+    // console.log('Weapon filter service: dissabled IDs: ' + this.disabledIds.value);
   }
 }
