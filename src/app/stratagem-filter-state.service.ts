@@ -40,6 +40,7 @@ export class StratagemFilterStateService {
   toggleOnlyOneBackpack() {
     const currentValue = this.onlyOneBackpack.value;
     this.onlyOneBackpack.next(!currentValue);
+    // console.log('Strategem Filter Service: onlyOneBackpack is: '+ this.onlyOneBackpack.value)
   }
 
   //BehaviorSubject for the guarenteeBackpack setting
@@ -68,7 +69,7 @@ export class StratagemFilterStateService {
   toggleOnlyOneSupport() {
     const currentValue = this.onlyOneSupport.value;
     this.onlyOneSupport.next(!currentValue);
-    console.log('Stratefem Filter Service: onlyOneSupport is: '+ this.onlyOneSupport.value)
+    // console.log('Strategem Filter Service: onlyOneSupport is: '+ this.onlyOneSupport.value)
   }
 
     //BehaviorSubject for the guarenteeSupport weapon setting
