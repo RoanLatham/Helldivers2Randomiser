@@ -30,6 +30,7 @@ input{
 .stratagem-filter-icon-disabled{
     filter: grayscale(100%);
     background-color: #191919;
+    transition: transform 0.05s ease-in-out;
     transform: scale(90%);
 
     // width: 90%;
