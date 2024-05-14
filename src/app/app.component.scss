@@ -52,6 +52,9 @@ $randomiser-display-gap: 6vmin;
         inset 0 0 4px #60dd81;
     /* Inner glow */
     width: fit-content;
+
+    transition: transform 0.05s ease-in-out;
+    transform: scale(95%);
 }
 
 .randomise-button:active>.randomise-button-text {
