@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BoosterDisplayComponent } from '../booster-display/booster-display.component';
-import { Booster, boosters } from '../boosters';
+import { Booster, boosters, maxBoosterId } from '../boosters';
 import { BoosterFilterStateService } from '../booster-filter-state.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { BoosterFilterStateService } from '../booster-filter-state.service';
 export class BoosterRandomiserComponent {
   id: number = 1;
   disabledIds: number[] = [];
-  maxId: number = boosters[boosters.length - 1].id;
+  maxId: number = maxBoosterId;
 
   constructor(private boosterState: BoosterFilterStateService) {}
 

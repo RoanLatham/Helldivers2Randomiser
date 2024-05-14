@@ -349,3 +349,4 @@ export const supportWeaponStratagemIds: number[] = [
   43,
   44
 ];
+export const maxStratagemId: number = 52;

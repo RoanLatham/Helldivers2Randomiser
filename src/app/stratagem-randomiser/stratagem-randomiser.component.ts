@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StratagemDisplayComponent } from '../stratagem-display/stratagem-display.component';
 import { StratagemFilterStateService } from '../stratagem-filter-state.service';
-import { Stratagem, stratagems, backpackStratagemIds, supportWeaponStratagemIds } from '../stratagems';
+import { Stratagem, stratagems, backpackStratagemIds, supportWeaponStratagemIds, maxStratagemId } from '../stratagems';
 
 @Component({
   selector: 'app-stratagem-randomiser',
@@ -22,8 +22,7 @@ export class StratagemRandomiserComponent implements OnInit {
 
   supportStratagemIDs: number[] = supportWeaponStratagemIds;
 
-  // Determine the maximum ID dynamically, this could be made more preformant by calculating this at compile time
-  maxId: number = stratagems[stratagems.length - 1].id;
+  maxId: number = maxStratagemId;
 
   constructor(private stratagemState: StratagemFilterStateService) {}
 

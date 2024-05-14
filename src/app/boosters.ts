@@ -4,7 +4,6 @@ export interface Booster {
   name: string;
   warbond: string;
   iconPath: string;
-  description: string;
 }
 
 export const boosters: Booster[] = [
@@ -12,63 +11,55 @@ export const boosters: Booster[] = [
     "id": 1,
     "name": "Localization Confusion",
     "warbond": "Cutting Edge",
-    "iconPath": "./assets/Boosters/Cutting%20Edge/Localization%20Confusion.png",
-    "description": "Increase the time between enemy encounters."
+    "iconPath": "./assets/Boosters/Cutting%20Edge/Localization%20Confusion.png"
   },
   {
     "id": 2,
     "name": "Expert Extraction Pilot",
     "warbond": "Democratic Detonation",
-    "iconPath": "./assets/Boosters/Democratic%20Detonation/Expert%20Extraction%20Pilot.png",
-    "description": "Lowers the time it takes for the extraction shuttle to reach the extraction beacon."
+    "iconPath": "./assets/Boosters/Democratic%20Detonation/Expert%20Extraction%20Pilot.png"
   },
   {
     "id": 3,
     "name": "Hellpod Space Optimization",
     "warbond": "Helldivers Mobilize",
-    "iconPath": "./assets/Boosters/Helldivers%20Mobilize/Hellpod%20Space%20Optimization.png",
-    "description": "Helldivers come out of the Hellpod fully stocked on Ammo, Grenades and Stims."
+    "iconPath": "./assets/Boosters/Helldivers%20Mobilize/Hellpod%20Space%20Optimization.png"
   },
   {
     "id": 4,
     "name": "Increased Reinforcement Budget",
     "warbond": "Helldivers Mobilize",
-    "iconPath": "./assets/Boosters/Helldivers%20Mobilize/Increased%20Reinforcement%20Budget.png",
-    "description": "Increase the number of available reinforcements."
+    "iconPath": "./assets/Boosters/Helldivers%20Mobilize/Increased%20Reinforcement%20Budget.png"
   },
   {
     "id": 5,
     "name": "Muscle Enhancement",
     "warbond": "Helldivers Mobilize",
-    "iconPath": "./assets/Boosters/Helldivers%20Mobilize/Muscle%20Enhancement.png",
-    "description": "Allows Helldivers to traverse difficult terrain with ease."
+    "iconPath": "./assets/Boosters/Helldivers%20Mobilize/Muscle%20Enhancement.png"
   },
   {
     "id": 6,
     "name": "Stamina Enhancement",
     "warbond": "Helldivers Mobilize",
-    "iconPath": "./assets/Boosters/Helldivers%20Mobilize/Stamina%20Enhancement.png",
-    "description": "Increases all Helldivers' stamina capacity and recovery."
+    "iconPath": "./assets/Boosters/Helldivers%20Mobilize/Stamina%20Enhancement.png"
   },
   {
     "id": 7,
     "name": "UAV Recon Booster",
     "warbond": "Helldivers Mobilize",
-    "iconPath": "./assets/Boosters/Helldivers%20Mobilize/UAV%20Recon%20Booster.png",
-    "description": "Increase all Helldivers' effective radar range."
+    "iconPath": "./assets/Boosters/Helldivers%20Mobilize/UAV%20Recon%20Booster.png"
   },
   {
     "id": 8,
     "name": "Vitality Enhancement",
     "warbond": "Helldivers Mobilize",
-    "iconPath": "./assets/Boosters/Helldivers%20Mobilize/Vitality%20Enhancement.png",
-    "description": "Allows all Helldivers to resist limb injury."
+    "iconPath": "./assets/Boosters/Helldivers%20Mobilize/Vitality%20Enhancement.png"
   },
   {
     "id": 9,
     "name": "Flexible Reinforcement Budget",
     "warbond": "Steeled Veterans",
-    "iconPath": "./assets/Boosters/Steeled%20Veterans/Flexible%20Reinforcement%20Budget.png",
-    "description": "Reduces time until new reinforcements are granted once they've been depleted."
+    "iconPath": "./assets/Boosters/Steeled%20Veterans/Flexible%20Reinforcement%20Budget.png"
   }
 ];
+export const maxBoosterId: number = 9;
