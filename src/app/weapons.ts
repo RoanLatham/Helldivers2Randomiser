@@ -244,3 +244,54 @@ export const grenades: Weapon[] = [
     "iconPath": "./assets/Weapons/Grenades/Grenades/Steeled%20Veterans/G-10%20Incendiary%20Grenade.png"
   }
 ];
+export const categoryWeaponIds: { [category: string]: number[] } = {
+  "Grenades": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "Assault Rifles": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "Energy Based": [
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "Explosive": [
+    17,
+    18,
+    19
+  ],
+  "Marksman Rifles": [
+    20,
+    21
+  ],
+  "Shotguns": [
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "Submachine Guns": [
+    27,
+    28
+  ],
+  "Secondary Weapons": [
+    29,
+    30,
+    31,
+    32,
+    33
+  ]
+};

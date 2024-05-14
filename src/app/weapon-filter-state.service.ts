@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, concatMap } from 'rxjs';
-import { primaryWeapons, secondaryWeapons, grenades } from './weapons';
+import { primaryWeapons, secondaryWeapons, grenades, categoryWeaponIds  } from './weapons';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WeaponFilterStateService {
+  categoryWeaponIds = categoryWeaponIds;
+
   // BehaviorSubject for individual Weapons the user disabled
   private disabledIds = new BehaviorSubject<number[]>([]);
   disabledIds$ = this.disabledIds.asObservable();
@@ -31,22 +33,14 @@ export class WeaponFilterStateService {
   }
 
   disableCategory(category: string): void {
-    const categoryWeaponIds = [
-      ...primaryWeapons.filter(weapon => weapon.category === category).map(weapon => weapon.id),
-      ...secondaryWeapons.filter(weapon => weapon.category === category).map(weapon => weapon.id),
-      ...grenades.filter(weapon => weapon.category === category).map(weapon => weapon.id)
-    ];
+    const categoryWeaponIds = this.categoryWeaponIds[category] || [];
 
     // Ensure no duplicates when adding to disabledIds
     this.disabledIds.next([...new Set([...this.disabledIds.value, ...categoryWeaponIds])]);
   }
 
   enableCategory(category: string): void {
-    const categoryWeaponIds = [
-      ...primaryWeapons.filter(weapon => weapon.category === category).map(weapon => weapon.id),
-      ...secondaryWeapons.filter(weapon => weapon.category === category).map(weapon => weapon.id),
-      ...grenades.filter(weapon => weapon.category === category).map(weapon => weapon.id)
-    ];
+    const categoryWeaponIds = this.categoryWeaponIds[category] || [];
 
     // Remove the IDs of the enabled category from disabledIds
     this.disabledIds.next(this.disabledIds.value.filter(id => !categoryWeaponIds.includes(id)));
@@ -55,11 +49,7 @@ export class WeaponFilterStateService {
   toggleCategory(category: string): void {
     // console.log('Weapon Filter Service: Attempting to toggle category: ' + category);
 
-    const categoryWeaponIds = [
-      ...primaryWeapons.filter(weapon => weapon.category === category).map(weapon => weapon.id),
-      ...secondaryWeapons.filter(weapon => weapon.category === category).map(weapon => weapon.id),
-      ...grenades.filter(weapon => weapon.category === category).map(weapon => weapon.id)
-    ];
+    const categoryWeaponIds = this.categoryWeaponIds[category] || [];
 
 
     // Check if the category is currently disabled
