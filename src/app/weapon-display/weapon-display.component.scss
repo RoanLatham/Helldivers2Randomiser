@@ -19,7 +19,8 @@
     // multi-line text doens not move the layout
     // this is done instead of overflow visible so that the layout will 
     // still shift in very extereme broswer window sizes
-    min-height: calc(3rem + $randomiser-display-gap);
+    min-height: calc(3rem + 0.333333 * #{$randomiser-display-gap});
+
 }
 
 .secondary-text {
@@ -46,4 +47,5 @@
     // the grenade display has the same witdth as the primary/secondary weapon displays
     // despite its icon having a diffrent width + apsect ratio
     width: calc($randomiers-icon-size * (250 / 134));   
+    margin-bottom: calc(0.666666 * #{$randomiser-display-gap});
 }
