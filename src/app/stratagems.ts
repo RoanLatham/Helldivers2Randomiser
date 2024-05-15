@@ -56,12 +56,6 @@ export const stratagems: Stratagem[] = [
     "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Engineering%20Bay/Anti-Personnel%20Minefield.svg"
   },
   {
-    "id": 9,
-    "name": "Anti-Tank Mines",
-    "shipModule": "Engineering Bay",
-    "iconPath": "./assets/Helldivers-2-Stratagems-icons-svg-master/Engineering%20Bay/Anti-Tank%20Mines.svg"
-  },
-  {
     "id": 10,
     "name": "Arc Thrower",
     "shipModule": "Engineering Bay",
