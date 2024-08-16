@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { StratagemDisplayComponent } from './stratagem-display/stratagem-display.component';
 import { StratagemRandomiserComponent } from './stratagem-randomiser/stratagem-randomiser.component';
@@ -11,6 +11,7 @@ import { WeaponRandomiserComponent } from './weapon-randomiser/weapon-randomiser
 import { WeaponFiltersComponent } from './weapon-filters/weapon-filters.component';
 import { WarbondFiltersComponent } from './warbond-filters/warbond-filters.component';
 import { RandomiseButtonComponent } from './randomise-button/randomise-button.component';
+import { GtagService } from './gtag-service.service';
 
 
 @Component({
@@ -30,10 +31,13 @@ import { RandomiseButtonComponent } from './randomise-button/randomise-button.co
     WarbondFiltersComponent,
     RandomiseButtonComponent
   ],
+  providers: [
+    GtagService,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'HelldiversLoadout';
   ids: number[] = [];
 
@@ -44,10 +48,14 @@ export class AppComponent {
     }
   }
 
-  constructor() {
+  constructor(private gtagService: GtagService) {
     const numbers = Array.from({ length: 52 }, (_, i) => i + 1);
     this.shuffle(numbers);
     this.ids = numbers.slice(0, 4);
+  }
+
+  ngOnInit(): void {
+    this.gtagService.trackEvent('app component loaded', 'app component loaded', 'PAGE_LOADED');
   }
 
   @ViewChild(WeaponRandomiserComponent) WeaponRandomiserComponent!: WeaponRandomiserComponent
