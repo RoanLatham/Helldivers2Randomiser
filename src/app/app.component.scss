@@ -13,8 +13,12 @@ $randomiser-display-gap: 6.6vmin;
     margin-top: $randomiser-display-gap;
 }
 
-.filters-container{
+.main-content-container {
     width: 90vmin;
+}
+
+.filters-container {
+    width: 100%;
     gap: $randomiser-display-gap;
     overflow: hidden;
 }

@@ -12,6 +12,7 @@ import { WeaponFiltersComponent } from './weapon-filters/weapon-filters.componen
 import { WarbondFiltersComponent } from './warbond-filters/warbond-filters.component';
 import { RandomiseButtonComponent } from './randomise-button/randomise-button.component';
 import { GtagService } from './gtag-service.service';
+import { LearnMoreComponent } from './learn-more/learn-more.component';
 
 
 @Component({
@@ -29,7 +30,8 @@ import { GtagService } from './gtag-service.service';
     WeaponRandomiserComponent,
     WeaponFiltersComponent,
     WarbondFiltersComponent,
-    RandomiseButtonComponent
+    RandomiseButtonComponent,
+    LearnMoreComponent
   ],
   providers: [
     GtagService,
