@@ -94,7 +94,8 @@
             "assets": [
               "src/favicon.ico",
               "src/HDR_Icon_shuffle.png",
-              "src/assets"
+              "src/assets",
+              "src/sitemap.xml"
             ],
             "styles": [
               "src/styles.scss"
