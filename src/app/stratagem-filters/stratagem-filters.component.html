@@ -1,39 +1,71 @@
-<div class="flex-vertical stratagem-filter-container">
+<div class="stratagem-filter-section">
+  <!-- Component-level collapsible header -->
+  <div class="component-header" (click)="toggleStratagemCollapse()">
+    <h3 class="component-title">Stratagems</h3>
+    <img
+      [src]="'assets/next.png'"
+      alt="Toggle stratagems"
+      class="chevron-icon"
+      [class.chevron-icon-down]="stratagemCollapsed"
+    />
+  </div>
+
+  <div class="component-content" [class.collapsed]="stratagemCollapsed">
     <div class="flex-horizontal checkboxes-container">
-        <div class="flex-vertical">
-            <div class="flex-horizontal checkbox-container" (click)="toggleOnlyOneBackpack()">
-                <p class="primary-text"> Only One Backpack</p>
-                <input type="checkbox" [checked]="onlyOneBackpack">
-            </div>
-            <!-- <div class="flex-horizontal">
-                <p class="primary-text">Guatentee Backpack</p>
-                <input type="checkbox" (change)="toggleGuatenteeBackpack()">
-            </div> -->
+      <div class="flex-vertical">
+        <div
+          class="flex-horizontal checkbox-container"
+          (click)="toggleOnlyOneBackpack()"
+        >
+          <p class="primary-text">Only One Backpack</p>
+          <input type="checkbox" [checked]="onlyOneBackpack" />
         </div>
-        <div class="flex-vertical checkbox-container" (click)="toggleOnlyOneSupport()">
-            <div class="flex-horizontal">
-                <p class="primary-text">Only One Support Weapon</p>
-                <input type="checkbox" [checked]="onlyOneSupport">
-            </div>
-            <!-- <div class="flex-horizontal">
-                <p class="primary-text">Guatentee Support Weapon</p>
-                <input type="checkbox" (change)="toggleGuatenteeSupport()">
-            </div> -->
+        <!-- <div class="flex-horizontal">
+                    <p class="primary-text">Guatentee Backpack</p>
+                    <input type="checkbox" (change)="toggleGuatenteeBackpack()">
+                </div> -->
+      </div>
+      <div
+        class="flex-vertical checkbox-container"
+        (click)="toggleOnlyOneSupport()"
+      >
+        <div class="flex-horizontal">
+          <p class="primary-text">Only One Support Weapon</p>
+          <input type="checkbox" [checked]="onlyOneSupport" />
         </div>
+        <!-- <div class="flex-horizontal">
+                    <p class="primary-text">Guatentee Support Weapon</p>
+                    <input type="checkbox" (change)="toggleGuatenteeSupport()">
+                </div> -->
+      </div>
     </div>
+
     <div class="flex-horizontal stratagem-filter-module-container">
-        <p class="subtitle-text">Enabled Stratagems:</p>
+      <p class="secondary-text">Stratagem Types</p>
     </div>
     <div class="flex-vertical">
-        <div class="flex-horizontal stratagem-filter-module-container" *ngFor="let module of shipModules">
-            <ng-container *ngFor="let stratagem of stratagems">
-                <button class="secondary-text stratagem-filter-button" *ngIf="stratagem.shipModule === module"
-                    (click)="toggleStratagem(stratagem.id)">
-                    <img [src]="stratagem.iconPath" alt="{{ stratagem.name }} toggle" class="stratagem-filter-icon"
-                        [class.stratagem-filter-icon-disabled]="disabledIds.includes(stratagem.id)">
-                    <!-- {{ stratagem.name }} -->
-                </button>
-            </ng-container>
-        </div>
+      <div
+        class="flex-horizontal stratagem-filter-module-container"
+        *ngFor="let module of shipModules"
+      >
+        <ng-container *ngFor="let stratagem of stratagems">
+          <button
+            class="secondary-text stratagem-filter-button"
+            *ngIf="stratagem.shipModule === module"
+            (click)="toggleStratagem(stratagem.id)"
+          >
+            <img
+              [src]="stratagem.iconPath"
+              alt="{{ stratagem.name }} toggle"
+              class="stratagem-filter-icon"
+              [class.stratagem-filter-icon-disabled]="
+                disabledIds.includes(stratagem.id)
+              "
+            />
+            <!-- {{ stratagem.name }} -->
+          </button>
+        </ng-container>
+      </div>
     </div>
+  </div>
 </div>

@@ -16,6 +16,7 @@ export class StratagemFiltersComponent implements OnInit {
   disabledIds: number[] = [];
   onlyOneBackpack: boolean = false;
   onlyOneSupport: boolean = false;
+  stratagemCollapsed: boolean = false;
 
   constructor(private stratagemState: StratagemFilterStateService) {}
 
@@ -59,5 +60,9 @@ export class StratagemFiltersComponent implements OnInit {
 
   toggleGuatenteeSupport(): void {
     this.stratagemState.toggleGuatenteeSupport();
+  }
+
+  toggleStratagemCollapse(): void {
+    this.stratagemCollapsed = !this.stratagemCollapsed;
   }
 }
