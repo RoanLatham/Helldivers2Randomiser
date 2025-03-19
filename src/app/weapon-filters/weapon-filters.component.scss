@@ -2,10 +2,10 @@
 
 .weapon-filter-container {
   display: flex;
-  justify-content: flex-start;
-  width: 100%;
-  margin-bottom: 1rem;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0.5rem;
+  gap: 0.25rem;
 }
 
 .weapon-filter-section {
@@ -50,7 +50,9 @@
 }
 
 .weapon-filter-icon {
-  height: 100%;
+  height: var(--icon-size-sm);
+  width: 100%;
+  object-fit: contain;
   transition: all 0.2s ease;
 }
 
