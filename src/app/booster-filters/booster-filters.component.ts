@@ -3,11 +3,12 @@ import { Booster, boosters } from '../boosters';
 import { CommonModule } from '@angular/common';
 import { BoosterFilterStateService } from '../booster-filter-state.service';
 import { WarbondFilterStateService } from '../warbond-filter-state.service';
+import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
 
 @Component({
   selector: 'app-booster-filters',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CollapsibleSectionComponent],
   templateUrl: './booster-filters.component.html',
   styleUrl: './booster-filters.component.scss',
 })
@@ -28,8 +29,12 @@ export class BoosterFiltersComponent implements OnInit {
     });
   }
 
-  toggleBoosterCollapse(): void {
-    this.boosterCollapsed = !this.boosterCollapsed;
+  toggleBoosterCollapse(collapsed?: boolean): void {
+    if (collapsed !== undefined) {
+      this.boosterCollapsed = collapsed;
+    } else {
+      this.boosterCollapsed = !this.boosterCollapsed;
+    }
   }
 
   toggleBooster(id: number): void {
