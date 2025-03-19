@@ -1,47 +1,54 @@
-// @import '../../styles.scss';
-
+@import "../../styles.scss";
 
 .learn-more-section {
-  width: 90vmin;
+  width: 100%;
   margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-sizing: border-box;
 
-  h2,h3, ul, ol {
+  h2,
+  h3,
+  ul,
+  ol {
     color: white;
-    }
+  }
 }
 
-li{
-    margin-bottom: 0.3rem;
+li {
+  margin-bottom: 0.3rem;
 }
 
 .separator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: auto;
-  
-    h2 {
-      margin-bottom: 1rem;
-    }
-  
-    .down-arrow {
-      width: 24px;
-      height: 24px;
-      animation: bounce 2s infinite;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: auto;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .down-arrow {
+    width: 24px;
+    height: 24px;
+    animation: bounce 2s infinite;
+  }
 }
 
 .content {
   text-align: left;
 
-  h2,h3 {
+  h2,
+  h3 {
     margin-bottom: 0.55rem;
   }
-
 }
 
-.feature-list, .usage-steps {
+.feature-list,
+.usage-steps {
   padding-left: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -57,11 +64,11 @@ li{
 }
 
 .content-section {
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 .usage-steps,
-.feature-list{
-    margin-top: 0;
-    margin-bottom: 0;
+.feature-list {
+  margin-top: 0;
+  margin-bottom: 0;
 }
