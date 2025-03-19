@@ -1,24 +1,171 @@
+// Import global styles for access to variables
+@import "../styles.scss";
 
-$randomiser-display-gap: 6.6vmin;
-
-.seperator {
-    width: 90vmin;
-    background-color: white;
-    height: 1px;
-    margin: $randomiser-display-gap 0;
+// Main styles
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  padding: $spacing-md;
+  padding: 0;
 }
 
-.randomiser-display{
-    gap: $randomiser-display-gap;
-    margin-top: $randomiser-display-gap;
+.title-text {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  text-align: center;
+  margin-bottom: $spacing-md;
+}
+
+.seperator {
+  width: var(--container-width);
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 2px;
+  margin: $spacing-lg 0;
+  border-radius: 1px;
+}
+
+.randomiser-display {
+  gap: $randomiser-display-gap;
+  margin-top: $spacing-md;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-content-container {
-    width: 90vmin;
+  width: var(--container-width);
+  max-width: 100%;
 }
 
 .filters-container {
-    width: 100%;
-    gap: $randomiser-display-gap;
-    overflow: hidden;
+  width: 100%;
+  gap: $spacing-lg;
+  overflow: hidden;
+}
+
+// Shared component styles
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-sm;
+}
+
+.flex-vertical-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.randomiser-display-container {
+  gap: 3rem;
+}
+
+// Typography
+.primary-text {
+  font-size: var(--text-primary-size);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.secondary-text {
+  font-size: var(--text-secondary-size);
+  font-weight: 400;
+  opacity: 0.9;
+  letter-spacing: 0.01em;
+}
+
+.subtitle-text {
+  font-size: calc(var(--text-primary-size) * 1.1);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: $spacing-xs;
+}
+
+// Responsive adjustments
+@media (max-width: $desktop) {
+  .randomiser-display {
+    gap: $spacing-md;
+  }
+
+  .filters-container {
+    gap: $spacing-md;
+  }
+
+  .seperator {
+    margin: $spacing-md 0;
+  }
+}
+
+@media (max-width: $mobile) {
+  .flex-horizontal {
+    gap: $spacing-xs;
+  }
+
+  .randomiser-display {
+    gap: $spacing-sm;
+  }
+}
+
+.filters-header {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 1.75rem;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  margin-bottom: 1.75rem;
+  border-left: 5px solid var(--accent-color);
+  width: 100%;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+}
+
+.filters-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  flex-grow: 1;
+  letter-spacing: 0.01em;
+}
+
+.filters-header .chevron-icon {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform: rotate(-90deg); /* Default facing up */
+}
+
+.filters-header .chevron-icon-down {
+  transform: rotate(90deg); /* Rotate to face down when collapsed */
+}
+
+.filters-content {
+  overflow: hidden;
+  transition: max-height 0.5s ease, margin-bottom 0.3s ease;
+  max-height: 5000px; /* Larger value to accommodate all filters */
+  width: 100%;
+}
+
+.filters-content.collapsed {
+  max-height: 0;
+  margin-bottom: 0;
 }

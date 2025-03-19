@@ -3,27 +3,47 @@
     <div class="flex-vertical randomiser-display">
       <h1 class="title-text">Helldivers 2 Loadout Randomiser</h1>
       <app-randomise-button (randomise)="randomise()"></app-randomise-button>
-      <div> <!-- adding this  div so the gap: attribute gets ingored between these too so the gap can instead be added my the wepon displays so the layout doesnt move with multi-line weapon names -->
+      <div class="flex-vertical randomiser-display-container">
         <app-weapon-randomiser></app-weapon-randomiser>
         <app-stratagem-randomiser></app-stratagem-randomiser>
+        <app-booster-randomiser></app-booster-randomiser>
       </div>
-      <app-booster-randomiser></app-booster-randomiser>
     </div>
-    <div style="width: 100%; justify-content: center; align-items: center; display: flex;">
+    <div
+      style="
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      "
+    >
       <div class="seperator"></div>
     </div>
     <div class="flex-vertical-center">
       <div class="main-content-container">
-      <div class="flex-vertical filters-container">
-        <app-warbond-filters></app-warbond-filters>
-        <app-weapon-filters></app-weapon-filters>
-        <app-stratagem-filters></app-stratagem-filters>
-        <app-booster-filters></app-booster-filters>
-      </div>
-      <div>
-        <div class="seperator"></div>
-        <app-learn-more></app-learn-more>
-      </div>
+        <div class="flex-vertical filters-container">
+          <!-- Filters Toggle Header -->
+          <div class="filters-header" (click)="toggleFiltersCollapse()">
+            <h2 class="component-title filters-title">Filters & Options</h2>
+            <img
+              [src]="'assets/next.png'"
+              alt="Toggle filters"
+              class="chevron-icon"
+              [class.chevron-icon-down]="filtersCollapsed"
+            />
+          </div>
+
+          <div class="filters-content" [class.collapsed]="filtersCollapsed">
+            <app-warbond-filters></app-warbond-filters>
+            <app-weapon-filters></app-weapon-filters>
+            <app-stratagem-filters></app-stratagem-filters>
+            <app-booster-filters></app-booster-filters>
+          </div>
+        </div>
+        <div>
+          <div class="seperator"></div>
+          <app-learn-more></app-learn-more>
+        </div>
       </div>
     </div>
   </div>

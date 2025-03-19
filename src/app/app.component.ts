@@ -14,7 +14,6 @@ import { RandomiseButtonComponent } from './randomise-button/randomise-button.co
 import { GtagService } from './gtag-service.service';
 import { LearnMoreComponent } from './learn-more/learn-more.component';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -31,17 +30,16 @@ import { LearnMoreComponent } from './learn-more/learn-more.component';
     WeaponFiltersComponent,
     WarbondFiltersComponent,
     RandomiseButtonComponent,
-    LearnMoreComponent
+    LearnMoreComponent,
   ],
-  providers: [
-    GtagService,
-  ],
+  providers: [GtagService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
   title = 'HelldiversLoadout';
   ids: number[] = [];
+  filtersCollapsed: boolean = false;
 
   shuffle(array: number[]) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -57,15 +55,26 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.gtagService.trackEvent('app component loaded', 'app component loaded', 'PAGE_LOADED');
+    this.gtagService.trackEvent(
+      'app component loaded',
+      'app component loaded',
+      'PAGE_LOADED'
+    );
   }
 
-  @ViewChild(WeaponRandomiserComponent) WeaponRandomiserComponent!: WeaponRandomiserComponent
-  @ViewChild(StratagemRandomiserComponent) stratagemRandomiserComponent!: StratagemRandomiserComponent;
-  @ViewChild(BoosterRandomiserComponent) boosterRandomiserComponent!: BoosterRandomiserComponent;
+  @ViewChild(WeaponRandomiserComponent)
+  WeaponRandomiserComponent!: WeaponRandomiserComponent;
+  @ViewChild(StratagemRandomiserComponent)
+  stratagemRandomiserComponent!: StratagemRandomiserComponent;
+  @ViewChild(BoosterRandomiserComponent)
+  boosterRandomiserComponent!: BoosterRandomiserComponent;
   randomise(): void {
     this.WeaponRandomiserComponent.randomise();
     this.stratagemRandomiserComponent.randomise();
     this.boosterRandomiserComponent.randomise();
+  }
+
+  toggleFiltersCollapse(): void {
+    this.filtersCollapsed = !this.filtersCollapsed;
   }
 }
