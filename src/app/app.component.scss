@@ -43,7 +43,6 @@
 
 .filters-container {
   width: 100%;
-  gap: $spacing-lg;
   overflow: hidden;
 }
 
@@ -127,7 +126,6 @@
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.25s ease;
-  margin-bottom: 1.75rem;
   border-left: 5px solid var(--accent-color);
   width: 100%;
   box-sizing: border-box;
