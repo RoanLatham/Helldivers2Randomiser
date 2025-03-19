@@ -24,9 +24,9 @@
 
     <div class="category-content" [class.collapsed]="primaryCollapsed">
       <div *ngFor="let category of weaponCategories">
-        <!-- Category Checkbox -->
+        <!-- Category Checkbox - interactive with both classes -->
         <div
-          class="weapon-checkbox-container"
+          class="weapon-category-label-container weapon-category-checkbox-container"
           (click)="toggleCategory(category)"
         >
           <p class="secondary-text weapon-filter-category">{{ category }}</p>
@@ -68,7 +68,8 @@
     </div>
 
     <div class="category-content" [class.collapsed]="secondaryCollapsed">
-      <div class="weapon-checkbox-container">
+      <!-- Non-interactive label - just base class -->
+      <div class="weapon-category-label-container">
         <p class="secondary-text weapon-filter-category">Secondary Weapons</p>
       </div>
 
@@ -103,7 +104,8 @@
     </div>
 
     <div class="category-content" [class.collapsed]="grenadesCollapsed">
-      <div class="weapon-checkbox-container">
+      <!-- Non-interactive label - just base class -->
+      <div class="weapon-category-label-container">
         <p class="secondary-text weapon-filter-category">Grenades</p>
       </div>
 

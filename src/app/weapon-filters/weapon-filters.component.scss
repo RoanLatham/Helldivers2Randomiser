@@ -60,21 +60,31 @@
   transform: scale(0.9);
 }
 
-.weapon-checkbox-container {
+/* Base class for all checkbox containers (shared styling) */
+.weapon-category-label-container {
   display: flex;
   align-items: center;
   margin: 0.5rem 0;
   padding: 0.5rem 0.75rem;
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
   margin-top: 0.5rem;
   width: 100%;
   box-sizing: border-box;
+}
+
+/* Extension class for interactive checkbox containers */
+.weapon-category-checkbox-container {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Make checkbox cursor pointer only in interactive containers */
+  input[type="checkbox"] {
+    cursor: pointer;
   }
 }
 
@@ -133,10 +143,10 @@
   font-size: 1.05rem;
 }
 
+/* Base styling for all checkboxes */
 input[type="checkbox"] {
   width: 16px;
   height: 16px;
-  cursor: pointer;
   accent-color: var(--accent-color);
 }
 
@@ -154,7 +164,7 @@ input[type="checkbox"] {
     font-size: 1.1rem;
   }
 
-  .weapon-checkbox-container {
+  .weapon-category-label-container {
     padding: 0.4rem 0.6rem;
   }
 
@@ -181,7 +191,7 @@ input[type="checkbox"] {
     margin-bottom: 0.75rem;
   }
 
-  .weapon-checkbox-container {
+  .weapon-category-label-container {
     padding: 0.3rem 0.5rem;
     font-size: 0.9rem;
   }
