@@ -23,22 +23,17 @@
       <div class="main-content-container">
         <div class="flex-vertical filters-container">
           <!-- Filters Toggle Header -->
-          <div class="filters-header" (click)="toggleFiltersCollapse()">
-            <h2 class="component-title filters-title">Filters & Options</h2>
-            <img
-              [src]="'assets/next.png'"
-              alt="Toggle filters"
-              class="chevron-icon"
-              [class.chevron-icon-down]="filtersCollapsed"
-            />
-          </div>
-
-          <div class="filters-content" [class.collapsed]="filtersCollapsed">
+          <app-collapsible-section
+            [title]="'Filters & Options'"
+            [variant]="'filters'"
+            [initiallyCollapsed]="filtersCollapsed"
+            (toggled)="toggleFiltersCollapse($event)"
+          >
             <app-warbond-filters></app-warbond-filters>
             <app-weapon-filters></app-weapon-filters>
             <app-stratagem-filters></app-stratagem-filters>
             <app-booster-filters></app-booster-filters>
-          </div>
+          </app-collapsible-section>
         </div>
         <div>
           <div class="seperator"></div>

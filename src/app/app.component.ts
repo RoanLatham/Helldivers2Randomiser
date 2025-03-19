@@ -13,6 +13,7 @@ import { WarbondFiltersComponent } from './warbond-filters/warbond-filters.compo
 import { RandomiseButtonComponent } from './randomise-button/randomise-button.component';
 import { GtagService } from './gtag-service.service';
 import { LearnMoreComponent } from './learn-more/learn-more.component';
+import { CollapsibleSectionComponent } from './shared/collapsible-section/collapsible-section.component';
 
 @Component({
   selector: 'app-root',
@@ -31,6 +32,7 @@ import { LearnMoreComponent } from './learn-more/learn-more.component';
     WarbondFiltersComponent,
     RandomiseButtonComponent,
     LearnMoreComponent,
+    CollapsibleSectionComponent,
   ],
   providers: [GtagService],
   templateUrl: './app.component.html',
@@ -74,7 +76,11 @@ export class AppComponent implements OnInit {
     this.boosterRandomiserComponent.randomise();
   }
 
-  toggleFiltersCollapse(): void {
-    this.filtersCollapsed = !this.filtersCollapsed;
+  toggleFiltersCollapse(collapsed?: boolean): void {
+    if (collapsed !== undefined) {
+      this.filtersCollapsed = collapsed;
+    } else {
+      this.filtersCollapsed = !this.filtersCollapsed;
+    }
   }
 }
