@@ -14,6 +14,7 @@ import { WarbondFilterStateService } from '../warbond-filter-state.service';
 export class BoosterFiltersComponent implements OnInit {
   boosters = boosters;
   disabledIds: number[] = [];
+  boosterCollapsed: boolean = false;
 
   constructor(
     private boosterState: BoosterFilterStateService,
@@ -27,8 +28,13 @@ export class BoosterFiltersComponent implements OnInit {
     });
   }
 
-  togglebooster(id: number): void {
+  toggleBoosterCollapse(): void {
+    this.boosterCollapsed = !this.boosterCollapsed;
+  }
+
+  toggleBooster(id: number): void {
     // console.log("Filter component:  Dissabling id: " + id)
     this.boosterState.toggleBooster(id);
+    // The subscription in ngOnInit will update disabledIds
   }
 }

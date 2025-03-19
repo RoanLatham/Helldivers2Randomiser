@@ -1,14 +1,32 @@
-<div class="flex-vertical booster-filter-container">
-    <div class="flex-horizontal booster-filter-module-container">
-        <p class="subtitle-text">Enabled Boosters:</p>
+<div class="booster-filter-section">
+  <!-- Component-level collapsible header -->
+  <div class="component-header" (click)="toggleBoosterCollapse()">
+    <h3 class="component-title">Boosters</h3>
+    <img
+      [src]="'assets/next.png'"
+      alt="Toggle boosters"
+      class="chevron-icon"
+      [class.chevron-icon-down]="boosterCollapsed"
+    />
+  </div>
+
+  <div class="component-content" [class.collapsed]="boosterCollapsed">
+    <div class="booster-filter-module-container">
+      <ng-container *ngFor="let booster of boosters">
+        <button
+          class="booster-filter-button"
+          (click)="toggleBooster(booster.id)"
+        >
+          <img
+            [src]="booster.iconPath"
+            alt="{{ booster.name }} toggle"
+            class="booster-filter-icon"
+            [class.booster-filter-icon-disabled]="
+              disabledIds.includes(booster.id)
+            "
+          />
+        </button>
+      </ng-container>
     </div>
-    <div class="flex-horizontal booster-filter-module-container">
-        <div *ngFor="let booster of boosters">
-            <button class="secondary-text booster-filter-button" (click)="togglebooster(booster.id)">
-                <img [src]="booster.iconPath" alt="{{ booster.name }} toggle" class="booster-filter-icon"
-                    [class.booster-filter-icon-disabled]="disabledIds.includes(booster.id)">
-                <!-- {{ booster.name }} -->
-            </button>
-        </div>
-    </div>
+  </div>
 </div>
