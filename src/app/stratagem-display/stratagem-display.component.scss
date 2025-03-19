@@ -26,8 +26,8 @@
   background-color: black;
   padding: 0.5rem;
   margin-bottom: 0.75rem;
-  width: var(--icon-size-lg);
-  height: var(--icon-size-lg);
+  width: calc(var(--icon-size-lg) * 0.9);
+  height: calc(var(--icon-size-lg) * 0.9);
 }
 
 .stratagem-icon {
