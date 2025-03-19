@@ -69,7 +69,7 @@
 }
 
 .randomiser-display-container {
-  gap: 3rem;
+  gap: 2rem;
 }
 
 // Typography
@@ -97,6 +97,10 @@
 @media (max-width: $desktop) {
   .randomiser-display {
     gap: $spacing-md;
+  }
+
+  .randomiser-display-container {
+    gap: 1rem;
   }
 
   .filters-container {
