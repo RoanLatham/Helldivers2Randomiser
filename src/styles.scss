@@ -1,113 +1,242 @@
 /* You can add global styles to this file, and also import other style files */
-:root {
-    --grey-text: #d9d9d9;
-}
 
-$randomiers-icon-size: 11vmin;
-$filters-icon-size: 6.5vmin;
-$filter-icon-gap: 1vmin;
+// Design system variables
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 3rem;
+$spacing-xl: 5rem;
 
-@font-face {
-    font-family: 'Swiss 721';
-    src: url('./assets/fonts/Swiss 721 Extended Bold.otf');
-    font-weight: bold;
-}
+// Icon sizing
+$icon-size-sm: 4.5rem;
+$icon-size-md: 6rem;
+$icon-size-lg: 6.5rem;
 
-@font-face {
-    font-family: 'Sinclair';
-    src: url('./assets/fonts/FS Sinclair Regular.otf');
-    font-weight: normal;
-}
+// Component spacing
+$randomiser-display-gap: max(3rem, 4vmin);
+$filter-icon-gap: max(0.5rem, 1vmin);
 
-@font-face {
-    font-family: 'Sinclair';
-    src: url('./assets/fonts/FS Sinclair Medium.otf');
-    font-weight: Medium;
-}
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$wide: 1440px;
 
+// Colors
 $background-color: #201e21;
+$accent-color: #ffeb00;
+$grey-text: #d9d9d9;
+
+// Global CSS custom properties
+:root {
+  // Typography
+  --grey-text: #{$grey-text};
+  --accent-color: #{$accent-color};
+
+  // Icon sizes
+  --icon-size-lg: #{$icon-size-lg};
+  --icon-size-md: #{$icon-size-md};
+  --icon-size-sm: #{$icon-size-sm};
+
+  // Typography sizes
+  --text-primary-size: 1.25rem;
+  --text-secondary-size: 0.875rem;
+
+  // Layout
+  --container-width: min(90vw, 1200px);
+}
+
+// Responsive adjustments for custom properties
+@media (max-width: $tablet) {
+  :root {
+    --icon-size-lg: #{$icon-size-md};
+    --icon-size-sm: #{$icon-size-sm * 0.9};
+    --text-primary-size: 1.125rem;
+    --text-secondary-size: 0.8rem;
+  }
+}
+
+@media (max-width: $mobile) {
+  :root {
+    --icon-size-lg: #{$icon-size-md * 0.85};
+    --icon-size-sm: #{$icon-size-sm * 0.8};
+    --text-primary-size: 1rem;
+    --text-secondary-size: 0.75rem;
+  }
+}
+
+@font-face {
+  font-family: "Swiss 721";
+  src: url("./assets/fonts/Swiss 721 Extended Bold.otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Sinclair";
+  src: url("./assets/fonts/FS Sinclair Regular.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Sinclair";
+  src: url("./assets/fonts/FS Sinclair Medium.otf");
+  font-weight: Medium;
+}
 
 body {
-    background-color: $background-color;
-    width: 100vw;
-    margin: 0;
+  background-color: $background-color;
+  width: 100vw;
+  margin: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin-bottom: 50vh;
 }
 
 p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .primary-text {
-    color: white;
-    font-family: 'Sinclair';
-    font-weight: Medium;
-    font-size: 1.5rem;
-    margin: 0px;
-    font-size: 24px;
+  color: white;
+  font-family: "Sinclair";
+  font-weight: Medium;
+  font-size: var(--text-primary-size);
+  margin: 0;
 }
 
 .secondary-text {
-    color: var(--grey-text);
-    font-family: 'Sinclair';
-    font-weight: Medium;
-    margin: 0px;
-    font-size: 16px;
+  color: var(--grey-text);
+  font-family: "Sinclair";
+  font-weight: Medium;
+  margin: 0;
+  font-size: var(--text-secondary-size);
 }
 
 .title-text {
-    color: white;
-    font-family: "Swiss 721";
-    font-weight: "bold";
-    margin: 0px;
+  color: white;
+  font-family: "Swiss 721";
+  font-weight: bold;
+  margin: 0;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
 }
 
 .subtitle-text {
-    color: var(--grey-text);
-    font-family: "Swiss 721";
-    font-weight: "bold";
-    margin: 0px;
-    margin-top: 0.5rem;
-    font-size: 16px;
+  color: var(--grey-text);
+  font-family: "Swiss 721";
+  font-weight: bold;
+  margin: 0;
+  font-size: calc(var(--text-primary-size) * 1.1);
 }
 
 .flex-horizontal {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-sm;
 }
 
 .flex-vertical {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
 }
 
 .flex-vertical-center {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-// Sizes the body to include the verical scroll bar to prevent the layout from 
+// Sizes the body to include the verical scroll bar to prevent the layout from
 // becoming off-center
 html {
-    overflow: auto;
-    overflow-x: hidden;
-}
-
-body {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    margin-bottom: 50vh;
+  overflow: auto;
+  overflow-x: hidden;
 }
 
 img {
-    pointer-events: none;
+  pointer-events: none;
+}
+
+// Responsive adjustments
+@media (max-width: $desktop) {
+  .flex-horizontal {
+    gap: $spacing-xs;
+  }
+}
+
+@media (max-width: $mobile) {
+  .flex-horizontal {
+    gap: calc($spacing-xs / 2);
+  }
+
+  .flex-vertical {
+    gap: calc($spacing-xs / 2);
+  }
+}
+
+.filter-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #ffffff;
+  padding-bottom: 0.5rem;
+  font-family: "Swiss 721", sans-serif;
+}
+
+.component-header {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  margin-bottom: 1.25rem;
+  border-left: 4px solid var(--accent-color);
+  width: 100%;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.component-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: #ffffff;
+  flex-grow: 1;
+  font-family: "Swiss 721", sans-serif;
+}
+
+.component-header .chevron-icon {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform: rotate(-90deg); /* Default facing up */
+}
+
+.component-header .chevron-icon-down {
+  transform: rotate(90deg); /* Rotate to face down when collapsed */
+}
+
+.component-content {
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  max-height: 3000px; /* Larger value for component-level content */
+  width: 100%;
+}
+
+.component-content.collapsed {
+  max-height: 0;
 }
