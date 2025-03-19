@@ -1,7 +1,23 @@
+@import "../../styles.scss";
+
 $stripe-dark: #201e21;
 $stripe-yellow: #48401b;
+$button-active-green: #60dd81;
+$button-yellow: #fde813;
 
 .randomise-button {
+  // Button base styles
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Fixed size that doesn't depend on text size
+  min-width: 280px;
+  height: 100px;
+  padding: 0;
+
+  // Appearance
   background: repeating-linear-gradient(
     45deg,
     $stripe-yellow,
@@ -9,52 +25,82 @@ $stripe-yellow: #48401b;
     $stripe-dark 4px,
     $stripe-dark 8px
   );
-
-  border: 3px solid #fde813;
-  box-shadow: 0 0 5px #4d532f, /* Outer glow */ inset 0 0 4px #d4bf00;
-  /* Inner glow */
-  width: fit-content;
+  border: 3px solid $button-yellow;
+  // border-radius: 4px;
+  box-shadow: 0 0 5px #4d532f, inset 0 0 4px #d4bf00;
   cursor: pointer;
-}
 
-.randomise-button:hover {
-  border: 3px solid white;
-}
+  // Transitions
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 
-//idk but setting the color attibiue in the button wasn't altering the text inside it (even without the <p> it has now, idc to find out why so im doing this
-.randomise-button:hover > .randomise-button-text {
-  color: white;
-}
+  // Hover state
+  &:hover {
+    border-color: white;
 
-.randomise-button:active {
-  border: 3px solid #60dd81;
+    .randomise-button-text {
+      color: white;
+    }
+  }
 
-  background: repeating-linear-gradient(
-    45deg,
-    #1f3b2d,
-    #1f3b2d 3px,
-    #1e211f 4px,
-    #1e211f 8px
-  );
+  // Active/pressed state
+  &:active {
+    border-color: $button-active-green;
+    background: repeating-linear-gradient(
+      45deg,
+      #1f3b2d,
+      #1f3b2d 3px,
+      #1e211f 4px,
+      #1e211f 8px
+    );
+    box-shadow: 0 0 5px #1e211f, inset 0 0 4px $button-active-green;
+    transform: scale(0.95);
 
-  box-shadow: 0 0 5px #1e211f, /* Outer glow */ inset 0 0 4px #60dd81;
-  /* Inner glow */
-  width: fit-content;
-
-  transition: transform 0.05s ease-in-out;
-  transform: scale(95%);
-}
-
-.randomise-button:active > .randomise-button-text {
-  color: #60dd81;
+    .randomise-button-text {
+      color: $button-active-green;
+    }
+  }
 }
 
 .randomise-button-text {
+  // Text styling
   text-transform: uppercase;
-  font-size: 2rem;
-  color: #ffeb00;
-  margin: 1.5rem 2rem;
-  // Stupid font has the text floating above the line so im doing this cursed thing
-  margin-bottom: 1.35rem;
-  line-height: 100%;
+  font-size: 2.5rem;
+  color: $button-yellow;
+  font-family: "Sinclair";
+  font-weight: Medium;
+  line-height: 1;
+
+  // Ensure text doesn't break lines and stays centered
+  white-space: nowrap;
+  text-align: center;
+
+  // Adjust for font baseline issues
+  transform: translateY(-2px);
+
+  // The fonts letters are too high above baseline this is a hack to center it vertically
+  // Fonts that aren't on the baseline should be punishable by death >:(
+  margin-top: 0.45rem;
+}
+
+// Responsive adjustments
+@media (max-width: $tablet) {
+  .randomise-button {
+    min-width: 240px;
+    height: 90px;
+  }
+
+  .randomise-button-text {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: $mobile) {
+  .randomise-button {
+    min-width: 200px;
+    height: 80px;
+  }
+
+  .randomise-button-text {
+    font-size: 3rem;
+  }
 }
