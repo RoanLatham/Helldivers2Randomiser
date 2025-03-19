@@ -1,51 +1,127 @@
-@import '../../styles.scss';
-@import '../app.component.scss';
+@import "../../styles.scss";
+@import "../app.component.scss";
 
 .subtitle-text,
 .primary-text,
 .secondary-text {
-    margin: 0;
-    padding: 0 1vmin;
+  margin: 0;
+  padding: 0 1vmin;
 }
 
-.subtitle-text{
-    margin-top: 1rem;
+.subtitle-text {
+  margin-top: 0.5rem;
 }
 
 .primary-text {
-    margin-top: 0.2rem;
+  margin-top: 0.2rem;
 
-    // Instead of using margin or gap, set the size of the text element so that 
-    // multi-line text doens not move the layout
-    // this is done instead of overflow visible so that the layout will 
-    // still shift in very extereme broswer window sizes
-    min-height: calc(3rem + 0.333333 * #{$randomiser-display-gap});
-
+  // Instead of using margin or gap, set the size of the text element so that
+  // multi-line text doens not move the layout
+  // this is done instead of overflow visible so that the layout will
+  // still shift in very extereme broswer window sizes
+  min-height: calc(3rem + 0.333333 * #{$randomiser-display-gap});
 }
 
 .secondary-text {
-    margin: none;
+  margin: none;
 }
 
-.flex-vertical{
-    align-items: left;
-    justify-items: left;
-    text-align: left;
+.flex-vertical {
+  align-items: center;
+  text-align: center;
 }
 
-.weapon-icon{
-    height: $randomiers-icon-size;
-    // aspect-ratio: 250/134;
-    width: fit-content;
+.weapon-icon {
+  height: var(--icon-size-lg);
+  width: fit-content;
+  max-width: 100%;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
 }
 
-.Weapon-display{
-    margin: 0px 2vmin;
-    // Calculate the width of the weapon display container based on the 
-    // icon height and aspect ratio of the primary/secondary weapon icons
-    // this is done instead of other methods so that
-    // the grenade display has the same witdth as the primary/secondary weapon displays
-    // despite its icon having a diffrent width + apsect ratio
-    width: calc($randomiers-icon-size * (250 / 134));   
-    margin-bottom: calc(0.666666 * #{$randomiser-display-gap});
+.Weapon-display {
+  display: flex;
+  gap: 0;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0 1rem 0rem 1rem;
+  width: clamp(220px, 20vw, 300px);
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.subtitle-text {
+  color: #a8a8a8;
+  margin: 0 0 0.25rem 0;
+  align-self: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.primary-text {
+  margin: 0;
+  text-align: center;
+  font-weight: 600;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.secondary-text {
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .Weapon-display {
+    width: clamp(150px, 27vw, 220px);
+    padding: 0.75rem;
+    margin: 0 0.5rem 0rem 0.5rem;
+  }
+
+  .primary-text {
+    min-height: 2.75rem;
+  }
+
+  .weapon-icon {
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle-text {
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Weapon-display {
+    width: clamp(130px, 40vw, 180px);
+    padding: 0.5rem;
+    margin: 0 0.25rem 0rem 0.25rem;
+  }
+
+  .weapon-icon {
+    margin-bottom: 0.4rem;
+  }
+
+  .primary-text {
+    min-height: 2.5rem;
+  }
+
+  .subtitle-text {
+    font-size: 0.8rem;
+    margin-bottom: 0.15rem;
+  }
 }
