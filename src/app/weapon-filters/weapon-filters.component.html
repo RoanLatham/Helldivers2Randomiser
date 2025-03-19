@@ -1,28 +1,18 @@
 <div class="weapon-filter-section">
-  <!-- Component-level collapsible header -->
-  <div class="component-header" (click)="toggleWeaponCollapse()">
-    <h3 class="component-title">Weapons</h3>
-    <img
-      [src]="'assets/next.png'"
-      alt="Toggle weapons"
-      class="chevron-icon"
-      [class.chevron-icon-down]="weaponCollapsed"
-    />
-  </div>
-
-  <div class="component-content" [class.collapsed]="weaponCollapsed">
-    <!-- Primary Weapons -->
-    <div class="category-header" (click)="togglePrimaryCollapse()">
-      <h4 class="category-title">Primary Weapons</h4>
-      <img
-        [src]="'assets/next.png'"
-        alt="Toggle primary weapons"
-        class="chevron-icon"
-        [class.chevron-icon-down]="primaryCollapsed"
-      />
-    </div>
-
-    <div class="category-content" [class.collapsed]="primaryCollapsed">
+  <!-- Main component section -->
+  <app-collapsible-section
+    [title]="'Weapons'"
+    [variant]="'component'"
+    [initiallyCollapsed]="weaponCollapsed"
+    (toggled)="toggleWeaponCollapse($event)"
+  >
+    <!-- Primary Weapons category -->
+    <app-collapsible-section
+      [title]="'Primary Weapons'"
+      [variant]="'category'"
+      [initiallyCollapsed]="primaryCollapsed"
+      (toggled)="togglePrimaryCollapse($event)"
+    >
       <div *ngFor="let category of weaponCategories">
         <!-- Category Checkbox - interactive with both classes -->
         <div
@@ -54,20 +44,15 @@
           </ng-container>
         </div>
       </div>
-    </div>
+    </app-collapsible-section>
 
-    <!-- Secondary Weapons -->
-    <div class="category-header" (click)="toggleSecondaryCollapse()">
-      <h4 class="category-title">Secondary Weapons</h4>
-      <img
-        [src]="'assets/next.png'"
-        alt="Toggle secondary weapons"
-        class="chevron-icon"
-        [class.chevron-icon-down]="secondaryCollapsed"
-      />
-    </div>
-
-    <div class="category-content" [class.collapsed]="secondaryCollapsed">
+    <!-- Secondary Weapons category -->
+    <app-collapsible-section
+      [title]="'Secondary Weapons'"
+      [variant]="'category'"
+      [initiallyCollapsed]="secondaryCollapsed"
+      (toggled)="toggleSecondaryCollapse($event)"
+    >
       <!-- Non-interactive label - just base class -->
       <div class="weapon-category-label-container">
         <p class="secondary-text weapon-filter-category">Secondary Weapons</p>
@@ -90,20 +75,15 @@
           </button>
         </ng-container>
       </div>
-    </div>
+    </app-collapsible-section>
 
-    <!-- Grenades -->
-    <div class="category-header" (click)="toggleGrenadesCollapse()">
-      <h4 class="category-title">Grenades</h4>
-      <img
-        [src]="'assets/next.png'"
-        alt="Toggle grenades"
-        class="chevron-icon"
-        [class.chevron-icon-down]="grenadesCollapsed"
-      />
-    </div>
-
-    <div class="category-content" [class.collapsed]="grenadesCollapsed">
+    <!-- Grenades category -->
+    <app-collapsible-section
+      [title]="'Grenades'"
+      [variant]="'category'"
+      [initiallyCollapsed]="grenadesCollapsed"
+      (toggled)="toggleGrenadesCollapse($event)"
+    >
       <!-- Non-interactive label - just base class -->
       <div class="weapon-category-label-container">
         <p class="secondary-text weapon-filter-category">Grenades</p>
@@ -126,6 +106,6 @@
           </button>
         </ng-container>
       </div>
-    </div>
-  </div>
+    </app-collapsible-section>
+  </app-collapsible-section>
 </div>

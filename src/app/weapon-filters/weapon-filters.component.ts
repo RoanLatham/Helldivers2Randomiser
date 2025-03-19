@@ -3,11 +3,12 @@ import { primaryWeapons, secondaryWeapons, grenades } from '../weapons';
 import { CommonModule } from '@angular/common';
 import { WeaponFilterStateService } from '../weapon-filter-state.service';
 import { Subscription } from 'rxjs';
+import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
 
 @Component({
   selector: 'app-weapon-filters',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CollapsibleSectionComponent],
   templateUrl: './weapon-filters.component.html',
   styleUrls: ['./weapon-filters.component.scss'],
 })
@@ -83,20 +84,36 @@ export class WeaponFiltersComponent implements OnInit, OnDestroy {
   }
 
   // Methods for section collapse toggling
-  togglePrimaryCollapse(): void {
-    this.primaryCollapsed = !this.primaryCollapsed;
+  togglePrimaryCollapse(collapsed?: boolean): void {
+    if (collapsed !== undefined) {
+      this.primaryCollapsed = collapsed;
+    } else {
+      this.primaryCollapsed = !this.primaryCollapsed;
+    }
   }
 
-  toggleSecondaryCollapse(): void {
-    this.secondaryCollapsed = !this.secondaryCollapsed;
+  toggleSecondaryCollapse(collapsed?: boolean): void {
+    if (collapsed !== undefined) {
+      this.secondaryCollapsed = collapsed;
+    } else {
+      this.secondaryCollapsed = !this.secondaryCollapsed;
+    }
   }
 
-  toggleGrenadesCollapse(): void {
-    this.grenadesCollapsed = !this.grenadesCollapsed;
+  toggleGrenadesCollapse(collapsed?: boolean): void {
+    if (collapsed !== undefined) {
+      this.grenadesCollapsed = collapsed;
+    } else {
+      this.grenadesCollapsed = !this.grenadesCollapsed;
+    }
   }
 
   // Method for component-level collapse toggling
-  toggleWeaponCollapse(): void {
-    this.weaponCollapsed = !this.weaponCollapsed;
+  toggleWeaponCollapse(collapsed?: boolean): void {
+    if (collapsed !== undefined) {
+      this.weaponCollapsed = collapsed;
+    } else {
+      this.weaponCollapsed = !this.weaponCollapsed;
+    }
   }
 }
