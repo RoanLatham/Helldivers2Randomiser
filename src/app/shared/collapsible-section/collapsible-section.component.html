@@ -1,0 +1,17 @@
+<!-- Header with toggle functionality -->
+<div [class]="headerClass" (click)="toggleCollapse()">
+  <!-- Title based on variant type -->
+  <h3 *ngIf="variant !== 'category'" [class]="'component-title ' + titleClass">
+    {{ title }}
+  </h3>
+  <h4 *ngIf="variant === 'category'" [class]="titleClass">{{ title }}</h4>
+
+  <!-- Chevron icon -->
+  <img [src]="chevronIconPath" [alt]="chevronIconAlt" [class]="chevronClass" />
+</div>
+
+<!-- Content container that can be collapsed -->
+<div [class]="contentClass" [class.collapsed]="isCollapsed">
+  <!-- Content provided via ng-content -->
+  <ng-content></ng-content>
+</div>
