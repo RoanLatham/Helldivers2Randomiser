@@ -178,7 +178,6 @@
   }
 
   .checkboxes-container {
-    flex-direction: column;
     gap: 0.5rem;
   }
 
@@ -193,5 +192,20 @@
   .stratagem-filter-icon {
     width: calc(var(--icon-size-sm) * 0.9);
     height: calc(var(--icon-size-sm) * 0.9);
+  }
+}
+
+@media (max-width: $mobile) {
+  .checkboxes-container {
+    width: 100%;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .checkbox-container {
+    padding: auto 0.8rem;
+    .primary-text {
+      font-size: 0.69rem;
+    }
   }
 }

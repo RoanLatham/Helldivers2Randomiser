@@ -194,3 +194,11 @@ input[type="checkbox"] {
     }
   }
 }
+
+@media (max-width: $mobile) {
+  // roughly enough for 2 icons horizontally
+  .weapon-filter-button {
+    width: 45%;
+    height: auto;
+  }
+}
