@@ -1,16 +1,10 @@
 <div class="stratagem-filter-section">
-  <!-- Component-level collapsible header -->
-  <div class="component-header" (click)="toggleStratagemCollapse()">
-    <h3 class="component-title">Stratagems</h3>
-    <img
-      [src]="'assets/next.png'"
-      alt="Toggle stratagems"
-      class="chevron-icon"
-      [class.chevron-icon-down]="stratagemCollapsed"
-    />
-  </div>
-
-  <div class="component-content" [class.collapsed]="stratagemCollapsed">
+  <app-collapsible-section
+    [title]="'Stratagems'"
+    [variant]="'component'"
+    [initiallyCollapsed]="stratagemCollapsed"
+    (toggled)="toggleStratagemCollapse($event)"
+  >
     <div class="flex-horizontal checkboxes-container">
       <div>
         <div
@@ -64,5 +58,5 @@
         </ng-container>
       </div>
     </div>
-  </div>
+  </app-collapsible-section>
 </div>

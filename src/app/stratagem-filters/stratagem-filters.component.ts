@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Stratagem, stratagems } from '../stratagems';
 import { CommonModule } from '@angular/common';
 import { StratagemFilterStateService } from '../stratagem-filter-state.service';
+import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
 
 @Component({
   selector: 'app-stratagem-filters',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CollapsibleSectionComponent],
   templateUrl: './stratagem-filters.component.html',
   styleUrl: './stratagem-filters.component.scss',
 })
@@ -62,7 +63,11 @@ export class StratagemFiltersComponent implements OnInit {
     this.stratagemState.toggleGuatenteeSupport();
   }
 
-  toggleStratagemCollapse(): void {
-    this.stratagemCollapsed = !this.stratagemCollapsed;
+  toggleStratagemCollapse(collapsed?: boolean): void {
+    if (collapsed !== undefined) {
+      this.stratagemCollapsed = collapsed;
+    } else {
+      this.stratagemCollapsed = !this.stratagemCollapsed;
+    }
   }
 }
