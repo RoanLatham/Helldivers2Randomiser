@@ -1,36 +1,107 @@
-@import '../../styles.scss';
+@import "../../styles.scss";
 
-.primary-text,
-.secondary-text {
-    margin: 0;
-    padding: 0 1vmin;
+.stratagem-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0 1rem 0rem 1rem;
+  width: clamp(160px, 16vw, 220px);
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-height: 12rem;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.icon-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 0.5rem;
+  margin-bottom: 0.75rem;
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+}
+
+.stratagem-icon {
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .primary-text {
-    // font-size: 1.5rem;
-    margin-top: 1rem;
+  margin: 0 0 0.25rem 0;
+  text-align: center;
+  font-weight: 600;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .secondary-text {
-    margin-top: 0.2rem;
+  margin: 0;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  color: #a8a8a8;
 }
 
-.icon-background,
-.stratagem-icon {
-    aspect-ratio: 1 / 1;
-    width: $randomiers-icon-size;
-    height: $randomiers-icon-size;
+.stratagem-display-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.icon-background{
-    background-color: black;
+@media (max-width: 768px) {
+  .stratagem-display {
+    width: clamp(140px, 20vw, 180px);
+    padding: 0.75rem;
+    margin: 0 0.5rem 0rem 0.5rem;
+    min-height: 10rem;
+  }
+
+  .primary-text {
+    min-height: 2.25rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .icon-background {
+    margin-bottom: 0.5rem;
+  }
 }
 
-.flex-vertical{
-    justify-content: center;
-    align-items: center;
-}
+@media (max-width: 480px) {
+  .stratagem-display {
+    width: clamp(100px, 40vw, 150px);
+    padding: 0.5rem;
+    margin: 0 0.25rem 0rem 0.25rem;
+    min-height: 8rem;
+  }
 
-.stratagem-display{
-    width: 25vmin;
+  .primary-text {
+    min-height: 2rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .icon-background {
+    margin-bottom: 0.4rem;
+  }
+
+  .secondary-text {
+    font-size: 0.75rem;
+  }
 }
