@@ -1,24 +1,66 @@
-<div class="flex-vertical">
-    <div class="flex-horizontal warbond-filter-container">
-        <p class="subtitle-text">Enabled Warbonds:</p>
-    </div>
-    <div class="flex-horizontal" style="position: relative;">
-        <button class="scroll-button scroll-button-left" (click)="scrollLeft()" style="color: black;">
-            <img [src]="'assets/next.png'" alt="scroll warbonds right" class="chevron-icon chevron-icon-left">
-        </button>
+<div class="warbond-filter-section">
+  <!-- Component-level collapsible header -->
+  <div class="component-header" (click)="toggleWarbondCollapse()">
+    <h3 class="component-title">Warbonds</h3>
+    <img
+      [src]="'assets/next.png'"
+      alt="Toggle warbonds"
+      class="chevron-icon"
+      [class.chevron-icon-down]="warbondCollapsed"
+    />
+  </div>
 
-        <div class="flex-horizontal warbond-filter-container scroll-container" #scrollContainer>
-            <ng-container *ngFor="let warbond of warbonds">
-                <!-- Check if the warbond belongs to the current type and category -->
-                <button class="secondary-text warbond-filter-button scroll-content" (click)="togglewarbond(warbond.id)">
-                    <img [src]="warbond.iconPath" alt="{{ warbond.name }} toggle" class="warbond-filter-icon"
-                        [class.warbond-filter-icon-disabled]="disabledIds.includes(warbond.id)">
-                    <p class="secondary-text">{{ warbond.name }}</p>
-                </button>
-            </ng-container>
-        </div>
-        <button class="scroll-button scroll-button-right" (click)="scrollRight()" style="color: black;">
-            <img [src]="'assets/next.png'" alt="scroll warbonds right" class="chevron-icon">
+  <div class="component-content" [class.collapsed]="warbondCollapsed">
+    <!-- Commented out scrolling elements -->
+    <!-- <div style="position: relative">
+      <button
+        class="scroll-button scroll-button-left"
+        (click)="scrollLeft()"
+        aria-label="Scroll left"
+      >
+        <img
+          [src]="'assets/next.png'"
+          alt="Scroll left"
+          class="chevron-icon chevron-icon-left"
+        />
+      </button>
+
+      <div class="scroll-container" #scrollContainer> -->
+
+    <!-- New warbond-grid container to display all warbonds -->
+    <div class="warbond-grid-container">
+      <ng-container *ngFor="let warbond of warbonds">
+        <button
+          class="warbond-filter-button"
+          (click)="togglewarbond(warbond.id)"
+        >
+          <img
+            [src]="warbond.iconPath"
+            alt="{{ warbond.name }} toggle"
+            class="warbond-filter-icon"
+            [class.warbond-filter-icon-disabled]="
+              disabledIds.includes(warbond.id)
+            "
+          />
+          <p class="secondary-text">{{ warbond.name }}</p>
         </button>
+      </ng-container>
     </div>
+
+    <!-- Commented out scroll right button -->
+    <!-- </div>
+
+      <button
+        class="scroll-button scroll-button-right"
+        (click)="scrollRight()"
+        aria-label="Scroll right"
+      >
+        <img
+          [src]="'assets/next.png'"
+          alt="Scroll right"
+          class="chevron-icon"
+        />
+      </button>
+    </div> -->
+  </div>
 </div>

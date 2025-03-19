@@ -13,6 +13,7 @@ import { WarbondFilterStateService } from '../warbond-filter-state.service';
 export class WarbondFiltersComponent implements OnInit {
   warbonds = warbonds;
   disabledIds: number[] = [];
+  warbondCollapsed: boolean = false;
 
   constructor(private warbondState: WarbondFilterStateService) {}
 
@@ -28,29 +29,42 @@ export class WarbondFiltersComponent implements OnInit {
     this.warbondState.toggleWarbond(id);
   }
 
+  toggleWarbondCollapse(): void {
+    this.warbondCollapsed = !this.warbondCollapsed;
+    console.log('Warbond collapsed:', this.warbondCollapsed); // For debugging
+  }
+
+  // Comment out scrolling functionality but keep for future re-implementation
   // Use ViewChild to access the scroll container
-  @ViewChild('scrollContainer') scrollContainer!: ElementRef;
+  /* @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
   scrollLeft(): void {
-    const itemWidth =
-      this.scrollContainer.nativeElement.querySelector(
-        '.scroll-content'
-      ).offsetWidth;
-    this.scrollContainer.nativeElement.scrollBy({
-      left: -itemWidth,
-      behavior: 'smooth',
-    });
+    if (this.scrollContainer) {
+      const scrollAmount = this.getScrollAmount();
+      this.scrollContainer.nativeElement.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth',
+      });
+    }
   }
 
   scrollRight(): void {
-    const itemWidth =
-      this.scrollContainer.nativeElement.querySelector(
-        '.scroll-content'
-      ).offsetWidth;
-    this.scrollContainer.nativeElement.scrollBy({
-      left: itemWidth,
-      behavior: 'smooth',
-    });
+    if (this.scrollContainer) {
+      const scrollAmount = this.getScrollAmount();
+      this.scrollContainer.nativeElement.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth',
+      });
+    }
   }
 
+  // Get scroll amount based on container width or a fallback value
+  private getScrollAmount(): number {
+    if (this.scrollContainer) {
+      const containerWidth = this.scrollContainer.nativeElement.offsetWidth;
+      // Scroll by 80% of the container width or by a minimum of 200px
+      return Math.max(containerWidth * 0.8, 200);
+    }
+    return 200; // Default fallback value
+  } */
 }

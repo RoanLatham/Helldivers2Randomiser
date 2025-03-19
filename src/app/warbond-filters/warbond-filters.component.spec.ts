@@ -52,20 +52,6 @@ describe('WarbondFiltersComponent', () => {
     expect(warbondFilterStateService.toggleWarbond).toHaveBeenCalledWith(5);
   });
 
-  it('should have scroll buttons in the template', () => {
-    // Arrange
-    const scrollLeftButton = fixture.debugElement.query(
-      By.css('.scroll-button-left')
-    );
-    const scrollRightButton = fixture.debugElement.query(
-      By.css('.scroll-button-right')
-    );
-
-    // Assert
-    expect(scrollLeftButton).toBeTruthy();
-    expect(scrollRightButton).toBeTruthy();
-  });
-
   it('should display warbond images with correct disabled state', () => {
     // Arrange
     fixture.detectChanges();
@@ -83,81 +69,5 @@ describe('WarbondFiltersComponent', () => {
 
     // We expect disabled elements to match our mocked disabledIds array
     expect(disabledWarbondElements.length).toBeGreaterThan(0);
-  });
-
-  describe('scroll functionality', () => {
-    // Helper method to mock the scrollContainer
-    function mockScrollContainer() {
-      // Create a mock element with scrollBy method
-      const mockElement = {
-        scrollBy: jasmine.createSpy('scrollBy'),
-        querySelector: jasmine.createSpy('querySelector').and.returnValue({
-          offsetWidth: 100,
-        }),
-      };
-
-      // Set the mock element to the component's scrollContainer
-      component.scrollContainer = {
-        nativeElement: mockElement,
-      } as unknown as ElementRef;
-
-      return mockElement;
-    }
-
-    it('should scroll left when scrollLeft is called', () => {
-      // Arrange
-      const mockElement = mockScrollContainer();
-
-      // Act
-      component.scrollLeft();
-
-      // Assert
-      expect(mockElement.scrollBy).toHaveBeenCalledWith({
-        left: -100,
-        behavior: 'smooth',
-      });
-    });
-
-    it('should scroll right when scrollRight is called', () => {
-      // Arrange
-      const mockElement = mockScrollContainer();
-
-      // Act
-      component.scrollRight();
-
-      // Assert
-      expect(mockElement.scrollBy).toHaveBeenCalledWith({
-        left: 100,
-        behavior: 'smooth',
-      });
-    });
-
-    it('should call scrollLeft when left button is clicked', () => {
-      // Arrange
-      spyOn(component, 'scrollLeft');
-      const leftButton = fixture.debugElement.query(
-        By.css('.scroll-button-left')
-      );
-
-      // Act
-      leftButton.triggerEventHandler('click', null);
-
-      // Assert
-      expect(component.scrollLeft).toHaveBeenCalled();
-    });
-
-    it('should call scrollRight when right button is clicked', () => {
-      // Arrange
-      spyOn(component, 'scrollRight');
-      const rightButton = fixture.debugElement.query(
-        By.css('.scroll-button-right')
-      );
-
-      // Act
-      rightButton.triggerEventHandler('click', null);
-
-      // Assert
-      expect(component.scrollRight).toHaveBeenCalled();
-    });
   });
 });

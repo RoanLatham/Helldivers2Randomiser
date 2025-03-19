@@ -1,90 +1,197 @@
-@import '../../styles.scss';
+@import "../../styles.scss";
+
+.warbond-filter-section {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.warbond-filter-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #ffffff;
+  padding-bottom: 0.5rem;
+  font-family: inherit;
+}
 
 .warbond-filter-button {
-    height: calc($filters-icon-size * 2);
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: transparent;
-    border: none;
-    padding: 0px;
-    cursor: pointer
+  height: var(--icon-size-md);
+  //   min-width: 80px;
+  //   max-width: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+  cursor: pointer;
+  margin: 0.5rem;
 }
 
 .secondary-text {
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
 }
 
 .warbond-filter-icon {
-    height: 100%;
+  height: var(--icon-size-sm);
+  width: auto;
 }
 
 .warbond-filter-icon-disabled {
-    filter: grayscale(100%);
-    transition: transform 0.05s ease-in-out;
-    transform: scale(90%);
-
-    // width: 90%;
-    // margin: 0px 10%;
-
-    align-self: center;
+  filter: grayscale(100%);
+  transition: transform 0.05s ease-in-out;
+  transform: scale(90%);
+  align-self: center;
 }
 
 .warbond-filter-container {
-    display: flex;
-    justify-content: left;
-    width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }
 
-.scroll-container {
-    overflow: hidden;
-    padding: 1vmin 0px;
+// New grid container to replace scroll container
+.warbond-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 1vmin 0;
+}
+
+// Commented out scroll-related styles
+/* .scroll-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: 1vmin 0;
+  width: 100%;
+  max-width: calc(100% - 80px); // Allow space for buttons
+  margin: 0 40px;
+  -ms-overflow-style: none; // IE and Edge
+  scrollbar-width: none; // Firefox
+  // Prevent wheel scrolling
+  overflow-y: hidden;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; // Chrome, Safari, Opera
 }
 
 $transparent-background-color: rgba($background-color, 0.85);
 
 .scroll-button {
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    
-    border: 0px;
-    height: 100%;
-
-    transition: transform 0.05s ease-in-out;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border: 0;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $transparent-background-color;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.scroll-button:active .chevron-icon{
-    transform: scale(0.9);
+.scroll-button:hover {
+  transform: translateY(-50%) scale(1.05);
 }
 
-.scroll-button:active .chevron-icon-left{
-    transform: rotate(180deg) scale(0.9);
+.scroll-button:active {
+  transform: translateY(-50%) scale(0.95);
 }
 
 .scroll-button-left {
-    left: 0;
-    background: linear-gradient(to right, $transparent-background-color, rgba(0, 0, 0, 0));
+  left: 10px;
 }
 
 .scroll-button-right {
-    right: 0;
-    background: linear-gradient(to left, $transparent-background-color, rgba(0, 0, 0, 0));
+  right: 10px;
 }
 
-.chevron-icon{
-    width: calc($filters-icon-size / 2);
-    cursor: pointer
+.chevron-icon {
+  width: calc(var(--icon-size-sm) / 2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.chevron-icon-left{
-    transform: rotate(180deg);
+.scroll-button .chevron-icon {
+  transform: none; // Reset any default rotation
+}
+
+.scroll-button .chevron-icon.chevron-icon-left {
+  transform: rotate(180deg);
+} */
+
+.chevron-icon {
+  width: calc(var(--icon-size-sm) / 2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .flex-horizontal,
 .flex-vertical {
-    gap: $filter-icon-gap;
+  gap: max(0.5rem, 1vmin);
+}
+
+@media (max-width: 768px) {
+  .warbond-filter-section {
+    padding: 1rem;
+  }
+
+  .warbond-filter-title {
+    font-size: 1.1rem;
+  }
+
+  /* Commented out scroll button styles
+  .scroll-button {
+    height: 35px;
+    width: 35px;
+  } */
+}
+
+@media (max-width: 480px) {
+  .warbond-filter-section {
+    padding: 0.75rem;
+  }
+
+  .warbond-filter-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .warbond-filter-button {
+    min-width: 70px;
+    max-width: 100px;
+  }
+
+  /* Commented out scroll container styles
+  .scroll-container {
+    max-width: calc(100% - 60px);
+    margin: 0 30px;
+  }
+
+  .scroll-button {
+    height: 30px;
+    width: 30px;
+  } */
 }
