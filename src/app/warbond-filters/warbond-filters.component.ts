@@ -2,11 +2,12 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Warbond, warbonds } from '../warbonds';
 import { CommonModule } from '@angular/common';
 import { WarbondFilterStateService } from '../warbond-filter-state.service';
+import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
 
 @Component({
   selector: 'app-warbond-filters',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CollapsibleSectionComponent],
   templateUrl: './warbond-filters.component.html',
   styleUrl: './warbond-filters.component.scss',
 })
@@ -29,8 +30,12 @@ export class WarbondFiltersComponent implements OnInit {
     this.warbondState.toggleWarbond(id);
   }
 
-  toggleWarbondCollapse(): void {
-    this.warbondCollapsed = !this.warbondCollapsed;
+  toggleWarbondCollapse(collapsed?: boolean): void {
+    if (collapsed !== undefined) {
+      this.warbondCollapsed = collapsed;
+    } else {
+      this.warbondCollapsed = !this.warbondCollapsed;
+    }
     console.log('Warbond collapsed:', this.warbondCollapsed); // For debugging
   }
 
