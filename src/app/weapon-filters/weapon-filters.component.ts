@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { primaryWeapons, secondaryWeapons, grenades } from '../weapons';
 import { CommonModule } from '@angular/common';
 import { WeaponFilterStateService } from '../weapon-filter-state.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-weapon-filters',
@@ -10,27 +11,41 @@ import { WeaponFilterStateService } from '../weapon-filter-state.service';
   templateUrl: './weapon-filters.component.html',
   styleUrls: ['./weapon-filters.component.scss'],
 })
-export class WeaponFiltersComponent implements OnInit {
+export class WeaponFiltersComponent implements OnInit, OnDestroy {
   primaryWeapons = primaryWeapons;
   secondaryWeapons = secondaryWeapons;
   grenades = grenades;
   weaponCategories: string[] = [];
   disabledIds: number[] = [];
 
+  // Subscription to track for cleanup
+  private subscription: Subscription | null = null;
+
+  // Properties for collapsible sections
+  weaponCollapsed = false;
+  primaryCollapsed = false;
+  secondaryCollapsed = false;
+  grenadesCollapsed = false;
+
   constructor(private weaponState: WeaponFilterStateService) {}
 
   ngOnInit(): void {
-    // Subscribe to the disabledIds$ observable
-    this.weaponState.disabledIds$.subscribe((ids) => {
-      this.disabledIds = ids;
-    });
-
     // Extract all categories from primary weapons, secondary weapons, and grenades
     this.weaponCategories = Array.from(
-      new Set([
-        ...this.primaryWeapons.map((s) => s.category),
-      ])
+      new Set([...this.primaryWeapons.map((s) => s.category)])
     );
+
+    // Subscribe to the disabledIds$ observable
+    this.subscription = this.weaponState.disabledIds$.subscribe((ids) => {
+      this.disabledIds = ids;
+    });
+  }
+
+  ngOnDestroy(): void {
+    // Clean up subscription when component is destroyed
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   toggleWeapon(id: number): void {
@@ -43,15 +58,45 @@ export class WeaponFiltersComponent implements OnInit {
 
   isCategoryDissabled(category: string): boolean {
     const categoryWeaponIds = [
-      ...this.primaryWeapons.filter((weapon) => weapon.category === category).map((weapon) => weapon.id),
-      ...this.secondaryWeapons.filter((weapon) => weapon.category === category).map((weapon) => weapon.id),
-      ...this.grenades.filter((weapon) => weapon.category === category).map((weapon) => weapon.id),
+      ...this.primaryWeapons
+        .filter((weapon) => weapon.category === category)
+        .map((weapon) => weapon.id),
+      ...this.secondaryWeapons
+        .filter((weapon) => weapon.category === category)
+        .map((weapon) => weapon.id),
+      ...this.grenades
+        .filter((weapon) => weapon.category === category)
+        .map((weapon) => weapon.id),
     ];
 
     return categoryWeaponIds.every((id) => this.disabledIds.includes(id));
   }
 
-  primaryWeaponsForCategory(category: string): { id: number; name: string; category: string; warbond: string; iconPath: string; }[] {
+  primaryWeaponsForCategory(category: string): {
+    id: number;
+    name: string;
+    category: string;
+    warbond: string;
+    iconPath: string;
+  }[] {
     return this.primaryWeapons.filter((weapon) => weapon.category === category);
+  }
+
+  // Methods for section collapse toggling
+  togglePrimaryCollapse(): void {
+    this.primaryCollapsed = !this.primaryCollapsed;
+  }
+
+  toggleSecondaryCollapse(): void {
+    this.secondaryCollapsed = !this.secondaryCollapsed;
+  }
+
+  toggleGrenadesCollapse(): void {
+    this.grenadesCollapsed = !this.grenadesCollapsed;
+  }
+
+  // Method for component-level collapse toggling
+  toggleWeaponCollapse(): void {
+    this.weaponCollapsed = !this.weaponCollapsed;
   }
 }

@@ -1,53 +1,196 @@
-@import '../../styles.scss';
+@import "../../styles.scss";
+
+.weapon-filter-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.weapon-filter-section {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.weapon-filter-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #ffffff;
+  padding-bottom: 0.5rem;
+  font-family: inherit;
+}
 
 .weapon-filter-button {
-    height: $filters-icon-size;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: transparent;
-    border: none;
-    padding: 0px;
-    cursor: pointer
-}
+  height: var(--icon-size-sm);
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 0.5rem;
 
-input{
-    cursor: pointer
-}
+  &:hover {
+    transform: scale(1.05);
+  }
 
-.secondary-text{
-    -webkit-hyphens:auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 .weapon-filter-icon {
-    height: 100%;
+  height: 100%;
+  transition: all 0.2s ease;
 }
 
-.weapon-filter-icon-disabled{
-    filter: grayscale(100%);
-    transition: transform 0.05s ease-in-out;
-    transform: scale(90%);
-
-    // width: 90%;
-    // margin: 0px 10%;
-
-    align-self: center;
-}
-.weapon-filter-container{
-    display: flex;
-    justify-content: left;
-    width: 100%;
+.weapon-filter-icon-disabled {
+  filter: grayscale(100%) brightness(0.7);
+  opacity: 0.7;
+  transform: scale(0.9);
 }
 
-.flex-horizontal,
-.flex-vertical{
-    gap: $filter-icon-gap;
+.weapon-checkbox-container {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
 
-.weapon-checkbox-container{
-    margin-top: calc($filter-icon-gap * 2);
-    cursor: pointer;
+.category-header {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin: 0.75rem 0;
+  border-left: 3px solid var(--accent-color);
+  width: 100%;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .category-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+    color: #ffffff;
+    flex-grow: 1;
+    font-family: "Sinclair", sans-serif;
+  }
+}
+
+.chevron-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform: rotate(-90deg); /* Default facing up */
+}
+
+.chevron-icon-down {
+  transform: rotate(90deg); /* Rotate to face down when collapsed */
+}
+
+.category-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 2000px; /* Increased value to accommodate all content */
+  width: 100%;
+}
+
+.category-content.collapsed {
+  max-height: 0;
+}
+
+.weapon-filter-category {
+  margin-right: 0.5rem;
+  font-size: 1.05rem;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--accent-color);
+}
+
+.category-section {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .weapon-filter-section {
+    padding: 1rem;
+  }
+
+  .weapon-filter-title {
+    font-size: 1.1rem;
+  }
+
+  .weapon-checkbox-container {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .weapon-filter-button {
+    margin: 0.4rem;
+  }
+
+  .category-header {
+    padding: 0.6rem 0.8rem;
+
+    .category-title {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .weapon-filter-section {
+    padding: 0.75rem;
+  }
+
+  .weapon-filter-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .weapon-checkbox-container {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .category-header {
+    padding: 0.5rem 0.7rem;
+
+    .category-title {
+      font-size: 0.95rem;
+    }
+  }
 }
