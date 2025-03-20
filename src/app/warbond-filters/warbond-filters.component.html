@@ -1,4 +1,4 @@
-<div class="warbond-filter-section">
+<div class="filter-section">
   <app-collapsible-section
     [title]="'Warbonds'"
     [variant]="'component'"
@@ -22,19 +22,17 @@
       <div class="scroll-container" #scrollContainer> -->
 
     <!-- Container to display all warbonds -->
-    <div class="warbond-grid-container">
+    <div class="filter-container warbond-grid-container">
       <ng-container *ngFor="let warbond of warbonds">
         <button
-          class="warbond-filter-button"
+          class="filter-button warbond-filter-button"
           (click)="togglewarbond(warbond.id)"
         >
           <img
             [src]="warbond.iconPath"
             alt="{{ warbond.name }} toggle"
-            class="warbond-filter-icon"
-            [class.warbond-filter-icon-disabled]="
-              disabledIds.includes(warbond.id)
-            "
+            class="filter-icon"
+            [class.filter-icon-disabled]="disabledIds.includes(warbond.id)"
           />
           <p class="secondary-text">{{ warbond.name }}</p>
         </button>
