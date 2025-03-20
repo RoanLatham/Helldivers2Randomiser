@@ -1,24 +1,25 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { primaryWeapons, secondaryWeapons, grenades } from '../weapons';
+import { Weapon } from '../new-weapons';
+import { getWeapon } from '../data-access';
 
 @Component({
   selector: 'app-weapon-display',
   standalone: true,
   imports: [],
   templateUrl: './weapon-display.component.html',
-  styleUrls: ['./weapon-display.component.scss']
+  styleUrls: ['./weapon-display.component.scss'],
 })
 export class WeaponDisplayComponent implements OnInit {
-  private _id!: number;
-  weapon!: { id: number; name: string; category: string; warbond: string; iconPath: string; };
+  private _id!: string;
+  weapon!: Weapon;
 
   @Input()
-  set id(value: number) {
+  set id(value: string) {
     this._id = value;
     this.updateWeapon();
   }
 
-  get id(): number {
+  get id(): string {
     return this._id;
   }
 
@@ -27,11 +28,11 @@ export class WeaponDisplayComponent implements OnInit {
   }
 
   updateWeapon() {
-    const weapon = [...primaryWeapons, ...secondaryWeapons, ...grenades].find((w) => w.id === this.id);
+    const weapon = getWeapon(this._id);
     if (weapon) {
       this.weapon = weapon;
     } else {
-      console.error(`No weapon found with ID ${this.id}`);
+      console.error(`No weapon found with ID ${this._id}`);
     }
   }
 }

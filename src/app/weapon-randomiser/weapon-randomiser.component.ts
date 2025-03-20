@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { WeaponDisplayComponent } from '../weapon-display/weapon-display.component';
-import { Weapon, primaryWeapons, secondaryWeapons, grenades } from '../weapons';
+import { Weapon } from '../new-weapons';
 import { WeaponFilterStateService } from '../weapon-filter-state.service';
+import { getRandomLoadout, getWeaponsByType } from '../data-access';
 
 @Component({
   selector: 'app-weapon-randomiser',
@@ -11,15 +12,11 @@ import { WeaponFilterStateService } from '../weapon-filter-state.service';
   styleUrls: ['./weapon-randomiser.component.scss'],
 })
 export class WeaponRandomiserComponent implements OnInit {
-  primaryWeaponIds = primaryWeapons.map((weapon) => weapon.id);
-  secondaryWeaponIds = secondaryWeapons.map((weapon) => weapon.id);
-  grenadeIds = grenades.map((weapon) => weapon.id);
+  primaryWeaponId!: string;
+  secondaryWeaponId!: string;
+  grenadeId!: string;
 
-  primaryWeaponId!: number;
-  secondaryWeaponId!: number;
-  grenadeId!: number;
-
-  disabledIds: number[] = [];
+  disabledIds: string[] = [];
 
   constructor(private weaponState: WeaponFilterStateService) {}
 
@@ -29,29 +26,17 @@ export class WeaponRandomiserComponent implements OnInit {
       this.disabledIds = ids;
     });
 
-    this.getRandomIds();
+    this.randomise();
   }
 
   randomise(): void {
-    this.getRandomIds();
-  }
+    const loadout = getRandomLoadout({
+      excludedWeaponIds: this.disabledIds,
+    });
 
-  getRandomIds(): void {
-    this.primaryWeaponId = this.getRandomWeaponId(this.primaryWeaponIds, this.primaryWeaponId);
-    this.secondaryWeaponId = this.getRandomWeaponId(this.secondaryWeaponIds, this.secondaryWeaponId);
-    this.grenadeId = this.getRandomWeaponId(this.grenadeIds, this.grenadeId);
-  }
-
-  getRandomWeaponId(weaponIds: number[], previousId: number): number {
-    // Filter out the disabled IDs
-    const availableIds = weaponIds.filter(id => !this.disabledIds.includes(id));
-
-    if (availableIds.length === 0) {
-      // If no available IDs, return the previous ID
-      return previousId;
-    }
-
-    const randomIndex = Math.floor(Math.random() * availableIds.length);
-    return availableIds[randomIndex];
+    // Set the weapon IDs from the randomized loadout
+    this.primaryWeaponId = loadout.primary?.id || '';
+    this.secondaryWeaponId = loadout.secondary?.id || '';
+    this.grenadeId = loadout.throwable?.id || '';
   }
 }

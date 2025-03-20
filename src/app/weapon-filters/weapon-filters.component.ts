@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { primaryWeapons, secondaryWeapons, grenades } from '../weapons';
+import { Weapon } from '../new-weapons';
 import { CommonModule } from '@angular/common';
 import { WeaponFilterStateService } from '../weapon-filter-state.service';
 import { Subscription } from 'rxjs';
 import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
+import { getWeaponsByType, getWeaponsByCategory } from '../data-access';
 
 @Component({
   selector: 'app-weapon-filters',
@@ -13,11 +14,13 @@ import { CollapsibleSectionComponent } from '../shared/collapsible-section/colla
   styleUrls: ['./weapon-filters.component.scss'],
 })
 export class WeaponFiltersComponent implements OnInit, OnDestroy {
-  primaryWeapons = primaryWeapons;
-  secondaryWeapons = secondaryWeapons;
-  grenades = grenades;
-  weaponCategories: string[] = [];
-  disabledIds: number[] = [];
+  primaryWeapons: Weapon[] = [];
+  secondaryWeapons: Weapon[] = [];
+  throwableWeapons: Weapon[] = [];
+  primaryCategories: string[] = [];
+  secondaryCategories: string[] = [];
+  throwableCategories: string[] = [];
+  disabledIds: string[] = [];
 
   // Subscription to track for cleanup
   private subscription: Subscription | null = null;
@@ -31,10 +34,23 @@ export class WeaponFiltersComponent implements OnInit, OnDestroy {
   constructor(private weaponState: WeaponFilterStateService) {}
 
   ngOnInit(): void {
-    // Extract all categories from primary weapons, secondary weapons, and grenades
-    this.weaponCategories = Array.from(
-      new Set([...this.primaryWeapons.map((s) => s.category)])
-    );
+    // Get weapons by type
+    this.primaryWeapons = getWeaponsByType('Primary');
+    this.secondaryWeapons = getWeaponsByType('Secondary');
+    this.throwableWeapons = getWeaponsByType('Throwable');
+
+    // Extract categories for each weapon type
+    this.primaryCategories = Array.from(
+      new Set(this.primaryWeapons.map((weapon) => weapon.category))
+    ).sort();
+
+    this.secondaryCategories = Array.from(
+      new Set(this.secondaryWeapons.map((weapon) => weapon.category))
+    ).sort();
+
+    this.throwableCategories = Array.from(
+      new Set(this.throwableWeapons.map((weapon) => weapon.category))
+    ).sort();
 
     // Subscribe to the disabledIds$ observable
     this.subscription = this.weaponState.disabledIds$.subscribe((ids) => {
@@ -49,38 +65,50 @@ export class WeaponFiltersComponent implements OnInit, OnDestroy {
     }
   }
 
-  toggleWeapon(id: number): void {
+  toggleWeapon(id: string): void {
     this.weaponState.toggleWeapon(id);
   }
 
-  toggleCategory(category: string): void {
-    this.weaponState.toggleCategory(category);
+  toggleCategory(
+    category: string,
+    type: 'Primary' | 'Secondary' | 'Throwable'
+  ): void {
+    this.weaponState.toggleCategory(category, type);
   }
 
-  isCategoryDissabled(category: string): boolean {
-    const categoryWeaponIds = [
-      ...this.primaryWeapons
-        .filter((weapon) => weapon.category === category)
-        .map((weapon) => weapon.id),
-      ...this.secondaryWeapons
-        .filter((weapon) => weapon.category === category)
-        .map((weapon) => weapon.id),
-      ...this.grenades
-        .filter((weapon) => weapon.category === category)
-        .map((weapon) => weapon.id),
-    ];
+  isCategoryDisabled(
+    category: string,
+    type: 'Primary' | 'Secondary' | 'Throwable'
+  ): boolean {
+    const weapons = this.getWeaponsByCategoryAndType(category, type);
+    const weaponIds = weapons.map((weapon) => weapon.id);
 
-    return categoryWeaponIds.every((id) => this.disabledIds.includes(id));
+    return (
+      weaponIds.length > 0 &&
+      weaponIds.every((id) => this.disabledIds.includes(id))
+    );
   }
 
-  primaryWeaponsForCategory(category: string): {
-    id: number;
-    name: string;
-    category: string;
-    warbond: string;
-    iconPath: string;
-  }[] {
-    return this.primaryWeapons.filter((weapon) => weapon.category === category);
+  getWeaponsByCategoryAndType(
+    category: string,
+    type: 'Primary' | 'Secondary' | 'Throwable'
+  ): Weapon[] {
+    switch (type) {
+      case 'Primary':
+        return this.primaryWeapons.filter(
+          (weapon) => weapon.category === category
+        );
+      case 'Secondary':
+        return this.secondaryWeapons.filter(
+          (weapon) => weapon.category === category
+        );
+      case 'Throwable':
+        return this.throwableWeapons.filter(
+          (weapon) => weapon.category === category
+        );
+      default:
+        return [];
+    }
   }
 
   // Methods for section collapse toggling
