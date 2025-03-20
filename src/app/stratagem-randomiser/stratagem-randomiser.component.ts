@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { StratagemDisplayComponent } from '../stratagem-display/stratagem-display.component';
 import { StratagemFilterStateService } from '../stratagem-filter-state.service';
-import { Stratagem, stratagems, backpackStratagemIds, supportWeaponStratagemIds, maxStratagemId } from '../stratagems';
+import {
+  Stratagem,
+  stratagems,
+  backpackStratagemIds,
+  supportWeaponStratagemIds,
+  maxStratagemId,
+} from '../stratagems';
 
 @Component({
   selector: 'app-stratagem-randomiser',
@@ -68,7 +74,7 @@ export class StratagemRandomiserComponent implements OnInit {
 
     this.shuffle(numbers);
 
-    console.log("only one backpack is: " + this.onlyOneBackpack);
+    console.log('only one backpack is: ' + this.onlyOneBackpack);
     // If onlyOneBackpack is true, filter the numbers array
     if (this.onlyOneBackpack) {
       // Find the first backpack ID in the numbers array
@@ -85,7 +91,7 @@ export class StratagemRandomiserComponent implements OnInit {
       }
     }
 
-    console.log("only one support weapon is: " + this.onlyOneSupport);
+    console.log('only one support weapon is: ' + this.onlyOneSupport);
     // If onlyOneSupport is true, filter the numbers array
     if (this.onlyOneSupport) {
       // Find the first backpack ID in the numbers array
@@ -101,6 +107,15 @@ export class StratagemRandomiserComponent implements OnInit {
         );
       }
     }
+
+    //TODO implement guarantees:
+    // in the above functions if guarantees are enables simply take the first found match
+    // and move it to the top of the array
+    // gen a random number between 0 and max
+    // place the backpack in that number,
+    // remember the result
+    // in the support weapon do tha same but repeat until the number is not the same as the backpacks
+    // and support the case when support guarantee is on and backpack is not
 
     //trim results to 4 IDs
     numbers = numbers.slice(0, 4);
