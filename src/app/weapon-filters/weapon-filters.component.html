@@ -1,4 +1,4 @@
-<div class="weapon-filter-section">
+<div class="filter-section">
   <!-- Main component section -->
   <app-collapsible-section
     [title]="'Weapons'"
@@ -13,32 +13,32 @@
       [initiallyCollapsed]="primaryCollapsed"
       (toggled)="togglePrimaryCollapse($event)"
     >
-      <div *ngFor="let category of weaponCategories">
+      <div *ngFor="let category of primaryCategories" class="filter-group">
         <!-- Category Checkbox - interactive with both classes -->
         <div
-          class="weapon-category-label-container weapon-category-checkbox-container"
-          (click)="toggleCategory(category)"
+          class="category-label-container category-checkbox-container"
+          (click)="toggleCategory(category, 'Primary')"
         >
-          <p class="secondary-text weapon-filter-category">{{ category }}</p>
-          <input type="checkbox" [checked]="!isCategoryDissabled(category)" />
+          <p class="secondary-text filter-category">{{ category }}</p>
+          <input
+            type="checkbox"
+            [checked]="!isCategoryDisabled(category, 'Primary')"
+          />
         </div>
 
         <!-- Weapons in this category -->
-        <div class="flex-horizontal weapon-filter-container">
+        <div class="flex-horizontal filter-container">
           <ng-container
-            *ngFor="let weapon of primaryWeaponsForCategory(category)"
+            *ngFor="
+              let weapon of getWeaponsByCategoryAndType(category, 'Primary')
+            "
           >
-            <button
-              class="weapon-filter-button"
-              (click)="toggleWeapon(weapon.id)"
-            >
+            <button class="filter-button" (click)="toggleWeapon(weapon.id)">
               <img
                 [src]="weapon.iconPath"
                 alt="{{ weapon.name }} toggle"
-                class="weapon-filter-icon"
-                [class.weapon-filter-icon-disabled]="
-                  disabledIds.includes(weapon.id)
-                "
+                class="filter-icon"
+                [class.filter-icon-disabled]="disabledIds.includes(weapon.id)"
               />
             </button>
           </ng-container>
@@ -53,58 +53,76 @@
       [initiallyCollapsed]="secondaryCollapsed"
       (toggled)="toggleSecondaryCollapse($event)"
     >
-      <!-- Non-interactive label - just base class -->
-      <div class="weapon-category-label-container">
-        <p class="secondary-text weapon-filter-category">Secondary Weapons</p>
-      </div>
+      <div *ngFor="let category of secondaryCategories" class="filter-group">
+        <!-- Category Checkbox -->
+        <div
+          class="category-label-container category-checkbox-container"
+          (click)="toggleCategory(category, 'Secondary')"
+        >
+          <p class="secondary-text filter-category">{{ category }}</p>
+          <input
+            type="checkbox"
+            [checked]="!isCategoryDisabled(category, 'Secondary')"
+          />
+        </div>
 
-      <div class="flex-horizontal weapon-filter-container">
-        <ng-container *ngFor="let weapon of secondaryWeapons">
-          <button
-            class="weapon-filter-button"
-            (click)="toggleWeapon(weapon.id)"
+        <!-- Weapons in this category -->
+        <div class="flex-horizontal filter-container">
+          <ng-container
+            *ngFor="
+              let weapon of getWeaponsByCategoryAndType(category, 'Secondary')
+            "
           >
-            <img
-              [src]="weapon.iconPath"
-              alt="{{ weapon.name }} toggle"
-              class="weapon-filter-icon"
-              [class.weapon-filter-icon-disabled]="
-                disabledIds.includes(weapon.id)
-              "
-            />
-          </button>
-        </ng-container>
+            <button class="filter-button" (click)="toggleWeapon(weapon.id)">
+              <img
+                [src]="weapon.iconPath"
+                alt="{{ weapon.name }} toggle"
+                class="filter-icon"
+                [class.filter-icon-disabled]="disabledIds.includes(weapon.id)"
+              />
+            </button>
+          </ng-container>
+        </div>
       </div>
     </app-collapsible-section>
 
-    <!-- Grenades category -->
+    <!-- Throwables category -->
     <app-collapsible-section
-      [title]="'Grenades'"
+      [title]="'Throwables'"
       [variant]="'category'"
       [initiallyCollapsed]="grenadesCollapsed"
       (toggled)="toggleGrenadesCollapse($event)"
     >
-      <!-- Non-interactive label - just base class -->
-      <div class="weapon-category-label-container">
-        <p class="secondary-text weapon-filter-category">Grenades</p>
-      </div>
+      <div *ngFor="let category of throwableCategories" class="filter-group">
+        <!-- Category Checkbox -->
+        <div
+          class="category-label-container category-checkbox-container"
+          (click)="toggleCategory(category, 'Throwable')"
+        >
+          <p class="secondary-text filter-category">{{ category }}</p>
+          <input
+            type="checkbox"
+            [checked]="!isCategoryDisabled(category, 'Throwable')"
+          />
+        </div>
 
-      <div class="flex-horizontal weapon-filter-container">
-        <ng-container *ngFor="let weapon of grenades">
-          <button
-            class="weapon-filter-button"
-            (click)="toggleWeapon(weapon.id)"
+        <!-- Weapons in this category -->
+        <div class="flex-horizontal filter-container">
+          <ng-container
+            *ngFor="
+              let weapon of getWeaponsByCategoryAndType(category, 'Throwable')
+            "
           >
-            <img
-              [src]="weapon.iconPath"
-              alt="{{ weapon.name }} toggle"
-              class="weapon-filter-icon"
-              [class.weapon-filter-icon-disabled]="
-                disabledIds.includes(weapon.id)
-              "
-            />
-          </button>
-        </ng-container>
+            <button class="filter-button" (click)="toggleWeapon(weapon.id)">
+              <img
+                [src]="weapon.iconPath"
+                alt="{{ weapon.name }} toggle"
+                class="filter-icon"
+                [class.filter-icon-disabled]="disabledIds.includes(weapon.id)"
+              />
+            </button>
+          </ng-container>
+        </div>
       </div>
     </app-collapsible-section>
   </app-collapsible-section>

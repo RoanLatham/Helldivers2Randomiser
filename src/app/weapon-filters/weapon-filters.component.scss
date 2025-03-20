@@ -1,149 +1,26 @@
 @import "../../styles.scss";
 
-.weapon-filter-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding: 0.5rem;
-  gap: 0.25rem;
-}
-
-.weapon-filter-section {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  padding: 1.25rem;
-  margin-bottom: 1.5rem;
-  width: 100%;
-  text-align: left;
-  box-sizing: border-box;
-}
-
-.weapon-filter-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 0 0 1rem 0;
-  color: #ffffff;
-  padding-bottom: 0.5rem;
-  font-family: inherit;
-}
-
-.weapon-filter-button {
-  height: var(--icon-size-sm);
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  margin: 0.5rem;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  &:active {
-    transform: scale(0.95);
-  }
-}
-
-.weapon-filter-icon {
-  height: var(--icon-size-sm);
-  width: 100%;
-  object-fit: contain;
-  transition: all 0.2s ease;
-}
-
-.weapon-filter-icon-disabled {
-  filter: grayscale(100%) brightness(0.7);
-  opacity: 0.7;
-  transform: scale(0.9);
-}
-
-/* Base class for all checkbox containers (shared styling) */
-.weapon-category-label-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 6px;
-  margin: 0.5rem 0;
-  color: white;
-}
-
-/* Extension class for interactive checkbox containers */
-.weapon-category-checkbox-container {
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-}
-
-// Category checkbox
-input[type="checkbox"] {
-  margin: 0;
-  accent-color: var(--accent-color);
-  height: 1rem;
-  width: 1rem;
-  cursor: pointer;
-
-  &:checked {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-    box-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
-  }
-}
-
-.weapon-filter-category {
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .weapon-filter-section {
-    padding: 1rem;
-  }
-
-  .weapon-filter-title {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .weapon-category-label-container {
-    padding: 0.4rem 0.8rem;
-  }
-
-  .weapon-filter-button {
-    margin: 0.3rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .weapon-filter-section {
-    padding: 0.75rem;
-  }
-
-  .weapon-filter-title {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .weapon-category-label-container {
-    padding: 0.3rem 0.6rem;
-  }
-
-  .weapon-filter-button {
-    margin: 0.25rem;
-  }
-}
-
 @media (max-width: $mobile) {
   // roughly enough for 2 icons horizontally
-  .weapon-filter-button {
+  .filter-button {
+    width: 45%;
+    height: auto;
+  }
+}
+
+// Component-specific overrides
+.filter-container {
+  gap: 0.5rem; // Override the global 0.25rem gap
+}
+
+.filter-icon {
+  width: auto;
+}
+
+// Media query overrides if needed
+@media (max-width: $mobile) {
+  // roughly enough for 2 icons horizontally
+  .filter-button {
     width: 45%;
     height: auto;
   }
