@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Warbond, warbonds } from '../warbonds';
+import { Warbond, warbonds } from '../new-warbonds';
 import { CommonModule } from '@angular/common';
 import { WarbondFilterStateService } from '../warbond-filter-state.service';
 import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
@@ -13,7 +13,7 @@ import { CollapsibleSectionComponent } from '../shared/collapsible-section/colla
 })
 export class WarbondFiltersComponent implements OnInit {
   warbonds = warbonds;
-  disabledIds: number[] = [];
+  disabledIds: string[] = [];
   warbondCollapsed: boolean = false;
 
   constructor(private warbondState: WarbondFilterStateService) {}
@@ -25,7 +25,7 @@ export class WarbondFiltersComponent implements OnInit {
     });
   }
 
-  togglewarbond(id: number): void {
+  togglewarbond(id: string): void {
     // console.log('Warbond Filter component:  toggling id: ' + id);
     this.warbondState.toggleWarbond(id);
   }
