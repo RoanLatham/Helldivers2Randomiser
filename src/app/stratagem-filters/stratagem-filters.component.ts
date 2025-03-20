@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Stratagem, stratagems } from '../stratagems';
+import { Stratagem, stratagemsByShipModule } from '../new-stratagems';
 import { CommonModule } from '@angular/common';
 import { StratagemFilterStateService } from '../stratagem-filter-state.service';
 import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
+import { getStratagemsByShipModule, getAllShipModules } from '../data-access';
 
 @Component({
   selector: 'app-stratagem-filters',
@@ -12,20 +13,26 @@ import { CollapsibleSectionComponent } from '../shared/collapsible-section/colla
   styleUrl: './stratagem-filters.component.scss',
 })
 export class StratagemFiltersComponent implements OnInit {
-  stratagems = stratagems;
+  stratagems: Stratagem[] = [];
   shipModules: string[] = [];
-  disabledIds: number[] = [];
+  disabledIds: string[] = [];
   onlyOneBackpack: boolean = false;
   onlyOneSupport: boolean = false;
+  guaranteeBackpack: boolean = false;
+  guaranteeSupport: boolean = false;
   stratagemCollapsed: boolean = false;
 
   constructor(private stratagemState: StratagemFilterStateService) {}
 
   ngOnInit(): void {
-    // Extract all shipoModules from stratagems.ts
-    this.shipModules = Array.from(
-      new Set(this.stratagems.map((s) => s.shipModule))
-    );
+    // Get all stratagems grouped by ship module
+    this.shipModules = getAllShipModules();
+
+    // Collect all stratagems
+    this.shipModules.forEach((module) => {
+      const moduleStratagems = getStratagemsByShipModule(module);
+      this.stratagems = [...this.stratagems, ...moduleStratagems];
+    });
 
     // Subscribe to the disabledIds$ observable
     this.stratagemState.disabledIds$.subscribe((ids) => {
@@ -33,17 +40,27 @@ export class StratagemFiltersComponent implements OnInit {
     });
 
     // Subscribe to the onlyOneBackpack$ observable
-    this.stratagemState.onlyOneBackpack$.subscribe((ids) => {
-      this.onlyOneBackpack = ids;
+    this.stratagemState.onlyOneBackpack$.subscribe((value) => {
+      this.onlyOneBackpack = value;
     });
 
     // Subscribe to the onlyOneSupport$ observable
-    this.stratagemState.onlyOneSupport$.subscribe((ids) => {
-      this.onlyOneSupport = ids;
+    this.stratagemState.onlyOneSupport$.subscribe((value) => {
+      this.onlyOneSupport = value;
+    });
+
+    // Subscribe to the guaranteeBackpack$ observable
+    this.stratagemState.guaranteeBackpack$.subscribe((value) => {
+      this.guaranteeBackpack = value;
+    });
+
+    // Subscribe to the guaranteeSupport$ observable
+    this.stratagemState.guaranteeSupport$.subscribe((value) => {
+      this.guaranteeSupport = value;
     });
   }
 
-  toggleStratagem(id: number): void {
+  toggleStratagem(id: string): void {
     this.stratagemState.toggleStratagem(id);
   }
 
@@ -51,16 +68,16 @@ export class StratagemFiltersComponent implements OnInit {
     this.stratagemState.toggleOnlyOneBackpack();
   }
 
-  toggleGuatenteeBackpack(): void {
-    this.stratagemState.toggleGuatenteeBackpack();
+  toggleGuaranteeBackpack(): void {
+    this.stratagemState.toggleGuaranteeBackpack();
   }
 
   toggleOnlyOneSupport(): void {
     this.stratagemState.toggleOnlyOneSupport();
   }
 
-  toggleGuatenteeSupport(): void {
-    this.stratagemState.toggleGuatenteeSupport();
+  toggleGuaranteeSupport(): void {
+    this.stratagemState.toggleGuaranteeSupport();
   }
 
   toggleStratagemCollapse(collapsed?: boolean): void {
@@ -69,5 +86,44 @@ export class StratagemFiltersComponent implements OnInit {
     } else {
       this.stratagemCollapsed = !this.stratagemCollapsed;
     }
+  }
+
+  getStratagemsForModule(module: string): Stratagem[] {
+    return this.stratagems.filter(
+      (stratagem) => stratagem.shipModule === module
+    );
+  }
+
+  toggleModule(module: string): void {
+    const moduleStratagems = this.getStratagemsForModule(module);
+    const moduleIds = moduleStratagems.map((stratagem) => stratagem.id);
+
+    // Check if all stratagems in this module are disabled
+    const allDisabled = moduleStratagems.every((stratagem) =>
+      this.disabledIds.includes(stratagem.id)
+    );
+
+    if (allDisabled) {
+      // Enable all stratagems in this module
+      moduleIds.forEach((id) => {
+        if (this.disabledIds.includes(id)) {
+          this.stratagemState.enableStratagem(id);
+        }
+      });
+    } else {
+      // Disable all stratagems in this module
+      moduleIds.forEach((id) => {
+        if (!this.disabledIds.includes(id)) {
+          this.stratagemState.disableStratagem(id);
+        }
+      });
+    }
+  }
+
+  isModuleDisabled(module: string): boolean {
+    const moduleStratagems = this.getStratagemsForModule(module);
+    return moduleStratagems.every((stratagem) =>
+      this.disabledIds.includes(stratagem.id)
+    );
   }
 }

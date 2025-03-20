@@ -8,7 +8,7 @@ import {
   secondaryWeapons,
   throwableWeapons,
 } from './new-weapons';
-import { Stratagem, stratagems } from './new-stratagems';
+import { Stratagem, stratagems, shipModules } from './new-stratagems';
 import { Booster, boosters } from './new-boosters';
 import { Warbond, warbonds, getWarbondById } from './new-warbonds';
 import {
@@ -75,6 +75,11 @@ export function getStratagem(id: string): Stratagem | undefined {
 // Get stratagems by ship module
 export function getStratagemsByShipModule(shipModule: string): Stratagem[] {
   return stratagems.filter((s) => s.shipModule === shipModule);
+}
+
+// Get all available ship modules
+export function getAllShipModules(): string[] {
+  return shipModules;
 }
 
 // Get stratagems from a specific warbond
@@ -182,6 +187,8 @@ export function getRandomLoadout(
     excludedBoosterIds?: string[];
     requireOneBackpack?: boolean;
     requireOneSupport?: boolean;
+    guaranteeBackpack?: boolean;
+    guaranteeSupport?: boolean;
   } = {}
 ): {
   primary: Weapon | null;
@@ -260,15 +267,177 @@ export function getRandomLoadout(
       ? throwableWeapons[Math.floor(Math.random() * throwableWeapons.length)]
       : null;
 
-  // Logic for selecting stratagems would go here, considering backpack and support requirements
-  // This is a simplified version; actual implementation would be more complex
-  const selectedStratagems: Stratagem[] = [];
+  // Select stratagems, handling backpack and support weapon requirements
+  let selectedStratagems: Stratagem[] = [];
   const maxStratagems = 4;
 
-  // Simple random selection for now
   if (availableStratagems.length > 0) {
+    // Create a shuffled copy of the available stratagems
     const shuffled = [...availableStratagems].sort(() => 0.5 - Math.random());
-    selectedStratagems.push(...shuffled.slice(0, maxStratagems));
+
+    // When guarantee options are enabled, also enable their corresponding "only one" options
+    if (options.guaranteeBackpack) {
+      options.requireOneBackpack = true;
+    }
+    if (options.guaranteeSupport) {
+      options.requireOneSupport = true;
+    }
+
+    // Filter stratagems by type
+    const backpacks = shuffled.filter((s) => s.isBackpack);
+    const supportWeapons = shuffled.filter((s) => s.isSupportWeapon);
+    const regularStratagems = shuffled.filter(
+      (s) => !s.isBackpack && !s.isSupportWeapon
+    );
+
+    // Start with a clean slate
+    selectedStratagems = [];
+    let remainingSlots = maxStratagems;
+
+    // First handle guaranteed items to ensure they're included
+    let guaranteedBackpackAdded = false;
+    let guaranteedSupportAdded = false;
+    let backpackPosition = -1;
+    let supportPosition = -1;
+
+    // If we need to guarantee both, we need to pick positions carefully
+    if (options.guaranteeBackpack && options.guaranteeSupport) {
+      if (backpacks.length > 0 && supportWeapons.length > 0) {
+        // Pick random positions for backpack and support
+        backpackPosition = Math.floor(Math.random() * maxStratagems);
+
+        // Ensure support position is different from backpack position
+        do {
+          supportPosition = Math.floor(Math.random() * maxStratagems);
+        } while (supportPosition === backpackPosition);
+      }
+    } else {
+      // Only one type is guaranteed, pick a random position
+      if (options.guaranteeBackpack && backpacks.length > 0) {
+        backpackPosition = Math.floor(Math.random() * maxStratagems);
+      }
+
+      if (options.guaranteeSupport && supportWeapons.length > 0) {
+        supportPosition = Math.floor(Math.random() * maxStratagems);
+      }
+    }
+
+    // Create a full array with placeholders for guaranteed positions
+    for (let i = 0; i < maxStratagems; i++) {
+      if (i === backpackPosition && backpacks.length > 0) {
+        // Add a random backpack at this position
+        const randomBackpack =
+          backpacks[Math.floor(Math.random() * backpacks.length)];
+        selectedStratagems.push(randomBackpack);
+        guaranteedBackpackAdded = true;
+      } else if (i === supportPosition && supportWeapons.length > 0) {
+        // Add a random support weapon at this position
+        const randomSupport =
+          supportWeapons[Math.floor(Math.random() * supportWeapons.length)];
+        selectedStratagems.push(randomSupport);
+        guaranteedSupportAdded = true;
+      } else {
+        // Placeholder for now, will fill with remaining stratagems later
+        selectedStratagems.push(null as any);
+      }
+    }
+
+    // Create a pool of remaining stratagems to randomly select from
+    let remainingPool = [...shuffled];
+
+    // If only one backpack is required, remove all but possibly one backpack
+    if (options.requireOneBackpack) {
+      // If a backpack is already guaranteed, remove all backpacks
+      if (guaranteedBackpackAdded) {
+        remainingPool = remainingPool.filter((s) => !s.isBackpack);
+      } else {
+        // Keep only one random backpack in the pool if any exist
+        const backpacksInPool = remainingPool.filter((s) => s.isBackpack);
+        if (backpacksInPool.length > 0) {
+          // Remove all backpacks
+          remainingPool = remainingPool.filter((s) => !s.isBackpack);
+          // Maybe add one backpack back (not guaranteed, just possible)
+          if (Math.random() < 0.5 && backpacksInPool.length > 0) {
+            const randomBackpack =
+              backpacksInPool[
+                Math.floor(Math.random() * backpacksInPool.length)
+              ];
+            remainingPool.push(randomBackpack);
+          }
+        }
+      }
+    }
+
+    // If only one support weapon is required, remove all but possibly one
+    if (options.requireOneSupport) {
+      // If a support weapon is already guaranteed, remove all support weapons
+      if (guaranteedSupportAdded) {
+        remainingPool = remainingPool.filter((s) => !s.isSupportWeapon);
+      } else {
+        // Keep only one random support weapon in the pool if any exist
+        const supportsInPool = remainingPool.filter((s) => s.isSupportWeapon);
+        if (supportsInPool.length > 0) {
+          // Remove all support weapons
+          remainingPool = remainingPool.filter((s) => !s.isSupportWeapon);
+          // Maybe add one support weapon back (not guaranteed, just possible)
+          if (Math.random() < 0.5 && supportsInPool.length > 0) {
+            const randomSupport =
+              supportsInPool[Math.floor(Math.random() * supportsInPool.length)];
+            remainingPool.push(randomSupport);
+          }
+        }
+      }
+    }
+
+    // Shuffle the remaining pool
+    remainingPool.sort(() => 0.5 - Math.random());
+
+    // Fill in the remaining slots with random stratagems
+    let remainingPoolIndex = 0;
+    for (let i = 0; i < maxStratagems; i++) {
+      // Skip positions that already have guaranteed items
+      if (
+        (i === backpackPosition && guaranteedBackpackAdded) ||
+        (i === supportPosition && guaranteedSupportAdded)
+      ) {
+        continue;
+      }
+
+      // If we still have stratagems in the pool, use them
+      if (remainingPoolIndex < remainingPool.length) {
+        selectedStratagems[i] = remainingPool[remainingPoolIndex];
+        remainingPoolIndex++;
+      } else {
+        // If we run out of stratagems, duplicate the first one
+        if (selectedStratagems.some((s) => s !== null)) {
+          const firstNonNull = selectedStratagems.find(
+            (s) => s !== null
+          ) as Stratagem;
+          selectedStratagems[i] = firstNonNull;
+        } else if (availableStratagems.length > 0) {
+          // Fallback if everything else fails
+          selectedStratagems[i] = availableStratagems[0];
+        }
+      }
+    }
+
+    // Filter out any remaining null values (should not happen)
+    selectedStratagems = selectedStratagems.filter((s) => s !== null);
+  }
+
+  // Ensure we have exactly maxStratagems items
+  while (selectedStratagems.length > maxStratagems) {
+    selectedStratagems.pop();
+  }
+
+  // In case we couldn't fill all slots, add duplicates to reach maxStratagems
+  if (
+    selectedStratagems.length > 0 &&
+    selectedStratagems.length < maxStratagems
+  ) {
+    while (selectedStratagems.length < maxStratagems) {
+      selectedStratagems.push(selectedStratagems[0]);
+    }
   }
 
   const booster =

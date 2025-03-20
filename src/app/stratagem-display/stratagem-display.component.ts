@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Stratagem, stratagems } from '../stratagems';
+import { Stratagem } from '../new-stratagems';
+import { getStratagem } from '../data-access';
 
 @Component({
   selector: 'app-stratagem-display',
@@ -8,16 +9,16 @@ import { Stratagem, stratagems } from '../stratagems';
   standalone: true,
 })
 export class StratagemDisplayComponent implements OnInit {
-  private _id!: number;
+  private _id!: string;
   stratagem!: Stratagem;
 
   @Input()
-  set id(value: number) {
+  set id(value: string) {
     this._id = value;
     this.updateStratagem();
   }
 
-  get id(): number {
+  get id(): string {
     return this._id;
   }
 
@@ -26,7 +27,7 @@ export class StratagemDisplayComponent implements OnInit {
   }
 
   updateStratagem() {
-    const stratagem = stratagems.find((s) => s.id === this.id);
+    const stratagem = getStratagem(this.id);
 
     if (stratagem) {
       this.stratagem = stratagem;
