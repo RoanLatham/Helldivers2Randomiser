@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Booster, boosters } from '../boosters';
+import { Booster, boosters } from '../new-boosters';
 import { CommonModule } from '@angular/common';
 import { BoosterFilterStateService } from '../booster-filter-state.service';
 import { WarbondFilterStateService } from '../warbond-filter-state.service';
@@ -13,8 +13,8 @@ import { CollapsibleSectionComponent } from '../shared/collapsible-section/colla
   styleUrl: './booster-filters.component.scss',
 })
 export class BoosterFiltersComponent implements OnInit {
-  boosters = boosters;
-  disabledIds: number[] = [];
+  boosters: Booster[] = boosters;
+  disabledIds: string[] = [];
   boosterCollapsed: boolean = false;
 
   constructor(
@@ -37,9 +37,7 @@ export class BoosterFiltersComponent implements OnInit {
     }
   }
 
-  toggleBooster(id: number): void {
-    // console.log("Filter component:  Dissabling id: " + id)
+  toggleBooster(id: string): void {
     this.boosterState.toggleBooster(id);
-    // The subscription in ngOnInit will update disabledIds
   }
 }

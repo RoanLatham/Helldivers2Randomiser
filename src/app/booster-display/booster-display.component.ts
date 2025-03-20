@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Booster, boosters } from '../boosters';
+import { Booster } from '../new-boosters';
+import { getBooster } from '../data-access';
 
 @Component({
   selector: 'app-booster-display',
@@ -8,16 +9,16 @@ import { Booster, boosters } from '../boosters';
   standalone: true,
 })
 export class BoosterDisplayComponent implements OnInit {
-  private _id!: number;
+  private _id!: string;
   booster!: Booster;
 
   @Input()
-  set id(value: number) {
+  set id(value: string) {
     this._id = value;
     this.updatebooster();
   }
 
-  get id(): number {
+  get id(): string {
     return this._id;
   }
 
@@ -26,11 +27,11 @@ export class BoosterDisplayComponent implements OnInit {
   }
 
   updatebooster() {
-    const booster = boosters.find((b) => b.id === this.id);
+    const booster = getBooster(this._id);
     if (booster) {
       this.booster = booster;
     } else {
-      console.error(`No booster found with ID ${this.id}`);
+      console.error(`No booster found with ID ${this._id}`);
     }
   }
 }
