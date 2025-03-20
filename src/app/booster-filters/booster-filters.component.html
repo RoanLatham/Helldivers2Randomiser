@@ -1,23 +1,18 @@
-<div class="booster-filter-section">
+<div class="filter-section">
   <app-collapsible-section
     [title]="'Boosters'"
     [variant]="'component'"
     [initiallyCollapsed]="boosterCollapsed"
     (toggled)="toggleBoosterCollapse($event)"
   >
-    <div class="booster-filter-module-container">
+    <div class="filter-container">
       <ng-container *ngFor="let booster of boosters">
-        <button
-          class="booster-filter-button"
-          (click)="toggleBooster(booster.id)"
-        >
+        <button class="filter-button" (click)="toggleBooster(booster.id)">
           <img
             [src]="booster.iconPath"
             alt="{{ booster.name }} toggle"
-            class="booster-filter-icon"
-            [class.booster-filter-icon-disabled]="
-              disabledIds.includes(booster.id)
-            "
+            class="filter-icon"
+            [class.filter-icon-disabled]="disabledIds.includes(booster.id)"
           />
         </button>
       </ng-container>
