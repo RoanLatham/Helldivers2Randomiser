@@ -1,4 +1,5 @@
-<div class="stratagem-filter-section">
+<div class="filter-section">
+  <!-- Main component section -->
   <app-collapsible-section
     [title]="'Stratagems'"
     [variant]="'component'"
@@ -6,56 +7,57 @@
     (toggled)="toggleStratagemCollapse($event)"
   >
     <div class="flex-horizontal checkboxes-container">
-      <div>
-        <div
-          class="flex-horizontal checkbox-container"
-          (click)="toggleOnlyOneBackpack()"
-        >
-          <p class="primary-text">Only One Backpack</p>
-          <input type="checkbox" [checked]="onlyOneBackpack" />
-        </div>
-        <!-- <div class="flex-horizontal">
-                    <p class="primary-text">Guatentee Backpack</p>
-                    <input type="checkbox" (change)="toggleGuatenteeBackpack()">
-                </div> -->
+      <div class="checkbox-container" (click)="toggleOnlyOneBackpack()">
+        <p class="primary-text">Only One Backpack</p>
+        <input type="checkbox" [checked]="onlyOneBackpack" />
       </div>
-      <div
-        class="flex-vertical checkbox-container"
-        (click)="toggleOnlyOneSupport()"
-      >
-        <div class="flex-horizontal">
-          <p class="primary-text">Only One Support Weapon</p>
-          <input type="checkbox" [checked]="onlyOneSupport" />
-        </div>
-        <!-- <div class="flex-horizontal">
-                    <p class="primary-text">Guatentee Support Weapon</p>
-                    <input type="checkbox" (change)="toggleGuatenteeSupport()">
-                </div> -->
+      <div class="checkbox-container" (click)="toggleGuaranteeBackpack()">
+        <p class="primary-text">Guarantee Backpack</p>
+        <input type="checkbox" [checked]="guaranteeBackpack" />
+      </div>
+      <div class="checkbox-container" (click)="toggleOnlyOneSupport()">
+        <p class="primary-text">Only One Support Weapon</p>
+        <input type="checkbox" [checked]="onlyOneSupport" />
+      </div>
+      <div class="checkbox-container" (click)="toggleGuaranteeSupport()">
+        <p class="primary-text">Guarantee Support Weapon</p>
+        <input type="checkbox" [checked]="guaranteeSupport" />
       </div>
     </div>
 
+    <!-- Ship Module Sections -->
     <div class="flex-vertical">
-      <div
-        class="flex-horizontal stratagem-filter-module-container"
-        *ngFor="let module of shipModules"
-      >
-        <ng-container *ngFor="let stratagem of stratagems">
-          <button
-            class="secondary-text stratagem-filter-button"
-            *ngIf="stratagem.shipModule === module"
-            (click)="toggleStratagem(stratagem.id)"
+      <div *ngFor="let module of shipModules" class="filter-group">
+        <!-- Module Checkbox - interactive container -->
+        <div
+          class="category-label-container category-checkbox-container"
+          (click)="toggleModule(module)"
+        >
+          <p class="secondary-text filter-category">{{ module }}</p>
+          <input type="checkbox" [checked]="!isModuleDisabled(module)" />
+        </div>
+
+        <!-- Stratagems in this module -->
+        <div class="flex-horizontal filter-container">
+          <ng-container
+            *ngFor="let stratagem of getStratagemsForModule(module)"
           >
-            <img
-              [src]="stratagem.iconPath"
-              alt="{{ stratagem.name }} toggle"
-              class="stratagem-filter-icon"
-              [class.stratagem-filter-icon-disabled]="
-                disabledIds.includes(stratagem.id)
-              "
-            />
-            <!-- {{ stratagem.name }} -->
-          </button>
-        </ng-container>
+            <button
+              class="filter-button"
+              (click)="toggleStratagem(stratagem.id)"
+              [title]="stratagem.name"
+            >
+              <img
+                [src]="stratagem.iconPath"
+                alt="{{ stratagem.name }} toggle"
+                class="filter-icon"
+                [class.filter-icon-disabled]="
+                  disabledIds.includes(stratagem.id)
+                "
+              />
+            </button>
+          </ng-container>
+        </div>
       </div>
     </div>
   </app-collapsible-section>
