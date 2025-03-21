@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, concatMap } from 'rxjs';
-import { Weapon } from './new-weapons';
+import { Weapon } from './weapons';
 import { getWeaponsByCategory, getWeaponsByType } from './data-access';
 
 @Injectable({

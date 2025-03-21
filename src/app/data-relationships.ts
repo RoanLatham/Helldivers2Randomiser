@@ -1,7 +1,7 @@
 // This file centralizes all data relationships between entities
 // It pre-computes relationships at build time to optimize runtime performance
 
-import { Weapon, allWeapons } from './new-weapons';
+import { Weapon, allWeapons } from './weapons';
 import { Stratagem, stratagems } from './stratagems';
 import { Booster, boosters } from './boosters';
 import { Warbond, warbonds } from './new-warbonds';

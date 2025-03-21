@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeaponDisplayComponent } from '../weapon-display/weapon-display.component';
-import { Weapon } from '../new-weapons';
+import { Weapon } from '../weapons';
 import { WeaponFilterStateService } from '../weapon-filter-state.service';
 import { getRandomLoadout, getWeaponsByType } from '../data-access';
 

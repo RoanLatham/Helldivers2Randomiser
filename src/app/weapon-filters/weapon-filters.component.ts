@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Weapon } from '../new-weapons';
+import { Weapon } from '../weapons';
 import { CommonModule } from '@angular/common';
 import { WeaponFilterStateService } from '../weapon-filter-state.service';
 import { Subscription } from 'rxjs';

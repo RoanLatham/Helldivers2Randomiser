@@ -7,7 +7,7 @@ import {
   primaryWeapons,
   secondaryWeapons,
   throwableWeapons,
-} from './new-weapons';
+} from './weapons';
 import { Stratagem, stratagems, shipModules } from './stratagems';
 import { Booster, boosters } from './boosters';
 import { Warbond, warbonds, getWarbondById } from './new-warbonds';

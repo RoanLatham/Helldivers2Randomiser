@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Weapon } from '../new-weapons';
+import { Weapon } from '../weapons';
 import { getWeapon } from '../data-access';
 
 @Component({
