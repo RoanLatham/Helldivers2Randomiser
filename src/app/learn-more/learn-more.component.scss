@@ -253,32 +253,6 @@
   margin: 2rem 0 1rem;
 }
 
-.cta-button {
-  display: inline-block;
-  background-color: var(--accent-color);
-  color: #201e21;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-  font-family: "Sinclair", sans-serif;
-  font-size: 1.1rem;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  text-align: center;
-
-  &:hover {
-    background-color: lighten($accent-color, 10%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  &:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-}
-
 .cta-section {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.15);
@@ -299,7 +273,7 @@
 }
 
 // Links
-a:not(.cta-button) {
+a:not(.action-button) {
   color: var(--accent-color);
   text-decoration: underline;
   transition: color 0.3s ease;
@@ -367,13 +341,6 @@ a:not(.cta-button) {
 
   .faq-answer.open {
     padding: 0 1rem 1rem 1rem;
-  }
-
-  .cta-button {
-    padding: 0.6rem 1.25rem;
-    font-size: 1rem;
-    width: 100%;
-    max-width: 280px;
   }
 
   .cta-section {
