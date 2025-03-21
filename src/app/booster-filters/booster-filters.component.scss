@@ -8,7 +8,7 @@
 
 // Media query overrides if needed
 @media (max-width: 768px) {
-  .filter-button {
-    width: calc(var(--icon-size-sm) * 1.1);
+  .filter-container {
+    justify-content: center;
   }
 }
