@@ -33,8 +33,8 @@
 .stratagem-icon {
   max-width: 90%;
   max-height: 90%;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -88,7 +88,8 @@
     width: clamp(100px, 40vw, 150px);
     padding: 0.5rem;
     margin: 0 0.25rem 0rem 0.25rem;
-    min-height: 8rem;
+    min-height: 22vh;
+    max-width: 18vw;
   }
 
   .primary-text {
