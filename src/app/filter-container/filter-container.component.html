@@ -1,0 +1,58 @@
+<div class="flex-vertical filters-container">
+  <!-- Filters Toggle Header -->
+  <app-collapsible-section
+    [title]="'Filters & Options'"
+    [variant]="'filters'"
+    [initiallyCollapsed]="filtersCollapsed"
+    (toggled)="toggleFiltersCollapse($event)"
+  >
+    <!-- Local Storage Management -->
+    <div class="filter-section settings-section">
+      <!-- <h3 class="settings-title">Save & Restore Filters</h3> -->
+      <app-collapsible-section
+        [title]="'Save & Restore Filters'"
+        [variant]="'component'"
+        [initiallyCollapsed]="settingsCollapsed"
+        (toggled)="toggleSettingsCollapse($event)"
+      >
+        <div class="settings-container">
+          <!-- Save button with conditional text -->
+          <button class="action-button save-button" (click)="saveSettings()">
+            <!-- <span class="button-icon">💾</span> -->
+            {{
+              hasStoredSettings ? "Override Settings" : "Save Filter Settings"
+            }}
+          </button>
+
+          <!-- Clear button shown only when storage exists -->
+          <button
+            *ngIf="hasStoredSettings"
+            class="action-button danger-button"
+            (click)="clearStorage()"
+          >
+            <!-- <span class="button-icon">🗑️</span> -->
+            Clear Saved Settings
+          </button>
+        </div>
+        <!-- Show last saved time if available -->
+        <p *ngIf="lastSaved" class="settings-info">
+          Last saved: {{ lastSaved }}
+        </p>
+
+        <!-- Success indicator - using ngClass for smooth animation -->
+        <div
+          class="save-success-indicator"
+          [ngClass]="{ visible: showSaveSuccess, hidden: !showSaveSuccess }"
+        >
+          <span class="success-icon">✓</span> Settings saved successfully!
+        </div>
+      </app-collapsible-section>
+    </div>
+
+    <!-- Individual Filter Components -->
+    <app-warbond-filters></app-warbond-filters>
+    <app-weapon-filters></app-weapon-filters>
+    <app-stratagem-filters></app-stratagem-filters>
+    <app-booster-filters></app-booster-filters>
+  </app-collapsible-section>
+</div>

@@ -1,0 +1,122 @@
+@import "../../styles.scss";
+
+// Import color variables for consistency
+$button-active-green: #60dd81;
+
+.filters-container {
+  width: 100%;
+  max-width: var(--container-width);
+}
+
+.settings-section {
+  margin-bottom: 1.5rem;
+  transition: height 0.3s ease-out;
+  overflow: hidden;
+}
+
+.settings-title {
+  font-family: "Swiss 721", sans-serif;
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.settings-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.settings-info {
+  text-align: center;
+  color: var(--grey-text);
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  font-family: "Sinclair", sans-serif;
+}
+
+// Success indicator
+.save-success-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.75rem;
+  color: $button-active-green;
+  font-family: "Sinclair", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  animation: pulse 1.5s ease-in-out infinite;
+  text-align: center;
+  overflow: hidden;
+  max-height: 0; /* Start collapsed */
+  opacity: 0; /* Start hidden */
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out,
+    margin-top 0.3s ease-out;
+
+  &.visible {
+    opacity: 1;
+    max-height: 50px;
+    margin-top: 0.75rem;
+  }
+
+  &.hidden {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+  }
+}
+
+.success-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+// Mobile styles
+@media (max-width: $tablet) {
+  .settings-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: $mobile) {
+  .settings-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .settings-title {
+    font-size: 1rem;
+  }
+
+  .settings-info {
+    font-size: 0.8rem;
+  }
+}

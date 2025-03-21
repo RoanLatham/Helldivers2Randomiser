@@ -15,6 +15,7 @@ import { GtagService } from './gtag-service.service';
 import { LearnMoreComponent } from './learn-more/learn-more.component';
 import { CollapsibleSectionComponent } from './shared/collapsible-section/collapsible-section.component';
 import { FooterComponent } from './footer/footer.component';
+import { FilterContainerComponent } from './filter-container/filter-container.component';
 
 @Component({
   selector: 'app-root',
@@ -35,6 +36,7 @@ import { FooterComponent } from './footer/footer.component';
     LearnMoreComponent,
     CollapsibleSectionComponent,
     FooterComponent,
+    FilterContainerComponent,
   ],
   providers: [GtagService],
   templateUrl: './app.component.html',
@@ -42,7 +44,6 @@ import { FooterComponent } from './footer/footer.component';
 })
 export class AppComponent implements OnInit {
   title = 'HelldiversLoadout';
-  filtersCollapsed: boolean = false;
 
   constructor(private gtagService: GtagService) {}
 
@@ -65,13 +66,5 @@ export class AppComponent implements OnInit {
     this.WeaponRandomiserComponent.randomise();
     this.stratagemRandomiserComponent.randomise();
     this.boosterRandomiserComponent.randomise();
-  }
-
-  toggleFiltersCollapse(collapsed?: boolean): void {
-    if (collapsed !== undefined) {
-      this.filtersCollapsed = collapsed;
-    } else {
-      this.filtersCollapsed = !this.filtersCollapsed;
-    }
   }
 }

@@ -21,20 +21,8 @@
     </div>
     <div class="flex-vertical-center">
       <div class="main-content-container">
-        <div class="flex-vertical filters-container">
-          <!-- Filters Toggle Header -->
-          <app-collapsible-section
-            [title]="'Filters & Options'"
-            [variant]="'filters'"
-            [initiallyCollapsed]="filtersCollapsed"
-            (toggled)="toggleFiltersCollapse($event)"
-          >
-            <app-warbond-filters></app-warbond-filters>
-            <app-weapon-filters></app-weapon-filters>
-            <app-stratagem-filters></app-stratagem-filters>
-            <app-booster-filters></app-booster-filters>
-          </app-collapsible-section>
-        </div>
+        <app-filter-container></app-filter-container>
+
         <div>
           <div class="seperator"></div>
           <app-learn-more></app-learn-more>
