@@ -59,6 +59,7 @@
 }
 
 .component-content {
+  max-height: 5000px; /*Must be set for transition animation to work*/
   transition-duration: 0.4s;
 }
 
@@ -96,6 +97,7 @@
 }
 
 .category-content {
+  max-height: 3000px; /*Must be set for transition animation to work*/
   transition-duration: 0.3s;
 }
 
@@ -134,6 +136,7 @@
 }
 
 .filters-content {
+  max-height: 9000px; /*Must be set for transition animation to work*/
   transition-duration: 0.5s;
 }
 
