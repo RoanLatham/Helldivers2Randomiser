@@ -3,7 +3,7 @@
 
 import { Weapon, allWeapons } from './new-weapons';
 import { Stratagem, stratagems } from './new-stratagems';
-import { Booster, boosters } from './new-boosters';
+import { Booster, boosters } from './boosters';
 import { Warbond, warbonds } from './new-warbonds';
 
 /**

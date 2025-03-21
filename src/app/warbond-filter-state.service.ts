@@ -6,7 +6,7 @@ import { StratagemFilterStateService } from './stratagem-filter-state.service';
 import { Warbond, warbonds, getWarbondById } from './new-warbonds';
 import { Weapon } from './new-weapons';
 import { Stratagem } from './new-stratagems';
-import { Booster } from './new-boosters';
+import { Booster } from './boosters';
 import { getWarbondContent } from './data-relationships';
 
 @Injectable({

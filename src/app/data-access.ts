@@ -9,7 +9,7 @@ import {
   throwableWeapons,
 } from './new-weapons';
 import { Stratagem, stratagems, shipModules } from './new-stratagems';
-import { Booster, boosters } from './new-boosters';
+import { Booster, boosters } from './boosters';
 import { Warbond, warbonds, getWarbondById } from './new-warbonds';
 import {
   warbondContents,

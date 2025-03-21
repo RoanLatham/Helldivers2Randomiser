@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Booster, boosters } from '../new-boosters';
+import { Booster, boosters } from '../boosters';
 import { CommonModule } from '@angular/common';
 import { BoosterFilterStateService } from '../booster-filter-state.service';
 import { WarbondFilterStateService } from '../warbond-filter-state.service';

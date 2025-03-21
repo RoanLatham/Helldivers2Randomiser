@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BoosterDisplayComponent } from '../booster-display/booster-display.component';
-import { Booster } from '../new-boosters';
+import { Booster } from '../boosters';
 import { BoosterFilterStateService } from '../booster-filter-state.service';
 import { getRandomLoadout } from '../data-access';
 

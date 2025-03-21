@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Booster } from '../new-boosters';
+import { Booster } from '../boosters';
 import { getBooster } from '../data-access';
 
 @Component({
