@@ -27,6 +27,31 @@ export class WeaponFilterStateService {
     } else {
       this.disableWeapon(id);
     }
+
+    // console.log(
+    //   'Weapon filter service: dissabled IDs: ' + this.disabledIds.value
+    // );
+  }
+
+  // Serialization for local storage
+  getState(): any {
+    return {
+      disabledIds: this.disabledIds.value,
+    };
+  }
+
+  // Load from serialized state
+  setState(state: any): void {
+    if (!state) return;
+
+    if (state.disabledIds) {
+      this.disabledIds.next(state.disabledIds);
+    }
+  }
+
+  // Reset to default values
+  resetState(): void {
+    this.disabledIds.next([]);
   }
 
   // Get all weapon IDs for a specific category and type

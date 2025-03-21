@@ -4,10 +4,10 @@ import { BoosterFilterStateService } from './booster-filter-state.service';
 import { WeaponFilterStateService } from './weapon-filter-state.service';
 import { StratagemFilterStateService } from './stratagem-filter-state.service';
 import { Warbond, warbonds, getWarbondById } from './warbonds';
+import { getWarbondContent } from './data-relationships';
 import { Weapon } from './weapons';
 import { Stratagem } from './stratagems';
 import { Booster } from './boosters';
-import { getWarbondContent } from './data-relationships';
 
 @Injectable({
   providedIn: 'root',
@@ -22,63 +22,76 @@ export class WarbondFilterStateService {
     private weaponState: WeaponFilterStateService,
     private stratagemState: StratagemFilterStateService
   ) {
-    // Subscribe to the disabledIds$ observable for boosters
-    this.boosterState.disabledIds$.subscribe((ids) => {
-      this.boosterDisabledIds = ids;
-      this.checkDisabledWarbonds();
-    });
+    // Initialize services and setup subscriptions
+    this.initializeServices();
+  }
 
-    // Subscribe to the disabledIds$ observable for weapons
+  private initializeServices(): void {
+    // Subscribe to weapon state
     this.weaponState.disabledIds$.subscribe((ids) => {
       this.weaponDisabledIds = ids;
       this.checkDisabledWarbonds();
     });
 
-    // Subscribe to the disabledIds$ observable for stratagems
+    // Subscribe to stratagem state
     this.stratagemState.disabledIds$.subscribe((ids) => {
       this.stratagemDisabledIds = ids;
       this.checkDisabledWarbonds();
     });
+
+    // Subscribe to booster state
+    this.boosterState.disabledIds$.subscribe((ids) => {
+      this.boosterDisabledIds = ids;
+      this.checkDisabledWarbonds();
+    });
   }
 
-  // BehaviorSubject for individual Warbonds the user disabled
   private disabledIds = new BehaviorSubject<string[]>([]);
   disabledIds$ = this.disabledIds.asObservable();
 
   isWarbondDisabled(warbondId: string): boolean {
-    const content = getWarbondContent(warbondId);
-    if (!content) return false;
-
-    // Check if all weapons, stratagems, and boosters of this warbond are disabled
-    const allWeaponsDisabled = [
-      ...content.primaryWeapons,
-      ...content.secondaryWeapons,
-      ...content.throwableWeapons,
-    ].every((weapon: Weapon) => this.weaponDisabledIds.includes(weapon.id));
-
-    const allStratagemsDisabled = content.stratagems.every(
-      (stratagem: Stratagem) => this.stratagemDisabledIds.includes(stratagem.id)
-    );
-
-    const allBoostersDisabled = content.boosters.every((booster: Booster) =>
-      this.boosterDisabledIds.includes(booster.id)
-    );
-
-    // A warbond is considered disabled if all its items are disabled
-    return allWeaponsDisabled && allStratagemsDisabled && allBoostersDisabled;
+    return this.disabledIds.value.includes(warbondId);
   }
 
+  // Check if all weapons/stratagems/boosters from a warbond are disabled
   checkDisabledWarbonds(): void {
-    let disabledWarbondIds: string[] = [];
+    // For each warbond, check if all its items are disabled
+    const disabledWarbondIds = warbonds
+      .map((warbond: Warbond) => {
+        // Get all items from this warbond
+        const content = getWarbondContent(warbond.id);
+        if (!content) return null;
 
-    // Check each warbond
-    warbonds.forEach((warbond) => {
-      if (this.isWarbondDisabled(warbond.id)) {
-        disabledWarbondIds.push(warbond.id);
-      }
-    });
+        // Check if all weapons/stratagems/boosters from this warbond are disabled
+        const allWeaponIds = [
+          ...content.primaryWeapons.map((w) => w.id),
+          ...content.secondaryWeapons.map((w) => w.id),
+          ...content.throwableWeapons.map((w) => w.id),
+        ];
 
-    // Update the BehaviorSubject with the new list of disabled warbond IDs
+        // If the warbond has any items and all of them are disabled, the warbond is disabled
+        const hasItems =
+          allWeaponIds.length > 0 ||
+          content.stratagems.length > 0 ||
+          content.boosters.length > 0;
+
+        const allItemsDisabled =
+          (!allWeaponIds.length ||
+            allWeaponIds.every((id) => this.weaponDisabledIds.includes(id))) &&
+          (!content.stratagems.length ||
+            content.stratagems.every((s) =>
+              this.stratagemDisabledIds.includes(s.id)
+            )) &&
+          (!content.boosters.length ||
+            content.boosters.every((b) =>
+              this.boosterDisabledIds.includes(b.id)
+            ));
+
+        return hasItems && allItemsDisabled ? warbond.id : null;
+      })
+      .filter((id): id is string => id !== null);
+
+    // Update the list of disabled warbonds
     this.disabledIds.next(disabledWarbondIds);
   }
 
@@ -139,5 +152,31 @@ export class WarbondFilterStateService {
 
     // Update the list of disabled warbonds
     this.checkDisabledWarbonds();
+  }
+
+  // Serialization for local storage
+  getState(): any {
+    return {
+      disabledIds: this.disabledIds.value,
+    };
+  }
+
+  // Load from serialized state
+  setState(state: any): void {
+    if (!state) return;
+
+    if (state.disabledIds) {
+      this.disabledIds.next(state.disabledIds);
+      // Update the derived disabled items lists
+      this.checkDisabledWarbonds();
+    }
+  }
+
+  // Reset to default values
+  resetState(): void {
+    this.disabledIds.next([]);
+    this.boosterDisabledIds = [];
+    this.weaponDisabledIds = [];
+    this.stratagemDisabledIds = [];
   }
 }

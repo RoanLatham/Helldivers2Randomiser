@@ -40,4 +40,25 @@ export class BoosterFilterStateService {
     //   'Booster filter service: dissabled IDs: ' + this.disabledIds.value
     // );
   }
+
+  // Serialization for local storage
+  getState(): any {
+    return {
+      disabledIds: this.disabledIds.value,
+    };
+  }
+
+  // Load from serialized state
+  setState(state: any): void {
+    if (!state) return;
+
+    if (state.disabledIds) {
+      this.disabledIds.next(state.disabledIds);
+    }
+  }
+
+  // Reset to default values
+  resetState(): void {
+    this.disabledIds.next([]);
+  }
 }

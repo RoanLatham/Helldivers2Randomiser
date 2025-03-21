@@ -34,6 +34,7 @@ export class StratagemFilterStateService {
   onlyOneBackpack$ = this.onlyOneBackpack.asObservable();
 
   setOnlyOneBackpack(value: boolean) {
+    // console.log('setting only one backpack: ' + value);
     this.onlyOneBackpack.next(value);
 
     // If turning off onlyOneBackpack, also turn off guaranteeBackpack
@@ -53,6 +54,7 @@ export class StratagemFilterStateService {
   guaranteeBackpack$ = this.guaranteeBackpack.asObservable();
 
   setGuaranteeBackpack(value: boolean) {
+    // console.log('setting guarantee backpack: ' + value);
     // If enabling guarantee, ensure onlyOne is also enabled
     if (value && !this.onlyOneBackpack.value) {
       this.setOnlyOneBackpack(true);
@@ -70,6 +72,7 @@ export class StratagemFilterStateService {
   onlyOneSupport$ = this.onlyOneSupport.asObservable();
 
   setOnlyOneSupport(value: boolean) {
+    // console.log('setting only one support: ' + value);
     this.onlyOneSupport.next(value);
 
     // If turning off onlyOneSupport, also turn off guaranteeSupport
@@ -89,6 +92,7 @@ export class StratagemFilterStateService {
   guaranteeSupport$ = this.guaranteeSupport.asObservable();
 
   setGuaranteeSupport(value: boolean) {
+    // console.log('setting guarantee support: ' + value);
     // If enabling guarantee, ensure onlyOne is also enabled
     if (value && !this.onlyOneSupport.value) {
       this.setOnlyOneSupport(true);
@@ -99,5 +103,50 @@ export class StratagemFilterStateService {
   toggleGuaranteeSupport() {
     const currentValue = this.guaranteeSupport.value;
     this.setGuaranteeSupport(!currentValue);
+  }
+
+  // Serialization for local storage
+  getState(): any {
+    return {
+      disabledIds: this.disabledIds.value,
+      onlyOneBackpack: this.onlyOneBackpack.value,
+      guaranteeBackpack: this.guaranteeBackpack.value,
+      onlyOneSupport: this.onlyOneSupport.value,
+      guaranteeSupport: this.guaranteeSupport.value,
+    };
+  }
+
+  // Load from serialized state
+  setState(state: any): void {
+    if (!state) return;
+
+    if (state.disabledIds) {
+      this.disabledIds.next(state.disabledIds);
+    }
+
+    if (state.onlyOneBackpack !== undefined) {
+      this.setOnlyOneBackpack(state.onlyOneBackpack);
+    }
+
+    if (state.guaranteeBackpack !== undefined) {
+      this.setGuaranteeBackpack(state.guaranteeBackpack);
+    }
+
+    if (state.onlyOneSupport !== undefined) {
+      this.setOnlyOneSupport(state.onlyOneSupport);
+    }
+
+    if (state.guaranteeSupport !== undefined) {
+      this.setGuaranteeSupport(state.guaranteeSupport);
+    }
+  }
+
+  // Reset to default values
+  resetState(): void {
+    this.disabledIds.next([]);
+    this.setOnlyOneBackpack(false);
+    this.setGuaranteeBackpack(false);
+    this.setOnlyOneSupport(false);
+    this.setGuaranteeSupport(false);
   }
 }
