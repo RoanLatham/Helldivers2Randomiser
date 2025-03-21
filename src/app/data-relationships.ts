@@ -40,8 +40,8 @@ warbonds.forEach((warbond: Warbond) => {
 // Populate warbond contents with all weapons
 allWeapons.forEach((weapon: Weapon) => {
   if (weapon.warbond) {
-    // Convert spaces to underscores to match warbond ID format
-    const warbondId = weapon.warbond.replace(/\s/g, '_');
+    // The warbond field is already in ID format
+    const warbondId = weapon.warbond;
 
     // Only add to warbond contents if the warbond exists
     if (warbondContents[warbondId]) {
@@ -63,8 +63,8 @@ allWeapons.forEach((weapon: Weapon) => {
 // Populate warbond contents with all stratagems
 stratagems.forEach((stratagem: Stratagem) => {
   if (stratagem.warbond) {
-    // Convert spaces to underscores to match warbond ID format
-    const warbondId = stratagem.warbond.replace(/\s/g, '_');
+    // The warbond field is already in ID format
+    const warbondId = stratagem.warbond;
 
     // Only add to warbond contents if the warbond exists
     if (warbondContents[warbondId]) {
@@ -76,8 +76,8 @@ stratagems.forEach((stratagem: Stratagem) => {
 // Populate warbond contents with all boosters
 boosters.forEach((booster: Booster) => {
   if (booster.warbond) {
-    // Convert spaces to underscores to match warbond ID format
-    const warbondId = booster.warbond.replace(/\s/g, '_');
+    // The warbond field is already in ID format
+    const warbondId = booster.warbond;
 
     // Only add to warbond contents if the warbond exists
     if (warbondContents[warbondId]) {
@@ -131,7 +131,8 @@ export const boosterToWarbonds: Record<string, string[]> = {};
 allWeapons.forEach((weapon: Weapon) => {
   weaponToWarbonds[weapon.id] = [];
   if (weapon.warbond) {
-    const warbondId = weapon.warbond.replace(/\s/g, '_');
+    // The warbond field is already in ID format
+    const warbondId = weapon.warbond;
     if (warbondContents[warbondId]) {
       weaponToWarbonds[weapon.id].push(warbondId);
     }
@@ -142,7 +143,8 @@ allWeapons.forEach((weapon: Weapon) => {
 stratagems.forEach((stratagem: Stratagem) => {
   stratagemToWarbonds[stratagem.id] = [];
   if (stratagem.warbond) {
-    const warbondId = stratagem.warbond.replace(/\s/g, '_');
+    // The warbond field is already in ID format
+    const warbondId = stratagem.warbond;
     if (warbondContents[warbondId]) {
       stratagemToWarbonds[stratagem.id].push(warbondId);
     }
@@ -153,7 +155,8 @@ stratagems.forEach((stratagem: Stratagem) => {
 boosters.forEach((booster: Booster) => {
   boosterToWarbonds[booster.id] = [];
   if (booster.warbond) {
-    const warbondId = booster.warbond.replace(/\s/g, '_');
+    // The warbond field is already in ID format
+    const warbondId = booster.warbond;
     if (warbondContents[warbondId]) {
       boosterToWarbonds[booster.id].push(warbondId);
     }
