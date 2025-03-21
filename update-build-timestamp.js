@@ -15,13 +15,7 @@ export const BUILD_TIMESTAMP = '${timestamp}';
 `;
 
 // Write to file
-const outputFile = path.join(
-  __dirname,
-  "..",
-  "src",
-  "app",
-  "build-timestamp.ts"
-);
+const outputFile = path.join(__dirname, "src", "app", "build-timestamp.ts");
 fs.writeFileSync(outputFile, tsContent);
 
 console.log(
