@@ -49,4 +49,21 @@
   .secondary-text {
     font-size: 0.8rem;
   }
+
+  .timestamp-section {
+    justify-content: space-around;
+  }
+}
+
+// Line break between text adn timestamp only on mobile
+@media (max-width: $mobile) {
+  .mobile-break {
+    display: block; // Show the break on mobile
+  }
+}
+
+@media (min-width: $mobile) {
+  .mobile-break {
+    display: none; // Hide the break on larger screens
+  }
 }
