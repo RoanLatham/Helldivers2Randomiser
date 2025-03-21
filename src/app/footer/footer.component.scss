@@ -1,0 +1,52 @@
+@import "../../styles.scss";
+
+.filter-section {
+  padding: 1rem;
+  margin: 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.timestamp-section {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.secondary-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #a8a8a8;
+}
+
+.timestamp {
+  color: #d9d9d9;
+  font-weight: 500;
+}
+
+.attribution {
+  font-size: 0.85rem;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: $mobile) {
+  .footer-container {
+    padding: 0.75rem;
+  }
+
+  .secondary-text {
+    font-size: 0.8rem;
+  }
+}

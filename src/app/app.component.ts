@@ -14,6 +14,7 @@ import { RandomiseButtonComponent } from './randomise-button/randomise-button.co
 import { GtagService } from './gtag-service.service';
 import { LearnMoreComponent } from './learn-more/learn-more.component';
 import { CollapsibleSectionComponent } from './shared/collapsible-section/collapsible-section.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -33,6 +34,7 @@ import { CollapsibleSectionComponent } from './shared/collapsible-section/collap
     RandomiseButtonComponent,
     LearnMoreComponent,
     CollapsibleSectionComponent,
+    FooterComponent,
   ],
   providers: [GtagService],
   templateUrl: './app.component.html',
