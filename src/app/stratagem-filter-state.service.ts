@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Stratagem } from './new-stratagems';
+import { Stratagem } from './stratagems';
 import { getStratagemsByShipModule } from './data-access';
 
 @Injectable({

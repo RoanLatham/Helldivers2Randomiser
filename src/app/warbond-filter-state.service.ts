@@ -5,7 +5,7 @@ import { WeaponFilterStateService } from './weapon-filter-state.service';
 import { StratagemFilterStateService } from './stratagem-filter-state.service';
 import { Warbond, warbonds, getWarbondById } from './new-warbonds';
 import { Weapon } from './new-weapons';
-import { Stratagem } from './new-stratagems';
+import { Stratagem } from './stratagems';
 import { Booster } from './boosters';
 import { getWarbondContent } from './data-relationships';
 

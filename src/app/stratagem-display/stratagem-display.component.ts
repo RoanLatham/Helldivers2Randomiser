@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Stratagem } from '../new-stratagems';
+import { Stratagem } from '../stratagems';
 import { getStratagem } from '../data-access';
 
 @Component({

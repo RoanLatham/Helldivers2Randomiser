@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StratagemDisplayComponent } from '../stratagem-display/stratagem-display.component';
 import { StratagemFilterStateService } from '../stratagem-filter-state.service';
-import { Stratagem } from '../new-stratagems';
+import { Stratagem } from '../stratagems';
 import { getRandomLoadout } from '../data-access';
 
 @Component({

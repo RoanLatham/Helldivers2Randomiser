@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Stratagem, stratagemsByShipModule } from '../new-stratagems';
+import { Stratagem, stratagemsByShipModule } from '../stratagems';
 import { CommonModule } from '@angular/common';
 import { StratagemFilterStateService } from '../stratagem-filter-state.service';
 import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
