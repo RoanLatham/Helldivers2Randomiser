@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { BoosterFilterStateService } from './booster-filter-state.service';
 import { WeaponFilterStateService } from './weapon-filter-state.service';
 import { StratagemFilterStateService } from './stratagem-filter-state.service';
-import { Warbond, warbonds, getWarbondById } from './new-warbonds';
+import { Warbond, warbonds, getWarbondById } from './warbonds';
 import { Weapon } from './weapons';
 import { Stratagem } from './stratagems';
 import { Booster } from './boosters';

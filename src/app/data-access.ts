@@ -10,7 +10,7 @@ import {
 } from './weapons';
 import { Stratagem, stratagems, shipModules } from './stratagems';
 import { Booster, boosters } from './boosters';
-import { Warbond, warbonds, getWarbondById } from './new-warbonds';
+import { Warbond, warbonds, getWarbondById } from './warbonds';
 import {
   warbondContents,
   getWarbondContent,

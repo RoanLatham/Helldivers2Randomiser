@@ -4,7 +4,7 @@
 import { Weapon, allWeapons } from './weapons';
 import { Stratagem, stratagems } from './stratagems';
 import { Booster, boosters } from './boosters';
-import { Warbond, warbonds } from './new-warbonds';
+import { Warbond, warbonds } from './warbonds';
 
 /**
  * WarbondContent represents all items belonging to a specific warbond
