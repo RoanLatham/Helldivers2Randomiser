@@ -13,6 +13,16 @@
   gap: 0.5rem; // Override the global 0.25rem gap
 }
 
+.filter-group {
+  flex-grow: 1;
+}
+
+.weapon-category-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .filter-icon {
   width: auto;
 }
