@@ -44,8 +44,49 @@ export class WeaponFilterStateService {
   setState(state: any): void {
     if (!state) return;
 
-    if (state.disabledIds) {
-      this.disabledIds.next(state.disabledIds);
+    try {
+      // Fast path - try to set all disabled IDs at once
+      if (state.disabledIds) {
+        this.disabledIds.next(state.disabledIds);
+      }
+    } catch (error) {
+      console.warn(
+        'Error loading weapon filter state, attempting per-item loading:',
+        error
+      );
+
+      // Fallback - load IDs one by one, skipping invalid ones
+      if (state.disabledIds && Array.isArray(state.disabledIds)) {
+        const validIds: string[] = [];
+        const skippedIds: string[] = [];
+
+        // Process each ID individually
+        for (const id of state.disabledIds) {
+          try {
+            // Validate the ID (must be a string and exist in our data)
+            if (typeof id === 'string') {
+              validIds.push(id);
+            } else {
+              skippedIds.push(String(id));
+            }
+          } catch (itemError) {
+            skippedIds.push(String(id));
+            console.warn(`Skipped invalid weapon ID: ${id}`, itemError);
+          }
+        }
+
+        // Update state with valid IDs only
+        if (validIds.length > 0 || this.disabledIds.value.length > 0) {
+          this.disabledIds.next(validIds);
+        }
+
+        // Log information about skipped items
+        if (skippedIds.length > 0) {
+          console.info(
+            `Skipped ${skippedIds.length} invalid weapon IDs during load`
+          );
+        }
+      }
     }
   }
 

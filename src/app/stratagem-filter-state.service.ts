@@ -120,24 +120,111 @@ export class StratagemFilterStateService {
   setState(state: any): void {
     if (!state) return;
 
-    if (state.disabledIds) {
-      this.disabledIds.next(state.disabledIds);
-    }
+    try {
+      // Fast path - try to set all settings at once
+      if (state.disabledIds) {
+        this.disabledIds.next(state.disabledIds);
+      }
 
-    if (state.onlyOneBackpack !== undefined) {
-      this.setOnlyOneBackpack(state.onlyOneBackpack);
-    }
+      // Load checkbox states
+      if (state.onlyOneBackpack !== undefined) {
+        this.onlyOneBackpack.next(state.onlyOneBackpack);
+      }
 
-    if (state.guaranteeBackpack !== undefined) {
-      this.setGuaranteeBackpack(state.guaranteeBackpack);
-    }
+      if (state.guaranteeBackpack !== undefined) {
+        this.guaranteeBackpack.next(state.guaranteeBackpack);
+      }
 
-    if (state.onlyOneSupport !== undefined) {
-      this.setOnlyOneSupport(state.onlyOneSupport);
-    }
+      if (state.onlyOneSupport !== undefined) {
+        this.onlyOneSupport.next(state.onlyOneSupport);
+      }
 
-    if (state.guaranteeSupport !== undefined) {
-      this.setGuaranteeSupport(state.guaranteeSupport);
+      if (state.guaranteeSupport !== undefined) {
+        this.guaranteeSupport.next(state.guaranteeSupport);
+      }
+    } catch (error) {
+      console.warn(
+        'Error loading stratagem filter state, attempting per-item loading:',
+        error
+      );
+
+      // Fallback for disabled IDs - load one by one
+      if (state.disabledIds && Array.isArray(state.disabledIds)) {
+        const validIds: string[] = [];
+        const skippedIds: string[] = [];
+
+        // Process each ID individually
+        for (const id of state.disabledIds) {
+          try {
+            // Validate the ID (must be a string)
+            if (typeof id === 'string') {
+              validIds.push(id);
+            } else {
+              skippedIds.push(String(id));
+            }
+          } catch (itemError) {
+            skippedIds.push(String(id));
+            console.warn(`Skipped invalid stratagem ID: ${id}`, itemError);
+          }
+        }
+
+        // Update state with valid IDs only
+        if (validIds.length > 0 || this.disabledIds.value.length > 0) {
+          this.disabledIds.next(validIds);
+        }
+
+        // Log information about skipped items
+        if (skippedIds.length > 0) {
+          console.info(
+            `Skipped ${skippedIds.length} invalid stratagem IDs during load`
+          );
+        }
+      }
+
+      // Safe fallback for checkbox states
+      try {
+        if (
+          state.onlyOneBackpack !== undefined &&
+          typeof state.onlyOneBackpack === 'boolean'
+        ) {
+          this.onlyOneBackpack.next(state.onlyOneBackpack);
+        }
+      } catch (e) {
+        console.warn('Error loading onlyOneBackpack setting', e);
+      }
+
+      try {
+        if (
+          state.guaranteeBackpack !== undefined &&
+          typeof state.guaranteeBackpack === 'boolean'
+        ) {
+          this.guaranteeBackpack.next(state.guaranteeBackpack);
+        }
+      } catch (e) {
+        console.warn('Error loading guaranteeBackpack setting', e);
+      }
+
+      try {
+        if (
+          state.onlyOneSupport !== undefined &&
+          typeof state.onlyOneSupport === 'boolean'
+        ) {
+          this.onlyOneSupport.next(state.onlyOneSupport);
+        }
+      } catch (e) {
+        console.warn('Error loading onlyOneSupport setting', e);
+      }
+
+      try {
+        if (
+          state.guaranteeSupport !== undefined &&
+          typeof state.guaranteeSupport === 'boolean'
+        ) {
+          this.guaranteeSupport.next(state.guaranteeSupport);
+        }
+      } catch (e) {
+        console.warn('Error loading guaranteeSupport setting', e);
+      }
     }
   }
 
