@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { StratagemDisplayComponent } from './stratagem-display.component';
-import { Stratagem, stratagems } from '../stratagems';
+import { Stratagem, stratagems } from '../services/stratagems';
 import { By } from '@angular/platform-browser';
 
 describe('StratagemDisplayComponent', () => {

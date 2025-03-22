@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Stratagem } from '../stratagems';
-import { getStratagem } from '../data-access';
+import { Stratagem } from '../services/stratagems';
+import { getStratagem } from '../services/data-access';
 
 @Component({
   selector: 'app-stratagem-display',

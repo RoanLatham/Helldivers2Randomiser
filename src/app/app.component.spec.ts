@@ -3,7 +3,7 @@ import { AppComponent } from './app.component';
 import { WeaponRandomiserComponent } from './weapon-randomiser/weapon-randomiser.component';
 import { StratagemRandomiserComponent } from './stratagem-randomiser/stratagem-randomiser.component';
 import { BoosterRandomiserComponent } from './booster-randomiser/booster-randomiser.component';
-import { GtagService } from './gtag-service.service';
+import { GtagService } from './services/gtag-service.service';
 import { Component, Input } from '@angular/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 

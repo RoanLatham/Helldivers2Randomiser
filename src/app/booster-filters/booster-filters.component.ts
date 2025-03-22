@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Booster, boosters } from '../boosters';
+import { Booster, boosters } from '../services/boosters';
 import { CommonModule } from '@angular/common';
-import { BoosterFilterStateService } from '../booster-filter-state.service';
-import { WarbondFilterStateService } from '../warbond-filter-state.service';
+import { BoosterFilterStateService } from '../services/booster-filter-state.service';
+import { WarbondFilterStateService } from '../services/warbond-filter-state.service';
 import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
 
 @Component({

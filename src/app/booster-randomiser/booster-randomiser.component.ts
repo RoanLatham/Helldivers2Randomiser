@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BoosterDisplayComponent } from '../booster-display/booster-display.component';
-import { Booster } from '../boosters';
-import { BoosterFilterStateService } from '../booster-filter-state.service';
-import { getRandomLoadout } from '../data-access';
+import { Booster } from '../services/boosters';
+import { BoosterFilterStateService } from '../services/booster-filter-state.service';
+import { getRandomLoadout } from '../services/data-access';
 
 @Component({
   selector: 'app-booster-randomiser',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { WeaponDisplayComponent } from '../weapon-display/weapon-display.component';
-import { Weapon } from '../weapons';
-import { WeaponFilterStateService } from '../weapon-filter-state.service';
-import { getRandomLoadout, getWeaponsByType } from '../data-access';
+import { Weapon } from '../services/weapons';
+import { WeaponFilterStateService } from '../services/weapon-filter-state.service';
+import { getRandomLoadout, getWeaponsByType } from '../services/data-access';
 
 @Component({
   selector: 'app-weapon-randomiser',

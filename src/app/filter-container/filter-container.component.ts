@@ -5,11 +5,11 @@ import { WeaponFiltersComponent } from '../weapon-filters/weapon-filters.compone
 import { StratagemFiltersComponent } from '../stratagem-filters/stratagem-filters.component';
 import { BoosterFiltersComponent } from '../booster-filters/booster-filters.component';
 import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
-import { WarbondFilterStateService } from '../warbond-filter-state.service';
-import { WeaponFilterStateService } from '../weapon-filter-state.service';
-import { StratagemFilterStateService } from '../stratagem-filter-state.service';
-import { BoosterFilterStateService } from '../booster-filter-state.service';
-import { GtagService } from '../gtag-service.service';
+import { WarbondFilterStateService } from '../services/warbond-filter-state.service';
+import { WeaponFilterStateService } from '../services/weapon-filter-state.service';
+import { StratagemFilterStateService } from '../services/stratagem-filter-state.service';
+import { BoosterFilterStateService } from '../services/booster-filter-state.service';
+import { GtagService } from '../services/gtag-service.service';
 import {
   StorageService,
   VersionComparisonResult,

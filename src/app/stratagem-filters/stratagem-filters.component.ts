@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Stratagem, stratagemsByShipModule } from '../stratagems';
+import { Stratagem, stratagemsByShipModule } from '../services/stratagems';
 import { CommonModule } from '@angular/common';
-import { StratagemFilterStateService } from '../stratagem-filter-state.service';
+import { StratagemFilterStateService } from '../services/stratagem-filter-state.service';
 import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
-import { getStratagemsByShipModule, getAllShipModules } from '../data-access';
+import {
+  getStratagemsByShipModule,
+  getAllShipModules,
+} from '../services/data-access';
 
 @Component({
   selector: 'app-stratagem-filters',

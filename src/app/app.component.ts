@@ -11,7 +11,7 @@ import { WeaponRandomiserComponent } from './weapon-randomiser/weapon-randomiser
 import { WeaponFiltersComponent } from './weapon-filters/weapon-filters.component';
 import { WarbondFiltersComponent } from './warbond-filters/warbond-filters.component';
 import { RandomiseButtonComponent } from './randomise-button/randomise-button.component';
-import { GtagService } from './gtag-service.service';
+import { GtagService } from './services/gtag-service.service';
 import { LearnMoreComponent } from './learn-more/learn-more.component';
 import { CollapsibleSectionComponent } from './shared/collapsible-section/collapsible-section.component';
 import { FooterComponent } from './footer/footer.component';

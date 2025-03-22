@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { WarbondFilterStateService } from '../warbond-filter-state.service';
-import { WeaponFilterStateService } from '../weapon-filter-state.service';
-import { StratagemFilterStateService } from '../stratagem-filter-state.service';
-import { BoosterFilterStateService } from '../booster-filter-state.service';
-import { GtagService } from '../gtag-service.service';
+import { WarbondFilterStateService } from './warbond-filter-state.service';
+import { WeaponFilterStateService } from './weapon-filter-state.service';
+import { StratagemFilterStateService } from './stratagem-filter-state.service';
+import { BoosterFilterStateService } from './booster-filter-state.service';
+import { GtagService } from './gtag-service.service';
 import { APP_VERSION, SCHEMA_VERSIONS } from '../version-info';
 
 // Storage key for localStorage

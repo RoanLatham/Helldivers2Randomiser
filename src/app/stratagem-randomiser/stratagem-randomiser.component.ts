@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StratagemDisplayComponent } from '../stratagem-display/stratagem-display.component';
-import { StratagemFilterStateService } from '../stratagem-filter-state.service';
-import { Stratagem } from '../stratagems';
-import { getRandomLoadout } from '../data-access';
+import { StratagemFilterStateService } from '../services/stratagem-filter-state.service';
+import { Stratagem } from '../services/stratagems';
+import { getRandomLoadout } from '../services/data-access';
 
 @Component({
   selector: 'app-stratagem-randomiser',

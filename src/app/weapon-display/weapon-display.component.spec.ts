@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { WeaponDisplayComponent } from './weapon-display.component';
-import { primaryWeapons, secondaryWeapons, grenades } from '../weapons';
+import {
+  primaryWeapons,
+  secondaryWeapons,
+  grenades,
+} from '../services/weapons';
 import { By } from '@angular/platform-browser';
 
 describe('WeaponDisplayComponent', () => {

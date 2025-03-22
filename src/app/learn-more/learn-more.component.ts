@@ -1,6 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GtagService } from '../gtag-service.service';
+import { GtagService } from '../services/gtag-service.service';
 
 @Component({
   selector: 'app-learn-more',
