@@ -423,6 +423,14 @@ export const secondaryWeapons: Weapon[] = [
     warbond: 'Truth_Enforcers',
     iconPath: './assets/NewWeapons/Secondary/Special/PLAS-15_Loyalist.png',
   },
+  {
+    id: 'Las-58_Talon',
+    name: 'Las-58 Talon',
+    type: 'Secondary',
+    category: 'Special',
+    warbond: 'Borderline_Justice',
+    iconPath: './assets/NewWeapons/Secondary/Special/Las-58_Talon.png',
+  },
 ];
 
 export const throwableWeapons: Weapon[] = [
@@ -926,6 +934,14 @@ export const allWeapons: Weapon[] = [
     category: 'Special',
     warbond: 'Truth_Enforcers',
     iconPath: './assets/NewWeapons/Secondary/Special/PLAS-15_Loyalist.png',
+  },
+  {
+    id: 'Las-58_Talon',
+    name: 'Las-58 Talon',
+    type: 'Secondary',
+    category: 'Special',
+    warbond: 'Borderline_Justice',
+    iconPath: './assets/NewWeapons/Secondary/Special/Las-58_Talon.png',
   },
   {
     id: 'G-6_Frag',
