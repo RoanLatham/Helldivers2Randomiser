@@ -2,10 +2,114 @@
 
 // Import color variables for consistency
 $button-active-green: #60dd81;
+$warning-color: #ffb900;
+$info-color: #3498db;
 
 .filters-container {
   width: 100%;
   max-width: var(--container-width);
+}
+
+// Version warning styling
+.version-warning {
+  background-color: rgba($warning-color, 0.2);
+  border: 1px solid $warning-color;
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  font-family: "Sinclair", sans-serif;
+  color: white;
+  line-height: 1.4;
+  animation: fadeIn 0.3s ease-out;
+
+  .warning-icon {
+    font-size: 1.25rem;
+    margin-right: 0.75rem;
+    color: $warning-color;
+  }
+
+  span {
+    flex: 1;
+  }
+
+  button {
+    margin-left: 1rem;
+    white-space: nowrap;
+  }
+}
+
+// Partial load warning styling
+.partial-load-warning {
+  background-color: rgba($info-color, 0.2);
+  border: 1px solid $info-color;
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-family: "Sinclair", sans-serif;
+  color: white;
+  line-height: 1.4;
+  animation: fadeIn 0.3s ease-out;
+
+  .info-icon {
+    font-size: 1.25rem;
+    margin-right: 0.75rem;
+    color: $info-color;
+  }
+
+  span {
+    flex: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .warning-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+}
+
+// Loading report details
+.loading-report {
+  background-color: rgba($info-color, 0.15);
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  font-family: "Sinclair", sans-serif;
+  color: #e0e0e0;
+  animation: fadeIn 0.3s ease-out;
+
+  .report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .report-heading {
+    font-size: 1.1rem;
+    margin: 0;
+    color: white;
+  }
+
+  .report-list {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    li {
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  .report-note {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
 }
 
 .settings-section {
@@ -103,6 +207,31 @@ $button-active-green: #60dd81;
   .settings-title {
     font-size: 1.1rem;
   }
+
+  .version-warning,
+  .partial-load-warning {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .warning-icon,
+    .info-icon {
+      margin-bottom: 0.5rem;
+    }
+
+    button {
+      margin-left: 0;
+      margin-top: 0.75rem;
+      align-self: flex-end;
+    }
+  }
+
+  .loading-report {
+    padding: 0.5rem;
+
+    .report-list {
+      padding-left: 1.25rem;
+    }
+  }
 }
 
 @media (max-width: $mobile) {
@@ -118,5 +247,52 @@ $button-active-green: #60dd81;
 
   .settings-info {
     font-size: 0.8rem;
+  }
+
+  .version-warning,
+  .partial-load-warning {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .loading-report {
+    font-size: 0.85rem;
+
+    .report-heading {
+      font-size: 0.9rem;
+    }
+
+    .report-list {
+      font-size: 0.8rem;
+    }
+
+    .report-note {
+      font-size: 0.75rem;
+    }
+  }
+
+  .partial-load-warning,
+  .loading-report {
+    padding: 0.5rem;
+
+    .warning-buttons {
+      flex-direction: column;
+      width: 100%;
+
+      button {
+        width: 100%;
+        margin-top: 0.25rem;
+      }
+    }
+  }
+
+  .loading-report .report-header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    button {
+      margin-top: 0.5rem;
+      width: 100%;
+    }
   }
 }

@@ -15,6 +15,76 @@
         [initiallyCollapsed]="settingsCollapsed"
         (toggled)="toggleSettingsCollapse($event)"
       >
+        <!-- Version warning message -->
+        <div class="version-warning" *ngIf="versionWarning">
+          <div class="warning-icon">⚠️</div>
+          <span>{{ versionWarning }}</span>
+          <button
+            class="action-button warning-button"
+            (click)="clearSettings()"
+          >
+            Reset Settings
+          </button>
+        </div>
+
+        <!-- Partial load warning message -->
+        <div class="partial-load-warning" *ngIf="partialLoadWarning">
+          <div class="info-icon">ℹ️</div>
+          <span>{{ partialLoadWarning }}</span>
+          <div class="warning-buttons">
+            <button
+              class="action-button info-button"
+              (click)="partialLoadWarning = null; loadingReport = null"
+              title="Dismiss this warning"
+            >
+              Dismiss
+            </button>
+            <button
+              class="action-button info-button"
+              (click)="partialLoadWarning = null"
+              title="View details of skipped items"
+            >
+              Show More
+            </button>
+          </div>
+        </div>
+
+        <!-- Loading report details (shown when expanded) -->
+        <div
+          class="loading-report"
+          *ngIf="loadingReport && !partialLoadWarning"
+        >
+          <div class="report-header">
+            <p class="report-heading">Loading Summary</p>
+            <button
+              class="action-button info-button"
+              (click)="loadingReport = null"
+              title="Hide this report"
+            >
+              Dismiss
+            </button>
+          </div>
+          <ul class="report-list">
+            <li *ngIf="loadingReport.skippedItems.warbond > 0">
+              Warbond filters: {{ loadingReport.skippedItems.warbond }} skipped
+            </li>
+            <li *ngIf="loadingReport.skippedItems.weapon > 0">
+              Weapon filters: {{ loadingReport.skippedItems.weapon }} skipped
+            </li>
+            <li *ngIf="loadingReport.skippedItems.stratagem > 0">
+              Stratagem filters:
+              {{ loadingReport.skippedItems.stratagem }} skipped
+            </li>
+            <li *ngIf="loadingReport.skippedItems.booster > 0">
+              Booster filters: {{ loadingReport.skippedItems.booster }} skipped
+            </li>
+          </ul>
+          <p class="report-note">
+            These items may have been from an older version or contain invalid
+            data.
+          </p>
+        </div>
+
         <div class="settings-container">
           <!-- Save button with conditional text -->
           <button class="action-button save-button" (click)="saveSettings()">
