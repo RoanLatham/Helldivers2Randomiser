@@ -53,13 +53,8 @@ export class FilterContainerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Check for stored settings on initialization
-    this.checkForStoredSettings();
-
-    // Auto-load settings if available
-    if (this.hasStoredSettings) {
-      this.loadSettings();
-    }
+    // Check for stored settings and load if available
+    this.loadSettingsFromStorage();
 
     // TESTING ONLY: Uncomment to simulate a partial load warning
     // this.testPartialLoadWarning();
@@ -306,5 +301,41 @@ export class FilterContainerComponent implements OnInit {
         }, 8000);
       }
     }
+  }
+
+  /**
+   * Checks for stored settings and loads them if available
+   */
+  loadSettingsFromStorage(): void {
+    // Check for stored settings
+    this.checkForStoredSettings();
+
+    // Auto-load settings if available
+    if (this.hasStoredSettings) {
+      this.loadSettings();
+    }
+  }
+
+  /**
+   * Reset all filters to default settings without clearing localStorage
+   */
+  resetFiltersOnly(): void {
+    // Reset all services to default state without affecting localStorage
+    this.warbondFilterState.resetState();
+    this.weaponFilterState.resetState();
+    this.stratagemFilterState.resetState();
+    this.boosterFilterState.resetState();
+
+    // Clear warnings but keep stored settings info
+    this.versionWarning = null;
+    this.partialLoadWarning = null;
+    this.loadingReport = null;
+
+    // Track event
+    this.gtagService.trackEvent(
+      'reset_filters_only',
+      'User reset filters without clearing storage',
+      'FILTERS'
+    );
   }
 }

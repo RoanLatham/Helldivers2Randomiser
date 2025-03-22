@@ -19,32 +19,41 @@
         <div class="version-warning" *ngIf="versionWarning">
           <div class="warning-icon">⚠️</div>
           <span>{{ versionWarning }}</span>
-          <button
-            class="action-button warning-button"
-            (click)="clearSettings()"
-          >
-            Reset Settings
-          </button>
+          <div class="flex-horizontal">
+            <button
+              class="action-button warning-button"
+              (click)="clearSettings()"
+            >
+              Reset Settings
+            </button>
+            <button
+              class="action-button warning-button"
+              (click)="versionWarning = null"
+              title="Dismiss this warning"
+            >
+              Dismiss
+            </button>
+          </div>
         </div>
 
         <!-- Partial load warning message -->
         <div class="partial-load-warning" *ngIf="partialLoadWarning">
           <div class="info-icon">ℹ️</div>
           <span>{{ partialLoadWarning }}</span>
-          <div class="warning-buttons">
-            <button
-              class="action-button info-button"
-              (click)="partialLoadWarning = null; loadingReport = null"
-              title="Dismiss this warning"
-            >
-              Dismiss
-            </button>
+          <div class="flex-horizontal">
             <button
               class="action-button info-button"
               (click)="partialLoadWarning = null"
               title="View details of skipped items"
             >
               Show More
+            </button>
+            <button
+              class="action-button info-button"
+              (click)="partialLoadWarning = null; loadingReport = null"
+              title="Dismiss this warning"
+            >
+              Dismiss
             </button>
           </div>
         </div>
@@ -87,11 +96,26 @@
 
         <div class="settings-container">
           <!-- Save button with conditional text -->
-          <button class="action-button save-button" (click)="saveSettings()">
-            <!-- <span class="button-icon">💾</span> -->
+          <button
+            class="action-button save-button"
+            (click)="saveSettings()"
+            title="Save your current filter selections to browser storage"
+          >
             {{
-              hasStoredSettings ? "Override Settings" : "Save Filter Settings"
+              hasStoredSettings
+                ? "Override Saved Settings"
+                : "Save Filter Settings"
             }}
+          </button>
+
+          <!-- Reload button shown only when storage exists -->
+          <button
+            *ngIf="hasStoredSettings"
+            class="action-button save-button"
+            (click)="loadSettingsFromStorage()"
+            title="Load your saved filters from storage, replacing current selections"
+          >
+            Reload Saved Settings
           </button>
 
           <!-- Clear button shown only when storage exists -->
@@ -99,9 +123,18 @@
             *ngIf="hasStoredSettings"
             class="action-button danger-button"
             (click)="clearStorage()"
+            title="Delete your saved filter settings from browser storage"
           >
-            <!-- <span class="button-icon">🗑️</span> -->
             Clear Saved Settings
+          </button>
+
+          <!-- Reset Filters button (always shown) -->
+          <button
+            class="action-button info-button"
+            (click)="resetFiltersOnly()"
+            title="Reset all filter selections to default without affecting saved settings"
+          >
+            Reset Active Filters
           </button>
         </div>
         <!-- Show last saved time if available -->
