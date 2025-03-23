@@ -10,6 +10,7 @@ import { WeaponFilterStateService } from '../services/weapon-filter-state.servic
 import { StratagemFilterStateService } from '../services/stratagem-filter-state.service';
 import { BoosterFilterStateService } from '../services/booster-filter-state.service';
 import { GtagService } from '../services/gtag-service.service';
+import { InitStateService } from '../services/init-state.service';
 import {
   StorageService,
   VersionComparisonResult,
@@ -49,7 +50,8 @@ export class FilterContainerComponent implements OnInit {
     private stratagemFilterState: StratagemFilterStateService,
     private boosterFilterState: BoosterFilterStateService,
     private gtagService: GtagService,
-    private storageService: StorageService
+    private storageService: StorageService,
+    private initStateService: InitStateService
   ) {}
 
   ngOnInit(): void {
@@ -162,6 +164,10 @@ export class FilterContainerComponent implements OnInit {
         this.loadingReport = null;
         this.partialLoadWarning = null;
       }
+
+      // Notify that settings have been loaded - this will trigger re-randomization
+      // but only if this is the first load of the application
+      this.initStateService.notifySettingsLoaded();
     } else if (result.versionResult?.resetRequired) {
       // Handle incompatible versions
       this.clearSettings();
@@ -313,6 +319,9 @@ export class FilterContainerComponent implements OnInit {
     // Auto-load settings if available
     if (this.hasStoredSettings) {
       this.loadSettings();
+    } else {
+      // If no settings found, still notify the init service so randomizers know they can proceed
+      this.initStateService.notifySettingsLoaded();
     }
   }
 

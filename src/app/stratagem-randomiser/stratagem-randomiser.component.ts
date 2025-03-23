@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { StratagemDisplayComponent } from '../stratagem-display/stratagem-display.component';
 import { StratagemFilterStateService } from '../services/stratagem-filter-state.service';
 import { Stratagem } from '../services/stratagems';
 import { getRandomStratagems } from '../services/data-access';
+import { InitStateService } from '../services/init-state.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-stratagem-randomiser',
@@ -11,43 +13,70 @@ import { getRandomStratagems } from '../services/data-access';
   imports: [StratagemDisplayComponent],
   standalone: true,
 })
-export class StratagemRandomiserComponent implements OnInit {
+export class StratagemRandomiserComponent implements OnInit, OnDestroy {
   ids: string[] = [];
   disabledIds: string[] = [];
   onlyOneBackpack: boolean = true;
   onlyOneSupport: boolean = true;
   guaranteeBackpack: boolean = false;
   guaranteeSupport: boolean = false;
+  private subscription: Subscription = new Subscription();
 
-  constructor(private stratagemState: StratagemFilterStateService) {}
+  constructor(
+    private stratagemState: StratagemFilterStateService,
+    private initStateService: InitStateService
+  ) {}
 
   ngOnInit(): void {
     // Subscribe to the disabledIds$ observable
-    this.stratagemState.disabledIds$.subscribe((ids) => {
-      this.disabledIds = ids;
-    });
+    this.subscription.add(
+      this.stratagemState.disabledIds$.subscribe((ids) => {
+        this.disabledIds = ids;
+      })
+    );
 
     // Subscribe to the onlyOneBackpack$ observable
-    this.stratagemState.onlyOneBackpack$.subscribe((value) => {
-      this.onlyOneBackpack = value;
-    });
+    this.subscription.add(
+      this.stratagemState.onlyOneBackpack$.subscribe((value) => {
+        this.onlyOneBackpack = value;
+      })
+    );
 
     // Subscribe to the onlyOneSupport$ observable
-    this.stratagemState.onlyOneSupport$.subscribe((value) => {
-      this.onlyOneSupport = value;
-    });
+    this.subscription.add(
+      this.stratagemState.onlyOneSupport$.subscribe((value) => {
+        this.onlyOneSupport = value;
+      })
+    );
 
     // Subscribe to the guaranteeBackpack$ observable
-    this.stratagemState.guaranteeBackpack$.subscribe((value) => {
-      this.guaranteeBackpack = value;
-    });
+    this.subscription.add(
+      this.stratagemState.guaranteeBackpack$.subscribe((value) => {
+        this.guaranteeBackpack = value;
+      })
+    );
 
     // Subscribe to the guaranteeSupport$ observable
-    this.stratagemState.guaranteeSupport$.subscribe((value) => {
-      this.guaranteeSupport = value;
-    });
+    this.subscription.add(
+      this.stratagemState.guaranteeSupport$.subscribe((value) => {
+        this.guaranteeSupport = value;
+      })
+    );
 
-    this.randomise();
+    // Subscribe to the settingsLoaded$ observable from InitStateService
+    this.subscription.add(
+      this.initStateService.settingsLoaded$.subscribe((loaded) => {
+        if (loaded) {
+          // Only randomize if settings have been loaded
+          this.randomise();
+        }
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    // Clean up subscriptions
+    this.subscription.unsubscribe();
   }
 
   randomise(): void {

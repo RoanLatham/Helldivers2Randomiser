@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { WeaponDisplayComponent } from '../weapon-display/weapon-display.component';
 import { Weapon } from '../services/weapons';
 import { WeaponFilterStateService } from '../services/weapon-filter-state.service';
-import { getRandomWeapons, getWeaponsByType } from '../services/data-access';
+import { getRandomWeapons } from '../services/data-access';
+import { InitStateService } from '../services/init-state.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-weapon-randomiser',
@@ -11,22 +13,41 @@ import { getRandomWeapons, getWeaponsByType } from '../services/data-access';
   templateUrl: './weapon-randomiser.component.html',
   styleUrls: ['./weapon-randomiser.component.scss'],
 })
-export class WeaponRandomiserComponent implements OnInit {
+export class WeaponRandomiserComponent implements OnInit, OnDestroy {
   primaryWeaponId!: string;
   secondaryWeaponId!: string;
   grenadeId!: string;
 
   disabledIds: string[] = [];
+  private subscription: Subscription = new Subscription();
 
-  constructor(private weaponState: WeaponFilterStateService) {}
+  constructor(
+    private weaponState: WeaponFilterStateService,
+    private initStateService: InitStateService
+  ) {}
 
   ngOnInit() {
     // Subscribe to the disabledIds$ observable
-    this.weaponState.disabledIds$.subscribe((ids) => {
-      this.disabledIds = ids;
-    });
+    this.subscription.add(
+      this.weaponState.disabledIds$.subscribe((ids) => {
+        this.disabledIds = ids;
+      })
+    );
 
-    this.randomise();
+    // Subscribe to the settingsLoaded$ observable from InitStateService
+    this.subscription.add(
+      this.initStateService.settingsLoaded$.subscribe((loaded) => {
+        if (loaded) {
+          // Only randomize if settings have been loaded
+          this.randomise();
+        }
+      })
+    );
+  }
+
+  ngOnDestroy() {
+    // Clean up subscriptions
+    this.subscription.unsubscribe();
   }
 
   randomise(): void {
