@@ -43,6 +43,12 @@ export class LearnMoreComponent implements AfterViewInit {
       isOpen: false,
     },
     {
+      question: 'How do I save my filter settings for future visits?',
+      answer:
+        'The app includes a settings storage system that saves your preferences to your browser\'s local storage. To save your current filter settings, open the "Save & Restore" section and click "Save Current Settings". Your settings will be automatically loaded when you return to the site in the future. You can also manually reload your saved settings or clear them completely if needed.',
+      isOpen: false,
+    },
+    {
       question: 'Why should I use randomized loadouts?',
       answer:
         'Randomized loadouts help prevent gameplay from becoming stale by encouraging you to try new equipment combinations you might not normally choose. This can help you discover powerful synergies, develop new skills with unfamiliar weapons, and add variety to your Helldivers 2 experience.',
