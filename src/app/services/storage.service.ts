@@ -30,7 +30,7 @@ export interface VersionInfo {
  * Represents the full storage data structure
  */
 export interface StorageData {
-  version: string; // e.g. "1.0.0"
+  version: string; // e.g. "1.0.0.0"
   timestamp: string; // ISO timestamp
   schemas: {
     warbond: string; // Schema version
@@ -66,6 +66,7 @@ export interface VersionComparisonResult {
   compatible: boolean;
   warningNeeded: boolean;
   resetRequired: boolean;
+  infoNeeded: boolean;
 }
 
 @Injectable({
@@ -173,6 +174,7 @@ export class StorageService {
             compatible: false,
             warningNeeded: false,
             resetRequired: true,
+            infoNeeded: false,
           },
           errors: ['Version information missing, reset required'],
         };
@@ -359,7 +361,8 @@ export class StorageService {
   }
 
   /**
-   * Compare two semantic versions and determine compatibility
+   * Compare two versions and determine compatibility
+   * Handles version format updates from 3-part to 4-part automatically
    * @param currentVersion Current application version
    * @param storedVersion Version from stored data
    * @returns Object with compatibility flags
@@ -374,11 +377,13 @@ export class StorageService {
         compatible: true,
         warningNeeded: false,
         resetRequired: false,
+        infoNeeded: false,
       };
     }
 
     try {
       const current = this.parseSemanticVersion(currentVersion);
+      // Handle case where stored version might be using old 3-part format
       const stored = this.parseSemanticVersion(storedVersion);
 
       // Major version change - reset required
@@ -387,6 +392,7 @@ export class StorageService {
           compatible: false,
           warningNeeded: false,
           resetRequired: true,
+          infoNeeded: false,
         };
       }
 
@@ -396,14 +402,30 @@ export class StorageService {
           compatible: true,
           warningNeeded: true,
           resetRequired: false,
+          infoNeeded: false,
         };
       }
 
-      // Patch version change or older major version - fully compatible
+      // Info version change - info notification needed
+      if (
+        current.major === stored.major &&
+        current.minor === stored.minor &&
+        current.info > stored.info
+      ) {
+        return {
+          compatible: true,
+          warningNeeded: false,
+          resetRequired: false,
+          infoNeeded: true,
+        };
+      }
+
+      // Patch version change - fully compatible
       return {
         compatible: true,
         warningNeeded: false,
         resetRequired: false,
+        infoNeeded: false,
       };
     } catch (error) {
       console.error('Version comparison error:', error);
@@ -412,32 +434,42 @@ export class StorageService {
         compatible: false,
         warningNeeded: false,
         resetRequired: true,
+        infoNeeded: false,
       };
     }
   }
 
   /**
    * Parse a semantic version string into its components
-   * @param version Version string in format "MAJOR.MINOR.PATCH"
+   * Supports both 3-part (MAJOR.MINOR.PATCH) and 4-part (MAJOR.MINOR.INFO.PATCH) formats
+   * @param version Version string in format "MAJOR.MINOR.PATCH" or "MAJOR.MINOR.INFO.PATCH"
    */
   private parseSemanticVersion(version: string): {
     major: number;
     minor: number;
+    info: number;
     patch: number;
   } {
     const parts = version.split('.');
-    if (parts.length !== 3) {
+
+    // Handle old 3-part version format by adding a '0' for the INFO segment
+    if (parts.length === 3) {
+      parts.splice(2, 0, '0'); // Insert '0' at index 2 (between MINOR and PATCH)
+    }
+
+    if (parts.length !== 4) {
       throw new Error(`Invalid semantic version: ${version}`);
     }
 
     const major = parseInt(parts[0], 10);
     const minor = parseInt(parts[1], 10);
-    const patch = parseInt(parts[2], 10);
+    const info = parseInt(parts[2], 10);
+    const patch = parseInt(parts[3], 10);
 
-    if (isNaN(major) || isNaN(minor) || isNaN(patch)) {
+    if (isNaN(major) || isNaN(minor) || isNaN(info) || isNaN(patch)) {
       throw new Error(`Invalid semantic version components: ${version}`);
     }
 
-    return { major, minor, patch };
+    return { major, minor, info, patch };
   }
 }
