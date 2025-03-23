@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Warbond, warbonds } from '../services/warbonds';
+import { Warbond, warbonds } from '../../services/warbonds';
 import { CommonModule } from '@angular/common';
-import { WarbondFilterStateService } from '../services/warbond-filter-state.service';
-import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
+import { WarbondFilterStateService } from '../../services/warbond-filter-state.service';
+import { CollapsibleSectionComponent } from '../../shared/collapsible-section/collapsible-section.component';
 
 @Component({
   selector: 'app-warbond-filters',

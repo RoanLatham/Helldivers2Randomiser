@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { WarbondFiltersComponent } from './warbond-filters.component';
-import { WarbondFilterStateService } from '../services/warbond-filter-state.service';
+import { WarbondFilterStateService } from '../../services/warbond-filter-state.service';
 import { By } from '@angular/platform-browser';
 import { DebugElement, ElementRef } from '@angular/core';
 import { of } from 'rxjs';

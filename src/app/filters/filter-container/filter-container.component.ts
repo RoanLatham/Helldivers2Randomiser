@@ -4,18 +4,18 @@ import { WarbondFiltersComponent } from '../warbond-filters/warbond-filters.comp
 import { WeaponFiltersComponent } from '../weapon-filters/weapon-filters.component';
 import { StratagemFiltersComponent } from '../stratagem-filters/stratagem-filters.component';
 import { BoosterFiltersComponent } from '../booster-filters/booster-filters.component';
-import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
-import { WarbondFilterStateService } from '../services/warbond-filter-state.service';
-import { WeaponFilterStateService } from '../services/weapon-filter-state.service';
-import { StratagemFilterStateService } from '../services/stratagem-filter-state.service';
-import { BoosterFilterStateService } from '../services/booster-filter-state.service';
-import { GtagService } from '../services/gtag-service.service';
-import { InitStateService } from '../services/init-state.service';
+import { CollapsibleSectionComponent } from '../../shared/collapsible-section/collapsible-section.component';
+import { WarbondFilterStateService } from '../../services/warbond-filter-state.service';
+import { WeaponFilterStateService } from '../../services/weapon-filter-state.service';
+import { StratagemFilterStateService } from '../../services/stratagem-filter-state.service';
+import { BoosterFilterStateService } from '../../services/booster-filter-state.service';
+import { GtagService } from '../../services/gtag-service.service';
+import { InitStateService } from '../../services/init-state.service';
 import {
   StorageService,
   VersionComparisonResult,
   LoadingReport,
-} from '../services/storage.service';
+} from '../../services/storage.service';
 
 @Component({
   selector: 'app-filter-container',

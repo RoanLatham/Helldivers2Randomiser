@@ -1,13 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Weapon } from '../services/weapons';
+import { Weapon } from '../../services/weapons';
 import { CommonModule } from '@angular/common';
-import { WeaponFilterStateService } from '../services/weapon-filter-state.service';
+import { WeaponFilterStateService } from '../../services/weapon-filter-state.service';
 import { Subscription } from 'rxjs';
-import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
+import { CollapsibleSectionComponent } from '../../shared/collapsible-section/collapsible-section.component';
 import {
   getWeaponsByType,
   getWeaponsByCategory,
-} from '../services/data-access';
+} from '../../services/data-access';
 
 @Component({
   selector: 'app-weapon-filters',
