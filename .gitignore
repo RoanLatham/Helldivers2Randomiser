@@ -47,3 +47,4 @@ gitignore/
 Helldivers 2 Loadout Randomiser_files/
 Rendered Helldivers 2 Loadout Randomiser.html
 src/app/build-timestamp.ts
+deploy.bat
