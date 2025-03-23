@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StratagemDisplayComponent } from '../stratagem-display/stratagem-display.component';
 import { StratagemFilterStateService } from '../services/stratagem-filter-state.service';
 import { Stratagem } from '../services/stratagems';
-import { getRandomLoadout } from '../services/data-access';
+import { getRandomStratagems } from '../services/data-access';
 
 @Component({
   selector: 'app-stratagem-randomiser',
@@ -51,7 +51,7 @@ export class StratagemRandomiserComponent implements OnInit {
   }
 
   randomise(): void {
-    const loadout = getRandomLoadout({
+    const stratagems = getRandomStratagems({
       excludedStratagemIds: this.disabledIds,
       requireOneBackpack: this.onlyOneBackpack,
       requireOneSupport: this.onlyOneSupport,
@@ -59,8 +59,8 @@ export class StratagemRandomiserComponent implements OnInit {
       guaranteeSupport: this.guaranteeSupport,
     });
 
-    // Extract stratagem IDs from the randomized loadout
-    this.ids = loadout.stratagems.map((stratagem) => stratagem.id);
+    // Extract stratagem IDs from the randomized stratagems
+    this.ids = stratagems.map((stratagem) => stratagem.id);
 
     // Ensure we have exactly 4 stratagem IDs (in case fewer were returned)
     while (this.ids.length < 4) {

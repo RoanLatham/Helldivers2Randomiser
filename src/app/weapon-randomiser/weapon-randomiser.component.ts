@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WeaponDisplayComponent } from '../weapon-display/weapon-display.component';
 import { Weapon } from '../services/weapons';
 import { WeaponFilterStateService } from '../services/weapon-filter-state.service';
-import { getRandomLoadout, getWeaponsByType } from '../services/data-access';
+import { getRandomWeapons, getWeaponsByType } from '../services/data-access';
 
 @Component({
   selector: 'app-weapon-randomiser',
@@ -30,13 +30,13 @@ export class WeaponRandomiserComponent implements OnInit {
   }
 
   randomise(): void {
-    const loadout = getRandomLoadout({
+    const weapons = getRandomWeapons({
       excludedWeaponIds: this.disabledIds,
     });
 
-    // Set the weapon IDs from the randomized loadout
-    this.primaryWeaponId = loadout.primary?.id || '';
-    this.secondaryWeaponId = loadout.secondary?.id || '';
-    this.grenadeId = loadout.throwable?.id || '';
+    // Set the weapon IDs from the randomized weapons
+    this.primaryWeaponId = weapons.primary?.id || '';
+    this.secondaryWeaponId = weapons.secondary?.id || '';
+    this.grenadeId = weapons.throwable?.id || '';
   }
 }

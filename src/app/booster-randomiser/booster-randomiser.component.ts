@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BoosterDisplayComponent } from '../booster-display/booster-display.component';
 import { Booster } from '../services/boosters';
 import { BoosterFilterStateService } from '../services/booster-filter-state.service';
-import { getRandomLoadout } from '../services/data-access';
+import { getRandomBooster } from '../services/data-access';
 
 @Component({
   selector: 'app-booster-randomiser',
@@ -27,11 +27,11 @@ export class BoosterRandomiserComponent implements OnInit {
   }
 
   randomise(): void {
-    const loadout = getRandomLoadout({
+    const booster = getRandomBooster({
       excludedBoosterIds: this.disabledIds,
     });
 
-    // Set the booster ID from the randomized loadout
-    this.id = loadout.booster?.id || '';
+    // Set the booster ID directly from the randomized booster
+    this.id = booster?.id || '';
   }
 }

@@ -178,29 +178,21 @@ export function getItemsFromMultipleWarbonds(warbondIds: string[]): {
   return getItemsFromWarbonds(warbondIds);
 }
 
-// Get random items suitable for a loadout
-export function getRandomLoadout(
+/**
+ * Get random weapons suitable for a loadout
+ */
+export function getRandomWeapons(
   options: {
     includedWarbondIds?: string[];
     excludedWeaponIds?: string[];
-    excludedStratagemIds?: string[];
-    excludedBoosterIds?: string[];
-    requireOneBackpack?: boolean;
-    requireOneSupport?: boolean;
-    guaranteeBackpack?: boolean;
-    guaranteeSupport?: boolean;
   } = {}
 ): {
   primary: Weapon | null;
   secondary: Weapon | null;
   throwable: Weapon | null;
-  stratagems: Stratagem[];
-  booster: Booster | null;
 } {
-  // Filter available items based on included warbonds if specified
+  // Filter available weapons based on options
   let availableWeapons = [...allWeapons];
-  let availableStratagems = [...stratagems];
-  let availableBoosters = [...boosters];
 
   // Filter by warbonds if specified
   if (options.includedWarbondIds && options.includedWarbondIds.length > 0) {
@@ -218,33 +210,15 @@ export function getRandomLoadout(
         (w.type === 'Secondary' && secondaryIds.has(w.id)) ||
         (w.type === 'Throwable' && throwableIds.has(w.id))
     );
-
-    const stratagemIds = new Set(items.stratagems);
-    availableStratagems = stratagems.filter((s) => stratagemIds.has(s.id));
-
-    const boosterIds = new Set(items.boosters);
-    availableBoosters = boosters.filter((b) => boosterIds.has(b.id));
   }
 
-  // Filter out excluded items
+  // Filter out excluded weapons
   if (options.excludedWeaponIds) {
     const excludedIds = new Set(options.excludedWeaponIds);
     availableWeapons = availableWeapons.filter((w) => !excludedIds.has(w.id));
   }
 
-  if (options.excludedStratagemIds) {
-    const excludedIds = new Set(options.excludedStratagemIds);
-    availableStratagems = availableStratagems.filter(
-      (s) => !excludedIds.has(s.id)
-    );
-  }
-
-  if (options.excludedBoosterIds) {
-    const excludedIds = new Set(options.excludedBoosterIds);
-    availableBoosters = availableBoosters.filter((b) => !excludedIds.has(b.id));
-  }
-
-  // Randomly select items
+  // Randomly select weapons
   const primaryWeapons = availableWeapons.filter((w) => w.type === 'Primary');
   const primary =
     primaryWeapons.length > 0
@@ -266,6 +240,44 @@ export function getRandomLoadout(
     throwableWeapons.length > 0
       ? throwableWeapons[Math.floor(Math.random() * throwableWeapons.length)]
       : null;
+
+  return {
+    primary,
+    secondary,
+    throwable,
+  };
+}
+
+/**
+ * Get random stratagems suitable for a loadout
+ */
+export function getRandomStratagems(
+  options: {
+    includedWarbondIds?: string[];
+    excludedStratagemIds?: string[];
+    requireOneBackpack?: boolean;
+    requireOneSupport?: boolean;
+    guaranteeBackpack?: boolean;
+    guaranteeSupport?: boolean;
+  } = {}
+): Stratagem[] {
+  // Filter available stratagems based on options
+  let availableStratagems = [...stratagems];
+
+  // Filter by warbonds if specified
+  if (options.includedWarbondIds && options.includedWarbondIds.length > 0) {
+    const items = getItemsFromWarbonds(options.includedWarbondIds);
+    const stratagemIds = new Set(items.stratagems);
+    availableStratagems = stratagems.filter((s) => stratagemIds.has(s.id));
+  }
+
+  // Filter out excluded stratagems
+  if (options.excludedStratagemIds) {
+    const excludedIds = new Set(options.excludedStratagemIds);
+    availableStratagems = availableStratagems.filter(
+      (s) => !excludedIds.has(s.id)
+    );
+  }
 
   // Select stratagems, handling backpack and support weapon requirements
   let selectedStratagems: Stratagem[] = [];
@@ -440,16 +452,87 @@ export function getRandomLoadout(
     }
   }
 
-  const booster =
-    availableBoosters.length > 0
-      ? availableBoosters[Math.floor(Math.random() * availableBoosters.length)]
-      : null;
+  return selectedStratagems;
+}
 
+/**
+ * Get a random booster suitable for a loadout
+ */
+export function getRandomBooster(
+  options: {
+    includedWarbondIds?: string[];
+    excludedBoosterIds?: string[];
+  } = {}
+): Booster | null {
+  // Filter available boosters based on options
+  let availableBoosters = [...boosters];
+
+  // Filter by warbonds if specified
+  if (options.includedWarbondIds && options.includedWarbondIds.length > 0) {
+    const items = getItemsFromWarbonds(options.includedWarbondIds);
+    const boosterIds = new Set(items.boosters);
+    availableBoosters = boosters.filter((b) => boosterIds.has(b.id));
+  }
+
+  // Filter out excluded boosters
+  if (options.excludedBoosterIds) {
+    const excludedIds = new Set(options.excludedBoosterIds);
+    availableBoosters = availableBoosters.filter((b) => !excludedIds.has(b.id));
+  }
+
+  // Randomly select a booster
+  return availableBoosters.length > 0
+    ? availableBoosters[Math.floor(Math.random() * availableBoosters.length)]
+    : null;
+}
+
+// Get random items suitable for a loadout
+export function getRandomLoadout(
+  options: {
+    includedWarbondIds?: string[];
+    excludedWeaponIds?: string[];
+    excludedStratagemIds?: string[];
+    excludedBoosterIds?: string[];
+    requireOneBackpack?: boolean;
+    requireOneSupport?: boolean;
+    guaranteeBackpack?: boolean;
+    guaranteeSupport?: boolean;
+  } = {}
+): {
+  primary: Weapon | null;
+  secondary: Weapon | null;
+  throwable: Weapon | null;
+  stratagems: Stratagem[];
+  booster: Booster | null;
+} {
+  // Get weapons using the specialized function
+  const weapons = getRandomWeapons({
+    includedWarbondIds: options.includedWarbondIds,
+    excludedWeaponIds: options.excludedWeaponIds,
+  });
+
+  // Get stratagems using the specialized function
+  const stratagemsArray = getRandomStratagems({
+    includedWarbondIds: options.includedWarbondIds,
+    excludedStratagemIds: options.excludedStratagemIds,
+    requireOneBackpack: options.requireOneBackpack,
+    requireOneSupport: options.requireOneSupport,
+    guaranteeBackpack: options.guaranteeBackpack,
+    guaranteeSupport: options.guaranteeSupport,
+  });
+
+  // Get booster using the specialized function
+  const booster = getRandomBooster({
+    includedWarbondIds: options.includedWarbondIds,
+    excludedBoosterIds: options.excludedBoosterIds,
+  });
+
+  // Return the combined loadout
   return {
-    primary,
-    secondary,
-    throwable,
-    stratagems: selectedStratagems,
-    booster,
+    primary: weapons.primary,
+    secondary: weapons.secondary,
+    throwable: weapons.throwable,
+    stratagems: stratagemsArray,
+    booster: booster,
   };
 }
