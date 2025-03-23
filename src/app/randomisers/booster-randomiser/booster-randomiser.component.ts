@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BoosterDisplayComponent } from '../displays/booster-display/booster-display.component';
-import { Booster } from '../services/boosters';
-import { BoosterFilterStateService } from '../services/booster-filter-state.service';
-import { getRandomBooster } from '../services/data-access';
-import { InitStateService } from '../services/init-state.service';
+import { BoosterDisplayComponent } from '../../displays/booster-display/booster-display.component';
+import { Booster } from '../../services/boosters';
+import { BoosterFilterStateService } from '../../services/booster-filter-state.service';
+import { getRandomBooster } from '../../services/data-access';
+import { InitStateService } from '../../services/init-state.service';
 import { Subscription } from 'rxjs';
 
 @Component({

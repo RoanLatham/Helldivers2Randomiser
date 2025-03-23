@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { WeaponDisplayComponent } from '../displays/weapon-display/weapon-display.component';
-import { Weapon } from '../services/weapons';
-import { WeaponFilterStateService } from '../services/weapon-filter-state.service';
-import { getRandomWeapons } from '../services/data-access';
-import { InitStateService } from '../services/init-state.service';
+import { WeaponDisplayComponent } from '../../displays/weapon-display/weapon-display.component';
+import { Weapon } from '../../services/weapons';
+import { WeaponFilterStateService } from '../../services/weapon-filter-state.service';
+import { getRandomWeapons } from '../../services/data-access';
+import { InitStateService } from '../../services/init-state.service';
 import { Subscription } from 'rxjs';
 
 @Component({

@@ -1,14 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { WeaponRandomiserComponent } from './weapon-randomiser.component';
-import { WeaponFilterStateService } from '../services/weapon-filter-state.service';
+import { WeaponFilterStateService } from '../../services/weapon-filter-state.service';
 import { BehaviorSubject } from 'rxjs';
 import { By } from '@angular/platform-browser';
 import {
   primaryWeapons,
   secondaryWeapons,
   grenades,
-} from '../services/weapons';
-import { WeaponDisplayComponent } from '../displays/weapon-display/weapon-display.component';
+} from '../../services/weapons';
+import { WeaponDisplayComponent } from '../../displays/weapon-display/weapon-display.component';
 
 describe('WeaponRandomiserComponent', () => {
   let component: WeaponRandomiserComponent;
