@@ -84,7 +84,7 @@
   opacity: 0.8;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 870px) {
   .Weapon-display {
     // width: clamp(150px, 27vw, 220px);
     padding: 0.75rem;
@@ -107,7 +107,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 620px) {
   .Weapon-display {
     width: clamp(130px, 40vw, 180px);
     padding: 0.5rem;

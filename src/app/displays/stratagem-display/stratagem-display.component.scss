@@ -64,26 +64,26 @@
   gap: 1rem;
 }
 
-@media (max-width: 768px) {
-  .stratagem-display {
-    width: clamp(140px, 20vw, 180px);
-    padding: 0.75rem;
-    margin: 0 0.5rem 0rem 0.5rem;
-    min-height: 10rem;
-  }
+// @media (max-width: 768px) {
+//   .stratagem-display {
+//     width: clamp(140px, 20vw, 180px);
+//     padding: 0.75rem;
+//     margin: 0 0.5rem 0rem 0.5rem;
+//     min-height: 10rem;
+//   }
 
-  .primary-text {
-    min-height: 2.25rem;
-    font-size: 0.95rem;
-    margin-bottom: 0.2rem;
-  }
+//   .primary-text {
+//     min-height: 2.25rem;
+//     font-size: 0.95rem;
+//     margin-bottom: 0.2rem;
+//   }
 
-  .icon-background {
-    margin-bottom: 0.5rem;
-  }
-}
+//   .icon-background {
+//     margin-bottom: 0.5rem;
+//   }
+// }
 
-@media (max-width: 480px) {
+@media (max-width: 920px) {
   .stratagem-display {
     width: clamp(100px, 40vw, 150px);
     padding: 0.5rem;
