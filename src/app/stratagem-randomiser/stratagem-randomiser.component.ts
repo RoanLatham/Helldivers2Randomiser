@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { StratagemDisplayComponent } from '../stratagem-display/stratagem-display.component';
+import { StratagemDisplayComponent } from '../displays/stratagem-display/stratagem-display.component';
 import { StratagemFilterStateService } from '../services/stratagem-filter-state.service';
 import { Stratagem } from '../services/stratagems';
 import { getRandomStratagems } from '../services/data-access';

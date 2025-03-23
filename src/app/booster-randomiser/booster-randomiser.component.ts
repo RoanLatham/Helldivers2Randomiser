@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BoosterDisplayComponent } from '../booster-display/booster-display.component';
+import { BoosterDisplayComponent } from '../displays/booster-display/booster-display.component';
 import { Booster } from '../services/boosters';
 import { BoosterFilterStateService } from '../services/booster-filter-state.service';
 import { getRandomBooster } from '../services/data-access';

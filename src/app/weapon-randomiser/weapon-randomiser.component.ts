@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { WeaponDisplayComponent } from '../weapon-display/weapon-display.component';
+import { WeaponDisplayComponent } from '../displays/weapon-display/weapon-display.component';
 import { Weapon } from '../services/weapons';
 import { WeaponFilterStateService } from '../services/weapon-filter-state.service';
 import { getRandomWeapons } from '../services/data-access';

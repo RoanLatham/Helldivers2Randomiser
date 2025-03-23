@@ -1,12 +1,12 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { StratagemDisplayComponent } from './stratagem-display/stratagem-display.component';
+import { StratagemDisplayComponent } from './displays/stratagem-display/stratagem-display.component';
 import { StratagemRandomiserComponent } from './stratagem-randomiser/stratagem-randomiser.component';
 import { StratagemFiltersComponent } from './stratagem-filters/stratagem-filters.component';
-import { BoosterDisplayComponent } from './booster-display/booster-display.component';
+import { BoosterDisplayComponent } from './displays/booster-display/booster-display.component';
 import { BoosterRandomiserComponent } from './booster-randomiser/booster-randomiser.component';
 import { BoosterFiltersComponent } from './booster-filters/booster-filters.component';
-import { WeaponDisplayComponent } from './weapon-display/weapon-display.component';
+import { WeaponDisplayComponent } from './displays/weapon-display/weapon-display.component';
 import { WeaponRandomiserComponent } from './weapon-randomiser/weapon-randomiser.component';
 import { WeaponFiltersComponent } from './weapon-filters/weapon-filters.component';
 import { WarbondFiltersComponent } from './warbond-filters/warbond-filters.component';

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Weapon } from '../services/weapons';
-import { getWeapon } from '../services/data-access';
+import { Weapon } from '../../services/weapons';
+import { getWeapon } from '../../services/data-access';
 
 @Component({
   selector: 'app-weapon-display',

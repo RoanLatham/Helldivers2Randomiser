@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Booster } from '../services/boosters';
-import { getBooster } from '../services/data-access';
+import { Booster } from '../../services/boosters';
+import { getBooster } from '../../services/data-access';
 
 @Component({
   selector: 'app-booster-display',

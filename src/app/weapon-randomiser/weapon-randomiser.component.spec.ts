@@ -8,7 +8,7 @@ import {
   secondaryWeapons,
   grenades,
 } from '../services/weapons';
-import { WeaponDisplayComponent } from '../weapon-display/weapon-display.component';
+import { WeaponDisplayComponent } from '../displays/weapon-display/weapon-display.component';
 
 describe('WeaponRandomiserComponent', () => {
   let component: WeaponRandomiserComponent;

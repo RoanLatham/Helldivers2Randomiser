@@ -4,7 +4,7 @@ import {
   primaryWeapons,
   secondaryWeapons,
   grenades,
-} from '../services/weapons';
+} from '../../services/weapons';
 import { By } from '@angular/platform-browser';
 
 describe('WeaponDisplayComponent', () => {

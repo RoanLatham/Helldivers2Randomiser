@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BoosterDisplayComponent } from './booster-display.component';
-import { Booster, boosters } from '../services/boosters';
+import { Booster, boosters } from '../../services/boosters';
 import { By } from '@angular/platform-browser';
 
 describe('BoosterDisplayComponent', () => {
