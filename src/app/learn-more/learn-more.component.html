@@ -65,6 +65,222 @@
       </div>
     </section>
 
+    <!-- Tool Usage Guide Section -->
+    <section class="content-section" id="usage-guide">
+      <div class="section-container">
+        <div class="subsection-header">
+          <h2 class="section-title">
+            How to Use the Helldivers 2 Loadout Randomiser
+          </h2>
+        </div>
+        <div class="subsection">
+          <h3 class="subsection-title">Step-by-Step Instructions</h3>
+          <div class="text-block">
+            <div itemscope itemtype="https://schema.org/HowTo">
+              <meta
+                itemprop="name"
+                content="How to Use the Helldivers 2 Loadout Randomiser"
+              />
+              <meta
+                itemprop="description"
+                content="A step-by-step guide to using the Helldivers 2 Loadout Randomiser to create random loadouts."
+              />
+
+              <ol class="usage-steps">
+                <li
+                  itemprop="step"
+                  itemscope
+                  itemtype="https://schema.org/HowToStep"
+                >
+                  <meta itemprop="position" content="1" />
+                  <div itemprop="name">
+                    <strong>Set Your Preferences</strong>
+                  </div>
+                  <p class="secondary-text" itemprop="text">
+                    Scroll down to the Filters & Options section below the main
+                    randomiser. Here you can toggle which weapons, stratagems,
+                    and boosters are included in the randomization.
+                  </p>
+                </li>
+
+                <li
+                  itemprop="step"
+                  itemscope
+                  itemtype="https://schema.org/HowToStep"
+                >
+                  <meta itemprop="position" content="2" />
+                  <div itemprop="name">
+                    <strong>Configure Special Options</strong>
+                  </div>
+                  <p class="secondary-text" itemprop="text">
+                    Use checkboxes like "Only One Backpack" or "Guarantee
+                    Support Weapon" to customize how stratagems are selected.
+                    These options help ensure you get a balanced and functional
+                    loadout.
+                  </p>
+                </li>
+
+                <li
+                  itemprop="step"
+                  itemscope
+                  itemtype="https://schema.org/HowToStep"
+                >
+                  <meta itemprop="position" content="3" />
+                  <div itemprop="name"><strong>Click Randomise</strong></div>
+                  <p class="secondary-text" itemprop="text">
+                    Press the large RANDOMISE button at the top of the page. The
+                    tool will instantly generate a complete loadout including
+                    primary weapon, secondary weapon, grenade, stratagems, and
+                    booster.
+                  </p>
+                </li>
+
+                <li
+                  itemprop="step"
+                  itemscope
+                  itemtype="https://schema.org/HowToStep"
+                >
+                  <meta itemprop="position" content="4" />
+                  <div itemprop="name"><strong>Refine and Repeat</strong></div>
+                  <p class="secondary-text" itemprop="text">
+                    If you're not satisfied with the result, simply click
+                    RANDOMISE again for a new combination. Adjust filters as
+                    needed until you find a loadout that appeals to you.
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-title">Filter Options Explained</h3>
+          <div class="text-block">
+            <p class="secondary-text">
+              The randomiser offers several filtering methods to customize your
+              experience:
+            </p>
+            <ul class="feature-list">
+              <li>
+                <p class="secondary-text">
+                  <strong>Warbond Filters:</strong> Enable/disable entire
+                  Warbonds to quickly filter sets of items.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Weapon Filters:</strong> Toggle individual weapons or
+                  entire weapon categories.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Stratagem Filters:</strong> Enable/disable individual
+                  stratagems or entire ship modules.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Booster Filters:</strong> Toggle which boosters are
+                  included in randomization.
+                </p>
+              </li>
+            </ul>
+            <p class="secondary-text">
+              These filtering options make it easy to customize the randomiser
+              to your preferences, ensuring you only get loadouts that include
+              equipment you own or prefer.
+            </p>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-title">
+            Tips for Getting the Most from the Randomiser
+          </h3>
+          <div class="text-block">
+            <p class="secondary-text">
+              Maximize your <strong>Helldivers 2</strong> experience with these
+              randomiser usage tips:
+            </p>
+            <ul class="feature-list">
+              <li>
+                <p class="secondary-text">
+                  <strong>Challenge Mode:</strong> Try using the randomiser
+                  without any filters for completely unpredictable loadouts.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Themed Loadouts:</strong> Filter for specific
+                  categories (e.g., only energy weapons) to create themed
+                  challenges.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Progressive Difficulty:</strong> Start with more
+                  restrictive filters and gradually expand as you master
+                  different equipment.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Team Coordination:</strong> Have your squad all use
+                  randomized loadouts for a diverse team composition.
+                </p>
+              </li>
+            </ul>
+            <p class="secondary-text">
+              The randomiser isn't just a tool—it's a gateway to new experiences
+              in <strong>Helldivers 2</strong> that keep the game fresh and
+              exciting.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="content-section" id="faq">
+      <div class="section-container">
+        <div class="subsection-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div
+          class="faq-container"
+          itemscope
+          itemtype="https://schema.org/FAQPage"
+        >
+          <div
+            *ngFor="let faq of faqItems; let i = index"
+            class="faq-item"
+            [class.open]="faq.isOpen"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <div class="faq-question" (click)="toggleFaqItem(i)">
+              <h3 class="question-text" itemprop="name">{{ faq.question }}</h3>
+              <div class="faq-toggle-icon">
+                <span [class.open]="faq.isOpen">+</span>
+              </div>
+            </div>
+            <div
+              class="faq-answer"
+              [class.open]="faq.isOpen"
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="secondary-text" itemprop="text">{{ faq.answer }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Game Mechanics Section -->
     <section class="content-section" id="game-mechanics">
       <div class="section-container">
@@ -351,222 +567,6 @@
               might not have considered, potentially revealing powerful
               synergies that enhance your effectiveness.
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tool Usage Guide Section -->
-    <section class="content-section" id="usage-guide">
-      <div class="section-container">
-        <div class="subsection-header">
-          <h2 class="section-title">
-            How to Use the Helldivers 2 Loadout Randomiser
-          </h2>
-        </div>
-        <div class="subsection">
-          <h3 class="subsection-title">Step-by-Step Instructions</h3>
-          <div class="text-block">
-            <div itemscope itemtype="https://schema.org/HowTo">
-              <meta
-                itemprop="name"
-                content="How to Use the Helldivers 2 Loadout Randomiser"
-              />
-              <meta
-                itemprop="description"
-                content="A step-by-step guide to using the Helldivers 2 Loadout Randomiser to create random loadouts."
-              />
-
-              <ol class="usage-steps">
-                <li
-                  itemprop="step"
-                  itemscope
-                  itemtype="https://schema.org/HowToStep"
-                >
-                  <meta itemprop="position" content="1" />
-                  <div itemprop="name">
-                    <strong>Set Your Preferences</strong>
-                  </div>
-                  <p class="secondary-text" itemprop="text">
-                    Scroll down to the Filters & Options section below the main
-                    randomiser. Here you can toggle which weapons, stratagems,
-                    and boosters are included in the randomization.
-                  </p>
-                </li>
-
-                <li
-                  itemprop="step"
-                  itemscope
-                  itemtype="https://schema.org/HowToStep"
-                >
-                  <meta itemprop="position" content="2" />
-                  <div itemprop="name">
-                    <strong>Configure Special Options</strong>
-                  </div>
-                  <p class="secondary-text" itemprop="text">
-                    Use checkboxes like "Only One Backpack" or "Guarantee
-                    Support Weapon" to customize how stratagems are selected.
-                    These options help ensure you get a balanced and functional
-                    loadout.
-                  </p>
-                </li>
-
-                <li
-                  itemprop="step"
-                  itemscope
-                  itemtype="https://schema.org/HowToStep"
-                >
-                  <meta itemprop="position" content="3" />
-                  <div itemprop="name"><strong>Click Randomise</strong></div>
-                  <p class="secondary-text" itemprop="text">
-                    Press the large RANDOMISE button at the top of the page. The
-                    tool will instantly generate a complete loadout including
-                    primary weapon, secondary weapon, grenade, stratagems, and
-                    booster.
-                  </p>
-                </li>
-
-                <li
-                  itemprop="step"
-                  itemscope
-                  itemtype="https://schema.org/HowToStep"
-                >
-                  <meta itemprop="position" content="4" />
-                  <div itemprop="name"><strong>Refine and Repeat</strong></div>
-                  <p class="secondary-text" itemprop="text">
-                    If you're not satisfied with the result, simply click
-                    RANDOMISE again for a new combination. Adjust filters as
-                    needed until you find a loadout that appeals to you.
-                  </p>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Filter Options Explained</h3>
-          <div class="text-block">
-            <p class="secondary-text">
-              The randomiser offers several filtering methods to customize your
-              experience:
-            </p>
-            <ul class="feature-list">
-              <li>
-                <p class="secondary-text">
-                  <strong>Warbond Filters:</strong> Enable/disable entire
-                  Warbonds to quickly filter sets of items.
-                </p>
-              </li>
-              <li>
-                <p class="secondary-text">
-                  <strong>Weapon Filters:</strong> Toggle individual weapons or
-                  entire weapon categories.
-                </p>
-              </li>
-              <li>
-                <p class="secondary-text">
-                  <strong>Stratagem Filters:</strong> Enable/disable individual
-                  stratagems or entire ship modules.
-                </p>
-              </li>
-              <li>
-                <p class="secondary-text">
-                  <strong>Booster Filters:</strong> Toggle which boosters are
-                  included in randomization.
-                </p>
-              </li>
-            </ul>
-            <p class="secondary-text">
-              These filtering options make it easy to customize the randomiser
-              to your preferences, ensuring you only get loadouts that include
-              equipment you own or prefer.
-            </p>
-          </div>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">
-            Tips for Getting the Most from the Randomiser
-          </h3>
-          <div class="text-block">
-            <p class="secondary-text">
-              Maximize your <strong>Helldivers 2</strong> experience with these
-              randomiser usage tips:
-            </p>
-            <ul class="feature-list">
-              <li>
-                <p class="secondary-text">
-                  <strong>Challenge Mode:</strong> Try using the randomiser
-                  without any filters for completely unpredictable loadouts.
-                </p>
-              </li>
-              <li>
-                <p class="secondary-text">
-                  <strong>Themed Loadouts:</strong> Filter for specific
-                  categories (e.g., only energy weapons) to create themed
-                  challenges.
-                </p>
-              </li>
-              <li>
-                <p class="secondary-text">
-                  <strong>Progressive Difficulty:</strong> Start with more
-                  restrictive filters and gradually expand as you master
-                  different equipment.
-                </p>
-              </li>
-              <li>
-                <p class="secondary-text">
-                  <strong>Team Coordination:</strong> Have your squad all use
-                  randomized loadouts for a diverse team composition.
-                </p>
-              </li>
-            </ul>
-            <p class="secondary-text">
-              The randomiser isn't just a tool—it's a gateway to new experiences
-              in <strong>Helldivers 2</strong> that keep the game fresh and
-              exciting.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="content-section" id="faq">
-      <div class="section-container">
-        <div class="subsection-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-        </div>
-
-        <div
-          class="faq-container"
-          itemscope
-          itemtype="https://schema.org/FAQPage"
-        >
-          <div
-            *ngFor="let faq of faqItems; let i = index"
-            class="faq-item"
-            [class.open]="faq.isOpen"
-            itemscope
-            itemprop="mainEntity"
-            itemtype="https://schema.org/Question"
-          >
-            <div class="faq-question" (click)="toggleFaqItem(i)">
-              <h3 class="question-text" itemprop="name">{{ faq.question }}</h3>
-              <div class="faq-toggle-icon">
-                <span [class.open]="faq.isOpen">+</span>
-              </div>
-            </div>
-            <div
-              class="faq-answer"
-              [class.open]="faq.isOpen"
-              itemscope
-              itemprop="acceptedAnswer"
-              itemtype="https://schema.org/Answer"
-            >
-              <p class="secondary-text" itemprop="text">{{ faq.answer }}</p>
-            </div>
           </div>
         </div>
       </div>
