@@ -1,585 +1,601 @@
-<article
-  class="learn-more-section"
-  itemscope
-  itemtype="https://schema.org/SoftwareApplication"
+<app-collapsible-section
+  title="About Helldivers 2 Loadout Randomiser"
+  variant="filters"
+  [initiallyCollapsed]="learnMoreCollapsed"
+  (toggled)="toggleLearnMoreCollapse($event)"
 >
-  <!-- SEO-optimized meta information -->
-  <meta itemprop="name" content="Helldivers 2 Loadout Randomiser" />
-  <meta itemprop="applicationCategory" content="Game Tool" />
-  <meta itemprop="operatingSystem" content="Web" />
-  <meta itemprop="offers" itemscope itemtype="https://schema.org/Offer" />
-  <meta itemprop="offers" content="free" />
+  <article
+    class="learn-more-section"
+    itemscope
+    itemtype="https://schema.org/SoftwareApplication"
+  >
+    <!-- SEO-optimized meta information -->
+    <meta itemprop="name" content="Helldivers 2 Loadout Randomiser" />
+    <meta itemprop="applicationCategory" content="Game Tool" />
+    <meta itemprop="operatingSystem" content="Web" />
+    <meta itemprop="offers" itemscope itemtype="https://schema.org/Offer" />
+    <meta itemprop="offers" content="free" />
 
-  <!-- Hero Section -->
-  <header class="section-header">
-    <h1 class="title-text" itemprop="name">
-      Helldivers 2 Loadout Randomiser Guide
-    </h1>
-    <p class="subtitle-text" itemprop="headline">
-      The Ultimate Tool for Freedom-Loving Super Earth Soldiers
-    </p>
-  </header>
+    <!-- Hero Section -->
+    <header class="section-header">
+      <h1 class="title-text" itemprop="name">
+        Helldivers 2 Loadout Randomiser Guide
+      </h1>
+      <p class="subtitle-text" itemprop="headline">
+        The Ultimate Tool for Freedom-Loving Super Earth Soldiers
+      </p>
+    </header>
 
-  <!-- Introduction Section -->
-  <section class="content-section" id="introduction">
-    <div class="section-container">
-      <div class="subsection-header">
-        <h2 class="section-title">Complete Helldivers 2 Loadout Randomiser</h2>
-      </div>
-      <div class="subsection">
-        <div class="text-block" itemprop="description">
-          <p class="secondary-text">
-            Welcome to the premier
-            <strong>Helldivers 2 Loadout Randomiser</strong>, the most
-            comprehensive tool available for creating varied and exciting
-            loadouts in your fight for Super Earth. This advanced randomiser
-            generates complete loadouts including primary and secondary weapons,
-            grenades, stratagems, and boosters, enabling you to discover
-            powerful combinations you might never have tried.
-          </p>
-          <p class="secondary-text">
-            Whether you're a veteran Helldiver looking to break out of your
-            comfort zone or a new recruit seeking to explore all the game has to
-            offer, our randomiser helps you experience the full arsenal of
-            democracy available in <strong>Helldivers 2</strong>.
-          </p>
+    <!-- Introduction Section -->
+    <section class="content-section" id="introduction">
+      <div class="section-container">
+        <div class="subsection-header">
+          <h2 class="section-title">
+            Complete Helldivers 2 Loadout Randomiser
+          </h2>
         </div>
+        <div class="subsection">
+          <div class="text-block" itemprop="description">
+            <p class="secondary-text">
+              Welcome to the premier
+              <strong>Helldivers 2 Loadout Randomiser</strong>, the most
+              comprehensive tool available for creating varied and exciting
+              loadouts in your fight for Super Earth. This advanced randomiser
+              generates complete loadouts including primary and secondary
+              weapons, grenades, stratagems, and boosters, enabling you to
+              discover powerful combinations you might never have tried.
+            </p>
+            <p class="secondary-text">
+              Whether you're a veteran Helldiver looking to break out of your
+              comfort zone or a new recruit seeking to explore all the game has
+              to offer, our randomiser helps you experience the full arsenal of
+              democracy available in <strong>Helldivers 2</strong>.
+            </p>
+          </div>
+          <div class="cta-container">
+            <a
+              href="#"
+              (click)="scrollToRandomizer($event)"
+              class="action-button primary-button"
+            >
+              Try the Randomizer
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Game Mechanics Section -->
+    <section class="content-section" id="game-mechanics">
+      <div class="section-container">
+        <div class="subsection-header">
+          <h2 class="section-title">Helldivers 2 Loadout System</h2>
+        </div>
+
+        <!-- Weapons subsection -->
+        <div class="subsection">
+          <h3 class="subsection-title">Weapons System</h3>
+          <div class="text-block">
+            <p class="secondary-text">
+              <strong>Helldivers 2</strong> features a diverse arsenal of
+              weapons categorized into three main types:
+            </p>
+            <ul class="feature-list">
+              <li>
+                <p class="secondary-text">
+                  <strong>Primary Weapons:</strong> Your main firearm, ranging
+                  from assault rifles to shotguns and sniper rifles.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Secondary Weapons:</strong> Sidearms that complement
+                  your primary weapon or provide alternative fire options.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Throwable Weapons:</strong> Grenades and other
+                  throwable explosives for area damage and crowd control.
+                </p>
+              </li>
+            </ul>
+            <p class="secondary-text">
+              Each weapon category includes options for different combat
+              scenarios, with unique attributes like fire rate, damage, range,
+              and special effects. Our randomiser helps you discover unexpected
+              combinations that might synergize brilliantly with your
+              stratagems.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stratagems subsection -->
+        <div class="subsection">
+          <h3 class="subsection-title">Stratagem System</h3>
+          <div class="text-block">
+            <p class="secondary-text">
+              <strong>Stratagems</strong> are special abilities called down from
+              orbit that define your combat role in
+              <strong>Helldivers 2</strong>. They're organized by ship modules:
+            </p>
+            <ul class="feature-list">
+              <li>
+                <p class="secondary-text">
+                  <strong>Orbital Cannons:</strong> Devastating orbital strikes
+                  for area denial and massive damage.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Eagle Airstrikes:</strong> Versatile air support
+                  solutions for precision targeting and close air support,
+                  including rockets, bombs, and strafing runs.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Sentries:</strong> Automated defense turrets that
+                  assist in protecting objectives and controlling enemy
+                  approaches.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Backpacks:</strong> Utility items worn on your back
+                  that provide unique benefits.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Support Weapons:</strong> Heavy weapons that offer
+                  specialized firepower.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Defensive Measures:</strong> Shields, mines, and other
+                  protective systems.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Supply Options:</strong> Ammunition, reinforcements,
+                  and other consumables.
+                </p>
+              </li>
+            </ul>
+            <p class="secondary-text">
+              Choosing the right stratagems for your mission is crucial. Our
+              randomiser helps you break from routine and try new combinations,
+              potentially discovering more effective loadouts for different
+              mission types.
+            </p>
+          </div>
+        </div>
+
+        <!-- Boosters subsection -->
+        <div class="subsection">
+          <h3 class="subsection-title">Booster System</h3>
+          <div class="text-block">
+            <p class="secondary-text">
+              <strong>Boosters</strong> provide passive bonuses that enhance
+              your Helldiver's capabilities. From increased armor to faster
+              movement or quicker stratagem cooldowns, boosters can
+              significantly impact your effectiveness on the battlefield.
+            </p>
+            <p class="secondary-text">
+              The right booster can complement your weapon and stratagem
+              choices, creating synergistic effects that elevate your combat
+              performance. Our randomiser includes boosters in its selections,
+              ensuring you experience all aspects of
+              <strong>Helldivers 2's</strong> loadout system.
+            </p>
+          </div>
+        </div>
+
+        <!-- Warbonds subsection -->
+        <div class="subsection">
+          <h3 class="subsection-title">Warbond System</h3>
+          <div class="text-block">
+            <p class="secondary-text">
+              <strong>Warbonds</strong> are content packs in
+              <strong>Helldivers 2</strong> that contain themed collections of
+              weapons, stratagems, and boosters. Each Warbond offers unique
+              equipment with distinct visual styles and gameplay advantages.
+            </p>
+            <p class="secondary-text">
+              Our randomiser allows filtering by Warbond, making it easy to
+              customize your experience based on the content you own. This
+              feature helps you quickly disable items from Warbonds you haven't
+              purchased, ensuring your randomized loadouts only include
+              equipment available to you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategic Considerations Section -->
+    <section class="content-section" id="strategy-guide">
+      <div class="section-container">
+        <div class="subsection-header">
+          <h2 class="section-title">Strategic Loadout Considerations</h2>
+        </div>
+        <!-- Mission-specific recommendations -->
+        <div class="subsection">
+          <h3 class="subsection-title">Mission-Specific Loadouts</h3>
+          <div class="text-block">
+            <p class="secondary-text">
+              Different mission types in <strong>Helldivers 2</strong> require
+              different approaches. Here are some considerations for major enemy
+              types:
+            </p>
+
+            <div class="strategy-grid">
+              <div class="strategy-card" id="bugs-strategy">
+                <h4 class="card-title">Terminid Tactics</h4>
+                <div class="card-content">
+                  <p class="secondary-text">
+                    When facing Terminids (bugs), consider loadouts with high
+                    area-of-effect damage to counter swarm tactics.
+                    Flamethrowers, rocket launchers, and incendiary stratagems
+                    excel against the bug menace.
+                  </p>
+                  <p class="secondary-text">
+                    <strong>Key Stratagem Types:</strong> Orbital Barrage,
+                    Incendiary Strike, Eagle Clusters
+                  </p>
+                </div>
+              </div>
+
+              <div class="strategy-card" id="bots-strategy">
+                <h4 class="card-title">Automaton Approach</h4>
+                <div class="card-content">
+                  <p class="secondary-text">
+                    Automatons (bots) require precision and armor penetration.
+                    Anti-materiel rifles, railguns, and EMP weapons are
+                    effective against their armored units and electronic
+                    systems.
+                  </p>
+                  <p class="secondary-text">
+                    <strong>Key Stratagem Types:</strong> EMP Strike, Orbital
+                    Railcannon, Anti-Tank solutions
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p class="secondary-text">
+              Our randomiser can help you discover unexpected combinations that
+              work well against specific enemy types, expanding your tactical
+              repertoire beyond conventional wisdom.
+            </p>
+          </div>
+        </div>
+
+        <!-- Team composition -->
+        <div class="subsection">
+          <h3 class="subsection-title">Team Composition Strategies</h3>
+          <div class="text-block">
+            <p class="secondary-text">
+              Effective <strong>Helldivers 2</strong> teams balance different
+              combat roles. Consider these roles when randomizing your loadout
+              in a multiplayer setting:
+            </p>
+            <ul class="feature-list">
+              <li>
+                <p class="secondary-text">
+                  <strong>Support:</strong> Focus on ammunition supply,
+                  defensive shields, and reinforcement beacons.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Heavy Weapons:</strong> Bring anti-tank options,
+                  artillery, and area denial tools.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Scout:</strong> Utilize UAV scans, mobility tools, and
+                  stealth capabilities.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Medic:</strong> Emphasize revive abilities, stim
+                  boosters, and protective measures.
+                </p>
+              </li>
+            </ul>
+            <p class="secondary-text">
+              Using our randomiser with friends can help create balanced team
+              compositions while still enjoying the excitement of unexpected
+              loadout combinations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Synergistic combinations -->
+        <div class="subsection">
+          <h3 class="subsection-title">Powerful Synergistic Combinations</h3>
+          <div class="text-block">
+            <p class="secondary-text">
+              Some <strong>Helldivers 2</strong> equipment combinations create
+              emergent gameplay advantages. Here are examples our randomiser
+              might help you discover:
+            </p>
+            <ul class="feature-list">
+              <li>
+                <p class="secondary-text">
+                  <strong>Shield Generator Pack + Close Combat Weapons:</strong>
+                  Provides protection while engaging enemies at short range.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Jumppack + Railgun:</strong> Allows you to gain
+                  vantage points for precision strikes.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Resupply Pack + Heavy Weapons:</strong> Ensures you
+                  never run out of ammunition for your power-hungry weapons.
+                </p>
+              </li>
+            </ul>
+            <p class="secondary-text">
+              The randomiser encourages experimentation with combinations you
+              might not have considered, potentially revealing powerful
+              synergies that enhance your effectiveness.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tool Usage Guide Section -->
+    <section class="content-section" id="usage-guide">
+      <div class="section-container">
+        <div class="subsection-header">
+          <h2 class="section-title">
+            How to Use the Helldivers 2 Loadout Randomiser
+          </h2>
+        </div>
+        <div class="subsection">
+          <h3 class="subsection-title">Step-by-Step Instructions</h3>
+          <div class="text-block">
+            <div itemscope itemtype="https://schema.org/HowTo">
+              <meta
+                itemprop="name"
+                content="How to Use the Helldivers 2 Loadout Randomiser"
+              />
+              <meta
+                itemprop="description"
+                content="A step-by-step guide to using the Helldivers 2 Loadout Randomiser to create random loadouts."
+              />
+
+              <ol class="usage-steps">
+                <li
+                  itemprop="step"
+                  itemscope
+                  itemtype="https://schema.org/HowToStep"
+                >
+                  <meta itemprop="position" content="1" />
+                  <div itemprop="name">
+                    <strong>Set Your Preferences</strong>
+                  </div>
+                  <p class="secondary-text" itemprop="text">
+                    Scroll down to the Filters & Options section below the main
+                    randomiser. Here you can toggle which weapons, stratagems,
+                    and boosters are included in the randomization.
+                  </p>
+                </li>
+
+                <li
+                  itemprop="step"
+                  itemscope
+                  itemtype="https://schema.org/HowToStep"
+                >
+                  <meta itemprop="position" content="2" />
+                  <div itemprop="name">
+                    <strong>Configure Special Options</strong>
+                  </div>
+                  <p class="secondary-text" itemprop="text">
+                    Use checkboxes like "Only One Backpack" or "Guarantee
+                    Support Weapon" to customize how stratagems are selected.
+                    These options help ensure you get a balanced and functional
+                    loadout.
+                  </p>
+                </li>
+
+                <li
+                  itemprop="step"
+                  itemscope
+                  itemtype="https://schema.org/HowToStep"
+                >
+                  <meta itemprop="position" content="3" />
+                  <div itemprop="name"><strong>Click Randomise</strong></div>
+                  <p class="secondary-text" itemprop="text">
+                    Press the large RANDOMISE button at the top of the page. The
+                    tool will instantly generate a complete loadout including
+                    primary weapon, secondary weapon, grenade, stratagems, and
+                    booster.
+                  </p>
+                </li>
+
+                <li
+                  itemprop="step"
+                  itemscope
+                  itemtype="https://schema.org/HowToStep"
+                >
+                  <meta itemprop="position" content="4" />
+                  <div itemprop="name"><strong>Refine and Repeat</strong></div>
+                  <p class="secondary-text" itemprop="text">
+                    If you're not satisfied with the result, simply click
+                    RANDOMISE again for a new combination. Adjust filters as
+                    needed until you find a loadout that appeals to you.
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-title">Filter Options Explained</h3>
+          <div class="text-block">
+            <p class="secondary-text">
+              The randomiser offers several filtering methods to customize your
+              experience:
+            </p>
+            <ul class="feature-list">
+              <li>
+                <p class="secondary-text">
+                  <strong>Warbond Filters:</strong> Enable/disable entire
+                  Warbonds to quickly filter sets of items.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Weapon Filters:</strong> Toggle individual weapons or
+                  entire weapon categories.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Stratagem Filters:</strong> Enable/disable individual
+                  stratagems or entire ship modules.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Booster Filters:</strong> Toggle which boosters are
+                  included in randomization.
+                </p>
+              </li>
+            </ul>
+            <p class="secondary-text">
+              These filtering options make it easy to customize the randomiser
+              to your preferences, ensuring you only get loadouts that include
+              equipment you own or prefer.
+            </p>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-title">
+            Tips for Getting the Most from the Randomiser
+          </h3>
+          <div class="text-block">
+            <p class="secondary-text">
+              Maximize your <strong>Helldivers 2</strong> experience with these
+              randomiser usage tips:
+            </p>
+            <ul class="feature-list">
+              <li>
+                <p class="secondary-text">
+                  <strong>Challenge Mode:</strong> Try using the randomiser
+                  without any filters for completely unpredictable loadouts.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Themed Loadouts:</strong> Filter for specific
+                  categories (e.g., only energy weapons) to create themed
+                  challenges.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Progressive Difficulty:</strong> Start with more
+                  restrictive filters and gradually expand as you master
+                  different equipment.
+                </p>
+              </li>
+              <li>
+                <p class="secondary-text">
+                  <strong>Team Coordination:</strong> Have your squad all use
+                  randomized loadouts for a diverse team composition.
+                </p>
+              </li>
+            </ul>
+            <p class="secondary-text">
+              The randomiser isn't just a tool—it's a gateway to new experiences
+              in <strong>Helldivers 2</strong> that keep the game fresh and
+              exciting.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="content-section" id="faq">
+      <div class="section-container">
+        <div class="subsection-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div
+          class="faq-container"
+          itemscope
+          itemtype="https://schema.org/FAQPage"
+        >
+          <div
+            *ngFor="let faq of faqItems; let i = index"
+            class="faq-item"
+            [class.open]="faq.isOpen"
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+          >
+            <div class="faq-question" (click)="toggleFaqItem(i)">
+              <h3 class="question-text" itemprop="name">{{ faq.question }}</h3>
+              <div class="faq-toggle-icon">
+                <span [class.open]="faq.isOpen">+</span>
+              </div>
+            </div>
+            <div
+              class="faq-answer"
+              [class.open]="faq.isOpen"
+              itemscope
+              itemprop="acceptedAnswer"
+              itemtype="https://schema.org/Answer"
+            >
+              <p class="secondary-text" itemprop="text">{{ faq.answer }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="content-section" id="cta">
+      <div class="section-container cta-section">
+        <div class="subsection-header">
+          <h2 class="section-title" style="width: 100%">
+            Ready to Discover Your Next Loadout?
+          </h2>
+        </div>
+        <p class="secondary-text">
+          Experience the excitement of trying new weapon combinations and
+          stratagem synergies with our
+          <strong>Helldivers 2 Loadout Randomiser</strong>. Keep your gameplay
+          fresh and discover powerful combinations you might have overlooked.
+        </p>
         <div class="cta-container">
           <a
             href="#"
             (click)="scrollToRandomizer($event)"
             class="action-button primary-button"
           >
-            Try the Randomizer
+            Try the Randomizer Now
           </a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Game Mechanics Section -->
-  <section class="content-section" id="game-mechanics">
-    <div class="section-container">
-      <div class="subsection-header">
-        <h2 class="section-title">Helldivers 2 Loadout System</h2>
-      </div>
-
-      <!-- Weapons subsection -->
-      <div class="subsection">
-        <h3 class="subsection-title">Weapons System</h3>
-        <div class="text-block">
-          <p class="secondary-text">
-            <strong>Helldivers 2</strong> features a diverse arsenal of weapons
-            categorized into three main types:
-          </p>
-          <ul class="feature-list">
-            <li>
-              <p class="secondary-text">
-                <strong>Primary Weapons:</strong> Your main firearm, ranging
-                from assault rifles to shotguns and sniper rifles.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Secondary Weapons:</strong> Sidearms that complement
-                your primary weapon or provide alternative fire options.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Throwable Weapons:</strong> Grenades and other throwable
-                explosives for area damage and crowd control.
-              </p>
-            </li>
-          </ul>
-          <p class="secondary-text">
-            Each weapon category includes options for different combat
-            scenarios, with unique attributes like fire rate, damage, range, and
-            special effects. Our randomiser helps you discover unexpected
-            combinations that might synergize brilliantly with your stratagems.
-          </p>
-        </div>
-      </div>
-
-      <!-- Stratagems subsection -->
-      <div class="subsection">
-        <h3 class="subsection-title">Stratagem System</h3>
-        <div class="text-block">
-          <p class="secondary-text">
-            <strong>Stratagems</strong> are special abilities called down from
-            orbit that define your combat role in <strong>Helldivers 2</strong>.
-            They're organized by ship modules:
-          </p>
-          <ul class="feature-list">
-            <li>
-              <p class="secondary-text">
-                <strong>Orbital Cannons:</strong> Devastating orbital strikes
-                for area denial and massive damage.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Eagle Airstrikes:</strong> Versatile air support
-                solutions for precision targeting and close air support,
-                including rockets, bombs, and strafing runs.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Sentries:</strong> Automated defense turrets that assist
-                in protecting objectives and controlling enemy approaches.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Backpacks:</strong> Utility items worn on your back that
-                provide unique benefits.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Support Weapons:</strong> Heavy weapons that offer
-                specialized firepower.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Defensive Measures:</strong> Shields, mines, and other
-                protective systems.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Supply Options:</strong> Ammunition, reinforcements, and
-                other consumables.
-              </p>
-            </li>
-          </ul>
-          <p class="secondary-text">
-            Choosing the right stratagems for your mission is crucial. Our
-            randomiser helps you break from routine and try new combinations,
-            potentially discovering more effective loadouts for different
-            mission types.
-          </p>
-        </div>
-      </div>
-
-      <!-- Boosters subsection -->
-      <div class="subsection">
-        <h3 class="subsection-title">Booster System</h3>
-        <div class="text-block">
-          <p class="secondary-text">
-            <strong>Boosters</strong> provide passive bonuses that enhance your
-            Helldiver's capabilities. From increased armor to faster movement or
-            quicker stratagem cooldowns, boosters can significantly impact your
-            effectiveness on the battlefield.
-          </p>
-          <p class="secondary-text">
-            The right booster can complement your weapon and stratagem choices,
-            creating synergistic effects that elevate your combat performance.
-            Our randomiser includes boosters in its selections, ensuring you
-            experience all aspects of <strong>Helldivers 2's</strong> loadout
-            system.
-          </p>
-        </div>
-      </div>
-
-      <!-- Warbonds subsection -->
-      <div class="subsection">
-        <h3 class="subsection-title">Warbond System</h3>
-        <div class="text-block">
-          <p class="secondary-text">
-            <strong>Warbonds</strong> are content packs in
-            <strong>Helldivers 2</strong> that contain themed collections of
-            weapons, stratagems, and boosters. Each Warbond offers unique
-            equipment with distinct visual styles and gameplay advantages.
-          </p>
-          <p class="secondary-text">
-            Our randomiser allows filtering by Warbond, making it easy to
-            customize your experience based on the content you own. This feature
-            helps you quickly disable items from Warbonds you haven't purchased,
-            ensuring your randomized loadouts only include equipment available
-            to you.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Strategic Considerations Section -->
-  <section class="content-section" id="strategy-guide">
-    <div class="section-container">
-      <div class="subsection-header">
-        <h2 class="section-title">Strategic Loadout Considerations</h2>
-      </div>
-      <!-- Mission-specific recommendations -->
-      <div class="subsection">
-        <h3 class="subsection-title">Mission-Specific Loadouts</h3>
-        <div class="text-block">
-          <p class="secondary-text">
-            Different mission types in <strong>Helldivers 2</strong> require
-            different approaches. Here are some considerations for major enemy
-            types:
-          </p>
-
-          <div class="strategy-grid">
-            <div class="strategy-card" id="bugs-strategy">
-              <h4 class="card-title">Terminid Tactics</h4>
-              <div class="card-content">
-                <p class="secondary-text">
-                  When facing Terminids (bugs), consider loadouts with high
-                  area-of-effect damage to counter swarm tactics. Flamethrowers,
-                  rocket launchers, and incendiary stratagems excel against the
-                  bug menace.
-                </p>
-                <p class="secondary-text">
-                  <strong>Key Stratagem Types:</strong> Orbital Barrage,
-                  Incendiary Strike, Eagle Clusters
-                </p>
-              </div>
-            </div>
-
-            <div class="strategy-card" id="bots-strategy">
-              <h4 class="card-title">Automaton Approach</h4>
-              <div class="card-content">
-                <p class="secondary-text">
-                  Automatons (bots) require precision and armor penetration.
-                  Anti-materiel rifles, railguns, and EMP weapons are effective
-                  against their armored units and electronic systems.
-                </p>
-                <p class="secondary-text">
-                  <strong>Key Stratagem Types:</strong> EMP Strike, Orbital
-                  Railcannon, Anti-Tank solutions
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <p class="secondary-text">
-            Our randomiser can help you discover unexpected combinations that
-            work well against specific enemy types, expanding your tactical
-            repertoire beyond conventional wisdom.
-          </p>
-        </div>
-      </div>
-
-      <!-- Team composition -->
-      <div class="subsection">
-        <h3 class="subsection-title">Team Composition Strategies</h3>
-        <div class="text-block">
-          <p class="secondary-text">
-            Effective <strong>Helldivers 2</strong> teams balance different
-            combat roles. Consider these roles when randomizing your loadout in
-            a multiplayer setting:
-          </p>
-          <ul class="feature-list">
-            <li>
-              <p class="secondary-text">
-                <strong>Support:</strong> Focus on ammunition supply, defensive
-                shields, and reinforcement beacons.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Heavy Weapons:</strong> Bring anti-tank options,
-                artillery, and area denial tools.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Scout:</strong> Utilize UAV scans, mobility tools, and
-                stealth capabilities.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Medic:</strong> Emphasize revive abilities, stim
-                boosters, and protective measures.
-              </p>
-            </li>
-          </ul>
-          <p class="secondary-text">
-            Using our randomiser with friends can help create balanced team
-            compositions while still enjoying the excitement of unexpected
-            loadout combinations.
-          </p>
-        </div>
-      </div>
-
-      <!-- Synergistic combinations -->
-      <div class="subsection">
-        <h3 class="subsection-title">Powerful Synergistic Combinations</h3>
-        <div class="text-block">
-          <p class="secondary-text">
-            Some <strong>Helldivers 2</strong> equipment combinations create
-            emergent gameplay advantages. Here are examples our randomiser might
-            help you discover:
-          </p>
-          <ul class="feature-list">
-            <li>
-              <p class="secondary-text">
-                <strong>Shield Generator Pack + Close Combat Weapons:</strong>
-                Provides protection while engaging enemies at short range.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Jumppack + Railgun:</strong> Allows you to gain vantage
-                points for precision strikes.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Resupply Pack + Heavy Weapons:</strong> Ensures you
-                never run out of ammunition for your power-hungry weapons.
-              </p>
-            </li>
-          </ul>
-          <p class="secondary-text">
-            The randomiser encourages experimentation with combinations you
-            might not have considered, potentially revealing powerful synergies
-            that enhance your effectiveness.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tool Usage Guide Section -->
-  <section class="content-section" id="usage-guide">
-    <div class="section-container">
-      <div class="subsection-header">
-        <h2 class="section-title">
-          How to Use the Helldivers 2 Loadout Randomiser
-        </h2>
-      </div>
-      <div class="subsection">
-        <h3 class="subsection-title">Step-by-Step Instructions</h3>
-        <div class="text-block">
-          <div itemscope itemtype="https://schema.org/HowTo">
-            <meta
-              itemprop="name"
-              content="How to Use the Helldivers 2 Loadout Randomiser"
-            />
-            <meta
-              itemprop="description"
-              content="A step-by-step guide to using the Helldivers 2 Loadout Randomiser to create random loadouts."
-            />
-
-            <ol class="usage-steps">
-              <li
-                itemprop="step"
-                itemscope
-                itemtype="https://schema.org/HowToStep"
-              >
-                <meta itemprop="position" content="1" />
-                <div itemprop="name"><strong>Set Your Preferences</strong></div>
-                <p class="secondary-text" itemprop="text">
-                  Scroll down to the Filters & Options section below the main
-                  randomiser. Here you can toggle which weapons, stratagems, and
-                  boosters are included in the randomization.
-                </p>
-              </li>
-
-              <li
-                itemprop="step"
-                itemscope
-                itemtype="https://schema.org/HowToStep"
-              >
-                <meta itemprop="position" content="2" />
-                <div itemprop="name">
-                  <strong>Configure Special Options</strong>
-                </div>
-                <p class="secondary-text" itemprop="text">
-                  Use checkboxes like "Only One Backpack" or "Guarantee Support
-                  Weapon" to customize how stratagems are selected. These
-                  options help ensure you get a balanced and functional loadout.
-                </p>
-              </li>
-
-              <li
-                itemprop="step"
-                itemscope
-                itemtype="https://schema.org/HowToStep"
-              >
-                <meta itemprop="position" content="3" />
-                <div itemprop="name"><strong>Click Randomise</strong></div>
-                <p class="secondary-text" itemprop="text">
-                  Press the large RANDOMISE button at the top of the page. The
-                  tool will instantly generate a complete loadout including
-                  primary weapon, secondary weapon, grenade, stratagems, and
-                  booster.
-                </p>
-              </li>
-
-              <li
-                itemprop="step"
-                itemscope
-                itemtype="https://schema.org/HowToStep"
-              >
-                <meta itemprop="position" content="4" />
-                <div itemprop="name"><strong>Refine and Repeat</strong></div>
-                <p class="secondary-text" itemprop="text">
-                  If you're not satisfied with the result, simply click
-                  RANDOMISE again for a new combination. Adjust filters as
-                  needed until you find a loadout that appeals to you.
-                </p>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </div>
-
-      <div class="subsection">
-        <h3 class="subsection-title">Filter Options Explained</h3>
-        <div class="text-block">
-          <p class="secondary-text">
-            The randomiser offers several filtering methods to customize your
-            experience:
-          </p>
-          <ul class="feature-list">
-            <li>
-              <p class="secondary-text">
-                <strong>Warbond Filters:</strong> Enable/disable entire Warbonds
-                to quickly filter sets of items.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Weapon Filters:</strong> Toggle individual weapons or
-                entire weapon categories.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Stratagem Filters:</strong> Enable/disable individual
-                stratagems or entire ship modules.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Booster Filters:</strong> Toggle which boosters are
-                included in randomization.
-              </p>
-            </li>
-          </ul>
-          <p class="secondary-text">
-            These filtering options make it easy to customize the randomiser to
-            your preferences, ensuring you only get loadouts that include
-            equipment you own or prefer.
-          </p>
-        </div>
-      </div>
-
-      <div class="subsection">
-        <h3 class="subsection-title">
-          Tips for Getting the Most from the Randomiser
-        </h3>
-        <div class="text-block">
-          <p class="secondary-text">
-            Maximize your <strong>Helldivers 2</strong> experience with these
-            randomiser usage tips:
-          </p>
-          <ul class="feature-list">
-            <li>
-              <p class="secondary-text">
-                <strong>Challenge Mode:</strong> Try using the randomiser
-                without any filters for completely unpredictable loadouts.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Themed Loadouts:</strong> Filter for specific categories
-                (e.g., only energy weapons) to create themed challenges.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Progressive Difficulty:</strong> Start with more
-                restrictive filters and gradually expand as you master different
-                equipment.
-              </p>
-            </li>
-            <li>
-              <p class="secondary-text">
-                <strong>Team Coordination:</strong> Have your squad all use
-                randomized loadouts for a diverse team composition.
-              </p>
-            </li>
-          </ul>
-          <p class="secondary-text">
-            The randomiser isn't just a tool—it's a gateway to new experiences
-            in <strong>Helldivers 2</strong> that keep the game fresh and
-            exciting.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="content-section" id="faq">
-    <div class="section-container">
-      <div class="subsection-header">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-      </div>
-
-      <div
-        class="faq-container"
-        itemscope
-        itemtype="https://schema.org/FAQPage"
-      >
-        <div
-          *ngFor="let faq of faqItems; let i = index"
-          class="faq-item"
-          [class.open]="faq.isOpen"
-          itemscope
-          itemprop="mainEntity"
-          itemtype="https://schema.org/Question"
-        >
-          <div class="faq-question" (click)="toggleFaqItem(i)">
-            <h3 class="question-text" itemprop="name">{{ faq.question }}</h3>
-            <div class="faq-toggle-icon">
-              <span [class.open]="faq.isOpen">+</span>
-            </div>
-          </div>
-          <div
-            class="faq-answer"
-            [class.open]="faq.isOpen"
-            itemscope
-            itemprop="acceptedAnswer"
-            itemtype="https://schema.org/Answer"
-          >
-            <p class="secondary-text" itemprop="text">{{ faq.answer }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action Section -->
-  <section class="content-section" id="cta">
-    <div class="section-container cta-section">
-      <div class="subsection-header">
-        <h2 class="section-title" style="width: 100%">
-          Ready to Discover Your Next Loadout?
-        </h2>
-      </div>
-      <p class="secondary-text">
-        Experience the excitement of trying new weapon combinations and
-        stratagem synergies with our
-        <strong>Helldivers 2 Loadout Randomiser</strong>. Keep your gameplay
-        fresh and discover powerful combinations you might have overlooked.
-      </p>
-      <div class="cta-container">
-        <a
-          href="#"
-          (click)="scrollToRandomizer($event)"
-          class="action-button primary-button"
-        >
-          Try the Randomizer Now
-        </a>
-      </div>
-    </div>
-  </section>
-</article>
+    </section>
+  </article>
+</app-collapsible-section>

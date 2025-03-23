@@ -1,15 +1,19 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GtagService } from '../services/gtag-service.service';
+import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
 
 @Component({
   selector: 'app-learn-more',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CollapsibleSectionComponent],
   templateUrl: './learn-more.component.html',
   styleUrl: './learn-more.component.scss',
 })
 export class LearnMoreComponent implements AfterViewInit {
+  // Collapsible section state
+  learnMoreCollapsed = false;
+
   // FAQ items can be expanded/collapsed
   faqItems = [
     {
@@ -62,6 +66,24 @@ export class LearnMoreComponent implements AfterViewInit {
       'learn_more_viewed',
       'Learn More section viewed',
       'ENGAGEMENT'
+    );
+  }
+
+  /**
+   * Toggle collapsed state of the learn more section
+   */
+  toggleLearnMoreCollapse(collapsed?: boolean): void {
+    if (collapsed !== undefined) {
+      this.learnMoreCollapsed = collapsed;
+    } else {
+      this.learnMoreCollapsed = !this.learnMoreCollapsed;
+    }
+
+    // Track this interaction
+    this.gtagService.trackEvent(
+      'toggle_learn_more_section',
+      this.learnMoreCollapsed ? 'collapsed' : 'expanded',
+      'UI_INTERACTION'
     );
   }
 
