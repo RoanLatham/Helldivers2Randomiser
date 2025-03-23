@@ -37,12 +37,14 @@ export class FilterContainerComponent implements OnInit {
   hasStoredSettings = false;
   lastSaved: string | null = null;
   showSaveSuccess = false; // Flag to control showing the success indicator
-  versionWarning: string | null = null; // New property to display version warnings
-  partialLoadWarning: string | null = null; // New property for partial load warnings
-  loadingReport: LoadingReport | null = null; // New property to track loading issues
+  versionWarningNotification: string | null = null;
+  versionInfoNotification: string | null = null;
+  partialLoadWarning: string | null = null;
+  loadingReport: LoadingReport | null = null;
 
-  // TESTING ONLY: Set to true to simulate a version warning
+  // TESTING ONLY: Set to true to simulate version notifications
   testVersionWarning = false;
+  testVersionInfo = false;
 
   constructor(
     private warbondFilterState: WarbondFilterStateService,
@@ -112,6 +114,12 @@ export class FilterContainerComponent implements OnInit {
       // Show success indicator
       this.showSaveSuccess = true;
 
+      // Clear notifications
+      this.versionWarningNotification = null;
+      this.versionInfoNotification = null;
+      this.partialLoadWarning = null;
+      this.loadingReport = null;
+
       // Hide success indicator after 3 seconds
       setTimeout(() => {
         this.showSaveSuccess = false;
@@ -136,9 +144,9 @@ export class FilterContainerComponent implements OnInit {
 
       this.hasStoredSettings = true;
 
-      // Handle version warnings if needed
+      // Handle version warning notification if needed
       if (this.testVersionWarning || result.versionResult?.warningNeeded) {
-        this.versionWarning =
+        this.versionWarningNotification =
           'Your settings were created with an older version of the app. Some new features may not be configured.';
 
         // Track version warning event
@@ -148,7 +156,22 @@ export class FilterContainerComponent implements OnInit {
           'VERSION'
         );
       } else {
-        this.versionWarning = null;
+        this.versionWarningNotification = null;
+      }
+
+      // Handle info notifications if needed (new content added)
+      if (this.testVersionInfo || result.versionResult?.infoNeeded) {
+        this.versionInfoNotification =
+          'Your settings were created with an older version of the app. New content has been added that may not be configured.';
+
+        // Track version info event
+        this.gtagService.trackEvent(
+          'version_info_shown',
+          'Settings loaded with new content available',
+          'VERSION'
+        );
+      } else {
+        this.versionInfoNotification = null;
       }
 
       // Handle partial loading report
@@ -190,7 +213,8 @@ export class FilterContainerComponent implements OnInit {
       // Reset UI state
       this.hasStoredSettings = false;
       this.lastSaved = null;
-      this.versionWarning = null;
+      this.versionWarningNotification = null;
+      this.versionInfoNotification = null;
       this.partialLoadWarning = null;
       this.loadingReport = null;
     }
@@ -205,7 +229,8 @@ export class FilterContainerComponent implements OnInit {
       // Update UI state
       this.hasStoredSettings = false;
       this.lastSaved = null;
-      this.versionWarning = null;
+      this.versionWarningNotification = null;
+      this.versionInfoNotification = null;
       this.partialLoadWarning = null;
       this.loadingReport = null;
     }
@@ -228,6 +253,34 @@ export class FilterContainerComponent implements OnInit {
     } catch (e) {
       return isoString;
     }
+  }
+
+  /**
+   * Dismiss the version info notification and track the event
+   */
+  dismissVersionInfo(): void {
+    this.versionInfoNotification = null;
+
+    // Track dismissal event
+    this.gtagService.trackEvent(
+      'version_info_dismissed',
+      'User dismissed version info notification',
+      'USER_ACTION'
+    );
+  }
+
+  /**
+   * Dismiss the version warning notification and track the event
+   */
+  dismissVersionWarning(): void {
+    this.versionWarningNotification = null;
+
+    // Track dismissal event
+    this.gtagService.trackEvent(
+      'version_warning_dismissed',
+      'User dismissed version warning notification',
+      'USER_ACTION'
+    );
   }
 
   /**
@@ -335,8 +388,9 @@ export class FilterContainerComponent implements OnInit {
     this.stratagemFilterState.resetState();
     this.boosterFilterState.resetState();
 
-    // Clear warnings but keep stored settings info
-    this.versionWarning = null;
+    // Clear notifications but keep stored settings info
+    this.versionWarningNotification = null;
+    this.versionInfoNotification = null;
     this.partialLoadWarning = null;
     this.loadingReport = null;
 

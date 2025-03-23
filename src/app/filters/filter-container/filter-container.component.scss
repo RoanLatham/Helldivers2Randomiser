@@ -11,7 +11,7 @@ $info-color: #3498db;
 }
 
 // Version warning styling
-.version-warning {
+.version-warning-notification {
   background-color: rgba($warning-color, 0.2);
   border: 1px solid $warning-color;
   border-radius: 4px;
@@ -41,7 +41,7 @@ $info-color: #3498db;
 }
 
 // Partial load warning styling
-.partial-load-warning {
+.version-info-notification {
   background-color: rgba($info-color, 0.2);
   border: 1px solid $info-color;
   border-radius: 4px;
@@ -215,8 +215,8 @@ $info-color: #3498db;
     font-size: 1.1rem;
   }
 
-  .version-warning,
-  .partial-load-warning {
+  .version-warning-notification,
+  .version-info-notification {
     flex-direction: column;
     align-items: flex-start;
 
@@ -261,8 +261,8 @@ $info-color: #3498db;
     font-size: 0.8rem;
   }
 
-  .version-warning,
-  .partial-load-warning {
+  .version-warning-notification,
+  .version-info-notification {
     padding: 0.5rem;
     font-size: 0.9rem;
   }
@@ -283,7 +283,7 @@ $info-color: #3498db;
     }
   }
 
-  .partial-load-warning,
+  .version-info-notification,
   .loading-report {
     padding: 0.5rem;
   }

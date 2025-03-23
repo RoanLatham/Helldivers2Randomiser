@@ -16,9 +16,12 @@
         (toggled)="toggleSettingsCollapse($event)"
       >
         <!-- Version warning message -->
-        <div class="version-warning" *ngIf="versionWarning">
+        <div
+          class="version-warning-notification"
+          *ngIf="versionWarningNotification"
+        >
           <div class="warning-icon">⚠️</div>
-          <span>{{ versionWarning }}</span>
+          <span>{{ versionWarningNotification }}</span>
           <div class="flex-horizontal">
             <button
               class="action-button warning-button"
@@ -28,7 +31,7 @@
             </button>
             <button
               class="action-button warning-button"
-              (click)="versionWarning = null"
+              (click)="dismissVersionWarning()"
               title="Dismiss this warning"
             >
               Dismiss
@@ -36,8 +39,26 @@
           </div>
         </div>
 
+        <!-- Version info notification -->
+        <div class="version-info-notification" *ngIf="versionInfoNotification">
+          <div class="warning-icon">ℹ️</div>
+          <span>{{ versionInfoNotification }}</span>
+          <div class="flex-horizontal">
+            <!-- <button class="action-button info-button" (click)="clearSettings()">
+              Reset Settings
+            </button> -->
+            <button
+              class="action-button info-button"
+              (click)="dismissVersionInfo()"
+              title="Dismiss this Notice"
+            >
+              Dismiss
+            </button>
+          </div>
+        </div>
+
         <!-- Partial load warning message -->
-        <div class="partial-load-warning" *ngIf="partialLoadWarning">
+        <div class="version-info-notification" *ngIf="partialLoadWarning">
           <div class="info-icon">ℹ️</div>
           <span>{{ partialLoadWarning }}</span>
           <div class="flex-horizontal">
