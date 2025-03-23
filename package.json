@@ -9,11 +9,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:HelldiversLoadout": "node dist/helldivers-loadout/server/server.mjs",
-    "GenerateStratagems": "node GenerateStratagems.js",
-    "GenerateBoosters": "node GenerateBoosters.js",
-    "GenerateWeapons": "node GenerateWeapons.js",
-    "GenerateBlankWarbonds": "node GenerateBlankWarbonds.js",
-    "PopulateWarbonds": "node PopulateWarbonds.js",
     "deploy": "deploy.bat"
   },
   "private": true,
