@@ -164,11 +164,11 @@
   }
 
   &#bugs-strategy {
-    border-left: 3px solid #ffb900; // Red for bugs
+    border-left: 3px solid #ffb900;
   }
 
   &#bots-strategy {
-    border-left: 3px solid #ff6262; // Blue for bots
+    border-left: 3px solid #ff6262;
   }
 }
 
@@ -339,9 +339,9 @@ a:not(.action-button) {
     padding: 0.75rem 1rem;
   }
 
-  .faq-answer.open {
-    padding: 0 1rem 1rem 1rem;
-  }
+  // .faq-answer.open {
+  //   padding: 0 1rem 1rem 1rem;
+  // }
 
   .cta-section {
     padding: 1.25rem;
