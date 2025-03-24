@@ -7,7 +7,7 @@ const IMAGE_DIRECTORIES = [
   "src/assets/Boosters",
   "src/assets/Warbonds",
   "src/assets/Stratagems",
-  "src/assets/NewWeapons",
+  "src/assets/Weapons",
 ];
 
 // File extensions to include

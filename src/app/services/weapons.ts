@@ -14,7 +14,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Assault Rifle',
     warbond: 'Standard_Issue',
-    iconPath: './assets/NewWeapons/Primary/Assault%20Rifle/AR-23_Liberator.png',
+    iconPath: './assets/Weapons/Primary/Assault%20Rifle/AR-23_Liberator.png',
   },
   {
     id: 'AR-23P_Liberator_Penetrator',
@@ -23,7 +23,7 @@ export const primaryWeapons: Weapon[] = [
     category: 'Assault Rifle',
     warbond: 'Helldivers_Mobilize',
     iconPath:
-      './assets/NewWeapons/Primary/Assault%20Rifle/AR-23P_Liberator_Penetrator.png',
+      './assets/Weapons/Primary/Assault%20Rifle/AR-23P_Liberator_Penetrator.png',
   },
   {
     id: 'AR-23C_Liberator_Concussive',
@@ -32,7 +32,7 @@ export const primaryWeapons: Weapon[] = [
     category: 'Assault Rifle',
     warbond: 'Steeled_Veterans',
     iconPath:
-      './assets/NewWeapons/Primary/Assault%20Rifle/AR-23C_Liberator_Concussive.png',
+      './assets/Weapons/Primary/Assault%20Rifle/AR-23C_Liberator_Concussive.png',
   },
   {
     id: 'StA-52_Assault_Rifle',
@@ -41,7 +41,7 @@ export const primaryWeapons: Weapon[] = [
     category: 'Assault Rifle',
     warbond: 'Helldivers_x_Killzone',
     iconPath:
-      './assets/NewWeapons/Primary/Assault%20Rifle/StA-52_Assault_Rifle.png',
+      './assets/Weapons/Primary/Assault%20Rifle/StA-52_Assault_Rifle.png',
   },
   {
     id: 'AR-23A_Liberator_Carbine',
@@ -50,7 +50,7 @@ export const primaryWeapons: Weapon[] = [
     category: 'Assault Rifle',
     warbond: 'Viper_Commandos',
     iconPath:
-      './assets/NewWeapons/Primary/Assault%20Rifle/AR-23A_Liberator_Carbine.png',
+      './assets/Weapons/Primary/Assault%20Rifle/AR-23A_Liberator_Carbine.png',
   },
   {
     id: 'AR-61_Tenderizer',
@@ -58,8 +58,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Assault Rifle',
     warbond: 'Polar_Patriots',
-    iconPath:
-      './assets/NewWeapons/Primary/Assault%20Rifle/AR-61_Tenderizer.png',
+    iconPath: './assets/Weapons/Primary/Assault%20Rifle/AR-61_Tenderizer.png',
   },
   {
     id: 'BR-14_Adjudicator',
@@ -67,8 +66,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Assault Rifle',
     warbond: 'Democratic_Detonation',
-    iconPath:
-      './assets/NewWeapons/Primary/Assault%20Rifle/BR-14_Adjudicator.png',
+    iconPath: './assets/Weapons/Primary/Assault%20Rifle/BR-14_Adjudicator.png',
   },
   {
     id: 'R-2124_Constitution',
@@ -77,7 +75,7 @@ export const primaryWeapons: Weapon[] = [
     category: 'Marksman Rifle',
     warbond: 'Liberty_Day',
     iconPath:
-      './assets/NewWeapons/Primary/Marksman%20Rifle/R-2124_Constitution.png',
+      './assets/Weapons/Primary/Marksman%20Rifle/R-2124_Constitution.png',
   },
   {
     id: 'R-6_Deadeye',
@@ -85,7 +83,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Marksman Rifle',
     warbond: 'Borderline_Justice',
-    iconPath: './assets/NewWeapons/Primary/Marksman%20Rifle/R-6_Deadeye.png',
+    iconPath: './assets/Weapons/Primary/Marksman%20Rifle/R-6_Deadeye.png',
   },
   {
     id: 'R-63_Diligence',
@@ -93,7 +91,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Marksman Rifle',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Primary/Marksman%20Rifle/R-63_Diligence.png',
+    iconPath: './assets/Weapons/Primary/Marksman%20Rifle/R-63_Diligence.png',
   },
   {
     id: 'R-63CS_Diligence_Counter_Sniper',
@@ -102,7 +100,7 @@ export const primaryWeapons: Weapon[] = [
     category: 'Marksman Rifle',
     warbond: 'Helldivers_Mobilize',
     iconPath:
-      './assets/NewWeapons/Primary/Marksman%20Rifle/R-63CS_Diligence_Counter_Sniper.png',
+      './assets/Weapons/Primary/Marksman%20Rifle/R-63CS_Diligence_Counter_Sniper.png',
   },
   {
     id: 'PLAS-39_Accelerator_Rifle',
@@ -111,7 +109,7 @@ export const primaryWeapons: Weapon[] = [
     category: 'Sniper Rifle',
     warbond: 'Helldivers_x_Killzone',
     iconPath:
-      './assets/NewWeapons/Primary/Sniper%20Rifle/PLAS-39_Accelerator_Rifle.png',
+      './assets/Weapons/Primary/Sniper%20Rifle/PLAS-39_Accelerator_Rifle.png',
   },
   {
     id: 'MP-98_Knight',
@@ -119,7 +117,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Submachine Gun',
     warbond: 'Super_Citizen_Edition',
-    iconPath: './assets/NewWeapons/Primary/Submachine%20Gun/MP-98_Knight.png',
+    iconPath: './assets/Weapons/Primary/Submachine%20Gun/MP-98_Knight.png',
   },
   {
     id: 'StA-11_SMG',
@@ -127,7 +125,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Submachine Gun',
     warbond: 'Helldivers_x_Killzone',
-    iconPath: './assets/NewWeapons/Primary/Submachine%20Gun/StA-11_SMG.png',
+    iconPath: './assets/Weapons/Primary/Submachine%20Gun/StA-11_SMG.png',
   },
   {
     id: 'SMG-32_Reprimand',
@@ -135,8 +133,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Submachine Gun',
     warbond: 'Truth_Enforcers',
-    iconPath:
-      './assets/NewWeapons/Primary/Submachine%20Gun/SMG-32_Reprimand.png',
+    iconPath: './assets/Weapons/Primary/Submachine%20Gun/SMG-32_Reprimand.png',
   },
   {
     id: 'SMG-37_Defender',
@@ -144,8 +141,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Submachine Gun',
     warbond: 'Helldivers_Mobilize',
-    iconPath:
-      './assets/NewWeapons/Primary/Submachine%20Gun/SMG-37_Defender.png',
+    iconPath: './assets/Weapons/Primary/Submachine%20Gun/SMG-37_Defender.png',
   },
   {
     id: 'SMG-72_Pummeler',
@@ -153,8 +149,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Submachine Gun',
     warbond: 'Polar_Patriots',
-    iconPath:
-      './assets/NewWeapons/Primary/Submachine%20Gun/SMG-72_Pummeler.png',
+    iconPath: './assets/Weapons/Primary/Submachine%20Gun/SMG-72_Pummeler.png',
   },
   {
     id: 'SG-8_Punisher',
@@ -162,7 +157,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Shotgun',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Primary/Shotgun/SG-8_Punisher.png',
+    iconPath: './assets/Weapons/Primary/Shotgun/SG-8_Punisher.png',
   },
   {
     id: 'SG-8S_Slugger',
@@ -170,7 +165,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Shotgun',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Primary/Shotgun/SG-8S_Slugger.png',
+    iconPath: './assets/Weapons/Primary/Shotgun/SG-8S_Slugger.png',
   },
   {
     id: 'SG-20_Halt',
@@ -178,7 +173,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Shotgun',
     warbond: 'Truth_Enforcers',
-    iconPath: './assets/NewWeapons/Primary/Shotgun/SG-20_Halt.png',
+    iconPath: './assets/Weapons/Primary/Shotgun/SG-20_Halt.png',
   },
   {
     id: 'SG-451_Cookout',
@@ -186,7 +181,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Shotgun',
     warbond: 'Freedoms_Flame',
-    iconPath: './assets/NewWeapons/Primary/Shotgun/SG-451_Cookout.png',
+    iconPath: './assets/Weapons/Primary/Shotgun/SG-451_Cookout.png',
   },
   {
     id: 'SG-225_Breaker',
@@ -194,7 +189,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Shotgun',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Primary/Shotgun/SG-225_Breaker.png',
+    iconPath: './assets/Weapons/Primary/Shotgun/SG-225_Breaker.png',
   },
   {
     id: 'SG-225SP_Breaker_Spray_&_Pray',
@@ -203,7 +198,7 @@ export const primaryWeapons: Weapon[] = [
     category: 'Shotgun',
     warbond: 'Helldivers_Mobilize',
     iconPath:
-      './assets/NewWeapons/Primary/Shotgun/SG-225SP_Breaker_Spray_&_Pray.png',
+      './assets/Weapons/Primary/Shotgun/SG-225SP_Breaker_Spray_&_Pray.png',
   },
   {
     id: 'SG-225IE_Breaker_Incendiary',
@@ -212,7 +207,7 @@ export const primaryWeapons: Weapon[] = [
     category: 'Shotgun',
     warbond: 'Steeled_Veterans',
     iconPath:
-      './assets/NewWeapons/Primary/Shotgun/SG-225IE_Breaker_Incendiary.png',
+      './assets/Weapons/Primary/Shotgun/SG-225IE_Breaker_Incendiary.png',
   },
   {
     id: 'CB-9_Exploding_Crossbow',
@@ -220,8 +215,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Explosive',
     warbond: 'Democratic_Detonation',
-    iconPath:
-      './assets/NewWeapons/Primary/Explosive/CB-9_Exploding_Crossbow.png',
+    iconPath: './assets/Weapons/Primary/Explosive/CB-9_Exploding_Crossbow.png',
   },
   {
     id: 'R-36_Eruptor',
@@ -229,7 +223,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Explosive',
     warbond: 'Democratic_Detonation',
-    iconPath: './assets/NewWeapons/Primary/Explosive/R-36_Eruptor.png',
+    iconPath: './assets/Weapons/Primary/Explosive/R-36_Eruptor.png',
   },
   {
     id: 'SG-8P_Punisher_Plasma',
@@ -237,8 +231,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Energy-Based',
     warbond: 'Cutting_Edge',
-    iconPath:
-      './assets/NewWeapons/Primary/Energy-Based/SG-8P_Punisher_Plasma.png',
+    iconPath: './assets/Weapons/Primary/Energy-Based/SG-8P_Punisher_Plasma.png',
   },
   {
     id: 'ARC-12_Blitzer',
@@ -246,7 +239,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Energy-Based',
     warbond: 'Cutting_Edge',
-    iconPath: './assets/NewWeapons/Primary/Energy-Based/ARC-12_Blitzer.png',
+    iconPath: './assets/Weapons/Primary/Energy-Based/ARC-12_Blitzer.png',
   },
   {
     id: 'LAS-5_Scythe',
@@ -254,7 +247,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Energy-Based',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Primary/Energy-Based/LAS-5_Scythe.png',
+    iconPath: './assets/Weapons/Primary/Energy-Based/LAS-5_Scythe.png',
   },
   {
     id: 'LAS-16_Sickle',
@@ -262,7 +255,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Energy-Based',
     warbond: 'Cutting_Edge',
-    iconPath: './assets/NewWeapons/Primary/Energy-Based/LAS-16_Sickle.png',
+    iconPath: './assets/Weapons/Primary/Energy-Based/LAS-16_Sickle.png',
   },
   {
     id: 'LAS-17_Double-Edge_Sickle',
@@ -271,7 +264,7 @@ export const primaryWeapons: Weapon[] = [
     category: 'Energy-Based',
     warbond: 'Servants_of_Freedom',
     iconPath:
-      './assets/NewWeapons/Primary/Energy-Based/LAS-17_Double-Edge_Sickle.png',
+      './assets/Weapons/Primary/Energy-Based/LAS-17_Double-Edge_Sickle.png',
   },
   {
     id: 'PLAS-1_Scorcher',
@@ -279,7 +272,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Energy-Based',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Primary/Energy-Based/PLAS-1_Scorcher.png',
+    iconPath: './assets/Weapons/Primary/Energy-Based/PLAS-1_Scorcher.png',
   },
   {
     id: 'PLAS-101_Purifier',
@@ -287,7 +280,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Energy-Based',
     warbond: 'Polar_Patriots',
-    iconPath: './assets/NewWeapons/Primary/Energy-Based/PLAS-101_Purifier.png',
+    iconPath: './assets/Weapons/Primary/Energy-Based/PLAS-101_Purifier.png',
   },
   {
     id: 'FLAM-66_Torcher',
@@ -295,7 +288,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Special',
     warbond: 'Freedoms_Flame',
-    iconPath: './assets/NewWeapons/Primary/Special/FLAM-66_Torcher.png',
+    iconPath: './assets/Weapons/Primary/Special/FLAM-66_Torcher.png',
   },
   {
     id: 'JAR-5_Dominator',
@@ -303,7 +296,7 @@ export const primaryWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Special',
     warbond: 'Steeled_Veterans',
-    iconPath: './assets/NewWeapons/Primary/Special/JAR-5_Dominator.png',
+    iconPath: './assets/Weapons/Primary/Special/JAR-5_Dominator.png',
   },
 ];
 
@@ -314,7 +307,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Pistol',
     warbond: 'Standard_Issue',
-    iconPath: './assets/NewWeapons/Secondary/Pistol/P-2_Peacemaker.png',
+    iconPath: './assets/Weapons/Secondary/Pistol/P-2_Peacemaker.png',
   },
   {
     id: 'P-19_Redeemer',
@@ -322,7 +315,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Pistol',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Secondary/Pistol/P-19_Redeemer.png',
+    iconPath: './assets/Weapons/Secondary/Pistol/P-19_Redeemer.png',
   },
   {
     id: 'P-113_Verdict',
@@ -330,7 +323,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Pistol',
     warbond: 'Polar_Patriots',
-    iconPath: './assets/NewWeapons/Secondary/Pistol/P-113_Verdict.png',
+    iconPath: './assets/Weapons/Secondary/Pistol/P-113_Verdict.png',
   },
   {
     id: 'P-4_Senator',
@@ -338,7 +331,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Pistol',
     warbond: 'Steeled_Veterans',
-    iconPath: './assets/NewWeapons/Secondary/Pistol/P-4_Senator.png',
+    iconPath: './assets/Weapons/Secondary/Pistol/P-4_Senator.png',
   },
   {
     id: 'CQC-19_Stun_Lance',
@@ -346,7 +339,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Melee',
     warbond: 'Urban_Legends',
-    iconPath: './assets/NewWeapons/Secondary/Melee/CQC-19_Stun_Lance.png',
+    iconPath: './assets/Weapons/Secondary/Melee/CQC-19_Stun_Lance.png',
   },
   {
     id: 'CQC-30_Stun_Baton',
@@ -354,7 +347,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Melee',
     warbond: '',
-    iconPath: './assets/NewWeapons/Secondary/Melee/CQC-30_Stun_Baton.png',
+    iconPath: './assets/Weapons/Secondary/Melee/CQC-30_Stun_Baton.png',
   },
   {
     id: 'CQC-5_Combat_Hatchet',
@@ -362,7 +355,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Melee',
     warbond: '',
-    iconPath: './assets/NewWeapons/Secondary/Melee/CQC-5_Combat_Hatchet.png',
+    iconPath: './assets/Weapons/Secondary/Melee/CQC-5_Combat_Hatchet.png',
   },
   {
     id: 'P-11_Stim_Pistol',
@@ -370,7 +363,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Chemical_Agents',
-    iconPath: './assets/NewWeapons/Secondary/Special/P-11_Stim_Pistol.png',
+    iconPath: './assets/Weapons/Secondary/Special/P-11_Stim_Pistol.png',
   },
   {
     id: 'SG-22_Bushwhacker',
@@ -378,7 +371,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Viper_Commandos',
-    iconPath: './assets/NewWeapons/Secondary/Special/SG-22_Bushwhacker.png',
+    iconPath: './assets/Weapons/Secondary/Special/SG-22_Bushwhacker.png',
   },
   {
     id: 'P-72_Crisper',
@@ -386,7 +379,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Freedoms_Flame',
-    iconPath: './assets/NewWeapons/Secondary/Special/P-72_Crisper.png',
+    iconPath: './assets/Weapons/Secondary/Special/P-72_Crisper.png',
   },
   {
     id: 'GP-31_Grenade_Pistol',
@@ -394,7 +387,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Democratic_Detonation',
-    iconPath: './assets/NewWeapons/Secondary/Special/GP-31_Grenade_Pistol.png',
+    iconPath: './assets/Weapons/Secondary/Special/GP-31_Grenade_Pistol.png',
   },
   {
     id: 'LAS-7_Dagger',
@@ -402,7 +395,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Cutting_Edge',
-    iconPath: './assets/NewWeapons/Secondary/Special/LAS-7_Dagger.png',
+    iconPath: './assets/Weapons/Secondary/Special/LAS-7_Dagger.png',
   },
   {
     id: 'GP-31_Ultimatum',
@@ -410,7 +403,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Servants_of_Freedom',
-    iconPath: './assets/NewWeapons/Secondary/Special/GP-31_Ultimatum.png',
+    iconPath: './assets/Weapons/Secondary/Special/GP-31_Ultimatum.png',
   },
   {
     id: 'PLAS-15_Loyalist',
@@ -418,7 +411,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Truth_Enforcers',
-    iconPath: './assets/NewWeapons/Secondary/Special/PLAS-15_Loyalist.png',
+    iconPath: './assets/Weapons/Secondary/Special/PLAS-15_Loyalist.png',
   },
   {
     id: 'Las-58_Talon',
@@ -426,7 +419,7 @@ export const secondaryWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Borderline_Justice',
-    iconPath: './assets/NewWeapons/Secondary/Special/Las-58_Talon.png',
+    iconPath: './assets/Weapons/Secondary/Special/Las-58_Talon.png',
   },
 ];
 
@@ -437,7 +430,7 @@ export const throwableWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Standard',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Throwable/Standard/G-6_Frag.png',
+    iconPath: './assets/Weapons/Throwable/Standard/G-6_Frag.png',
   },
   {
     id: 'G-12_High_Explosive',
@@ -445,7 +438,7 @@ export const throwableWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Standard',
     warbond: 'Standard_Issue',
-    iconPath: './assets/NewWeapons/Throwable/Standard/G-12_High_Explosive.png',
+    iconPath: './assets/Weapons/Throwable/Standard/G-12_High_Explosive.png',
   },
   {
     id: 'G-10_Incendiary',
@@ -453,7 +446,7 @@ export const throwableWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Standard',
     warbond: 'Steeled_Veterans',
-    iconPath: './assets/NewWeapons/Throwable/Standard/G-10_Incendiary.png',
+    iconPath: './assets/Weapons/Throwable/Standard/G-10_Incendiary.png',
   },
   {
     id: 'G-16_Impact',
@@ -461,7 +454,7 @@ export const throwableWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Throwable/Special/G-16_Impact.png',
+    iconPath: './assets/Weapons/Throwable/Special/G-16_Impact.png',
   },
   {
     id: 'G-13_Incendiary_Impact',
@@ -469,8 +462,7 @@ export const throwableWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Polar_Patriots',
-    iconPath:
-      './assets/NewWeapons/Throwable/Special/G-13_Incendiary_Impact.png',
+    iconPath: './assets/Weapons/Throwable/Special/G-13_Incendiary_Impact.png',
   },
   {
     id: 'G-23_Stun',
@@ -478,7 +470,7 @@ export const throwableWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Cutting_Edge',
-    iconPath: './assets/NewWeapons/Throwable/Special/G-23_Stun.png',
+    iconPath: './assets/Weapons/Throwable/Special/G-23_Stun.png',
   },
   {
     id: 'G-4_Gas',
@@ -486,7 +478,7 @@ export const throwableWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Chemical_Agents',
-    iconPath: './assets/NewWeapons/Throwable/Special/G-4_Gas.png',
+    iconPath: './assets/Weapons/Throwable/Special/G-4_Gas.png',
   },
   {
     id: 'G-50_Seeker',
@@ -494,7 +486,7 @@ export const throwableWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Servants_of_Freedom',
-    iconPath: './assets/NewWeapons/Throwable/Special/G-50_Seeker.png',
+    iconPath: './assets/Weapons/Throwable/Special/G-50_Seeker.png',
   },
   {
     id: 'G-3_Smoke',
@@ -502,7 +494,7 @@ export const throwableWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Throwable/Special/G-3_Smoke.png',
+    iconPath: './assets/Weapons/Throwable/Special/G-3_Smoke.png',
   },
   {
     id: 'G-123_Thermite',
@@ -510,7 +502,7 @@ export const throwableWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Democratic_Detonation',
-    iconPath: './assets/NewWeapons/Throwable/Special/G-123_Thermite.png',
+    iconPath: './assets/Weapons/Throwable/Special/G-123_Thermite.png',
   },
   {
     id: 'K-2_Throwing_Knife',
@@ -518,7 +510,7 @@ export const throwableWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Viper_Commandos',
-    iconPath: './assets/NewWeapons/Throwable/Special/K-2_Throwing_Knife.png',
+    iconPath: './assets/Weapons/Throwable/Special/K-2_Throwing_Knife.png',
   },
 ];
 
@@ -529,7 +521,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Assault Rifle',
     warbond: 'Standard_Issue',
-    iconPath: './assets/NewWeapons/Primary/Assault%20Rifle/AR-23_Liberator.png',
+    iconPath: './assets/Weapons/Primary/Assault%20Rifle/AR-23_Liberator.png',
   },
   {
     id: 'AR-23P_Liberator_Penetrator',
@@ -538,7 +530,7 @@ export const allWeapons: Weapon[] = [
     category: 'Assault Rifle',
     warbond: 'Helldivers_Mobilize',
     iconPath:
-      './assets/NewWeapons/Primary/Assault%20Rifle/AR-23P_Liberator_Penetrator.png',
+      './assets/Weapons/Primary/Assault%20Rifle/AR-23P_Liberator_Penetrator.png',
   },
   {
     id: 'AR-23C_Liberator_Concussive',
@@ -547,7 +539,7 @@ export const allWeapons: Weapon[] = [
     category: 'Assault Rifle',
     warbond: 'Steeled_Veterans',
     iconPath:
-      './assets/NewWeapons/Primary/Assault%20Rifle/AR-23C_Liberator_Concussive.png',
+      './assets/Weapons/Primary/Assault%20Rifle/AR-23C_Liberator_Concussive.png',
   },
   {
     id: 'StA-52_Assault_Rifle',
@@ -556,7 +548,7 @@ export const allWeapons: Weapon[] = [
     category: 'Assault Rifle',
     warbond: 'Helldivers_x_Killzone',
     iconPath:
-      './assets/NewWeapons/Primary/Assault%20Rifle/StA-52_Assault_Rifle.png',
+      './assets/Weapons/Primary/Assault%20Rifle/StA-52_Assault_Rifle.png',
   },
   {
     id: 'AR-23A_Liberator_Carbine',
@@ -565,7 +557,7 @@ export const allWeapons: Weapon[] = [
     category: 'Assault Rifle',
     warbond: 'Viper_Commandos',
     iconPath:
-      './assets/NewWeapons/Primary/Assault%20Rifle/AR-23A_Liberator_Carbine.png',
+      './assets/Weapons/Primary/Assault%20Rifle/AR-23A_Liberator_Carbine.png',
   },
   {
     id: 'AR-61_Tenderizer',
@@ -573,8 +565,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Assault Rifle',
     warbond: 'Polar_Patriots',
-    iconPath:
-      './assets/NewWeapons/Primary/Assault%20Rifle/AR-61_Tenderizer.png',
+    iconPath: './assets/Weapons/Primary/Assault%20Rifle/AR-61_Tenderizer.png',
   },
   {
     id: 'BR-14_Adjudicator',
@@ -582,8 +573,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Assault Rifle',
     warbond: 'Democratic_Detonation',
-    iconPath:
-      './assets/NewWeapons/Primary/Assault%20Rifle/BR-14_Adjudicator.png',
+    iconPath: './assets/Weapons/Primary/Assault%20Rifle/BR-14_Adjudicator.png',
   },
   {
     id: 'R-2124_Constitution',
@@ -592,7 +582,7 @@ export const allWeapons: Weapon[] = [
     category: 'Marksman Rifle',
     warbond: 'Liberty_Day',
     iconPath:
-      './assets/NewWeapons/Primary/Marksman%20Rifle/R-2124_Constitution.png',
+      './assets/Weapons/Primary/Marksman%20Rifle/R-2124_Constitution.png',
   },
   {
     id: 'R-6_Deadeye',
@@ -600,7 +590,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Marksman Rifle',
     warbond: 'Borderline_Justice',
-    iconPath: './assets/NewWeapons/Primary/Marksman%20Rifle/R-6_Deadeye.png',
+    iconPath: './assets/Weapons/Primary/Marksman%20Rifle/R-6_Deadeye.png',
   },
   {
     id: 'R-63_Diligence',
@@ -608,7 +598,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Marksman Rifle',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Primary/Marksman%20Rifle/R-63_Diligence.png',
+    iconPath: './assets/Weapons/Primary/Marksman%20Rifle/R-63_Diligence.png',
   },
   {
     id: 'R-63CS_Diligence_Counter_Sniper',
@@ -617,7 +607,7 @@ export const allWeapons: Weapon[] = [
     category: 'Marksman Rifle',
     warbond: 'Helldivers_Mobilize',
     iconPath:
-      './assets/NewWeapons/Primary/Marksman%20Rifle/R-63CS_Diligence_Counter_Sniper.png',
+      './assets/Weapons/Primary/Marksman%20Rifle/R-63CS_Diligence_Counter_Sniper.png',
   },
   {
     id: 'PLAS-39_Accelerator_Rifle',
@@ -626,7 +616,7 @@ export const allWeapons: Weapon[] = [
     category: 'Sniper Rifle',
     warbond: 'Helldivers_x_Killzone',
     iconPath:
-      './assets/NewWeapons/Primary/Sniper%20Rifle/PLAS-39_Accelerator_Rifle.png',
+      './assets/Weapons/Primary/Sniper%20Rifle/PLAS-39_Accelerator_Rifle.png',
   },
   {
     id: 'MP-98_Knight',
@@ -634,7 +624,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Submachine Gun',
     warbond: 'Super_Citizen_Edition',
-    iconPath: './assets/NewWeapons/Primary/Submachine%20Gun/MP-98_Knight.png',
+    iconPath: './assets/Weapons/Primary/Submachine%20Gun/MP-98_Knight.png',
   },
   {
     id: 'StA-11_SMG',
@@ -642,7 +632,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Submachine Gun',
     warbond: 'Helldivers_x_Killzone',
-    iconPath: './assets/NewWeapons/Primary/Submachine%20Gun/StA-11_SMG.png',
+    iconPath: './assets/Weapons/Primary/Submachine%20Gun/StA-11_SMG.png',
   },
   {
     id: 'SMG-32_Reprimand',
@@ -650,8 +640,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Submachine Gun',
     warbond: 'Truth_Enforcers',
-    iconPath:
-      './assets/NewWeapons/Primary/Submachine%20Gun/SMG-32_Reprimand.png',
+    iconPath: './assets/Weapons/Primary/Submachine%20Gun/SMG-32_Reprimand.png',
   },
   {
     id: 'SMG-37_Defender',
@@ -659,8 +648,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Submachine Gun',
     warbond: 'Helldivers_Mobilize',
-    iconPath:
-      './assets/NewWeapons/Primary/Submachine%20Gun/SMG-37_Defender.png',
+    iconPath: './assets/Weapons/Primary/Submachine%20Gun/SMG-37_Defender.png',
   },
   {
     id: 'SMG-72_Pummeler',
@@ -668,8 +656,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Submachine Gun',
     warbond: 'Polar_Patriots',
-    iconPath:
-      './assets/NewWeapons/Primary/Submachine%20Gun/SMG-72_Pummeler.png',
+    iconPath: './assets/Weapons/Primary/Submachine%20Gun/SMG-72_Pummeler.png',
   },
   {
     id: 'SG-8_Punisher',
@@ -677,7 +664,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Shotgun',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Primary/Shotgun/SG-8_Punisher.png',
+    iconPath: './assets/Weapons/Primary/Shotgun/SG-8_Punisher.png',
   },
   {
     id: 'SG-8S_Slugger',
@@ -685,7 +672,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Shotgun',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Primary/Shotgun/SG-8S_Slugger.png',
+    iconPath: './assets/Weapons/Primary/Shotgun/SG-8S_Slugger.png',
   },
   {
     id: 'SG-20_Halt',
@@ -693,7 +680,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Shotgun',
     warbond: 'Truth_Enforcers',
-    iconPath: './assets/NewWeapons/Primary/Shotgun/SG-20_Halt.png',
+    iconPath: './assets/Weapons/Primary/Shotgun/SG-20_Halt.png',
   },
   {
     id: 'SG-451_Cookout',
@@ -701,7 +688,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Shotgun',
     warbond: 'Freedoms_Flame',
-    iconPath: './assets/NewWeapons/Primary/Shotgun/SG-451_Cookout.png',
+    iconPath: './assets/Weapons/Primary/Shotgun/SG-451_Cookout.png',
   },
   {
     id: 'SG-225_Breaker',
@@ -709,7 +696,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Shotgun',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Primary/Shotgun/SG-225_Breaker.png',
+    iconPath: './assets/Weapons/Primary/Shotgun/SG-225_Breaker.png',
   },
   {
     id: 'SG-225SP_Breaker_Spray_&_Pray',
@@ -718,7 +705,7 @@ export const allWeapons: Weapon[] = [
     category: 'Shotgun',
     warbond: 'Helldivers_Mobilize',
     iconPath:
-      './assets/NewWeapons/Primary/Shotgun/SG-225SP_Breaker_Spray_&_Pray.png',
+      './assets/Weapons/Primary/Shotgun/SG-225SP_Breaker_Spray_&_Pray.png',
   },
   {
     id: 'SG-225IE_Breaker_Incendiary',
@@ -727,7 +714,7 @@ export const allWeapons: Weapon[] = [
     category: 'Shotgun',
     warbond: 'Steeled_Veterans',
     iconPath:
-      './assets/NewWeapons/Primary/Shotgun/SG-225IE_Breaker_Incendiary.png',
+      './assets/Weapons/Primary/Shotgun/SG-225IE_Breaker_Incendiary.png',
   },
   {
     id: 'CB-9_Exploding_Crossbow',
@@ -735,8 +722,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Explosive',
     warbond: 'Democratic_Detonation',
-    iconPath:
-      './assets/NewWeapons/Primary/Explosive/CB-9_Exploding_Crossbow.png',
+    iconPath: './assets/Weapons/Primary/Explosive/CB-9_Exploding_Crossbow.png',
   },
   {
     id: 'R-36_Eruptor',
@@ -744,7 +730,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Explosive',
     warbond: 'Democratic_Detonation',
-    iconPath: './assets/NewWeapons/Primary/Explosive/R-36_Eruptor.png',
+    iconPath: './assets/Weapons/Primary/Explosive/R-36_Eruptor.png',
   },
   {
     id: 'SG-8P_Punisher_Plasma',
@@ -752,8 +738,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Energy-Based',
     warbond: 'Cutting_Edge',
-    iconPath:
-      './assets/NewWeapons/Primary/Energy-Based/SG-8P_Punisher_Plasma.png',
+    iconPath: './assets/Weapons/Primary/Energy-Based/SG-8P_Punisher_Plasma.png',
   },
   {
     id: 'ARC-12_Blitzer',
@@ -761,7 +746,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Energy-Based',
     warbond: 'Cutting_Edge',
-    iconPath: './assets/NewWeapons/Primary/Energy-Based/ARC-12_Blitzer.png',
+    iconPath: './assets/Weapons/Primary/Energy-Based/ARC-12_Blitzer.png',
   },
   {
     id: 'LAS-5_Scythe',
@@ -769,7 +754,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Energy-Based',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Primary/Energy-Based/LAS-5_Scythe.png',
+    iconPath: './assets/Weapons/Primary/Energy-Based/LAS-5_Scythe.png',
   },
   {
     id: 'LAS-16_Sickle',
@@ -777,7 +762,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Energy-Based',
     warbond: 'Cutting_Edge',
-    iconPath: './assets/NewWeapons/Primary/Energy-Based/LAS-16_Sickle.png',
+    iconPath: './assets/Weapons/Primary/Energy-Based/LAS-16_Sickle.png',
   },
   {
     id: 'LAS-17_Double-Edge_Sickle',
@@ -786,7 +771,7 @@ export const allWeapons: Weapon[] = [
     category: 'Energy-Based',
     warbond: 'Servants_of_Freedom',
     iconPath:
-      './assets/NewWeapons/Primary/Energy-Based/LAS-17_Double-Edge_Sickle.png',
+      './assets/Weapons/Primary/Energy-Based/LAS-17_Double-Edge_Sickle.png',
   },
   {
     id: 'PLAS-1_Scorcher',
@@ -794,7 +779,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Energy-Based',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Primary/Energy-Based/PLAS-1_Scorcher.png',
+    iconPath: './assets/Weapons/Primary/Energy-Based/PLAS-1_Scorcher.png',
   },
   {
     id: 'PLAS-101_Purifier',
@@ -802,7 +787,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Energy-Based',
     warbond: 'Polar_Patriots',
-    iconPath: './assets/NewWeapons/Primary/Energy-Based/PLAS-101_Purifier.png',
+    iconPath: './assets/Weapons/Primary/Energy-Based/PLAS-101_Purifier.png',
   },
   {
     id: 'FLAM-66_Torcher',
@@ -810,7 +795,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Special',
     warbond: 'Freedoms_Flame',
-    iconPath: './assets/NewWeapons/Primary/Special/FLAM-66_Torcher.png',
+    iconPath: './assets/Weapons/Primary/Special/FLAM-66_Torcher.png',
   },
   {
     id: 'JAR-5_Dominator',
@@ -818,7 +803,7 @@ export const allWeapons: Weapon[] = [
     type: 'Primary',
     category: 'Special',
     warbond: 'Steeled_Veterans',
-    iconPath: './assets/NewWeapons/Primary/Special/JAR-5_Dominator.png',
+    iconPath: './assets/Weapons/Primary/Special/JAR-5_Dominator.png',
   },
   {
     id: 'P-2_Peacemaker',
@@ -826,7 +811,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Pistol',
     warbond: 'Standard_Issue',
-    iconPath: './assets/NewWeapons/Secondary/Pistol/P-2_Peacemaker.png',
+    iconPath: './assets/Weapons/Secondary/Pistol/P-2_Peacemaker.png',
   },
   {
     id: 'P-19_Redeemer',
@@ -834,7 +819,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Pistol',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Secondary/Pistol/P-19_Redeemer.png',
+    iconPath: './assets/Weapons/Secondary/Pistol/P-19_Redeemer.png',
   },
   {
     id: 'P-113_Verdict',
@@ -842,7 +827,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Pistol',
     warbond: 'Polar_Patriots',
-    iconPath: './assets/NewWeapons/Secondary/Pistol/P-113_Verdict.png',
+    iconPath: './assets/Weapons/Secondary/Pistol/P-113_Verdict.png',
   },
   {
     id: 'P-4_Senator',
@@ -850,7 +835,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Pistol',
     warbond: 'Steeled_Veterans',
-    iconPath: './assets/NewWeapons/Secondary/Pistol/P-4_Senator.png',
+    iconPath: './assets/Weapons/Secondary/Pistol/P-4_Senator.png',
   },
   {
     id: 'CQC-19_Stun_Lance',
@@ -858,7 +843,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Melee',
     warbond: 'Urban_Legends',
-    iconPath: './assets/NewWeapons/Secondary/Melee/CQC-19_Stun_Lance.png',
+    iconPath: './assets/Weapons/Secondary/Melee/CQC-19_Stun_Lance.png',
   },
   {
     id: 'CQC-30_Stun_Baton',
@@ -866,7 +851,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Melee',
     warbond: '',
-    iconPath: './assets/NewWeapons/Secondary/Melee/CQC-30_Stun_Baton.png',
+    iconPath: './assets/Weapons/Secondary/Melee/CQC-30_Stun_Baton.png',
   },
   {
     id: 'CQC-5_Combat_Hatchet',
@@ -874,7 +859,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Melee',
     warbond: '',
-    iconPath: './assets/NewWeapons/Secondary/Melee/CQC-5_Combat_Hatchet.png',
+    iconPath: './assets/Weapons/Secondary/Melee/CQC-5_Combat_Hatchet.png',
   },
   {
     id: 'P-11_Stim_Pistol',
@@ -882,7 +867,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Chemical_Agents',
-    iconPath: './assets/NewWeapons/Secondary/Special/P-11_Stim_Pistol.png',
+    iconPath: './assets/Weapons/Secondary/Special/P-11_Stim_Pistol.png',
   },
   {
     id: 'SG-22_Bushwhacker',
@@ -890,7 +875,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Viper_Commandos',
-    iconPath: './assets/NewWeapons/Secondary/Special/SG-22_Bushwhacker.png',
+    iconPath: './assets/Weapons/Secondary/Special/SG-22_Bushwhacker.png',
   },
   {
     id: 'P-72_Crisper',
@@ -898,7 +883,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Freedoms_Flame',
-    iconPath: './assets/NewWeapons/Secondary/Special/P-72_Crisper.png',
+    iconPath: './assets/Weapons/Secondary/Special/P-72_Crisper.png',
   },
   {
     id: 'GP-31_Grenade_Pistol',
@@ -906,7 +891,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Democratic_Detonation',
-    iconPath: './assets/NewWeapons/Secondary/Special/GP-31_Grenade_Pistol.png',
+    iconPath: './assets/Weapons/Secondary/Special/GP-31_Grenade_Pistol.png',
   },
   {
     id: 'LAS-7_Dagger',
@@ -914,7 +899,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Cutting_Edge',
-    iconPath: './assets/NewWeapons/Secondary/Special/LAS-7_Dagger.png',
+    iconPath: './assets/Weapons/Secondary/Special/LAS-7_Dagger.png',
   },
   {
     id: 'GP-31_Ultimatum',
@@ -922,7 +907,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Servants_of_Freedom',
-    iconPath: './assets/NewWeapons/Secondary/Special/GP-31_Ultimatum.png',
+    iconPath: './assets/Weapons/Secondary/Special/GP-31_Ultimatum.png',
   },
   {
     id: 'PLAS-15_Loyalist',
@@ -930,7 +915,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Truth_Enforcers',
-    iconPath: './assets/NewWeapons/Secondary/Special/PLAS-15_Loyalist.png',
+    iconPath: './assets/Weapons/Secondary/Special/PLAS-15_Loyalist.png',
   },
   {
     id: 'Las-58_Talon',
@@ -938,7 +923,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Borderline_Justice',
-    iconPath: './assets/NewWeapons/Secondary/Special/Las-58_Talon.png',
+    iconPath: './assets/Weapons/Secondary/Special/Las-58_Talon.png',
   },
   {
     id: 'G-6_Frag',
@@ -946,7 +931,7 @@ export const allWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Standard',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Throwable/Standard/G-6_Frag.png',
+    iconPath: './assets/Weapons/Throwable/Standard/G-6_Frag.png',
   },
   {
     id: 'G-12_High_Explosive',
@@ -954,7 +939,7 @@ export const allWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Standard',
     warbond: 'Standard_Issue',
-    iconPath: './assets/NewWeapons/Throwable/Standard/G-12_High_Explosive.png',
+    iconPath: './assets/Weapons/Throwable/Standard/G-12_High_Explosive.png',
   },
   {
     id: 'G-10_Incendiary',
@@ -962,7 +947,7 @@ export const allWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Standard',
     warbond: 'Steeled_Veterans',
-    iconPath: './assets/NewWeapons/Throwable/Standard/G-10_Incendiary.png',
+    iconPath: './assets/Weapons/Throwable/Standard/G-10_Incendiary.png',
   },
   {
     id: 'G-16_Impact',
@@ -970,7 +955,7 @@ export const allWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Throwable/Special/G-16_Impact.png',
+    iconPath: './assets/Weapons/Throwable/Special/G-16_Impact.png',
   },
   {
     id: 'G-13_Incendiary_Impact',
@@ -978,8 +963,7 @@ export const allWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Polar_Patriots',
-    iconPath:
-      './assets/NewWeapons/Throwable/Special/G-13_Incendiary_Impact.png',
+    iconPath: './assets/Weapons/Throwable/Special/G-13_Incendiary_Impact.png',
   },
   {
     id: 'G-23_Stun',
@@ -987,7 +971,7 @@ export const allWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Cutting_Edge',
-    iconPath: './assets/NewWeapons/Throwable/Special/G-23_Stun.png',
+    iconPath: './assets/Weapons/Throwable/Special/G-23_Stun.png',
   },
   {
     id: 'G-4_Gas',
@@ -995,7 +979,7 @@ export const allWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Chemical_Agents',
-    iconPath: './assets/NewWeapons/Throwable/Special/G-4_Gas.png',
+    iconPath: './assets/Weapons/Throwable/Special/G-4_Gas.png',
   },
   {
     id: 'G-50_Seeker',
@@ -1003,7 +987,7 @@ export const allWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Servants_of_Freedom',
-    iconPath: './assets/NewWeapons/Throwable/Special/G-50_Seeker.png',
+    iconPath: './assets/Weapons/Throwable/Special/G-50_Seeker.png',
   },
   {
     id: 'G-3_Smoke',
@@ -1011,7 +995,7 @@ export const allWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Helldivers_Mobilize',
-    iconPath: './assets/NewWeapons/Throwable/Special/G-3_Smoke.png',
+    iconPath: './assets/Weapons/Throwable/Special/G-3_Smoke.png',
   },
   {
     id: 'G-123_Thermite',
@@ -1019,7 +1003,7 @@ export const allWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Democratic_Detonation',
-    iconPath: './assets/NewWeapons/Throwable/Special/G-123_Thermite.png',
+    iconPath: './assets/Weapons/Throwable/Special/G-123_Thermite.png',
   },
   {
     id: 'K-2_Throwing_Knife',
@@ -1027,7 +1011,7 @@ export const allWeapons: Weapon[] = [
     type: 'Throwable',
     category: 'Special',
     warbond: 'Viper_Commandos',
-    iconPath: './assets/NewWeapons/Throwable/Special/K-2_Throwing_Knife.png',
+    iconPath: './assets/Weapons/Throwable/Special/K-2_Throwing_Knife.png',
   },
 ];
 
