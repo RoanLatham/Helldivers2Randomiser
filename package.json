@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "prebuild": "node update-build-timestamp.js",
+    "prebuild": "node replace-gtag.js && node update-build-timestamp.js",
     "build": "ng build",
     "postbuild": "node inject-preload-links.js",
     "watch": "ng build --watch --configuration development",
