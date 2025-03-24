@@ -6,7 +6,7 @@ const glob = require("glob");
 const IMAGE_DIRECTORIES = [
   "src/assets/Boosters",
   "src/assets/NewWarbonds",
-  "src/assets/NewStratagems",
+  "src/assets/Stratagems",
   "src/assets/NewWeapons",
 ];
 

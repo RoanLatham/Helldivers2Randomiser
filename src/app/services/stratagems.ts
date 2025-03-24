@@ -17,7 +17,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Patriotic Administration Center',
 
     iconPath:
-      './assets/NewStratagems/Patriotic%20Administration%20Center/MG-43_Machine_Gun.png',
+      './assets/Stratagems/Patriotic%20Administration%20Center/MG-43_Machine_Gun.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -29,7 +29,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Patriotic Administration Center',
 
     iconPath:
-      './assets/NewStratagems/Patriotic%20Administration%20Center/APW-1_Anti-Materiel_Rifle.png',
+      './assets/Stratagems/Patriotic%20Administration%20Center/APW-1_Anti-Materiel_Rifle.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -41,7 +41,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Patriotic Administration Center',
 
     iconPath:
-      './assets/NewStratagems/Patriotic%20Administration%20Center/M-105_Stalwart.png',
+      './assets/Stratagems/Patriotic%20Administration%20Center/M-105_Stalwart.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -53,7 +53,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Patriotic Administration Center',
 
     iconPath:
-      './assets/NewStratagems/Patriotic%20Administration%20Center/EAT-17_Expendable_Anti-Tank.png',
+      './assets/Stratagems/Patriotic%20Administration%20Center/EAT-17_Expendable_Anti-Tank.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -65,7 +65,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Patriotic Administration Center',
 
     iconPath:
-      './assets/NewStratagems/Patriotic%20Administration%20Center/GR-8_Recoilless_Rifle.png',
+      './assets/Stratagems/Patriotic%20Administration%20Center/GR-8_Recoilless_Rifle.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -77,7 +77,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Patriotic Administration Center',
 
     iconPath:
-      './assets/NewStratagems/Patriotic%20Administration%20Center/FLAM-40_Flamethrower.png',
+      './assets/Stratagems/Patriotic%20Administration%20Center/FLAM-40_Flamethrower.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -89,7 +89,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Patriotic Administration Center',
 
     iconPath:
-      './assets/NewStratagems/Patriotic%20Administration%20Center/AC-8_Autocannon.png',
+      './assets/Stratagems/Patriotic%20Administration%20Center/AC-8_Autocannon.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -101,7 +101,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Patriotic Administration Center',
 
     iconPath:
-      './assets/NewStratagems/Patriotic%20Administration%20Center/MG-206_Heavy_Machine_Gun.png',
+      './assets/Stratagems/Patriotic%20Administration%20Center/MG-206_Heavy_Machine_Gun.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -113,7 +113,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Patriotic Administration Center',
 
     iconPath:
-      './assets/NewStratagems/Patriotic%20Administration%20Center/RL-77_Airburst_Rocket_Launcher.png',
+      './assets/Stratagems/Patriotic%20Administration%20Center/RL-77_Airburst_Rocket_Launcher.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -125,7 +125,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Patriotic Administration Center',
 
     iconPath:
-      './assets/NewStratagems/Patriotic%20Administration%20Center/MLS-4X_Commando.png',
+      './assets/Stratagems/Patriotic%20Administration%20Center/MLS-4X_Commando.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -137,7 +137,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Patriotic Administration Center',
 
     iconPath:
-      './assets/NewStratagems/Patriotic%20Administration%20Center/RS-422_Railgun.png',
+      './assets/Stratagems/Patriotic%20Administration%20Center/RS-422_Railgun.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -149,7 +149,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Patriotic Administration Center',
 
     iconPath:
-      './assets/NewStratagems/Patriotic%20Administration%20Center/FAF-14_Spear.png',
+      './assets/Stratagems/Patriotic%20Administration%20Center/FAF-14_Spear.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -161,7 +161,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Patriotic Administration Center',
 
     iconPath:
-      './assets/NewStratagems/Patriotic%20Administration%20Center/StA-X3_WASP_Launcher.png',
+      './assets/Stratagems/Patriotic%20Administration%20Center/StA-X3_WASP_Launcher.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -173,7 +173,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Orbital Cannons',
 
     iconPath:
-      './assets/NewStratagems/Orbital%20Cannons/Orbital_Gatling_Barrage.png',
+      './assets/Stratagems/Orbital%20Cannons/Orbital_Gatling_Barrage.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -185,7 +185,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Orbital Cannons',
 
     iconPath:
-      './assets/NewStratagems/Orbital%20Cannons/Orbital_Airburst_Strike.png',
+      './assets/Stratagems/Orbital%20Cannons/Orbital_Airburst_Strike.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -197,7 +197,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Orbital Cannons',
 
     iconPath:
-      './assets/NewStratagems/Orbital%20Cannons/Orbital_120mm_HE_Barrage.png',
+      './assets/Stratagems/Orbital%20Cannons/Orbital_120mm_HE_Barrage.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -209,7 +209,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Orbital Cannons',
 
     iconPath:
-      './assets/NewStratagems/Orbital%20Cannons/Orbital_380mm_HE_Barrage.png',
+      './assets/Stratagems/Orbital%20Cannons/Orbital_380mm_HE_Barrage.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -221,7 +221,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Orbital Cannons',
 
     iconPath:
-      './assets/NewStratagems/Orbital%20Cannons/Orbital_Walking_Barrage.png',
+      './assets/Stratagems/Orbital%20Cannons/Orbital_Walking_Barrage.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -232,7 +232,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Orbital Cannons',
 
-    iconPath: './assets/NewStratagems/Orbital%20Cannons/Orbital_Laser.png',
+    iconPath: './assets/Stratagems/Orbital%20Cannons/Orbital_Laser.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -244,7 +244,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Orbital Cannons',
 
     iconPath:
-      './assets/NewStratagems/Orbital%20Cannons/Orbital_Napalm_Barrage.png',
+      './assets/Stratagems/Orbital%20Cannons/Orbital_Napalm_Barrage.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -256,7 +256,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Orbital Cannons',
 
     iconPath:
-      './assets/NewStratagems/Orbital%20Cannons/Orbital_Railcannon_Strike.png',
+      './assets/Stratagems/Orbital%20Cannons/Orbital_Railcannon_Strike.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -267,7 +267,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Hangar',
 
-    iconPath: './assets/NewStratagems/Hangar/Eagle_Strafing_Run.png',
+    iconPath: './assets/Stratagems/Hangar/Eagle_Strafing_Run.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -278,7 +278,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Hangar',
 
-    iconPath: './assets/NewStratagems/Hangar/Eagle_Airstrike.png',
+    iconPath: './assets/Stratagems/Hangar/Eagle_Airstrike.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -289,7 +289,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Hangar',
 
-    iconPath: './assets/NewStratagems/Hangar/Eagle_Cluster_Bomb.png',
+    iconPath: './assets/Stratagems/Hangar/Eagle_Cluster_Bomb.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -300,7 +300,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Hangar',
 
-    iconPath: './assets/NewStratagems/Hangar/Eagle_Napalm_Airstrike.png',
+    iconPath: './assets/Stratagems/Hangar/Eagle_Napalm_Airstrike.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -311,7 +311,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Hangar',
 
-    iconPath: './assets/NewStratagems/Hangar/LIFT-850_Jump_Pack.png',
+    iconPath: './assets/Stratagems/Hangar/LIFT-850_Jump_Pack.png',
     isBackpack: true,
     isSupportWeapon: false,
   },
@@ -322,7 +322,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Hangar',
 
-    iconPath: './assets/NewStratagems/Hangar/Eagle_Smoke_Strike.png',
+    iconPath: './assets/Stratagems/Hangar/Eagle_Smoke_Strike.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -333,7 +333,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Hangar',
 
-    iconPath: './assets/NewStratagems/Hangar/Eagle_110mm_Rocket_Pods.png',
+    iconPath: './assets/Stratagems/Hangar/Eagle_110mm_Rocket_Pods.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -344,7 +344,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Hangar',
 
-    iconPath: './assets/NewStratagems/Hangar/Eagle_500kg_Bomb.png',
+    iconPath: './assets/Stratagems/Hangar/Eagle_500kg_Bomb.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -355,7 +355,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Hangar',
 
-    iconPath: './assets/NewStratagems/Hangar/M-102_Fast_Recon_Vehicle.png',
+    iconPath: './assets/Stratagems/Hangar/M-102_Fast_Recon_Vehicle.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -366,7 +366,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Bridge',
 
-    iconPath: './assets/NewStratagems/Bridge/Orbital_Precision_Strike.png',
+    iconPath: './assets/Stratagems/Bridge/Orbital_Precision_Strike.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -377,7 +377,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Bridge',
 
-    iconPath: './assets/NewStratagems/Bridge/Orbital_Gas_Strike.png',
+    iconPath: './assets/Stratagems/Bridge/Orbital_Gas_Strike.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -388,7 +388,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Bridge',
 
-    iconPath: './assets/NewStratagems/Bridge/Orbital_EMS_Strike.png',
+    iconPath: './assets/Stratagems/Bridge/Orbital_EMS_Strike.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -399,7 +399,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Bridge',
 
-    iconPath: './assets/NewStratagems/Bridge/Orbital_Smoke_Strike.png',
+    iconPath: './assets/Stratagems/Bridge/Orbital_Smoke_Strike.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -410,7 +410,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Bridge',
 
-    iconPath: './assets/NewStratagems/Bridge/EMG-101_HMG_Emplacement.png',
+    iconPath: './assets/Stratagems/Bridge/EMG-101_HMG_Emplacement.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -421,7 +421,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Bridge',
 
-    iconPath: './assets/NewStratagems/Bridge/FX-12_Shield_Generator_Relay.png',
+    iconPath: './assets/Stratagems/Bridge/FX-12_Shield_Generator_Relay.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -432,7 +432,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Bridge',
 
-    iconPath: './assets/NewStratagems/Bridge/AARC-3_Tesla_Tower.png',
+    iconPath: './assets/Stratagems/Bridge/AARC-3_Tesla_Tower.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -444,7 +444,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Engineering Bay',
 
     iconPath:
-      './assets/NewStratagems/Engineering%20Bay/MD-6_Anti-Personnel_Minefield.png',
+      './assets/Stratagems/Engineering%20Bay/MD-6_Anti-Personnel_Minefield.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -455,7 +455,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Engineering Bay',
 
-    iconPath: './assets/NewStratagems/Engineering%20Bay/B-1_Supply_Pack.png',
+    iconPath: './assets/Stratagems/Engineering%20Bay/B-1_Supply_Pack.png',
     isBackpack: true,
     isSupportWeapon: false,
   },
@@ -467,7 +467,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Engineering Bay',
 
     iconPath:
-      './assets/NewStratagems/Engineering%20Bay/GL-21_Grenade_Launcher.png',
+      './assets/Stratagems/Engineering%20Bay/GL-21_Grenade_Launcher.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -478,8 +478,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Engineering Bay',
 
-    iconPath:
-      './assets/NewStratagems/Engineering%20Bay/LAS-98_Laser_Cannon.png',
+    iconPath: './assets/Stratagems/Engineering%20Bay/LAS-98_Laser_Cannon.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -491,7 +490,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Engineering Bay',
 
     iconPath:
-      './assets/NewStratagems/Engineering%20Bay/MD-I4_Incendiary_Mines.png',
+      './assets/Stratagems/Engineering%20Bay/MD-I4_Incendiary_Mines.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -503,7 +502,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Engineering Bay',
 
     iconPath:
-      './assets/NewStratagems/Engineering%20Bay/AXLAS-5_Guard_Dog_Rover.png',
+      './assets/Stratagems/Engineering%20Bay/AXLAS-5_Guard_Dog_Rover.png',
     isBackpack: true,
     isSupportWeapon: false,
   },
@@ -515,7 +514,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Engineering Bay',
 
     iconPath:
-      './assets/NewStratagems/Engineering%20Bay/SH-20_Ballistic_Shield_Backpack.png',
+      './assets/Stratagems/Engineering%20Bay/SH-20_Ballistic_Shield_Backpack.png',
     isBackpack: true,
     isSupportWeapon: false,
   },
@@ -526,7 +525,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Engineering Bay',
 
-    iconPath: './assets/NewStratagems/Engineering%20Bay/ARC-3_Arc_Thrower.png',
+    iconPath: './assets/Stratagems/Engineering%20Bay/ARC-3_Arc_Thrower.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -537,8 +536,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Engineering Bay',
 
-    iconPath:
-      './assets/NewStratagems/Engineering%20Bay/MD-17_Anti-Tank_Mines.png',
+    iconPath: './assets/Stratagems/Engineering%20Bay/MD-17_Anti-Tank_Mines.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -549,8 +547,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Engineering Bay',
 
-    iconPath:
-      './assets/NewStratagems/Engineering%20Bay/LAS-99_Quasar_Cannon.png',
+    iconPath: './assets/Stratagems/Engineering%20Bay/LAS-99_Quasar_Cannon.png',
     isBackpack: false,
     isSupportWeapon: true,
   },
@@ -562,7 +559,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Engineering Bay',
 
     iconPath:
-      './assets/NewStratagems/Engineering%20Bay/SH-32_Shield_Generator_Pack.png',
+      './assets/Stratagems/Engineering%20Bay/SH-32_Shield_Generator_Pack.png',
     isBackpack: true,
     isSupportWeapon: false,
   },
@@ -573,7 +570,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Engineering Bay',
 
-    iconPath: './assets/NewStratagems/Engineering%20Bay/MD-8_Gas_Mines.png',
+    iconPath: './assets/Stratagems/Engineering%20Bay/MD-8_Gas_Mines.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -585,7 +582,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Robotics Workshop',
 
     iconPath:
-      './assets/NewStratagems/Robotics%20Workshop/AMG-43_Machine_Gun_Sentry.png',
+      './assets/Stratagems/Robotics%20Workshop/AMG-43_Machine_Gun_Sentry.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -597,7 +594,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Robotics Workshop',
 
     iconPath:
-      './assets/NewStratagems/Robotics%20Workshop/AG-16_Gatling_Sentry.png',
+      './assets/Stratagems/Robotics%20Workshop/AG-16_Gatling_Sentry.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -608,8 +605,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Robotics Workshop',
 
-    iconPath:
-      './assets/NewStratagems/Robotics%20Workshop/AM-12_Mortar_Sentry.png',
+    iconPath: './assets/Stratagems/Robotics%20Workshop/AM-12_Mortar_Sentry.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -620,8 +616,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Robotics Workshop',
 
-    iconPath:
-      './assets/NewStratagems/Robotics%20Workshop/AXAR-23_Guard_Dog.png',
+    iconPath: './assets/Stratagems/Robotics%20Workshop/AXAR-23_Guard_Dog.png',
     isBackpack: true,
     isSupportWeapon: false,
   },
@@ -633,7 +628,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Robotics Workshop',
 
     iconPath:
-      './assets/NewStratagems/Robotics%20Workshop/AAC-8_Autocannon_Sentry.png',
+      './assets/Stratagems/Robotics%20Workshop/AAC-8_Autocannon_Sentry.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -645,7 +640,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Robotics Workshop',
 
     iconPath:
-      './assets/NewStratagems/Robotics%20Workshop/AMLS-4X_Rocket_Sentry.png',
+      './assets/Stratagems/Robotics%20Workshop/AMLS-4X_Rocket_Sentry.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -657,7 +652,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Robotics Workshop',
 
     iconPath:
-      './assets/NewStratagems/Robotics%20Workshop/AM-23_EMS_Mortar_Sentry.png',
+      './assets/Stratagems/Robotics%20Workshop/AM-23_EMS_Mortar_Sentry.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -669,7 +664,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Robotics Workshop',
 
     iconPath:
-      './assets/NewStratagems/Robotics%20Workshop/EXO-45_Patriot_Exosuit.png',
+      './assets/Stratagems/Robotics%20Workshop/EXO-45_Patriot_Exosuit.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -681,7 +676,7 @@ export const stratagems: Stratagem[] = [
     shipModule: 'Robotics Workshop',
 
     iconPath:
-      './assets/NewStratagems/Robotics%20Workshop/EXO-49_Emancipator_Exosuit.png',
+      './assets/Stratagems/Robotics%20Workshop/EXO-49_Emancipator_Exosuit.png',
     isBackpack: false,
     isSupportWeapon: false,
   },
@@ -692,7 +687,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Warbonds',
 
-    iconPath: './assets/NewStratagems/Warbonds/TX-41_Sterilizer.png',
+    iconPath: './assets/Stratagems/Warbonds/TX-41_Sterilizer.png',
 
     warbond: 'Chemical_Agents',
     isBackpack: false,
@@ -705,8 +700,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Warbonds',
 
-    iconPath:
-      './assets/NewStratagems/Warbonds/AXTX-13_Guard_Dog_Dog_Breath.png',
+    iconPath: './assets/Stratagems/Warbonds/AXTX-13_Guard_Dog_Dog_Breath.png',
 
     warbond: 'Chemical_Agents',
     isBackpack: true,
@@ -719,7 +713,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Warbonds',
 
-    iconPath: './assets/NewStratagems/Warbonds/SH-51_Directional_Shield.png',
+    iconPath: './assets/Stratagems/Warbonds/SH-51_Directional_Shield.png',
 
     warbond: 'Urban_Legends',
     isBackpack: true,
@@ -732,8 +726,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Warbonds',
 
-    iconPath:
-      './assets/NewStratagems/Warbonds/EAT-12_Anti-Tank_Emplacement.png',
+    iconPath: './assets/Stratagems/Warbonds/EAT-12_Anti-Tank_Emplacement.png',
 
     warbond: 'Urban_Legends',
     isBackpack: false,
@@ -746,7 +739,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Warbonds',
 
-    iconPath: './assets/NewStratagems/Warbonds/AFLAM-40_Flame_Sentry.png',
+    iconPath: './assets/Stratagems/Warbonds/AFLAM-40_Flame_Sentry.png',
 
     warbond: 'Urban_Legends',
     isBackpack: false,
@@ -759,7 +752,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Warbonds',
 
-    iconPath: './assets/NewStratagems/Warbonds/B-100_Portable_Hellbomb.png',
+    iconPath: './assets/Stratagems/Warbonds/B-100_Portable_Hellbomb.png',
 
     warbond: 'Servants_of_Freedom',
     isBackpack: true,
@@ -772,7 +765,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Warbonds',
 
-    iconPath: './assets/NewStratagems/Fallback_Stratagem.png',
+    iconPath: './assets/Stratagems/Fallback_Stratagem.png',
 
     warbond: 'Borderline_Justice',
     isBackpack: true,
