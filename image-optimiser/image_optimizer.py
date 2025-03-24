@@ -29,12 +29,12 @@ import logging
 DEFAULT_CONFIG = {
     # Source directories relative to script location
     'SOURCE_DIRS': {
-        'Weapons': './Weapons',
-        'Stratagems': './Stratagems',
-        'Warbonds': './Warbonds'
+        'Weapons': '../Weapons',
+        'Stratagems': '../Stratagems',
+        'Warbonds': '../Warbonds'
     },
     # Output base directory relative to script location
-    'OUTPUT_DIR': '../../src/assets',
+    'OUTPUT_DIR': '../src/assets',
     
     # Resizing rules
     'RESIZE_RULES': {
@@ -93,6 +93,9 @@ def parse_args():
     parser.add_argument('--force', action='store_true', dest='force_overwrite',
                         default=False,
                         help='Force overwrite of existing files')
+    
+    parser.add_argument('--single-image', type=str, dest='single_image_path',
+                        help='Process a single image file instead of directories')
     
     return parser.parse_args()
 
@@ -234,6 +237,38 @@ def process_directory(source_dir, output_base_dir, config):
     
     return succeeded, skipped, failed
 
+def process_single_image(image_path, config):
+    """Process a single image file"""
+    source_path = Path(image_path).resolve()
+    
+    if not source_path.exists() or not source_path.is_file():
+        logger.error(f"Image file not found: {source_path}")
+        return False
+    
+    # Check if file is an image
+    if not source_path.suffix.lower() in ['.png', '.jpg', '.jpeg', '.gif', '.bmp', '.tiff']:
+        logger.error(f"File is not a supported image type: {source_path}")
+        return False
+    
+    # Create output path in the same folder as the input
+    output_path = source_path.with_suffix('.webp')
+    
+    logger.info(f"Processing single image: {source_path}")
+    logger.info(f"Output will be saved to: {output_path}")
+    
+    # Call optimize_image function
+    result = optimize_image(source_path, output_path, config)
+    
+    if result == "success":
+        logger.info(f"Successfully optimized image: {output_path}")
+        return True
+    elif result == "skipped":
+        logger.info(f"Skipped already processed image: {output_path}")
+        return True
+    else:
+        logger.error(f"Failed to optimize image: {source_path}")
+        return False
+
 def main():
     """Main function to run the optimization process"""
     args = parse_args()
@@ -253,6 +288,12 @@ def main():
                 f"lossless={config['LOSSLESS']}, method={config['METHOD']}, "
                 f"workers={config['MAX_WORKERS']}, preserve_structure={config['PRESERVE_STRUCTURE']}")
     
+    # Process single image if path provided
+    if args.single_image_path:
+        success = process_single_image(args.single_image_path, config)
+        sys.exit(0 if success else 1)
+    
+    # Otherwise, process directories
     script_dir = Path(__file__).parent.resolve()
     output_base_dir = script_dir / Path(config['OUTPUT_DIR'])
     
