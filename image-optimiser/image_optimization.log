@@ -1,0 +1,8 @@
+2025-03-24 17:18:27,940 - INFO - Starting image optimization with settings: quality=90, lossless=True, method=6, workers=8, preserve_structure=True
+2025-03-24 17:18:27,942 - INFO - Processing Weapons images from D:\ComputerScience\HelldiversLoadoutSite\HelldiversLoadout\gitignore\image-optimiser\Weapons
+2025-03-24 17:18:27,947 - INFO - Found 61 images to process in D:\ComputerScience\HelldiversLoadoutSite\HelldiversLoadout\gitignore\image-optimiser\Weapons
+2025-03-24 17:18:29,475 - INFO - Processing Stratagems images from D:\ComputerScience\HelldiversLoadoutSite\HelldiversLoadout\gitignore\image-optimiser\Stratagems
+2025-03-24 17:18:29,479 - INFO - Found 65 images to process in D:\ComputerScience\HelldiversLoadoutSite\HelldiversLoadout\gitignore\image-optimiser\Stratagems
+2025-03-24 17:18:29,985 - INFO - Processing Warbonds images from D:\ComputerScience\HelldiversLoadoutSite\HelldiversLoadout\gitignore\image-optimiser\Warbonds
+2025-03-24 17:18:29,986 - INFO - Found 14 images to process in D:\ComputerScience\HelldiversLoadoutSite\HelldiversLoadout\gitignore\image-optimiser\Warbonds
+2025-03-24 17:18:30,585 - INFO - Optimization complete: 140 succeeded, 0 skipped, 0 failed
