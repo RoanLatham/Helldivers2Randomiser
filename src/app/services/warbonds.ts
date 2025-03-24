@@ -1,4 +1,3 @@
-
 export interface Warbond {
   id: string;
   name: string;
@@ -9,81 +8,80 @@ export interface Warbond {
 export const warbonds: Warbond[] = [
   {
     id: 'Helldivers_Mobilize',
-    name: "Helldivers Mobilize!",
-    iconPath: './assets/NewWarbonds/Helldivers_Mobilize.png',
+    name: 'Helldivers Mobilize!',
+    iconPath: './assets/Warbonds/Helldivers_Mobilize.png',
   },
   {
     id: 'Servants_of_Freedom',
-    name: "Servants of Freedom",
-    iconPath: './assets/NewWarbonds/Servants_of_Freedom.png',
+    name: 'Servants of Freedom',
+    iconPath: './assets/Warbonds/Servants_of_Freedom.png',
   },
   {
     id: 'Urban_Legends',
-    name: "Urban Legends",
-    iconPath: './assets/NewWarbonds/Urban_Legends.png',
+    name: 'Urban Legends',
+    iconPath: './assets/Warbonds/Urban_Legends.png',
   },
   {
     id: 'Truth_Enforcers',
-    name: "Truth Enforcers",
-    iconPath: './assets/NewWarbonds/Truth_Enforcers.png',
+    name: 'Truth Enforcers',
+    iconPath: './assets/Warbonds/Truth_Enforcers.png',
   },
   {
     id: 'Chemical_Agents',
-    name: "Chemical Agents",
-    iconPath: './assets/NewWarbonds/Chemical_Agents.png',
+    name: 'Chemical Agents',
+    iconPath: './assets/Warbonds/Chemical_Agents.png',
   },
   {
     id: 'Freedoms_Flame',
     name: "Freedom's Flame",
-    iconPath: './assets/NewWarbonds/Freedoms_Flame.png',
+    iconPath: './assets/Warbonds/Freedoms_Flame.png',
   },
   {
     id: 'Viper_Commandos',
-    name: "Viper Commandos",
-    iconPath: './assets/NewWarbonds/Viper_Commandos.png',
+    name: 'Viper Commandos',
+    iconPath: './assets/Warbonds/Viper_Commandos.png',
   },
   {
     id: 'Polar_Patriots',
-    name: "Polar Patriots",
-    iconPath: './assets/NewWarbonds/Polar_Patriots.png',
+    name: 'Polar Patriots',
+    iconPath: './assets/Warbonds/Polar_Patriots.png',
   },
   {
     id: 'Democratic_Detonation',
-    name: "Democratic Detonation",
-    iconPath: './assets/NewWarbonds/Democratic_Detonation.png',
+    name: 'Democratic Detonation',
+    iconPath: './assets/Warbonds/Democratic_Detonation.png',
   },
   {
     id: 'Cutting_Edge',
-    name: "Cutting Edge",
-    iconPath: './assets/NewWarbonds/Cutting_Edge.png',
+    name: 'Cutting Edge',
+    iconPath: './assets/Warbonds/Cutting_Edge.png',
   },
   {
     id: 'Steeled_Veterans',
-    name: "Steeled Veterans",
-    iconPath: './assets/NewWarbonds/Steeled_Veterans.png',
+    name: 'Steeled Veterans',
+    iconPath: './assets/Warbonds/Steeled_Veterans.png',
   },
   {
     id: 'Borderline_Justice',
-    name: "Borderline Justice",
-    iconPath: './assets/NewWarbonds/Borderline_Justice.png',
+    name: 'Borderline Justice',
+    iconPath: './assets/Warbonds/Borderline_Justice.png',
   },
   {
     id: 'Helldivers_x_Killzone',
-    name: "Helldivers x Killzone",
-    iconPath: './assets/NewWarbonds/Helldivers_x_Killzone.png',
+    name: 'Helldivers x Killzone',
+    iconPath: './assets/Warbonds/Helldivers_x_Killzone.png',
   },
   {
     id: 'Super_Citizen_Edition',
-    name: "Super Citizen Edition",
-    iconPath: './assets/NewWarbonds/Super_Citizen_Edition.png',
+    name: 'Super Citizen Edition',
+    iconPath: './assets/Warbonds/Super_Citizen_Edition.png',
   },
   {
     id: 'Standard_Issue',
-    name: "Standard Issue",
-    iconPath: './assets/NewWarbonds/Helldivers_Mobilize.png',
+    name: 'Standard Issue',
+    iconPath: './assets/Warbonds/Helldivers_Mobilize.png',
   },
 ];
-
 
 // Helper function to get a warbond by ID
 export function getWarbondById(id: string): Warbond | undefined {

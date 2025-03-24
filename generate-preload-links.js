@@ -5,7 +5,7 @@ const glob = require("glob");
 // Directories to scan for images
 const IMAGE_DIRECTORIES = [
   "src/assets/Boosters",
-  "src/assets/NewWarbonds",
+  "src/assets/Warbonds",
   "src/assets/Stratagems",
   "src/assets/NewWeapons",
 ];
