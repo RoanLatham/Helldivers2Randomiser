@@ -274,7 +274,7 @@ describe('CollapsibleSectionComponent', () => {
       fixture.detectChanges();
 
       const imgEl = fixture.debugElement.query(By.css('img'));
-      expect(imgEl.properties['src']).toBe('assets/next.png');
+      expect(imgEl.properties['src']).toBe('assets/next.webp');
     });
 
     it('should use custom chevron icon path when provided', () => {

@@ -25,7 +25,7 @@ export class CollapsibleSectionComponent {
     return this._variant;
   }
   private _variant: SectionVariant = 'component';
-  @Input() chevronIconPath: string = 'assets/next.png';
+  @Input() chevronIconPath: string = 'assets/next.webp';
   @Input() chevronIconAlt: string = 'Toggle section';
 
   // Output event when toggled

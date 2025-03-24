@@ -25,7 +25,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/HDR_Icon_shuffle.png",
+              "src/HDR_Icon_shuffle.webp",
               "src/assets"
             ],
             "styles": ["src/styles.scss"],
@@ -89,7 +89,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/HDR_Icon_shuffle.png",
+              "src/HDR_Icon_shuffle.webp",
               "src/assets",
               "src/sitemap.xml"
             ],

@@ -145,11 +145,20 @@ function generateAndSavePreloadTags() {
   // Generate preload tags
   const preloadTags = generatePreloadTags(webPaths);
 
+  // Add hardcoded preload links
+  const hardcodedPreloadTags = `
+    <link rel="preload" href="assets/next.webp" as="image" />
+    <link rel="preload" href="HDR_Icon_shuffle.webp" as="image" />
+  `;
+
+  // Combine hardcoded tags with generated tags
+  const combinedPreloadTags = hardcodedPreloadTags + preloadTags;
+
   // Count how many images we're preloading
   console.log(`Generating preload tags for ${webPaths.length} images...`);
 
   // Create content with HTML comment
-  const content = `<!-- Image preload tags - Generated on ${new Date().toISOString()} -->\n    ${preloadTags}`;
+  const content = `<!-- Image preload tags - Generated on ${new Date().toISOString()} -->\n    ${combinedPreloadTags}`;
 
   // Write to output file
   fs.writeFileSync(OUTPUT_FILE, content);
