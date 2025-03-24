@@ -26,12 +26,26 @@ $wide: 1440px;
 $background-color: #201e21;
 $accent-color: #ffeb00;
 $grey-text: #d9d9d9;
+$surface-bg-dark: rgba(
+  0,
+  0,
+  0,
+  0.2
+); // Used for display components and filter sections
+$surface-bg-medium: rgba(
+  0,
+  0,
+  0,
+  0.15
+); // Used for filter groups and content containers
 
 // Global CSS custom properties
 :root {
   // Typography
   --grey-text: #{$grey-text};
   --accent-color: #{$accent-color};
+  --surface-bg-dark: #{$surface-bg-dark};
+  --surface-bg-medium: #{$surface-bg-medium};
 
   // Icon sizes
   --icon-size-lg: #{$icon-size-lg};
@@ -184,7 +198,7 @@ img {
 
 /* Common Filter Styles */
 .filter-section {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--surface-bg-dark);
   border-radius: 8px;
   padding: 1.25rem;
   margin-bottom: 1.5rem;
@@ -197,7 +211,7 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 6px;
   padding: 0.75rem;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: var(--surface-bg-medium);
 
   & > .category-label-container:first-child {
     margin-top: 0;

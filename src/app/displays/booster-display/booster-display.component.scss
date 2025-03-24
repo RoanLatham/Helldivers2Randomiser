@@ -2,7 +2,7 @@
 
 .booster-display {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--surface-bg-dark);
   padding: 1.25rem;
   border-radius: 8px;
   transition: transform 0.2s, box-shadow 0.2s;
