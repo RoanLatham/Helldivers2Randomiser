@@ -150,7 +150,7 @@ export const stratagems: Stratagem[] = [
 
     iconPath:
       './assets/Stratagems/Patriotic%20Administration%20Center/FAF-14_Spear.webp',
-    isBackpack: false,
+    isBackpack: true,
     isSupportWeapon: true,
   },
   {
@@ -162,7 +162,7 @@ export const stratagems: Stratagem[] = [
 
     iconPath:
       './assets/Stratagems/Patriotic%20Administration%20Center/StA-X3_WASP_Launcher.webp',
-    isBackpack: false,
+    isBackpack: true,
     isSupportWeapon: true,
   },
   {
@@ -631,7 +631,7 @@ export const stratagems: Stratagem[] = [
 
     iconPath:
       './assets/Stratagems/Robotics%20Workshop/AAC-8_Autocannon_Sentry.webp',
-    isBackpack: false,
+    isBackpack: true,
     isSupportWeapon: false,
   },
   {
