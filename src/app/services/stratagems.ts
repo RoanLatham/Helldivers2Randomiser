@@ -90,7 +90,7 @@ export const stratagems: Stratagem[] = [
 
     iconPath:
       './assets/Stratagems/Patriotic%20Administration%20Center/AC-8_Autocannon.webp',
-    isBackpack: false,
+    isBackpack: true,
     isSupportWeapon: true,
   },
   {
@@ -114,7 +114,7 @@ export const stratagems: Stratagem[] = [
 
     iconPath:
       './assets/Stratagems/Patriotic%20Administration%20Center/RL-77_Airburst_Rocket_Launcher.webp',
-    isBackpack: false,
+    isBackpack: true,
     isSupportWeapon: true,
   },
   {

@@ -8,7 +8,7 @@
 // MINOR - Potentially incompatible changes requiring warning (new attributes)
 // INFO - Compatible changes requiring notification (new content added)
 // PATCH - Compatible changes with no notification needed (bug fixes, text changes)
-export const APP_VERSION = '1.0.1.2';
+export const APP_VERSION = '1.0.1.3';
 
 // The current schema versions for different data types
 // These should be updated when the structure of the data changes
