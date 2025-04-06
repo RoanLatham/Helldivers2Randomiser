@@ -295,160 +295,141 @@ export function getRandomStratagems(
       options.requireOneSupport = true;
     }
 
-    // Filter stratagems by type
-    const backpacks = shuffled.filter((s) => s.isBackpack);
-    const supportWeapons = shuffled.filter((s) => s.isSupportWeapon);
-    const regularStratagems = shuffled.filter(
-      (s) => !s.isBackpack && !s.isSupportWeapon
+    // Track whether we need to find specific types of stratagems
+    const needBackpack = options.requireOneBackpack || false;
+    const needSupport = options.requireOneSupport || false;
+    const guaranteeBackpack = options.guaranteeBackpack || false;
+    const guaranteeSupport = options.guaranteeSupport || false;
+
+    // Track whether we've found specific types of stratagems
+    let foundBackpack = false;
+    let foundSupport = false;
+    let dualPurposeStratagem: Stratagem | null = null;
+
+    // Initialize our working set of stratagems
+    let remainingStratagems = [...shuffled];
+    let specialStratagems: Stratagem[] = [];
+
+    // First pass: Find backpack if needed
+    if (needBackpack) {
+      // Try to find a backpack
+      const backpackIndex = remainingStratagems.findIndex((s) => s.isBackpack);
+
+      if (backpackIndex >= 0) {
+        const backpack = remainingStratagems[backpackIndex];
+        foundBackpack = true;
+
+        // Check if this is a dual-purpose stratagem
+        if (backpack.isSupportWeapon) {
+          foundSupport = true;
+          dualPurposeStratagem = backpack;
+        }
+
+        // If we need to guarantee a backpack, add it to special stratagems
+        if (guaranteeBackpack) {
+          specialStratagems.push(backpack);
+        }
+
+        // Remove all backpacks from consideration
+        remainingStratagems = remainingStratagems.filter((s) => !s.isBackpack);
+
+        // If we found a dual-purpose stratagem, and we need one support weapon,
+        // remove all other support weapons too (since our backpack already fulfills this role)
+        if (foundSupport && needSupport) {
+          remainingStratagems = remainingStratagems.filter(
+            (s) => !s.isSupportWeapon
+          );
+        } else if (!guaranteeBackpack) {
+          // If we don't need to guarantee position, add the backpack back to the remaining stratagems
+          // at its original position to preserve randomness
+          remainingStratagems.splice(backpackIndex, 0, backpack);
+        }
+      }
+    }
+
+    // Second pass: Find support weapon if needed and not already found
+    if (needSupport && !foundSupport) {
+      // Try to find a support weapon
+      const supportIndex = remainingStratagems.findIndex(
+        (s) => s.isSupportWeapon
+      );
+
+      if (supportIndex >= 0) {
+        const support = remainingStratagems[supportIndex];
+        foundSupport = true;
+
+        // Check if this is a dual-purpose stratagem
+        if (support.isBackpack) {
+          foundBackpack = true;
+          dualPurposeStratagem = support;
+        }
+
+        // If we need to guarantee a support weapon, add it to special stratagems
+        if (guaranteeSupport) {
+          specialStratagems.push(support);
+        }
+
+        // Remove all support weapons from consideration
+        remainingStratagems = remainingStratagems.filter(
+          (s) => !s.isSupportWeapon
+        );
+
+        // If we found a dual-purpose stratagem, and we need one backpack,
+        // remove all other backpacks too (since our support already fulfills this role)
+        if (foundBackpack && needBackpack) {
+          remainingStratagems = remainingStratagems.filter(
+            (s) => !s.isBackpack
+          );
+        } else if (!guaranteeSupport) {
+          // If we don't need to guarantee position, add the support weapon back to the remaining stratagems
+          // at its original position to preserve randomness
+          remainingStratagems.splice(supportIndex, 0, support);
+        }
+      }
+    }
+
+    // Special case: Both guarantees enabled but a dual-purpose stratagem fulfills both roles
+    if (guaranteeBackpack && guaranteeSupport && dualPurposeStratagem) {
+      // Remove duplicate entries of the dual-purpose stratagem
+      specialStratagems = specialStratagems.filter((s, index) =>
+        s === dualPurposeStratagem
+          ? specialStratagems.indexOf(dualPurposeStratagem) === index
+          : true
+      );
+    }
+
+    // Get regular stratagems (non-special ones)
+    const regularStratagems = remainingStratagems.filter(
+      (s) => !specialStratagems.includes(s)
     );
 
-    // Start with a clean slate
-    selectedStratagems = [];
-    let remainingSlots = maxStratagems;
+    // Calculate how many regular stratagems we need
+    const slotsForRegular = maxStratagems - specialStratagems.length;
 
-    // First handle guaranteed items to ensure they're included
-    let guaranteedBackpackAdded = false;
-    let guaranteedSupportAdded = false;
-    let backpackPosition = -1;
-    let supportPosition = -1;
+    // Combine special and regular stratagems
+    selectedStratagems = [
+      ...specialStratagems,
+      ...regularStratagems.slice(0, slotsForRegular),
+    ];
 
-    // If we need to guarantee both, we need to pick positions carefully
-    if (options.guaranteeBackpack && options.guaranteeSupport) {
-      if (backpacks.length > 0 && supportWeapons.length > 0) {
-        // Pick random positions for backpack and support
-        backpackPosition = Math.floor(Math.random() * maxStratagems);
-
-        // Ensure support position is different from backpack position
-        do {
-          supportPosition = Math.floor(Math.random() * maxStratagems);
-        } while (supportPosition === backpackPosition);
-      }
-    } else {
-      // Only one type is guaranteed, pick a random position
-      if (options.guaranteeBackpack && backpacks.length > 0) {
-        backpackPosition = Math.floor(Math.random() * maxStratagems);
-      }
-
-      if (options.guaranteeSupport && supportWeapons.length > 0) {
-        supportPosition = Math.floor(Math.random() * maxStratagems);
-      }
+    // If we have guaranteed stratagems, randomize all positions with a shuffle
+    if (specialStratagems.length > 0) {
+      // Shuffle the entire array to randomize positions including guarantees
+      selectedStratagems = selectedStratagems.sort(() => 0.5 - Math.random());
     }
 
-    // Create a full array with placeholders for guaranteed positions
-    for (let i = 0; i < maxStratagems; i++) {
-      if (i === backpackPosition && backpacks.length > 0) {
-        // Add a random backpack at this position
-        const randomBackpack =
-          backpacks[Math.floor(Math.random() * backpacks.length)];
-        selectedStratagems.push(randomBackpack);
-        guaranteedBackpackAdded = true;
-      } else if (i === supportPosition && supportWeapons.length > 0) {
-        // Add a random support weapon at this position
-        const randomSupport =
-          supportWeapons[Math.floor(Math.random() * supportWeapons.length)];
-        selectedStratagems.push(randomSupport);
-        guaranteedSupportAdded = true;
-      } else {
-        // Placeholder for now, will fill with remaining stratagems later
-        selectedStratagems.push(null as any);
+    // Ensure we have exactly maxStratagems stratagems
+    selectedStratagems = selectedStratagems.slice(0, maxStratagems);
+
+    // If we don't have enough stratagems, fill with duplicates of the first one
+    if (
+      selectedStratagems.length < maxStratagems &&
+      selectedStratagems.length > 0
+    ) {
+      const firstStratagem = selectedStratagems[0];
+      while (selectedStratagems.length < maxStratagems) {
+        selectedStratagems.push(firstStratagem);
       }
-    }
-
-    // Create a pool of remaining stratagems to randomly select from
-    let remainingPool = [...shuffled];
-
-    // If only one backpack is required, remove all but possibly one backpack
-    if (options.requireOneBackpack) {
-      // If a backpack is already guaranteed, remove all backpacks
-      if (guaranteedBackpackAdded) {
-        remainingPool = remainingPool.filter((s) => !s.isBackpack);
-      } else {
-        // Keep only one random backpack in the pool if any exist
-        const backpacksInPool = remainingPool.filter((s) => s.isBackpack);
-        if (backpacksInPool.length > 0) {
-          // Remove all backpacks
-          remainingPool = remainingPool.filter((s) => !s.isBackpack);
-          // Maybe add one backpack back (not guaranteed, just possible)
-          if (Math.random() < 0.5 && backpacksInPool.length > 0) {
-            const randomBackpack =
-              backpacksInPool[
-                Math.floor(Math.random() * backpacksInPool.length)
-              ];
-            remainingPool.push(randomBackpack);
-          }
-        }
-      }
-    }
-
-    // If only one support weapon is required, remove all but possibly one
-    if (options.requireOneSupport) {
-      // If a support weapon is already guaranteed, remove all support weapons
-      if (guaranteedSupportAdded) {
-        remainingPool = remainingPool.filter((s) => !s.isSupportWeapon);
-      } else {
-        // Keep only one random support weapon in the pool if any exist
-        const supportsInPool = remainingPool.filter((s) => s.isSupportWeapon);
-        if (supportsInPool.length > 0) {
-          // Remove all support weapons
-          remainingPool = remainingPool.filter((s) => !s.isSupportWeapon);
-          // Maybe add one support weapon back (not guaranteed, just possible)
-          if (Math.random() < 0.5 && supportsInPool.length > 0) {
-            const randomSupport =
-              supportsInPool[Math.floor(Math.random() * supportsInPool.length)];
-            remainingPool.push(randomSupport);
-          }
-        }
-      }
-    }
-
-    // Shuffle the remaining pool
-    remainingPool.sort(() => 0.5 - Math.random());
-
-    // Fill in the remaining slots with random stratagems
-    let remainingPoolIndex = 0;
-    for (let i = 0; i < maxStratagems; i++) {
-      // Skip positions that already have guaranteed items
-      if (
-        (i === backpackPosition && guaranteedBackpackAdded) ||
-        (i === supportPosition && guaranteedSupportAdded)
-      ) {
-        continue;
-      }
-
-      // If we still have stratagems in the pool, use them
-      if (remainingPoolIndex < remainingPool.length) {
-        selectedStratagems[i] = remainingPool[remainingPoolIndex];
-        remainingPoolIndex++;
-      } else {
-        // If we run out of stratagems, duplicate the first one
-        if (selectedStratagems.some((s) => s !== null)) {
-          const firstNonNull = selectedStratagems.find(
-            (s) => s !== null
-          ) as Stratagem;
-          selectedStratagems[i] = firstNonNull;
-        } else if (availableStratagems.length > 0) {
-          // Fallback if everything else fails
-          selectedStratagems[i] = availableStratagems[0];
-        }
-      }
-    }
-
-    // Filter out any remaining null values (should not happen)
-    selectedStratagems = selectedStratagems.filter((s) => s !== null);
-  }
-
-  // Ensure we have exactly maxStratagems items
-  while (selectedStratagems.length > maxStratagems) {
-    selectedStratagems.pop();
-  }
-
-  // In case we couldn't fill all slots, add duplicates to reach maxStratagems
-  if (
-    selectedStratagems.length > 0 &&
-    selectedStratagems.length < maxStratagems
-  ) {
-    while (selectedStratagems.length < maxStratagems) {
-      selectedStratagems.push(selectedStratagems[0]);
     }
   }
 
