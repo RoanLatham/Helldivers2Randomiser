@@ -893,7 +893,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Borderline_Justice',
-    iconPath: './assets/Weapons/Secondary/Special/Las-58_Talon.webp',
+    iconPath: './assets/Weapons/Secondary/Special/LAS-58_Talon.webp',
   },
   {
     id: 'P-72_Crisper',
@@ -949,7 +949,7 @@ export const allWeapons: Weapon[] = [
     type: 'Secondary',
     category: 'Special',
     warbond: 'Borderline_Justice',
-    iconPath: './assets/Weapons/Secondary/Special/Las-58_Talon.webp',
+    iconPath: './assets/Weapons/Secondary/Special/LAS-58_Talon.webp',
   },
   {
     id: 'G-6_Frag',
