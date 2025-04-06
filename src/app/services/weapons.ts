@@ -375,6 +375,14 @@ export const secondaryWeapons: Weapon[] = [
     iconPath: './assets/Weapons/Secondary/Special/SG-22_Bushwhacker.webp',
   },
   {
+    id: 'LAS-58_Talon',
+    name: 'LAS-58 Talon',
+    type: 'Secondary',
+    category: 'Special',
+    warbond: 'Borderline_Justice',
+    iconPath: './assets/Weapons/Secondary/Special/LAS-58_Talon.webp',
+  },
+  {
     id: 'P-72_Crisper',
     name: 'P-72 Crisper',
     type: 'Secondary',
@@ -414,17 +422,17 @@ export const secondaryWeapons: Weapon[] = [
     warbond: 'Truth_Enforcers',
     iconPath: './assets/Weapons/Secondary/Special/PLAS-15_Loyalist.webp',
   },
-  {
-    id: 'Las-58_Talon',
-    name: 'Las-58 Talon',
-    type: 'Secondary',
-    category: 'Special',
-    warbond: 'Borderline_Justice',
-    iconPath: './assets/Weapons/Secondary/Special/Las-58_Talon.webp',
-  },
 ];
 
 export const throwableWeapons: Weapon[] = [
+  {
+    id: 'TED-63_Dynamite',
+    name: 'TED-63 Dynamite',
+    type: 'Throwable',
+    category: 'Standard',
+    warbond: 'Borderline_Justice',
+    iconPath: './assets/Weapons/Throwable/Standard/TED-63_Dynamite.webp',
+  },
   {
     id: 'G-6_Frag',
     name: 'G-6 Frag',
@@ -880,6 +888,14 @@ export const allWeapons: Weapon[] = [
     iconPath: './assets/Weapons/Secondary/Special/SG-22_Bushwhacker.webp',
   },
   {
+    id: 'LAS-58_Talon',
+    name: 'LAS-58 Talon',
+    type: 'Secondary',
+    category: 'Special',
+    warbond: 'Borderline_Justice',
+    iconPath: './assets/Weapons/Secondary/Special/Las-58_Talon.webp',
+  },
+  {
     id: 'P-72_Crisper',
     name: 'P-72 Crisper',
     type: 'Secondary',
@@ -918,6 +934,14 @@ export const allWeapons: Weapon[] = [
     category: 'Special',
     warbond: 'Truth_Enforcers',
     iconPath: './assets/Weapons/Secondary/Special/PLAS-15_Loyalist.webp',
+  },
+  {
+    id: 'TED-63_Dynamite',
+    name: 'TED-63 Dynamite',
+    type: 'Throwable',
+    category: 'Standard',
+    warbond: 'Borderline_Justice',
+    iconPath: './assets/Weapons/Throwable/Standard/TED-63_Dynamite.webp',
   },
   {
     id: 'Las-58_Talon',
@@ -1018,26 +1042,26 @@ export const allWeapons: Weapon[] = [
 ];
 
 export const weaponsByCategory: { [category: string]: Weapon[] } = {
-  Pistol: allWeapons.filter((weapon) => weapon.category === 'Pistol'),
-  'Sniper Rifle': allWeapons.filter(
-    (weapon) => weapon.category === 'Sniper Rifle'
-  ),
+  Shotgun: allWeapons.filter((weapon) => weapon.category === 'Shotgun'),
+  Melee: allWeapons.filter((weapon) => weapon.category === 'Melee'),
   Explosive: allWeapons.filter((weapon) => weapon.category === 'Explosive'),
-  Special: allWeapons.filter((weapon) => weapon.category === 'Special'),
+  Standard: allWeapons.filter((weapon) => weapon.category === 'Standard'),
   'Submachine Gun': allWeapons.filter(
     (weapon) => weapon.category === 'Submachine Gun'
+  ),
+  'Assault Rifle': allWeapons.filter(
+    (weapon) => weapon.category === 'Assault Rifle'
   ),
   'Energy-Based': allWeapons.filter(
     (weapon) => weapon.category === 'Energy-Based'
   ),
-  Shotgun: allWeapons.filter((weapon) => weapon.category === 'Shotgun'),
-  'Assault Rifle': allWeapons.filter(
-    (weapon) => weapon.category === 'Assault Rifle'
-  ),
-  Melee: allWeapons.filter((weapon) => weapon.category === 'Melee'),
-  Standard: allWeapons.filter((weapon) => weapon.category === 'Standard'),
   'Marksman Rifle': allWeapons.filter(
     (weapon) => weapon.category === 'Marksman Rifle'
+  ),
+  Special: allWeapons.filter((weapon) => weapon.category === 'Special'),
+  Pistol: allWeapons.filter((weapon) => weapon.category === 'Pistol'),
+  'Sniper Rifle': allWeapons.filter(
+    (weapon) => weapon.category === 'Sniper Rifle'
   ),
 };
 

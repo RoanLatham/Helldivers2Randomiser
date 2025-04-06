@@ -437,6 +437,17 @@ export const stratagems: Stratagem[] = [
     isSupportWeapon: false,
   },
   {
+    id: 'EGL-21_Grenadier_Battlement',
+
+    name: 'E/GL-21 Grenadier Battlement',
+
+    shipModule: 'Bridge',
+
+    iconPath: './assets/Stratagems/Bridge/EGL-21_Grenadier_Battlement.webp',
+    isBackpack: false,
+    isSupportWeapon: false,
+  },
+  {
     id: 'MD-6_Anti-Personnel_Minefield',
 
     name: 'MD-6 Anti-Personnel Minefield',
@@ -631,7 +642,7 @@ export const stratagems: Stratagem[] = [
 
     iconPath:
       './assets/Stratagems/Robotics%20Workshop/AAC-8_Autocannon_Sentry.webp',
-    isBackpack: true,
+    isBackpack: false,
     isSupportWeapon: false,
   },
   {
@@ -767,7 +778,7 @@ export const stratagems: Stratagem[] = [
 
     shipModule: 'Warbonds',
 
-    iconPath: './assets/Stratagems/Fallback_Stratagem.webp',
+    iconPath: './assets/Stratagems/Warbonds/LIFT-860_Hover_Pack.webp',
 
     warbond: 'Borderline_Justice',
     isBackpack: true,
@@ -816,6 +827,9 @@ export const stratagemsByWarbond: { [warbond: string]: Stratagem[] } = {
   ),
   Urban_Legends: stratagems.filter(
     (stratagem) => stratagem.warbond === 'Urban_Legends'
+  ),
+  Borderline_Justice: stratagems.filter(
+    (stratagem) => stratagem.warbond === 'Borderline_Justice'
   ),
 };
 

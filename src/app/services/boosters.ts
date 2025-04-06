@@ -18,7 +18,8 @@ export const boosters: Booster[] = [
   {
     id: 'Vitality_Enhancement',
     name: 'Vitality Enhancement',
-    description: 'Allows all Helldivers to resist injury.',
+    description:
+      'Provides minor damage reduction from all sources for all Helldivers',
     warbond: 'Helldivers_Mobilize',
     iconPath: './assets/Boosters/Vitality_Enhancement.svg',
   },
@@ -113,36 +114,47 @@ export const boosters: Booster[] = [
     warbond: 'Urban_Legends',
     iconPath: './assets/Boosters/Armed_Resupply_Pods.svg',
   },
+  {
+    id: 'Sample_Extricator',
+    name: 'Sample Extricator',
+    description:
+      'Large enemies now have a chance of dropping Samples on death. Capped at 10 drops per mission.',
+    warbond: 'Borderline_Justice',
+    iconPath: './assets/Boosters/Sample_Extricator.webp',
+  },
 ];
 
 // Lookup collections for filtering
 export const boostersByWarbond: { [warbond: string]: Booster[] } = {
-  Steeled_Veterans: boosters.filter(
-    (booster) => booster.warbond === 'Steeled_Veterans'
-  ),
-  Freedoms_Flame: boosters.filter(
-    (booster) => booster.warbond === 'Freedoms_Flame'
+  Polar_Patriots: boosters.filter(
+    (booster) => booster.warbond === 'Polar_Patriots'
   ),
   Truth_Enforcers: boosters.filter(
     (booster) => booster.warbond === 'Truth_Enforcers'
   ),
+  Democratic_Detonation: boosters.filter(
+    (booster) => booster.warbond === 'Democratic_Detonation'
+  ),
+  Steeled_Veterans: boosters.filter(
+    (booster) => booster.warbond === 'Steeled_Veterans'
+  ),
   Cutting_Edge: boosters.filter(
     (booster) => booster.warbond === 'Cutting_Edge'
-  ),
-  Viper_Commandos: boosters.filter(
-    (booster) => booster.warbond === 'Viper_Commandos'
   ),
   Urban_Legends: boosters.filter(
     (booster) => booster.warbond === 'Urban_Legends'
   ),
-  Democratic_Detonation: boosters.filter(
-    (booster) => booster.warbond === 'Democratic_Detonation'
+  Viper_Commandos: boosters.filter(
+    (booster) => booster.warbond === 'Viper_Commandos'
+  ),
+  Borderline_Justice: boosters.filter(
+    (booster) => booster.warbond === 'Borderline_Justice'
   ),
   Helldivers_Mobilize: boosters.filter(
     (booster) => booster.warbond === 'Helldivers_Mobilize'
   ),
-  Polar_Patriots: boosters.filter(
-    (booster) => booster.warbond === 'Polar_Patriots'
+  Freedoms_Flame: boosters.filter(
+    (booster) => booster.warbond === 'Freedoms_Flame'
   ),
 };
 

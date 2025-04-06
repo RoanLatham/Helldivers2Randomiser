@@ -12,6 +12,11 @@ export const warbonds: Warbond[] = [
     iconPath: './assets/Warbonds/Helldivers_Mobilize.webp',
   },
   {
+    id: 'Borderline_Justice',
+    name: 'Borderline Justice',
+    iconPath: './assets/Warbonds/Borderline_Justice.webp',
+  },
+  {
     id: 'Servants_of_Freedom',
     name: 'Servants of Freedom',
     iconPath: './assets/Warbonds/Servants_of_Freedom.webp',
@@ -60,11 +65,6 @@ export const warbonds: Warbond[] = [
     id: 'Steeled_Veterans',
     name: 'Steeled Veterans',
     iconPath: './assets/Warbonds/Steeled_Veterans.webp',
-  },
-  {
-    id: 'Borderline_Justice',
-    name: 'Borderline Justice',
-    iconPath: './assets/Warbonds/Borderline_Justice.webp',
   },
   {
     id: 'Helldivers_x_Killzone',
