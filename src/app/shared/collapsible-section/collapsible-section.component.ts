@@ -6,8 +6,7 @@ export type SectionVariant = 'filters' | 'component' | 'category';
 
 @Component({
   selector: 'app-collapsible-section',
-  standalone: true,
-  imports: [CommonModule],
+    imports: [CommonModule],
   templateUrl: './collapsible-section.component.html',
   styleUrl: './collapsible-section.component.scss',
 })
