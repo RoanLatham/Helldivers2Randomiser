@@ -7,11 +7,10 @@ import { InitStateService } from '../../services/init-state.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-stratagem-randomiser',
-  templateUrl: './stratagem-randomiser.component.html',
-  styleUrls: ['./stratagem-randomiser.component.scss'],
-  imports: [StratagemDisplayComponent],
-  standalone: true,
+    selector: 'app-stratagem-randomiser',
+    templateUrl: './stratagem-randomiser.component.html',
+    styleUrls: ['./stratagem-randomiser.component.scss'],
+    imports: [StratagemDisplayComponent]
 })
 export class StratagemRandomiserComponent implements OnInit, OnDestroy {
   ids: string[] = [];

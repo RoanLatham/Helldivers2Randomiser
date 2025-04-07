@@ -18,29 +18,28 @@ import { FooterComponent } from './footer/footer.component';
 import { FilterContainerComponent } from './filters/filter-container/filter-container.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    StratagemDisplayComponent,
-    StratagemRandomiserComponent,
-    StratagemFiltersComponent,
-    BoosterDisplayComponent,
-    BoosterRandomiserComponent,
-    BoosterFiltersComponent,
-    WeaponDisplayComponent,
-    WeaponRandomiserComponent,
-    WeaponFiltersComponent,
-    WarbondFiltersComponent,
-    RandomiseButtonComponent,
-    LearnMoreComponent,
-    CollapsibleSectionComponent,
-    FooterComponent,
-    FilterContainerComponent,
-  ],
-  providers: [GtagService],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    selector: 'app-root',
+    imports: [
+        RouterOutlet,
+        StratagemDisplayComponent,
+        StratagemRandomiserComponent,
+        StratagemFiltersComponent,
+        BoosterDisplayComponent,
+        BoosterRandomiserComponent,
+        BoosterFiltersComponent,
+        WeaponDisplayComponent,
+        WeaponRandomiserComponent,
+        WeaponFiltersComponent,
+        WarbondFiltersComponent,
+        RandomiseButtonComponent,
+        LearnMoreComponent,
+        CollapsibleSectionComponent,
+        FooterComponent,
+        FilterContainerComponent,
+    ],
+    providers: [GtagService],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
   title = 'HelldiversLoadout';

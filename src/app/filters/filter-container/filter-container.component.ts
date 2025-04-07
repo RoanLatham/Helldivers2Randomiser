@@ -18,18 +18,17 @@ import {
 } from '../../services/storage.service';
 
 @Component({
-  selector: 'app-filter-container',
-  standalone: true,
-  imports: [
-    CommonModule,
-    CollapsibleSectionComponent,
-    WarbondFiltersComponent,
-    WeaponFiltersComponent,
-    StratagemFiltersComponent,
-    BoosterFiltersComponent,
-  ],
-  templateUrl: './filter-container.component.html',
-  styleUrl: './filter-container.component.scss',
+    selector: 'app-filter-container',
+    imports: [
+        CommonModule,
+        CollapsibleSectionComponent,
+        WarbondFiltersComponent,
+        WeaponFiltersComponent,
+        StratagemFiltersComponent,
+        BoosterFiltersComponent,
+    ],
+    templateUrl: './filter-container.component.html',
+    styleUrl: './filter-container.component.scss'
 })
 export class FilterContainerComponent implements OnInit {
   filtersCollapsed = false;

@@ -6,11 +6,10 @@ import { WarbondFilterStateService } from '../../services/warbond-filter-state.s
 import { CollapsibleSectionComponent } from '../../shared/collapsible-section/collapsible-section.component';
 
 @Component({
-  selector: 'app-booster-filters',
-  standalone: true,
-  imports: [CommonModule, CollapsibleSectionComponent],
-  templateUrl: './booster-filters.component.html',
-  styleUrl: './booster-filters.component.scss',
+    selector: 'app-booster-filters',
+    imports: [CommonModule, CollapsibleSectionComponent],
+    templateUrl: './booster-filters.component.html',
+    styleUrl: './booster-filters.component.scss'
 })
 export class BoosterFiltersComponent implements OnInit {
   boosters: Booster[] = boosters;

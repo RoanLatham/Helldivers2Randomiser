@@ -4,11 +4,10 @@ import { GtagService } from '../services/gtag-service.service';
 import { CollapsibleSectionComponent } from '../shared/collapsible-section/collapsible-section.component';
 
 @Component({
-  selector: 'app-learn-more',
-  standalone: true,
-  imports: [CommonModule, CollapsibleSectionComponent],
-  templateUrl: './learn-more.component.html',
-  styleUrl: './learn-more.component.scss',
+    selector: 'app-learn-more',
+    imports: [CommonModule, CollapsibleSectionComponent],
+    templateUrl: './learn-more.component.html',
+    styleUrl: './learn-more.component.scss'
 })
 export class LearnMoreComponent implements AfterViewInit {
   // Collapsible section state

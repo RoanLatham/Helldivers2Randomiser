@@ -7,11 +7,10 @@ import { InitStateService } from '../../services/init-state.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-weapon-randomiser',
-  standalone: true,
-  imports: [WeaponDisplayComponent],
-  templateUrl: './weapon-randomiser.component.html',
-  styleUrls: ['./weapon-randomiser.component.scss'],
+    selector: 'app-weapon-randomiser',
+    imports: [WeaponDisplayComponent],
+    templateUrl: './weapon-randomiser.component.html',
+    styleUrls: ['./weapon-randomiser.component.scss']
 })
 export class WeaponRandomiserComponent implements OnInit, OnDestroy {
   primaryWeaponId!: string;

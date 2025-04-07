@@ -4,11 +4,10 @@ import { LAST_UPDATED } from '../data-last-updated';
 import { BUILD_TIMESTAMP } from '../build-timestamp';
 
 @Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss',
+    selector: 'app-footer',
+    imports: [CommonModule],
+    templateUrl: './footer.component.html',
+    styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
   // Data update timestamp (from extractors)

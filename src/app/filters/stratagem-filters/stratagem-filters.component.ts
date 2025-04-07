@@ -9,11 +9,10 @@ import {
 } from '../../services/data-access';
 
 @Component({
-  selector: 'app-stratagem-filters',
-  standalone: true,
-  imports: [CommonModule, CollapsibleSectionComponent],
-  templateUrl: './stratagem-filters.component.html',
-  styleUrl: './stratagem-filters.component.scss',
+    selector: 'app-stratagem-filters',
+    imports: [CommonModule, CollapsibleSectionComponent],
+    templateUrl: './stratagem-filters.component.html',
+    styleUrl: './stratagem-filters.component.scss'
 })
 export class StratagemFiltersComponent implements OnInit {
   stratagems: Stratagem[] = [];

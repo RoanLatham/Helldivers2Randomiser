@@ -5,11 +5,10 @@ import { WarbondFilterStateService } from '../../services/warbond-filter-state.s
 import { CollapsibleSectionComponent } from '../../shared/collapsible-section/collapsible-section.component';
 
 @Component({
-  selector: 'app-warbond-filters',
-  standalone: true,
-  imports: [CommonModule, CollapsibleSectionComponent],
-  templateUrl: './warbond-filters.component.html',
-  styleUrl: './warbond-filters.component.scss',
+    selector: 'app-warbond-filters',
+    imports: [CommonModule, CollapsibleSectionComponent],
+    templateUrl: './warbond-filters.component.html',
+    styleUrl: './warbond-filters.component.scss'
 })
 export class WarbondFiltersComponent implements OnInit {
   warbonds = warbonds;

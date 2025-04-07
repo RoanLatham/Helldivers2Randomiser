@@ -7,11 +7,10 @@ import { InitStateService } from '../../services/init-state.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-booster-randomiser',
-  standalone: true,
-  imports: [BoosterDisplayComponent],
-  templateUrl: './booster-randomiser.component.html',
-  styleUrl: './booster-randomiser.component.scss',
+    selector: 'app-booster-randomiser',
+    imports: [BoosterDisplayComponent],
+    templateUrl: './booster-randomiser.component.html',
+    styleUrl: './booster-randomiser.component.scss'
 })
 export class BoosterRandomiserComponent implements OnInit, OnDestroy {
   id: string = '';

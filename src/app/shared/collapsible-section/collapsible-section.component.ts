@@ -5,10 +5,10 @@ import { CommonModule } from '@angular/common';
 export type SectionVariant = 'filters' | 'component' | 'category';
 
 @Component({
-  selector: 'app-collapsible-section',
+    selector: 'app-collapsible-section',
     imports: [CommonModule],
-  templateUrl: './collapsible-section.component.html',
-  styleUrl: './collapsible-section.component.scss',
+    templateUrl: './collapsible-section.component.html',
+    styleUrl: './collapsible-section.component.scss'
 })
 export class CollapsibleSectionComponent {
   // Inputs for configuration

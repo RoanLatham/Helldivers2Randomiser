@@ -10,11 +10,10 @@ import {
 } from '../../services/data-access';
 
 @Component({
-  selector: 'app-weapon-filters',
-  standalone: true,
-  imports: [CommonModule, CollapsibleSectionComponent],
-  templateUrl: './weapon-filters.component.html',
-  styleUrls: ['./weapon-filters.component.scss'],
+    selector: 'app-weapon-filters',
+    imports: [CommonModule, CollapsibleSectionComponent],
+    templateUrl: './weapon-filters.component.html',
+    styleUrls: ['./weapon-filters.component.scss']
 })
 export class WeaponFiltersComponent implements OnInit, OnDestroy {
   primaryWeapons: Weapon[] = [];

@@ -9,32 +9,36 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 // Create mock components to prevent template errors
 @Component({
-  selector: 'app-weapon-randomiser',
-  template: '<div>Mock Weapon Randomiser</div>',
+    selector: 'app-weapon-randomiser',
+    template: '<div>Mock Weapon Randomiser</div>',
+    standalone: false
 })
 class MockWeaponRandomiserComponent {
   randomise() {}
 }
 
 @Component({
-  selector: 'app-stratagem-randomiser',
-  template: '<div>Mock Stratagem Randomiser</div>',
+    selector: 'app-stratagem-randomiser',
+    template: '<div>Mock Stratagem Randomiser</div>',
+    standalone: false
 })
 class MockStratagemRandomiserComponent {
   randomise() {}
 }
 
 @Component({
-  selector: 'app-booster-randomiser',
-  template: '<div>Mock Booster Randomiser</div>',
+    selector: 'app-booster-randomiser',
+    template: '<div>Mock Booster Randomiser</div>',
+    standalone: false
 })
 class MockBoosterRandomiserComponent {
   randomise() {}
 }
 
 @Component({
-  selector: 'app-randomise-button',
-  template: '<button>Mock Randomise Button</button>',
+    selector: 'app-randomise-button',
+    template: '<button>Mock Randomise Button</button>',
+    standalone: false
 })
 class MockRandomiseButtonComponent {
   @Input() randomise: any;
@@ -42,8 +46,9 @@ class MockRandomiseButtonComponent {
 
 // Mock the stratagem-display component which is causing our template errors
 @Component({
-  selector: 'app-stratagem-display',
-  template: '<div>Mock Stratagem Display</div>',
+    selector: 'app-stratagem-display',
+    template: '<div>Mock Stratagem Display</div>',
+    standalone: false
 })
 class MockStratagemDisplayComponent {
   @Input() id: number = 0;

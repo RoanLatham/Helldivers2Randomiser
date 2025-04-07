@@ -9,7 +9,7 @@ import {
 
 // Host component for testing with content projection
 @Component({
-  template: `
+    template: `
     <app-collapsible-section
       [title]="title"
       [initiallyCollapsed]="initiallyCollapsed"
@@ -19,6 +19,7 @@ import {
       <div class="test-content">Projected content</div>
     </app-collapsible-section>
   `,
+    standalone: false
 })
 class TestHostComponent {
   title = 'Test Title';

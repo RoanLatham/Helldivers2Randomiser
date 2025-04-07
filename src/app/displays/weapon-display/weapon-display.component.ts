@@ -3,11 +3,10 @@ import { Weapon } from '../../services/weapons';
 import { getWeapon } from '../../services/data-access';
 
 @Component({
-  selector: 'app-weapon-display',
-  standalone: true,
-  imports: [],
-  templateUrl: './weapon-display.component.html',
-  styleUrls: ['./weapon-display.component.scss'],
+    selector: 'app-weapon-display',
+    imports: [],
+    templateUrl: './weapon-display.component.html',
+    styleUrls: ['./weapon-display.component.scss']
 })
 export class WeaponDisplayComponent implements OnInit {
   private _id!: string;
