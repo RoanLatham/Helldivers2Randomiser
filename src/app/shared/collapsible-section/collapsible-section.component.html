@@ -1,5 +1,9 @@
 <!-- Header with toggle functionality -->
-<div [class]="headerClass" (click)="toggleCollapse()">
+<div
+  [class]="headerClass"
+  (click)="toggleCollapse()"
+  [title]="(isCollapsed ? 'expand ' : 'collapse ') + title + ' section'"
+>
   <!-- Title based on variant type -->
   <h3 *ngIf="variant !== 'category'" [class]="'component-title ' + titleClass">
     {{ title }}
