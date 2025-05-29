@@ -7,7 +7,14 @@
   >
     <div class="filter-container">
       <ng-container *ngFor="let booster of boosters">
-        <button class="filter-button" (click)="toggleBooster(booster.id)">
+        <button
+          class="filter-button"
+          (click)="toggleBooster(booster.id)"
+          [title]="
+            (disabledIds.includes(booster.id) ? 'enable ' : 'disable ') +
+            booster.name
+          "
+        >
           <img
             [src]="booster.iconPath"
             alt="{{ booster.name }} toggle"
