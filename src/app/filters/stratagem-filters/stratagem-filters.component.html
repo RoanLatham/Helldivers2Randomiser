@@ -45,7 +45,10 @@
             <button
               class="filter-button"
               (click)="toggleStratagem(stratagem.id)"
-              [title]="stratagem.name"
+              [title]="
+                (disabledIds.includes(stratagem.id) ? 'enable ' : 'disable ') +
+                stratagem.name
+              "
             >
               <img
                 [src]="stratagem.iconPath"
@@ -53,6 +56,11 @@
                 class="filter-icon"
                 [class.filter-icon-disabled]="
                   disabledIds.includes(stratagem.id)
+                "
+                [title]="
+                  (disabledIds.includes(stratagem.id)
+                    ? 'enable '
+                    : 'disable ') + stratagem.name
                 "
               />
             </button>
