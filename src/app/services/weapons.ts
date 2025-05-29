@@ -103,6 +103,15 @@ export const primaryWeapons: Weapon[] = [
       './assets/Weapons/Primary/Marksman%20Rifle/R-63CS_Diligence_Counter_Sniper.webp',
   },
   {
+    id: 'R-2_Amendment',
+    name: 'R-2 Amendment',
+    type: 'Primary',
+    category: 'Marksman Rifle',
+    warbond: 'Masters_of_Ceremony',
+    iconPath:
+      './assets/Weapons/Primary/Marksman%20Rifle/R-2_Amendment_Primary_Weaponry.webp',
+  },
+  {
     id: 'PLAS-39_Accelerator_Rifle',
     name: 'PLAS-39 Accelerator Rifle',
     type: 'Primary',
@@ -619,6 +628,15 @@ export const allWeapons: Weapon[] = [
       './assets/Weapons/Primary/Marksman%20Rifle/R-63CS_Diligence_Counter_Sniper.webp',
   },
   {
+    id: 'R-2_Amendment',
+    name: 'R-2 Amendment',
+    type: 'Primary',
+    category: 'Marksman Rifle',
+    warbond: 'Masters_of_Ceremony',
+    iconPath:
+      './assets/Weapons/Primary/Marksman%20Rifle/R-2_Amendment_Primary_Weaponry.webp',
+  },
+  {
     id: 'PLAS-39_Accelerator_Rifle',
     name: 'PLAS-39 Accelerator Rifle',
     type: 'Primary',
@@ -1118,5 +1136,8 @@ export const weaponsByWarbond: { [warbond: string]: Weapon[] } = {
   ),
   Helldivers_x_Killzone: allWeapons.filter(
     (weapon) => weapon.warbond === 'Helldivers_x_Killzone'
+  ),
+  Masters_of_Ceremony: allWeapons.filter(
+    (weapon) => weapon.warbond === 'Masters_of_Ceremony'
   ),
 };

@@ -122,6 +122,14 @@ export const boosters: Booster[] = [
     warbond: 'Borderline_Justice',
     iconPath: './assets/Boosters/Sample_Extricator.webp',
   },
+  {
+    id: 'Sample_Scanner',
+    name: 'Sample Scanner',
+    description:
+      'The Sample scanner gives you a 15% chance to receive twice the Samples on sample pick up.',
+    warbond: 'Masters_of_Ceremony',
+    iconPath: './assets/Boosters/Sample_Scanner.webp',
+  },
 ];
 
 // Lookup collections for filtering
@@ -155,6 +163,9 @@ export const boostersByWarbond: { [warbond: string]: Booster[] } = {
   ),
   Freedoms_Flame: boosters.filter(
     (booster) => booster.warbond === 'Freedoms_Flame'
+  ),
+  Masters_of_Ceremony: boosters.filter(
+    (booster) => booster.warbond === 'Masters_of_Ceremony'
   ),
 };
 

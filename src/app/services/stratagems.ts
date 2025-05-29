@@ -784,6 +784,19 @@ export const stratagems: Stratagem[] = [
     isBackpack: true,
     isSupportWeapon: false,
   },
+  {
+    id: 'CQC-1_One_True_Flag',
+
+    name: 'CQC-1 One True Flag',
+
+    shipModule: 'Warbonds',
+
+    iconPath: './assets/Stratagems/Warbonds/CQC-1_One_True_Flag.webp',
+
+    warbond: 'Masters_of_Ceremony',
+    isBackpack: false,
+    isSupportWeapon: false,
+  },
 ];
 
 // Export ship modules as a constant array
@@ -830,6 +843,9 @@ export const stratagemsByWarbond: { [warbond: string]: Stratagem[] } = {
   ),
   Borderline_Justice: stratagems.filter(
     (stratagem) => stratagem.warbond === 'Borderline_Justice'
+  ),
+  Masters_of_Ceremony: stratagems.filter(
+    (stratagem) => stratagem.warbond === 'Masters_of_Ceremony'
   ),
 };
 

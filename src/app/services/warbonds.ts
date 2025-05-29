@@ -12,6 +12,11 @@ export const warbonds: Warbond[] = [
     iconPath: './assets/Warbonds/Helldivers_Mobilize.webp',
   },
   {
+    id: 'Masters_of_Ceremony',
+    name: 'Masters of Ceremony',
+    iconPath: './assets/Warbonds/Masters_of_Ceremony.webp',
+  },
+  {
     id: 'Borderline_Justice',
     name: 'Borderline Justice',
     iconPath: './assets/Warbonds/Borderline_Justice.webp',
