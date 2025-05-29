@@ -368,6 +368,14 @@ export const secondaryWeapons: Weapon[] = [
     iconPath: './assets/Weapons/Secondary/Melee/CQC-5_Combat_Hatchet.webp',
   },
   {
+    id: 'CQC-2_Saber',
+    name: 'CQC-2 Saber',
+    type: 'Secondary',
+    category: 'Melee',
+    warbond: 'Masters of Ceremony',
+    iconPath: './assets/Weapons/Secondary/Melee/CQC-2_Saber.webp',
+  },
+  {
     id: 'P-11_Stim_Pistol',
     name: 'P-11 Stim Pistol',
     type: 'Secondary',
@@ -888,6 +896,14 @@ export const allWeapons: Weapon[] = [
     category: 'Melee',
     warbond: '',
     iconPath: './assets/Weapons/Secondary/Melee/CQC-5_Combat_Hatchet.webp',
+  },
+  {
+    id: 'CQC-2_Saber',
+    name: 'CQC-2 Saber',
+    type: 'Secondary',
+    category: 'Melee',
+    warbond: 'Masters_of_Ceremony',
+    iconPath: './assets/Weapons/Secondary/Melee/CQC-2_Saber.webp',
   },
   {
     id: 'P-11_Stim_Pistol',
