@@ -34,7 +34,14 @@
                 let weapon of getWeaponsByCategoryAndType(category, 'Primary')
               "
             >
-              <button class="filter-button" (click)="toggleWeapon(weapon.id)">
+              <button
+                class="filter-button"
+                (click)="toggleWeapon(weapon.id)"
+                [title]="
+                  (disabledIds.includes(weapon.id) ? 'enable ' : 'disable ') +
+                  weapon.name
+                "
+              >
                 <img
                   [src]="weapon.iconPath"
                   alt="{{ weapon.name }} toggle"
@@ -76,7 +83,14 @@
                 let weapon of getWeaponsByCategoryAndType(category, 'Secondary')
               "
             >
-              <button class="filter-button" (click)="toggleWeapon(weapon.id)">
+              <button
+                class="filter-button"
+                (click)="toggleWeapon(weapon.id)"
+                [title]="
+                  (disabledIds.includes(weapon.id) ? 'enable ' : 'disable ') +
+                  weapon.name
+                "
+              >
                 <img
                   [src]="weapon.iconPath"
                   alt="{{ weapon.name }} toggle"
@@ -118,7 +132,14 @@
                 let weapon of getWeaponsByCategoryAndType(category, 'Throwable')
               "
             >
-              <button class="filter-button" (click)="toggleWeapon(weapon.id)">
+              <button
+                class="filter-button"
+                (click)="toggleWeapon(weapon.id)"
+                [title]="
+                  (disabledIds.includes(weapon.id) ? 'enable ' : 'disable ') +
+                  weapon.name
+                "
+              >
                 <img
                   [src]="weapon.iconPath"
                   alt="{{ weapon.name }} toggle"
