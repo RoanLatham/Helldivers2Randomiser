@@ -27,6 +27,10 @@
         <button
           class="filter-button warbond-filter-button"
           (click)="togglewarbond(warbond.id)"
+          [title]="
+            (disabledIds.includes(warbond.id) ? 'enable ' : 'disable ') +
+            warbond.name
+          "
         >
           <img
             [src]="warbond.iconPath"
