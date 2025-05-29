@@ -120,7 +120,11 @@
           <button
             class="action-button save-button"
             (click)="saveSettings()"
-            title="Save your current filter selections to browser storage"
+            [title]="
+              hasStoredSettings
+                ? 'Override your previously saved filter settings with the current selections'
+                : 'Save your current filter selections to browser storage'
+            "
           >
             {{
               hasStoredSettings
@@ -134,7 +138,7 @@
             *ngIf="hasStoredSettings"
             class="action-button save-button"
             (click)="loadSettingsFromStorage()"
-            title="Load your saved filters from storage, replacing current selections"
+            title="Load your saved filters from storage, replacing current selections with the saved ones"
           >
             Reload Saved Settings
           </button>
@@ -144,7 +148,7 @@
             *ngIf="hasStoredSettings"
             class="action-button danger-button"
             (click)="clearStorage()"
-            title="Delete your saved filter settings from browser storage"
+            title="Delete your saved filter settings from browser storage permanently"
           >
             Delete Saved Settings
           </button>
@@ -153,7 +157,7 @@
           <button
             class="action-button info-button"
             (click)="resetFiltersOnly()"
-            title="Reset all filter selections to default without affecting saved settings"
+            title="Reset all filter selections to their default state without affecting saved settings in storage"
           >
             Reset Active Filters
           </button>
