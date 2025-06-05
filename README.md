@@ -4,7 +4,7 @@
 
 The ultimate loadout randomization tool for Helldivers 2 - helping Super Earth's finest discover new weapon combinations and stratagem synergies.
 
-**[View Live Site](https://helldivers2randomiser.site/)**
+**[View Live Site](https://helldivers2randomiser.xyz/)**
 
 ![Angular](https://img.shields.io/badge/Angular-17.3-dd0031)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.4-3178c6)
