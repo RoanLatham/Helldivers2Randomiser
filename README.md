@@ -4,7 +4,7 @@
 
 The ultimate loadout randomization tool for Helldivers 2 - helping Super Earth's finest discover new weapon combinations and stratagem synergies.
 
-**[View Live Site](https://helldivers2randomiser.site/)**
+**[View Live Site](https://helldivers2randomiser.xyz/)**
 
 ![Angular](https://img.shields.io/badge/Angular-17.3-dd0031)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.4-3178c6)
@@ -52,11 +52,11 @@ The ultimate loadout randomization tool for Helldivers 2 - helping Super Earth's
 <details open>
 <summary><h2>🚀🌍 Getting Started</h2></summary>
 
-The Helldivers 2 Loadout Randomiser is hosted online and ready to use. Simply visit [helldivers2randomiser.site](https://helldivers2randomiser.site/) to start discovering new loadout combinations.
+The Helldivers 2 Loadout Randomiser is hosted online and ready to use. Simply visit [helldivers2randomiser.xyz](https://helldivers2randomiser.xyz/) to start discovering new loadout combinations.
 
 ### Basic Usage
 
-1. **Visit the site** - Open [helldivers2randomiser.site](https://helldivers2randomiser.site/) in any modern browser
+1. **Visit the site** - Open [helldivers2randomiser.xyz](https://helldivers2randomiser.xyz/) in any modern browser
 2. **Click "Randomise"** - Instantly generate a random loadout
 3. **Adjust Filters** - Customize what items are included in the randomization
 4. **Save Your Settings** - Store your preferences for future visits
